@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>《底层逻辑》读书笔记</title>
+<style>
+:root{--bg:#0f0f0f;--s:#1a1a1a;--s2:#242424;--t:#e8e6e3;--t2:#9a9a9a;--a:#e8a838;--a2:#c4882a;--b:#2a2a2a;--r:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--t);line-height:1.8;-webkit-font-smoothing:antialiased;padding:20px;max-width:900px;margin:0 auto}
+a{color:var(--a);text-decoration:none}
+a:hover{text-decoration:underline}
+.back{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:20px;border:1px solid var(--b);background:transparent;color:var(--t2);font-size:.9rem;margin-bottom:24px}
+.back:hover{border-color:var(--a);color:var(--t)}
+.note{padding:24px;background:var(--s);border-radius:var(--r);border:1px solid var(--b);margin-bottom:24px}
+.note h1{font-size:1.8rem;font-weight:800;margin-bottom:8px;background:linear-gradient(135deg,var(--a),#f0c060);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.note .meta{color:var(--t2);font-size:.9rem;margin-bottom:24px}
+.note h2{font-size:1.4rem;font-weight:700;margin:32px 0 16px;color:var(--a)}
+.note h3{font-size:1.2rem;font-weight:600;margin:24px 0 12px}
+.note h4{font-size:1rem;font-weight:600;margin:16px 0 8px}
+.note p{margin-bottom:16px}
+.note ul{margin:16px 0 16px 24px}
+.note li{margin-bottom:8px}
+.note blockquote{border-left:4px solid var(--a);padding:16px 24px;margin:24px 0;background:var(--s2);border-radius:0 var(--r) var(--r) 0}
+.note blockquote p{margin-bottom:8px;font-style:italic}
+.note blockquote .parse{font-style:normal;color:var(--t2);font-size:.95rem}
+.note table{width:100%;border-collapse:collapse;margin:16px 0}
+.note th,.note td{padding:12px;border:1px solid var(--b);text-align:left}
+.note th{background:var(--s2)}
+.tag{display:inline-block;padding:2px 10px;border-radius:10px;font-size:.75rem;background:rgba(232,168,56,.12);color:var(--a);margin:4px 4px 4px 0}
+.footer{padding:24px 0;border-top:1px solid var(--b);color:var(--t2);font-size:.85rem}
+@media(max-width:640px){
+body{padding:16px}
+.note h1{font-size:1.5rem}
+.note h2{font-size:1.2rem}
+}
+</style>
+</head>
+<body>
+<a class="back" href="https://zhubao315.github.io/my-booklist/">← 回到书单</a>
+
+<div class="note">
+<h1>《底层逻辑》读书笔记</h1>
+<div class="meta">
+<span class="tag">刘润</span>
+<span class="tag">思维模型</span>
+<span class="tag">2026-03-10</span>
+</div>
+
+<h2>● 核心定位</h2>
+<h3>看透世界本质的思维框架：用第一性原理思考复杂问题</h3>
+<p>《底层逻辑》是商业顾问刘润的思维方法论，帮助人们透过现象看本质。本书的核心洞见：世界分为三类——不变的事物、会变化的事物、不确定性的事物。面对不同类型，要用不同的思维方式。底层逻辑是底层的不变规律，掌握了它，就能在变化中找到确定性。</p>
+
+<h2>● 五大底层逻辑</h2>
+<h3>思考的底层逻辑</h3>
+<table>
+<tr style="background:var(--s2)"><th>类型</th><th>核心问题</th><th>思维方式</th></tr>
+<tr><td><strong>第一性原理</strong></td><td>最本质的真理是什么？</td><td>追溯到不可再分解的基本事实</td></tr>
+<tr><td><strong>系统思维</strong></td><td>要素如何相互作用？</td><td>看整体而非局部</td></tr>
+<tr><td><strong>概率思维</strong></td><td>成功的概率是多少？</td><td>用期望值做决策</td></tr>
+<tr><td><strong>边际思维</strong></td><td>多投入一分的回报？</td><td>边际成本 vs 边际收益</td></tr>
+</table>
+
+<h3>行为的底层逻辑</h3>
+<ol>
+<li><strong>个体视角</strong>：如何让自己更好？</li>
+<li><strong>系统视角</strong>：如何让系统更好？</li>
+<li><strong>生态视角</strong>：如何让生态更好？</li>
+</ol>
+
+<h2>● 核心观点</h2>
+<h3>七大核心洞察</h3>
+<h4>1. 分清"事实"和"观点"</h4>
+<p>事实：可以验证真伪  
+观点：个人的看法  
+决策要基于事实，而非观点。</p>
+
+<h4>2. 第一性原理：追溯到本质</h4>
+<p>不断问"为什么"，直到找到不可再分解的基本真理。这是所有决策的起点。</p>
+
+<h4>3. 系统大于个体</h4>
+<p>个体努力重要，但系统选择更重要。选择对的系统，比在错误的系统中努力更重要。</p>
+
+<h4>4. 长期主义：用复利思维思考</h4>
+<p>短期看结果，长期看趋势。真正的成功来自长期坚持的正确方向。</p>
+
+<h4>5. 概率思维：不追求确定性</h4>
+<p>世界本质不确定。用期望值决策，而非追求 100% 成功。提高概率，重复下注。</p>
+
+<h4>6. 边界：知道什么不能做</h4>
+<p>成功不在于能做多少事，而在于知道什么不能做。边界是选择的前提。</p>
+
+<h4>7. 利他即利己</h4>
+<p>从系统视角看，帮助他人最终帮助自己。真正的智慧是创造价值，而非掠夺价值。</p>
+
+<h2>● 金句摘录</h2>
+<blockquote>
+<p>"底层逻辑是变化中的不变，是现象背后的本质。"</p>
+<p class="parse"><strong>解析</strong>：世界在变，但有些规律不变。找到不变的规律，就能应对变化。</p>
+</blockquote>
+
+<blockquote>
+<p>"第一性原理：追溯到不能再分解的基本事实。"</p>
+<p class="parse"><strong>解析</strong>：不盲从经验，不跟随潮流，从最基本的真理出发思考问题。</p>
+</blockquote>
+
+<blockquote>
+<p>"选择比努力重要，赛道比速度重要。"</p>
+<p class="parse"><strong>解析</strong>：在错误的赛道上努力，越努力越失败。先选择对的系统，再加速前进。</p>
+</blockquote>
+
+<blockquote>
+<p>"长期主义者，用复利的眼光看待世界。"</p>
+<p class="parse"><strong>解析</strong>：短期看得失，长期看价值。真正的成功是时间的函数。</p>
+</blockquote>
+
+<blockquote>
+<p>"真正的智慧，是知道什么不能做。"</p>
+<p class="parse"><strong>解析</strong>：机会成本理论。选择不做什么，比选择做什么同样重要。</p>
+</blockquote>
+
+<h2>● 实践应用</h2>
+<h3>场景 1：商业决策</h3>
+<ul>
+<li><strong>用第一性原理思考</strong>：这个生意的本质是什么？</li>
+<li><strong>分析边际收益</strong>：多投入一分，回报是多少？</li>
+<li><strong>评估概率</strong>：成功的概率多大？期望值如何？</li>
+</ul>
+
+<h3>场景 2：个人发展</h3>
+<ul>
+<li><strong>选择赛道</strong>：选择增长型行业，而非夕阳行业</li>
+<li><strong>长期投入</strong>：在优势领域持续积累</li>
+<li><strong>建立边界</strong>：明确什么不做，专注核心竞争力</li>
+</ul>
+
+<h3>场景 3：问题解决</h3>
+<ul>
+<li><strong>区分事实与观点</strong>：什么是真的，什么是想当然？</li>
+<li><strong>系统思考</strong>：问题背后的系统是什么？</li>
+<li><strong>找到杠杆点</strong>：用最小投入获得最大改变</li>
+</ul>
+
+<h2>● 相关标签</h2>
+<div>
+<span class="tag">#刘润</span>
+<span class="tag">#底层逻辑</span>
+<span class="tag">#第一性原理</span>
+<span class="tag">#系统思维</span>
+<span class="tag">#概率思维</span>
+<span class="tag">#长期主义</span>
+<span class="tag">#商业思维</span>
+<span class="tag">#决策方法论</span>
+</div>
+
+<div class="footer">
+<p>📝 笔记撰写日期：2026-03-10 | 📖 阅读进度：深度阅读完成 | ⚡ 实践状态：持续行动中</p>
+</div>
+</div>
+
+</body>
+</html>
