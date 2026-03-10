@@ -433,6 +433,8 @@ b.onclick=()=>filter(c.id);
 nav.appendChild(b);
 });
 
+const LINKS={"文明的故事":"notes/civilization.html"};
+
 let activeCat='all';
 function filter(cat){
 activeCat=cat;
@@ -489,7 +491,10 @@ if(q)items=items.filter(b=>b.title.toLowerCase().includes(q)||b.author.toLowerCa
 if(!items.length)return;
 html+='<div class="sec"><div class="sec-h"><h2>'+c.e+' '+c.n+'</h2><span class="cnt">'+items.length+'本</span></div><div class="sec-sub">'+c.d+'</div><ul class="bl">';
 items.forEach(b=>{
-html+='<li class="bi"><div class="rk'+(b.rank<=3?' t3':'')+'">'+b.rank+'</div><div class="bf"><h3>《'+b.title+'》</h3><div class="ba">'+b.author+'</div><div class="bd">'+b.desc+'</div></div></li>';
+const link=LINKS[b.title];
+const clickable=link?'cursor:pointer;':'';
+const arrow=link?' <span style="color:var(--a);font-size:.8rem">→</span>':'';
+html+='<li class="bi" style="'+clickable+'"'+(link?' onclick="location.href=\''+link+'\'"':'')+'><div class="rk'+(b.rank<=3?' t3':'')+'">'+b.rank+'</div><div class="bf"><h3>《'+b.title+'》'+arrow+'</h3><div class="ba">'+b.author+'</div><div class="bd">'+b.desc+'</div></div></li>';
 });
 html+='</ul></div>';
 });
