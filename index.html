@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📚 我的书单</title>
+<style>
+:root{--bg:#0f0f0f;--s:#1a1a1a;--s2:#242424;--t:#e8e6e3;--t2:#9a9a9a;--a:#e8a838;--a2:#c4882a;--b:#2a2a2a;--r:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--t);line-height:1.6;-webkit-font-smoothing:antialiased}
+.hero{position:relative;padding:80px 20px 60px;text-align:center;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(232,168,56,.12)0%,transparent 70%);pointer-events:none}
+.hero h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:800;margin-bottom:12px;background:linear-gradient(135deg,var(--a),#f0c060);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero .sub{font-size:1.1rem;color:var(--t2);margin-bottom:24px}
+.badges{display:flex;justify-content:center;gap:16px;margin-bottom:32px;flex-wrap:wrap}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:6px 16px;border-radius:20px;font-size:.85rem;font-weight:500}
+.bc{background:rgba(232,168,56,.15);color:var(--a);border:1px solid rgba(232,168,56,.3)}
+.bg{background:rgba(100,200,140,.12);color:#7dcea0;border:1px solid rgba(100,200,140,.3)}
+.stats{display:flex;justify-content:center;gap:32px;flex-wrap:wrap}
+.stat-n{font-size:2rem;font-weight:800;color:var(--a)}
+.stat-l{font-size:.85rem;color:var(--t2)}
+nav{position:sticky;top:0;z-index:100;background:rgba(15,15,15,.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--b);padding:12px 20px}
+.nav-in{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:12px;overflow-x:auto;scrollbar-width:none}
+.nav-in::-webkit-scrollbar{display:none}
+.nb{flex-shrink:0;padding:8px 16px;border-radius:20px;border:1px solid var(--b);background:transparent;color:var(--t2);font-size:.85rem;cursor:pointer;white-space:nowrap;transition:all .2s}
+.nb:hover{border-color:var(--t2);color:var(--t)}
+.nb.active{background:var(--a);color:#000;border-color:var(--a);font-weight:600}
+.sw{max-width:1200px;margin:24px auto 0;padding:0 20px}
+.sb{width:100%;padding:14px 20px;border-radius:var(--r);border:1px solid var(--b);background:var(--s);color:var(--t);font-size:1rem;outline:none;transition:border-color .2s}
+.sb::placeholder{color:var(--t2)}
+.sb:focus{border-color:var(--a)}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+.sec{margin-bottom:48px;animation:fi .4s ease}
+@keyframes fi{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.sec-h{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.sec-h h2{font-size:1.4rem;font-weight:700}
+.cnt{font-size:.85rem;color:var(--t2);background:var(--s2);padding:2px 10px;border-radius:10px}
+.sec-sub{color:var(--t2);font-size:.9rem;margin-bottom:20px}
+.cb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+.cb{padding:24px;background:var(--s);border-radius:var(--r);border:1px solid var(--b);position:relative;overflow:hidden}
+.cb::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--a)}
+.cb h3{font-size:1.1rem;margin-bottom:4px}
+.cb .au{color:var(--t2);font-size:.85rem;margin-bottom:12px}
+.cb .tg{display:inline-block;padding:2px 10px;border-radius:10px;font-size:.75rem;background:rgba(232,168,56,.12);color:var(--a);margin-bottom:10px}
+.cb .ds{font-size:.9rem;color:var(--t2);line-height:1.5}
+.cb .gl{margin-top:10px;font-size:.85rem;color:#7dcea0}
+.ov{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.ovc{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;background:var(--s);border-radius:var(--r);border:1px solid var(--b);cursor:pointer;transition:all .2s}
+.ovc:hover{border-color:var(--a);transform:translateY(-2px)}
+.ovc .cn{font-weight:600;font-size:.95rem}
+.ovc .cc{font-size:.85rem;color:var(--t2)}
+.ovc .bar{width:60px;height:4px;background:var(--s2);border-radius:2px;overflow:hidden;margin-top:4px}
+.ovc .bf{height:100%;background:var(--a);border-radius:2px}
+.bl{list-style:none}
+.bi{display:flex;gap:16px;padding:16px 20px;border-radius:var(--r);margin-bottom:8px;background:var(--s);border:1px solid var(--b);transition:all .2s;cursor:default}
+.bi:hover{border-color:rgba(232,168,56,.3);background:var(--s2)}
+.rk{flex-shrink:0;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:10px;background:var(--s2);color:var(--a);font-weight:700;font-size:.9rem}
+.rk.t3{background:var(--a);color:#000}
+.bf h3{font-size:1rem;font-weight:600;margin-bottom:2px}
+.bf .ba{color:var(--a2);font-size:.8rem;font-weight:500}
+.bf .bd{color:var(--t2);font-size:.85rem;margin-top:4px;line-height:1.5}
+.gg{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.gc{padding:20px;background:var(--s);border-radius:var(--r);border:1px solid var(--b)}
+.gc h3{font-size:1rem;margin-bottom:10px}
+.gc p{color:var(--t2);font-size:.85rem;line-height:1.5}
+.sh{text-align:center;padding:40px 20px;border-top:1px solid var(--b);color:var(--t2);font-size:.85rem}
+.hide{display:none!important}
+@media(max-width:640px){
+.hero{padding:60px 16px 40px}
+.hero h1{font-size:1.8rem}
+.stat-n{font-size:1.5rem}
+.nb{padding:6px 12px;font-size:.8rem}
+.bi{padding:12px 14px;gap:12px}
+.rk{width:30px;height:30px;font-size:.8rem}
+.sec-h h2{font-size:1.2rem}
+.cb-grid{grid-template-columns:1fr}
+.ov{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+<h1>📚 我的书单</h1>
+<p class="sub">深度阅读 · 终身学习 · 全面成长</p>
+<div class="badges">
+<span class="badge bc">📖 计划阅读中</span>
+<span class="badge bg">🎯 目标：深度内化与实践</span>
+</div>
+<div class="stats">
+<div><div class="stat-n">285</div><div class="stat-l">本书籍</div></div>
+<div><div class="stat-n">9</div><div class="stat-l">大分类</div></div>
+</div>
+</div>
+
+<nav><div class="nav-in" id="nav"></div></nav>
+
+<div class="sw"><input type="text" class="sb" id="search" placeholder="🔍 搜索书名、作者或主题..."></div>
+
+<div class="wrap" id="app"></div>
+
+<footer class="sh">📚 我的书单 · 285本 · 9大分类 · 终身学习</footer>
+
+<script>
+const C=[
+{id:1,n:"文学虚构类",e:"1️⃣",d:"审美体验与情感共鸣"},
+{id:2,n:"实用技能类",e:"2️⃣",d:"解决具体问题，提升实战能力"},
+{id:3,n:"认知成长类",e:"3️⃣",d:"向内生长，突破认知边界"},
+{id:4,n:"历史社科类",e:"4️⃣",d:"洞察历史规律，理解社会本质"},
+{id:5,n:"科技科普类",e:"5️⃣",d:"理解科技本质，把握未来趋势"},
+{id:6,n:"投资理财类",e:"6️⃣",d:"构建财富观念，实现财务自由"},
+{id:7,n:"传记人物类",e:"7️⃣",d:"观名人人生，汲取成长智慧"},
+{id:8,n:"艺术美学类",e:"8️⃣",d:"艺术修养与美学品味"},
+{id:9,n:"哲学宗教类",e:"9️⃣",d:"精神追求与智慧启蒙"}
+];
+
+const B={
+1:[
+["百年孤独","马尔克斯","魔幻现实主义巅峰，诺贝尔文学奖作品"],
+["1984","奥威尔","反乌托邦经典，极权主义的终极警告"],
+["红楼梦","曹雪芹","中国古典文学巅峰，四大名著之首"],
+["悲惨世界","雨果","人道主义巨著，探讨救赎与正义"],
+["罪与罚","陀思妥耶夫斯基","心理小说经典，灵魂深处的拷问"],
+["简·爱","勃朗特","女性主义文学先驱，独立自尊"],
+["傲慢与偏见","奥斯汀","爱情喜剧经典，反讽幽默"],
+["呼啸山庄","艾米莉·勃朗特","狂野激烈的爱与恨"],
+["双城记","狄更斯","救赎与人道主义经典"],
+["老人与海","海明威","人可以被毁灭但不能被打败"],
+["了不起的盖茨比","菲茨杰拉德","美国梦的幻灭，爵士时代经典"],
+["麦田里的守望者","塞林格","青春叛逆与成长迷茫"],
+["堂吉诃德","塞万提斯","西方现代小说鼻祖"],
+["变形记","卡夫卡","现代人的异化与孤独"],
+["安娜·卡列尼娜","托尔斯泰","俄罗斯文学巅峰"]
+],
+2:[
+["从优秀到卓越","柯林斯","企业转型的战略指南"],
+["从0到1","蒂尔","垂直进步创造垄断价值"],
+["精益创业","莱斯","MVP验证+快速迭代"],
+["高效能人士的七个习惯","柯维","全面效能提升"],
+["创新者的窘境","克里斯坦森","颠覆创新理论"],
+["创业维艰","霍洛维茨","反直觉管理与危机处理"],
+["重新定义公司","施密特","创意精英管理"],
+["定位","艾·里斯","心智认知战略"],
+["增长黑客","埃利斯","产品驱动增长"],
+["引爆点","格拉德威尔","流行传播规律"],
+["疯传","伯杰","让创意像病毒一样传播"],
+["上瘾","艾亚尔","打造让用户上瘾的产品"],
+["流量池","杨飞","品牌+裂变+精准投放"],
+["商业模式新生代","奥斯特瓦德","九大要素系统化分析"],
+["刻意练习","艾利克森","科学方法突破技能瓶颈"],
+["番茄工作法图解","西里洛","25分钟专注循环"],
+["高效能人士的时间管理","艾伦","GTD五步工作流"],
+["精力管理","洛尔","平衡人生四大能量源"],
+["极简时间管理","山下英子","断舍离在时间管理中的应用"],
+["拖延心理学","博克","拖延的深层心理机制"],
+["奇特的一生","格拉宁","56年时间统计法的极致实践"],
+["卓越基因","柯林斯","从初创到卓越"],
+["80/20法则","科克","最小努力获得最大收益"]
+],
+3:[
+["思考，快与慢","卡尼曼","大脑的两种思维模式"],
+["金字塔原理","明托","结构化思维经典指南"],
+["非暴力沟通","卢森堡","同理心沟通化解冲突"],
+["原则","达利欧","系统化决策框架"],
+["第五项修炼","圣吉","学习型组织与系统思考"],
+["深度工作","纽波特","碎片化时代保持专注力"],
+["如何阅读一本书","艾德勒","终身学习的基础"],
+["反脆弱","塔勒布","从不确定性中获益"],
+["自卑与超越","阿德勒","借自我成长超越自卑"],
+["社会心理学","迈尔斯","群体行为与个体互动"],
+["黑天鹅","塔勒布","应对不可预测的重大事件"],
+["津巴多普通心理学","津巴多","描述、解释、预测、控制行为"],
+["心理学与生活","格里格","心理学与日常生活的入门经典"],
+["学习之道","奥克利","从学渣到博士的学习方法论"],
+["费曼学习法","费曼","教学相长深化理解"],
+["认知天性","布朗","基于认知科学的学习方法"],
+["心流","契克森米哈赖","最优体验与幸福科学"],
+["影响力","西奥迪尼","说服的六大原则"],
+["系统思考","舍伍德","复杂问题的系统性解决方案"],
+["习惯的力量","杜希格","解码习惯的运行机制"],
+["终身成长","德韦克","成长型思维模式"],
+["坚毅","达克沃思","激情与毅力的双重力量"],
+["清单革命","葛文德","用清单避免错误与遗漏"],
+["底层逻辑","刘润","看透世界本质的思维框架"],
+["跃迁","刘未鹏","利用认知杠杆跨越式成长"],
+["认知觉醒","周岭","开启自我改变的原动力"],
+["长期主义","刘润","用长期思维指导决策"],
+["远见","费瑟斯通豪","职业生涯三阶段规划"],
+["优秀到不能被忽视","纽波特","技能理论vs激情理论"],
+["精进","采铜","系统化思维规划人生"],
+["执行","鲍西迪","从战略到执行的落地方法"],
+["把时间当作朋友","李笑来","用心智开启成长之路"],
+["小强升职记","吴伯凡","时间管理实战指南"],
+["自律力","崔西","通过习惯实现自我管理"],
+["知识的边界","爱泼斯坦","多领域学习者的优势"],
+["阅读的力量","约翰逊","通过阅读改变命运"],
+["当下的力量","托利","觉察当下超越痛苦"],
+["象与骑象人","海特","理性与情感双系统模型"],
+["社会性动物","阿伦森","社会性动物的深层动机"],
+["亲密关系","米勒","科学研究视角的亲密关系指南"],
+["梦的解析","弗洛伊德","通过梦境探索潜意识"],
+["路西法效应","津巴多","环境对人性善恶的影响"],
+["操纵心理学","布瑞克","识别和应对心理操控"],
+["幸福的婚姻","戈特曼","科学研究的婚姻幸福秘诀"],
+["正面管教","尼尔森","不惩罚不娇纵的教育方法"],
+["如何说孩子才会听","费伯","亲子沟通经典指南"],
+["爱的五种语言","查普曼","用不同爱语表达和接收爱"],
+["养育男孩","比达尔夫","理解男孩成长特点"],
+["养育女孩","比达尔夫","养育自信智慧的女孩"],
+["父母的觉醒","保罗","与孩子一起成长"],
+["稀缺","穆来纳森","贫穷与忙碌的认知机制"],
+["被讨厌的勇气","岸见一郎","阿德勒心理学与课题分离"],
+["活出生命的意义","弗兰克尔","集中营幸存者的生命智慧"],
+["自控力","麦格尼格尔","意志力的科学训练"],
+["原子习惯","克利尔","微小改变的复利效应"],
+["少有人走的路","派克","自律、爱与心智成熟"],
+["学会提问","布朗","批判性思维的十大关键问题"],
+["清醒思考的艺术","多贝里","52种常见思维谬误"],
+["掌控习惯","杜希格","习惯回路机制与改变"],
+["第二座山","大卫·布鲁克斯","追求道德喜乐，超越自我"],
+["重启人生","亚瑟·布鲁克斯","人生下半场，流体智力向晶体智力转型"]
+],
+4:[
+["文明的故事","杜兰特","人类文明如何崛起与腐化"],
+["伊利亚特","荷马","战争、领导力与决断"],
+["通往奴役之路","哈耶克","计划经济为何滑向专制"],
+["毁灭的代价","图兹","纳粹经济因资源错配而崩溃"],
+["八月枪声","塔奇曼","小错如何引爆世界大战"],
+["高卢战记","恺撒","组织+叙事+执行的征服手册"],
+["钢铁风暴","荣格尔","一战最真实的一线视角"],
+["论语","孔子","修身齐家治国平天下"],
+["道德经","老子","无为而治的人生哲学"],
+["史记","司马迁","史家之绝唱，无韵之离骚"],
+["人类简史","赫拉利","重新认识人类本身"],
+["资治通鉴","司马光","治国理政的历史镜鉴"],
+["孟子","孟子","性善论与仁政思想"],
+["大学","曾子","三纲领八条目"],
+["万历十五年","黄仁宇","大历史观的微观切入"],
+["理想国","柏拉图","西方哲学奠基之作"],
+["全球通史","斯塔夫里安诺斯","从史前到现代"],
+["国富论","亚当·斯密","市场经济运行规律"],
+["中庸","子思","致中和的人生境界"],
+["中国哲学史","冯友兰","中国哲学发展脉络"],
+["西方哲学史","罗素","西方哲学发展历程"],
+["尼各马可伦理学","亚里士多德","幸福与良善生活的本质"],
+["未来简史","赫拉利","AI时代的思想指南"],
+["今日简史","赫拉利","全球化时代的思考"],
+["乡土中国","费孝通","中国传统农村社会的密码"],
+["乌合之众","勒庞","群体行为的非理性特征"],
+["新教伦理与资本主义精神","韦伯","资本主义兴起的文化根源"],
+["毛选","毛泽东","在变局中把握本质"],
+["中国社会各阶层分析","梁晓声","当代社会阶层结构与变迁"],
+["莎士比亚全集","莎士比亚","人文主义思想的集大成者"],
+["美学散步","宗白华","中国美学思想与艺术精神"],
+["文化苦旅","余秋雨","文化探索与文明反思"],
+["商君书","商鞅","法家思想的集大成之作"],
+["盐铁论","桓宽","古代经济政策辩论实录"],
+["社会分工论","涂尔干","社会团结的根基"],
+["自杀论","涂尔干","社会学研究方法论典范"],
+["社会学概论","郑杭生","社会学基本理论和方法"],
+["社会学的邀请","威特","社会学思维和洞察"],
+["日常生活中的自我呈现","戈夫曼","拟剧论开创之作"],
+["回归故里","埃里蓬","社会阶层的固化与流动"]
+],
+5:[
+["毁灭大师","库什纳","用代码改变世界的真实案例"],
+["深度学习","古德费洛","深度学习最权威的百科全书"],
+["机器学习","周志华","中文机器学习经典教材"],
+["时间简史","霍金","时间与空间的终极探索"],
+["必然","凯文·凯利","科技发展的12种必然趋势"],
+["失控","凯文·凯利","复杂自适应系统的终极探索"],
+["浪潮之巅","吴军","科技巨头兴衰史"],
+["智能时代","吴军","大数据与智能革命"],
+["创新者","艾萨克森","数字时代先驱者群像"],
+["计算机视觉","Szeliski","计算机视觉理论与算法大全"],
+["自然语言处理综论","Jurafsky","NLP最权威教科书"],
+["Python机器学习","Raschka","Python机器学习实践指南"],
+["Python深度学习","Chollet","Keras作者深度学习实战"],
+["动手学深度学习","李沐","交互式深度学习教程"],
+["强化学习","Sutton","强化学习理论基石"],
+["统计学习方法","李航","统计学习数学原理精讲"],
+["机器学习实战","Harrington","机器学习算法案例集"],
+["深度学习入门","斋藤康毅","深度学习最佳入门书"],
+["神经网络与深度学习","邱锡鹏","中文深度学习代表作"],
+["机器学习系统设计","Eric Kim","ML系统设计最佳实践"],
+["AI极简经济学","Agrawal","AI技术的经济影响"],
+["推荐系统实践","项亮","推荐系统完整指南"],
+["生成式AI","Wolfram","AIGC核心技术探秘"],
+["图深度学习","孙立钢","图神经网络前沿技术"],
+["联邦学习","杨强","分布式ML与隐私保护"],
+["科技想要什么","凯文·凯利","技术进化论深度思考"],
+["大数据时代","舍恩伯格","重新定义信息价值"],
+["区块链革命","塔普斯科特","区块链原理与未来影响"],
+["超级智能","博斯特罗姆","超级智能的风险与路径"],
+["AI产品经理手册","待定","AI产品管理实战方法"],
+["大模型应用开发","待定","大模型应用开发全流程"],
+["超越百岁","阿提亚","Medicine 3.0预防医学理念"],
+["长跑启示录","麦克杜格尔","人类跑步进化论"],
+["大脑健身房","汉森","运动对抗焦虑提升认知"],
+["观察的艺术","沃克","唤醒感官，把跑步变成探险"],
+["跑步安全指南","迪查里","建立无伤跑法的防护机制"],
+["姿势跑法实践","罗曼诺夫","利用重力高效奔跑"],
+["速度训练原理","丹尼尔斯","VDOT科学掌控配速"]
+],
+6:[
+["聪明的投资者","格雷厄姆","安全边际投资哲学"],
+["穷查理宝典","考夫曼","多元思维模型集成"],
+["巴菲特致股东的信","巴菲特","价值投资实战精髓"],
+["原则","达利欧","系统化决策原则"],
+["证券分析","格雷厄姆","企业价值评估的圣经"],
+["漫步华尔街","马尔基尔","市场效率与被动投资"],
+["投资最重要的事","马克斯","第二层思维与周期投资"],
+["随机漫步的傻瓜","塔勒布","概率思维与黑天鹅"],
+["非理性繁荣","席勒","市场心理与资产泡沫"],
+["估值","达莫达兰","企业估值完整方法论"],
+["指数基金投资指南","博格","被动投资理论"],
+["资产配置的艺术","伯恩斯坦","构建稳健投资组合"],
+["财务自由之路","舍费尔","系统化财务规划"],
+["穷爸爸富爸爸","清崎","区分资产与负债"],
+["小狗钱钱","舍费尔","用童话教授财富管理"],
+["纳瓦尔宝典","乔根森","专长积累与复利效应"],
+["金钱心理学","豪泽尔","人性与金钱的关系"],
+["思考致富","希尔","成功与财富的心理密码"],
+["芒格之道","芒格","多领域思维模型"],
+["慢慢变富","杨天南","价值投资的实践指南"],
+["有钱人","艾克","重构财富思维"],
+["富有的习惯","科里","日常习惯改变实现财富积累"],
+["贫穷的本质","班纳吉","贫穷的深层心理和社会机制"],
+["钱从哪里来","香帅","个人财富积累路径全面解析"],
+["你的第一本理财书","埃利斯","投资咨询师的专业建议"]
+],
+7:[
+["美国恺撒","曼彻斯特","麦克阿瑟：天才+缺陷"],
+["十二位对抗诸神的人","博利索","拒绝接受命运的疯子"],
+["成吉思汗：现代世界的缔造者","威瑟弗德","草原帝国的崛起"],
+["富兰克林自传","富兰克林","美国精神的自我修养典范"],
+["苏东坡","林语堂","道家顺应、佛家破执的生活哲学家"],
+["曾国藩","唐浩明","从笨小孩到半个圣人的自省之路"],
+["乔布斯","艾萨克森","极简美学的创新教父"],
+["马斯克传","艾萨克森","重新定义多个行业的颠覆者"],
+["毛选","毛泽东","改变中国命运的传奇历程"],
+["稻盛和夫","稻盛和夫","利他哲学创造两家世界500强"],
+["贝索斯","斯通","长期主义重塑零售业"],
+["甘地自传","甘地","非暴力不合作的精神领袖"],
+["曼德拉传","桑普森","用宽容终结种族隔离"],
+["曹操","张作耀","理性客观的政治家"],
+["褚时健","周桦","实干破局的企业家精神"],
+["张居正","熊召政","用改革智慧挽救大明王朝"],
+["左宗棠","徐志频","抬棺出征收复新疆的民族英雄"],
+["袁隆平","辛业芸","杂交水稻之父解决世界粮食危机"],
+["居里夫人传","艾芙·居里","两次诺贝尔奖的女性先驱"],
+["海伦凯勒","海伦·凯勒","在黑暗中创造光明"],
+["苏格拉底","色诺芬","认识你自己的哲学智慧"]
+],
+8:[
+["吴哥之美","蒋勋","在废墟中看见文明的生灭"],
+["艺术的故事","贡布里希","从史前到现代的艺术发展"],
+["美的历程","李泽厚","中国数千年审美意识演变"],
+["谈美","朱光潜","书信体美感修养与人生艺术"],
+["观看之道","伯格","揭示视觉背后的意识形态"],
+["艺术精神","罗伯特·亨利","艺术创作与生活的深刻联系"]
+],
+9:[
+["纯粹理性批判","康德","人类理性的边界与能力"],
+["存在与时间","海德格尔","追问存在的意义"],
+["查拉图斯特拉如是说","尼采","上帝已死与超人的诞生"],
+["禅与摩托车维修艺术","皮尔西格","调和理性与感性的哲学之旅"],
+["悉达多","黑塞","探索自我实现与内心平静"],
+["心经","玄奘译","260字浓缩大乘佛法精髓"],
+["蒙田随笔","蒙田","通过认识自己寻找安身立命之本"],
+["黄庭经","魏华存","道教内丹修炼经典"],
+["太上感应篇","佚名","道教入门伦理指南"],
+["庄子","庄子","坐忘心斋等修养方法"],
+["周易参同契","魏伯阳","万古丹经王"],
+["抱朴子内篇","葛洪","系统论述神仙方术"],
+["养生延命录","陶弘景","南朝道教养生集大成"],
+["太乙金华宗旨","吕洞宾","回光修炼法"],
+["云笈七签","张君房","宋代道教文献汇编"],
+["性命圭旨","佚名","内丹修炼图解经典"],
+["乐育堂语录","黄元吉","全真道内丹修炼语录"],
+["炁体源流","张至顺","当代道教大师实修经验"],
+["礼记·月令","佚名","遵循季节变化的养生指南"],
+["黄帝内经","佚名","中医养生根本经典"],
+["千金方","孙思邈","药王养生实践集"],
+["本草纲目","李时珍","药食同源养生"],
+["遵生八笺","高濂","明代文人养生大全"],
+["丹道法诀十二讲","胡孚琛","社科院道学研究成果"],
+["道的呼吸","李谨伯","橐龠呼吸详解"],
+["道家养生学概要","萧天石","系统梳理道家养生体系"],
+["道教与养生","陈撄宁","近代仙学大师著作"],
+["道医学","熊春锦","现代道医学体系"],
+["金花的秘密","荣格","心理学解读太乙金华宗旨"],
+["马王堆房中术","佚名","中国最早房中术文献"],
+["容成阴道","容成子","最早系统论述还精补脑"],
+["养性延命录·御女损益篇","陶弘景","房中术实操指南"],
+["素女经","佚名","调和阴阳与还精补脑"],
+["洞玄子","张鼎","体位与技巧体系"],
+["房中补益","孙思邈","药王性养生经验"],
+["三元延寿参赞书","李鹏飞","欲不可早、不可纵、不可禁"],
+["遵生八笺·延年却病笺","高濂","固精气修炼法与药膳"],
+["摄生总要","洪基","综合性养生著作"],
+["道教与性","李约瑟","西方汉学视角解读房中术"],
+["中国古代房内考","高罗佩","房中术发展脉络学术研究"],
+["道家性养生研究","胡孚琛","现代科学解读道教性养生"],
+["性理学","萧天石","性与生命能量关系"],
+["悟真篇","张伯端","南宗祖书，隐喻阴阳双修"],
+["无根树词","张三丰","丹道词作，接命延年"],
+["钟吕传道集","钟离权","龙虎交媾与坎离交济框架"],
+["方壶外史","陆西星","东派双修集大成"],
+["道窍谈","李西月","西派核心，彼家真义"],
+["三车秘旨","李西月","丹道河车运转"],
+["金丹真传","孙汝忠","明代双修实操记录"],
+["大成捷要","柳华阳","全真龙门派著作"],
+["青娥功","佚名","女性双修/独修功法"],
+["道教南宗与双修","汇编","南宗双修思想考证"],
+["与塞涅卡共进早餐","菲德勒","斯多葛哲学的生活指南"]
+]
+};
+
+// Build nav
+const nav=document.getElementById('nav');
+const cats=[{id:'all',n:'全部'},{id:'current',n:'📖 当前阅读'},{id:'overview',n:'📊 分类概览'}];
+C.forEach(c=>cats.push({id:c.id,n:c.e+' '+c.n}));
+cats.push({id:'guide',n:'💡 阅读指南'});
+
+cats.forEach(c=>{
+const b=document.createElement('button');
+b.className='nb'+(c.id==='all'?' active':'');
+b.textContent=c.n;
+b.dataset.cat=c.id;
+b.onclick=()=>filter(c.id);
+nav.appendChild(b);
+});
+
+let activeCat='all';
+function filter(cat){
+activeCat=cat;
+document.querySelectorAll('.nb').forEach(b=>b.classList.toggle('active',b.dataset.cat==cat));
+render();
+}
+
+function render(){
+const app=document.getElementById('app');
+const q=document.getElementById('search').value.trim().toLowerCase();
+let html='';
+
+if(activeCat==='current'||activeCat==='all'){
+const cbooks=[
+{t:"第二座山",a:"大卫·布鲁克斯",tag:"道德喜乐",d:"从个人主义走向关系主义",g:"理解承诺与奉献的力量"},
+{t:"重启人生",a:"亚瑟·布鲁克斯",tag:"职业转型",d:"应对职业倦怠与中年危机",g:"从流体智力向晶体智力转型"},
+{t:"与塞涅卡共进早餐",a:"大卫·菲德勒",tag:"斯多葛哲学",d:"古老智慧应对现代焦虑",g:"内心宁静与情绪管理"}
+];
+let matchC=cbooks.filter(b=>!q||b.t.toLowerCase().includes(q)||b.a.toLowerCase().includes(q)||b.d.toLowerCase().includes(q));
+if(matchC.length&&(activeCat==='current'||activeCat==='all')){
+html+='<div class="sec"><h2>📖 当前阅读</h2><div class="cb-grid">';
+matchC.forEach(b=>{
+html+='<div class="cb"><h3>《'+b.t+'》</h3><div class="au">'+b.a+'</div><span class="tg">'+b.tag+'</span><div class="ds">'+b.d+'</div><div class="gl">🎯 '+b.g+'</div></div>';
+});
+html+='</div></div>';
+}
+}
+
+if(activeCat==='overview'||activeCat==='all'){
+html+='<div class="sec"><h2>📊 分类概览</h2><div class="ov">';
+C.forEach(c=>{
+const cnt=B[c.id].length;
+const pct=Math.round(cnt/285*100);
+html+='<div class="ovc" onclick="filter('+c.id+')"><div><div class="cn">'+c.e+' '+c.n+'</div><div class="cc">'+cnt+'本 · '+pct+'%</div><div class="bar"><div class="bf" style="width:'+pct+'%"></div></div></div></div>';
+});
+html+='</div></div>';
+}
+
+if(activeCat==='guide'||activeCat==='all'){
+html+='<div class="sec"><h2>💡 阅读指南</h2><div class="gg">';
+html+='<div class="gc"><h3>🎯 按需选择</h3><p>需要解决问题 → 实用技能类<br>追求自我成长 → 认知成长类<br>理解社会运行 → 历史社科类<br>把握科技趋势 → 科技科普类<br>建立财富观念 → 投资理财类</p></div>';
+html+='<div class="gc"><h3>📅 按场景阅读</h3><p>通勤碎片：认知成长、科技科普<br>周末深度：历史社科、哲学宗教<br>工作学习：实用技能、技术类<br>投资理财：投资理财、金融类</p></div>';
+html+='<div class="gc"><h3>⭐ 精读建议</h3><p>每类前5本为核心必读。从最重要的开始，深度内化后再拓展。<br><br>阅读 ≠ 读完，真正吸收并实践才算完成。</p></div>';
+html+='</div></div>';
+}
+
+// Book sections
+const showCats=activeCat==='all'?C.map(c=>c.id):[parseInt(activeCat)].filter(id=>B[id]);
+showCats.forEach(id=>{
+const c=C.find(x=>x.id===id);
+if(!c)return;
+let items=B[id].map((b,i)=>({title:b[0],author:b[1],desc:b[2],rank:i+1}));
+if(q)items=items.filter(b=>b.title.toLowerCase().includes(q)||b.author.toLowerCase().includes(q)||b.desc.toLowerCase().includes(q));
+if(!items.length)return;
+html+='<div class="sec"><div class="sec-h"><h2>'+c.e+' '+c.n+'</h2><span class="cnt">'+items.length+'本</span></div><div class="sec-sub">'+c.d+'</div><ul class="bl">';
+items.forEach(b=>{
+html+='<li class="bi"><div class="rk'+(b.rank<=3?' t3':'')+'">'+b.rank+'</div><div class="bf"><h3>《'+b.title+'》</h3><div class="ba">'+b.author+'</div><div class="bd">'+b.desc+'</div></div></li>';
+});
+html+='</ul></div>';
+});
+
+app.innerHTML=html||'<div style="text-align:center;padding:60px 20px;color:var(--t2)"><p style="font-size:1.2rem">🔍 没有找到匹配的书籍</p></div>';
+}
+
+document.getElementById('search').addEventListener('input',render);
+render();
+</script>
+</body>
+</html>
