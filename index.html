@@ -38,7 +38,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(15,15,15,.92);backdrop-fil
 .cnt{font-size:.85rem;color:var(--t2);background:var(--s2);padding:2px 10px;border-radius:10px}
 .sec-sub{color:var(--t2);font-size:.9rem;margin-bottom:20px}
 .cb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
-.cb{padding:24px;background:var(--s);border-radius:var(--r);border:1px solid var(--b);position:relative;overflow:hidden}
+.cb{padding:24px;background:var(--s);border-radius:var(--r);border:1px solid var(--b);position:relative;overflow:hidden;cursor:pointer;transition:all .2s}.cb:hover{border-color:var(--a);transform:translateY(-2px)}
 .cb::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--a)}
 .cb h3{font-size:1.1rem;margin-bottom:4px}
 .cb .au{color:var(--t2);font-size:.85rem;margin-bottom:12px}
@@ -741,9 +741,10 @@ const cbooks=[
 ];
 let matchC=cbooks.filter(b=>!q||b.t.toLowerCase().includes(q)||b.a.toLowerCase().includes(q)||b.d.toLowerCase().includes(q));
 if(matchC.length&&(activeCat==='current'||activeCat==='all')){
-html+='<div class="sec"><h2>📖 当前阅读</h2><div class="cb-grid">';
+html+='<div class="sec"><h2>📖 当前阅读</h2><div class="ov">';
 matchC.forEach(b=>{
-html+='<div class="cb"><h3>《'+b.t+'》</h3><div class="au">'+b.a+'</div><span class="tg">'+b.tag+'</span><div class="ds">'+b.d+'</div><div class="gl">🎯 '+b.g+'</div></div>';
+const link=LINKS[b.t];
+html+='<a href="'+link+'" class="ovc" style="text-decoration:none;color:inherit"><div><div class="cn">《'+b.t+'》</div><div class="cc">'+b.a+' · '+b.tag+'</div></div><div style="color:var(--a)">→</div></a>';
 });
 html+='</div></div>';
 }
