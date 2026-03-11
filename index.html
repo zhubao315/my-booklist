@@ -89,7 +89,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(15,15,15,.92);backdrop-fil
 <span class="badge bg">🎯 目标：深度内化与实践</span>
 </div>
 <div class="stats">
-<div><div class="stat-n">285</div><div class="stat-l">本书籍</div></div>
+<div><div class="stat-n">276</div><div class="stat-l">本书籍</div></div>
 <div><div class="stat-n">9</div><div class="stat-l">大分类</div></div>
 </div>
 </div>
@@ -100,7 +100,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(15,15,15,.92);backdrop-fil
 
 <div class="wrap" id="app"></div>
 
-<footer class="sh">📚 我的书单 · 285本 · 9大分类 · 终身学习 · <a href="notes/civilization.html" style="color:var(--a);text-decoration:none">📖 读书笔记</a></footer>
+<footer class="sh">📚 我的书单 · 276本 · 9大分类 · 终身学习 · <a href="notes/civilization.html" style="color:var(--a);text-decoration:none">📖 读书笔记</a></footer>
 
 <script>
 const C=[
@@ -744,7 +744,7 @@ if(activeCat==='overview'||activeCat==='all'){
 html+='<div class="sec"><h2>📊 分类概览</h2><div class="ov">';
 C.forEach(c=>{
 const cnt=B[c.id].length;
-const pct=Math.round(cnt/285*100);
+const pct=Math.round(cnt/276*100);
 html+='<div class="ovc" onclick="filter('+c.id+')"><div><div class="cn">'+c.e+' '+c.n+'</div><div class="cc">'+cnt+'本 · '+pct+'%</div><div class="bar"><div class="bf" style="width:'+pct+'%"></div></div></div></div>';
 });
 html+='</div></div>';
