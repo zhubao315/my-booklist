@@ -741,14 +741,11 @@ const cbooks=[
 ];
 let matchC=cbooks.filter(b=>!q||b.t.toLowerCase().includes(q)||b.a.toLowerCase().includes(q)||b.d.toLowerCase().includes(q));
 if(matchC.length&&(activeCat==='current'||activeCat==='all')){
-html+='<div class="sec"><h2>📖 当前阅读</h2><div class="ov">';
+html+='<div class="sec"><h2>📖 当前阅读</h2><div class="cb-grid">';
 matchC.forEach(b=>{
 const link=LINKS[b.t];
-if(link){
-html+='<a href="'+link+'" class="ovc" style="text-decoration:none;color:inherit"><div><div class="cn">《'+b.t+'》</div><div class="cc">'+b.a+' · '+b.tag+'</div></div><div style="color:var(--a)">→</div></a>';
-}else{
-html+='<div class="cb"><h3>《'+b.t+'》</h3><div class="au">'+b.a+'</div><span class="tg">'+b.tag+'</span><div class="ds">'+b.d+'</div></div>';
-}
+const clickable=link?'cursor:pointer;':'';
+html+='<div class="cb" style="'+clickable+'"'+(link?' onclick="location.href='notes/'+link+''"':'')+'><h3>《'+b.t+'》</h3><div class="au">'+b.a+'</div><span class="tg">'+b.tag+'</span><div class="ds">'+b.d+'</div><div class="gl">🎯 '+b.g+'</div></div>';
 });
 html+='</div></div>';
 }
