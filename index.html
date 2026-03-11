@@ -745,7 +745,7 @@ html+='<div class="sec"><h2>📖 当前阅读</h2><div class="cb-grid">';
 matchC.forEach(b=>{
 const link=LINKS[b.t];
 const clickable=link?'cursor:pointer;':'';
-html+='<div class="cb" style="'+clickable+'"'+(link?' onclick="location.href='notes/'+link+''"':'')+'><h3>《'+b.t+'》</h3><div class="au">'+b.a+'</div><span class="tg">'+b.tag+'</span><div class="ds">'+b.d+'</div><div class="gl">🎯 '+b.g+'</div></div>';
+html+='<div class="cb" style="'+clickable+'"'+(link?' onclick="location.href=\'notes/'+link+'\'"':'')+'><h3>《'+b.t+'》</h3><div class="au">'+b.a+'</div><span class="tg">'+b.tag+'</span><div class="ds">'+b.d+'</div><div class="gl">🎯 '+b.g+'</div></div>';
 });
 html+='</div></div>';
 }
