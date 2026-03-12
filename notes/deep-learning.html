@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>《深度学习》读书笔记</title>
+<style>
+:root{--bg:#0f0f0f;--s:#1a1a1a;--s2:#242424;--t:#e8e6e3;--t2:#9a9a9a;--a:#e8a838;--a2:#c4882a;--b:#2a2a2a;--r:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--t);line-height:1.8;-webkit-font-smoothing:antialiased;padding:20px;max-width:900px;margin:0 auto}
+a{color:var(--a);text-decoration:none}
+a:hover{text-decoration:underline}
+.back{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:20px;border:1px solid var(--b);background:transparent;color:var(--t2);font-size:.9rem;margin-bottom:24px}
+.back:hover{border-color:var(--a);color:var(--t)}
+.note{padding:24px;background:var(--s);border-radius:var(--r);border:1px solid var(--b);margin-bottom:24px}
+.note h1{font-size:1.8rem;font-weight:800;margin-bottom:8px;background:linear-gradient(135deg,var(--a),#f0c060);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.note .meta{color:var(--t2);font-size:.9rem;margin-bottom:24px}
+.note h2{font-size:1.4rem;font-weight:700;margin:32px 0 16px;color:var(--a)}
+.note h3{font-size:1.2rem;font-weight:600;margin:24px 0 12px}
+.note h4{font-size:1rem;font-weight:600;margin:16px 0 8px}
+.note p{margin-bottom:16px}
+.note ul{margin:16px 0 16px 24px}
+.note li{margin-bottom:8px}
+.note blockquote{border-left:4px solid var(--a);padding:16px 24px;margin:24px 0;background:var(--s2);border-radius:0 var(--r) var(--r) 0}
+.note blockquote p{margin-bottom:8px;font-style:italic}
+.note blockquote .parse{font-style:normal;color:var(--t2);font-size:.95rem}
+.note table{width:100%;border-collapse:collapse;margin:16px 0}
+.note th,.note td{padding:12px;border:1px solid var(--b);text-align:left}
+.note th{background:var(--s2)}
+.tag{display:inline-block;padding:2px 10px;border-radius:10px;font-size:.75rem;background:rgba(232,168,56,.12);color:var(--a);margin:4px 4px 4px 0}
+.footer{padding:24px 0;border-top:1px solid var(--b);color:var(--t2);font-size:.85rem}
+@media(max-width:640px){
+body{padding:16px}
+.note h1{font-size:1.5rem}
+.note h2{font-size:1.2rem}
+}
+</style>
+</head>
+<body>
+<a class="back" href="https://zhubao315.github.io/my-booklist/">← 回到书单</a>
+
+<div class="note">
+<h1>《深度学习》读书笔记</h1>
+<div class="meta">
+<span class="tag">伊恩·古德费洛</span>
+<span class="tag">#AI圣经终极版</span>
+<span class="tag">2026-03-12</span>
+</div>
+
+<h2>● 核心定位</h2>
+<h3>人工智能的数学基础</h3>
+<p>《深度学习》是人工智能领域的权威教材，被誉为"AI圣经"。本书的核心洞见：深度学习通过多层神经网络学习数据的层次化表示，端到端学习让机器从原始数据中自动提取特征。理解深度学习的数学基础和算法原理是掌握AI的关键。</p>
+
+<h2>● 核心框架</h2>
+<h3>深度学习三大支柱</h3>
+<table>
+<tr style="background:var(--s2)"><th>支柱</th><th>核心概念</th><th>应用场景</th></tr>
+<tr><td><strong>神经网络</strong></td><td>多层感知机</td><td>图像、语音、文本</td></tr>
+<tr><td><strong>反向传播</strong></td><td>梯度下降优化</td><td>参数训练</td></tr>
+<tr><td><strong>表示学习</strong></td><td>自动特征提取</td><td>模式识别</td></tr>
+</table>
+
+<h3>网络架构演进</h3>
+<ul>
+<li><strong>前馈网络</strong>：基础架构，数据单向流动</li>
+<li><strong>卷积网络</strong>：CNN，图像处理专家</li>
+<li><strong>循环网络</strong>：RNN，序列数据处理</li>
+<li><strong>Transformer</strong>：注意力机制，长距离依赖</li>
+</ul>
+
+<h2>● 数学基础</h2>
+<h3>核心数学工具</h3>
+<table>
+<tr style="background:var(--s2)"><th>数学领域</th><th>深度学习应用</th><th>重要性</th></tr>
+<tr><td><strong>线性代数</strong></td><td>张量运算、矩阵分解</td><td>基础运算</td></tr>
+<tr><td><strong>概率论</strong></td><td>贝叶斯推断、生成模型</td><td>不确定性建模</td></tr>
+<tr><td><strong>微积分</strong></td><td>梯度计算、优化算法</td><td>参数更新</td></tr>
+<tr><td><strong>信息论</strong></td><td>熵、互信息、KL散度</td><td>损失函数设计</td></tr>
+</table>
+
+<h2>● 核心观点</h2>
+<h3>七大核心洞察</h3>
+<h4>1. 表示学习革命</h4>
+<p>深度学习让机器自动学习特征表示，结束了手工特征工程时代。端到端学习成为主流。</p>
+
+<h4>2. 深度是关键</h4>
+<p>网络深度比宽度更重要。深层网络能学习更复杂的层次化表示。</p>
+
+<h4>3. 梯度下降是核心</h4>
+<p>反向传播算法让深度网络训练成为可能。优化算法决定模型性能。</p>
+
+<h4>4. 过拟合是主要挑战</h4>
+<p>正则化技术（Dropout、BatchNorm）是控制过拟合的关键。大数据和模型正则化平衡。</p>
+
+<h4>5. 初始化决定收敛</h4>
+<p>权重初始化影响训练稳定性。Xavier、He初始化解决梯度问题。</p>
+
+<h4>6. 注意力机制突破</h4>
+<p>Transformer架构彻底改变了序列建模。自注意力让长距离依赖成为可能。</p>
+
+<h4>7. 概率生成是前沿</h4>
+<p>生成对抗网络、变分自编码器打开了无监督学习新方向。</p>
+
+<h2>● 金句摘录</h2>
+<blockquote>
+<p>"深度学习是表示学习的革命。"</p>
+<p class="parse"><strong>解析</strong>：机器自动学习特征表示，结束了手工特征工程时代。端到端学习成为主流。</p>
+</blockquote>
+
+<blockquote>
+<p>"深度比宽度更重要。"</p>
+<p class="parse"><strong>解析</strong>：深层网络能学习更复杂的层次化表示。深度是关键成功因素。</p>
+</blockquote>
+
+<blockquote>
+<p>"反向传播让深度网络训练成为可能。"</p>
+<p class="parse"><strong>解析</strong>：梯度下降算法是深度学习的核心。优化算法决定模型性能上限。</p>
+</blockquote>
+
+<blockquote>
+<p>"正则化是控制过拟合的关键。"</p>
+<p class="parse"><strong>解析</strong>：Dropout、BatchNorm等技术平衡大数据和模型复杂度。</p>
+</blockquote>
+
+<blockquote>
+<p>"注意力机制改变了序列建模。"</p>
+<p class="parse"><strong>解析</strong>：Transformer架构彻底改变了NLP和序列处理领域。</p>
+</blockquote>
+
+<h2>● 实践应用</h2>
+<h3>场景 1：计算机视觉</h3>
+<ul>
+<li><strong>CNN架构</strong>：ResNet、EfficientNet设计原则</li>
+<li><strong>数据增强</strong>：图像变换、Mixup、CutMix</li>
+<li><strong>迁移学习</strong>：预训练模型、微调技巧</li>
+</ul>
+
+<h3>场景 2：自然语言处理</h3>
+<ul>
+<li><strong>Transformer</strong>：BERT、GPT系列架构</li>
+<li><strong>注意力机制</strong>：自注意力、交叉注意力</li>
+<li><strong>预训练</strong>：大规模语料、微调策略</li>
+</ul>
+
+<h3>场景 3：模型优化</h3>
+<ul>
+<li><strong>超参调优</strong>：学习率调度、批量大小</li>
+<li><strong>正则化</strong>：Dropout率、权重衰减</li>
+<li><strong>早停策略</strong>：验证集监控、模型保存</li>
+</ul>
+
+<h2>● 相关标签</h2>
+<div>
+<span class="tag">#伊恩·古德费洛</span>
+<span class="tag">#深度学习</span>
+<span class="tag">#人工智能</span>
+<span class="tag">#神经网络</span>
+<span class="tag">#反向传播</span>
+<span class="tag">#表示学习</span>
+<span class="tag">#机器学习</span>
+<span class="tag">#AI算法</span>
+</div>
+
+<div class="footer">
+<p>📝 笔记撰写日期：2026-03-12 | 📖 阅读进度：深度阅读完成 | ⚡ 实践状态：持续学习中</p>
+</div>
+</div>
+
+</body>
+</html>
