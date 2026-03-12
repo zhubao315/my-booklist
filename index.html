@@ -1150,279 +1150,269 @@ const booksByCategory = {
   ]
 };
 
-// Smart navigation links configuration - automatically matches book titles with note files
-function createNavigationLinks() {
-  const notesDir = "notes/";
-  const navigationLinks = {};
+// Create a comprehensive and reliable navigation links mapping
+function createReliableNavigationLinks() {
+  // Standardized note file mappings based on actual filenames in notes directory
+  const noteFiles = {
+    // Historical & Social Science - Direct matches
+    "civilization": "civilization.html",
+    "iliad": "iliad.html",
+    "road-to-serfdom": "road-to-serfdom.html",
 
-  // Create mapping based on common patterns in note filenames
-  const titlePatterns = [
-    // Direct matches
-    [/文明的故事/g, "civilization.html"],
-    [/伊利亚特/g, "iliad.html"],
-    [/通往奴役之路/g, "road-to-serfdom.html"],
-    [/第二座山/g, "�ڶ���ɽ.html"],
-    [/重启人生/g, "重启人生.html"],
-    [/与塞涅卡共进早餐/g, "与塞涅卡共进早餐.html"],
+    // Self-improvement classics - Pattern matches
+    "思考，快与慢": "˼�� 快 慢 2.html",
+    "思考 快与慢": "˼�� 快 慢 2.html",
+    "思考的快与慢": "˼���Ŀ�����.html",
+    "思考的艺术": "˼���Ŀ�����.html",
+    "原则": "ԭ��.html",
+    "原子习惯": "原子习惯.html",
+    "深度工作": "深度工作.html",
+    "刻意练习": "������ϰ.html",
+    "高效能人士的七个习惯": "�׸�Ч��ʿ.html",
+    "被讨厌的勇气": "�Ǳ�����ͨ.html",
+    "非暴力沟通": "�Ǳ�����ͨ.html",
+    "心流": "Ӱ����.html",
+    "影响力": "Ӱ����.html",
+    "系统思考": "ϵͳ˼��.html",
+    "系统之美": "Ӱ����.html",
+    "认知天性": "˼��������.html",
+    "认知觉醒": "˼��������.html",
+    "终身成长": "ԾǨ.html",
+    "跃迁": "ԾǨ 2.html",
+    "远见": "Զ��.html",
+    "精进": "ԾǨ.html",
+    "执行": "ִ��.html",
+    "学习之道": "ѧ������.html",
+    "如何阅读一本书": "�ú�ѧϰ.html",
+    "如何高效学习": "ѧ������.html",
+    "学会提问": "̸�е�����.html",
+    "反脆弱": "Ӱ����.html",
+    "反直觉思考": "˼�� ͼƬ 2.html",
+    "习惯的力量": "�ײ��߼�.html",
+    "掌控习惯": "�ײ��߼�.html",
+    "掌控时间": "�׸�Ч��ʿ.html",
+    "精力管理": "�׸�Ч��ʿ.html",
+    "时间管理": "�׸�Ч��ʿ.html",
+    "番茄工作法": "�ú�ѧϰ.html",
+    "拖延心理学": "ѧ������.html",
+    "奇特的一生": "�ú�ѧϰ 3.html",
 
-    // Self-improvement classics
-    [/思考，快与慢/g, "˼�� 快 慢 2.html"],
-    [/思考 快与慢/g, "˼�� 快 慢 2.html"],
-    [/思考的快与慢/g, "˼���Ŀ�����.html"],
-    [/思考的艺术/g, "˼���Ŀ�����.html"],
-    [/原则/g, "ԭ��.html"],
-    [/原子习惯/g, "原子习惯.html"],
-    [/深度工作/g, "深度工作.html"],
-    [/刻意练习/g, "������ϰ.html"],
-    [/高效能人士的七个习惯/g, "�׸�Ч��ʿ.html"],
-    [/被讨厌的勇气/g, "�Ǳ�����ͨ.html"],
-    [/非暴力沟通/g, "�Ǳ�����ͨ.html"],
-    [/心流/g, "Ӱ����.html"],
-    [/影响力/g, "Ӱ����.html"],
-    [/系统思考/g, "ϵͳ˼��.html"],
-    [/系统之美/g, "Ӱ����.html"],
-    [/认知天性/g, "˼��������.html"],
-    [/认知觉醒/g, "˼��������.html"],
-    [/终身成长/g, "ԾǨ.html"],
-    [/跃迁/g, "ԾǨ 2.html"],
-    [/远见/g, "Զ��.html"],
-    [/精进/g, "ԾǨ.html"],
-    [/执行/g, "ִ��.html"],
-    [/学习之道/g, "ѧ������.html"],
-    [/如何阅读一本书/g, "�ú�ѧϰ.html"],
-    [/如何高效学习/g, "ѧ������.html"],
-    [/学会提问/g, "̸�е�����.html"],
-    [/反脆弱/g, "Ӱ����.html"],
-    [/反直觉思考/g, "˼�� ͼƬ 2.html"],
-    [/习惯的力量/g, "�ײ��߼�.html"],
-    [/掌控习惯/g, "�ײ��߼�.html"],
-    [/掌控时间/g, "�׸�Ч��ʿ.html"],
-    [/精力管理/g, "�׸�Ч��ʿ.html"],
-    [/时间管理/g, "�׸�Ч��ʿ.html"],
-    [/番茄工作法/g, "�ú�ѧϰ.html"],
-    [/拖延心理学/g, "ѧ������.html"],
-    [/奇特的一生/g, "�ú�ѧϰ 3.html"],
+    // Business & Innovation - Pattern matches
+    "从0到1": "�� 0 �� 1.html",
+    "精益创业": "�ú�ѧϰ.html",
+    "创新者的窘境": "Ӱ����.html",
+    "定位": "�ײ��߼�.html",
+    "增长黑客": "˼��������.html",
+    "商业模式": "�ײ��߼�.html",
+    "商业模式新生代": "�ú�ѧϰ 2.html",
+    "创业维艰": "Ӱ����.html",
+    "重新定义公司": "˼��������.html",
+    "创新者": "Ӱ����.html",
+    "颠覆创新": "Ӱ����.html",
+    "创业": "ԾǨ.html",
+    "商业": "�ײ��߼�.html",
 
-    // Business & Innovation
-    [/从0到1/g, "�� 0 �� 1.html"],
-    [/精益创业/g, "�ú�ѧϰ.html"],
-    [/创新者的窘境/g, "Ӱ����.html"],
-    [/定位/g, "�ײ��߼�.html"],
-    [/增长黑客/g, "˼��������.html"],
-    [/商业模式/g, "�ײ��߼�.html"],
-    [/商业模式新生代/g, "�ú�ѧϰ 2.html"],
-    [/创业维艰/g, "Ӱ����.html"],
-    [/重新定义公司/g, "˼��������.html"],
-    [/创新者/g, "Ӱ����.html"],
-    [/颠覆创新/g, "Ӱ����.html"],
-    [/创业/g, "ԾǨ.html"],
-    [/商业/g, "�ײ��߼�.html"],
+    // Psychology & Philosophy - Pattern matches
+    "心理学": "ѧ������.html",
+    "心理学与生活": "ѧ������.html",
+    "津巴多": "Ӱ����.html",
+    "社会心理学": "ѧ������.html",
+    "社会性动物": "Ӱ����.html",
+    "亲密关系": "ѧ������.html",
+    "梦的解析": "ѧ������.html",
+    "路西法效应": "Ӱ����.html",
+    "操纵心理学": "ѧ������.html",
+    "幸福的婚姻": "ѧ������.html",
+    "正面管教": "ѧ������.html",
+    "如何说孩子才会听": "ѧ������.html",
+    "爱的五种语言": "ѧ������.html",
+    "养育": "ѧ������.html",
+    "父母": "ѧ������.html",
+    "稀缺": "ѧ������.html",
+    "被讨厌的勇气": "�Ǳ�����ͨ.html",
+    "自卑与超越": "ѧ������.html",
+    "自卑": "ѧ������.html",
+    "自我": "ѧ������.html",
+    "人格": "ѧ������.html",
+    "情绪": "ѧ������.html",
+    "意志力": "ѧ������.html",
+    "自控力": "ѧ������.html",
+    "少有人走的路": "ѧ������.html",
+    "学会提问": "̸�е�����.html",
+    "清醒思考": "˼��������.html",
+    "清醒思考的艺术": "˼��������.html",
+    "掌控习惯": "�ײ��߼�.html",
 
-    // Psychology & Philosophy
-    [/心理学/g, "ѧ������.html"],
-    [/心理学与生活/g, "ѧ������.html"],
-    [/津巴多/g, "Ӱ����.html"],
-    [/社会心理学/g, "ѧ������.html"],
-    [/社会性动物/g, "Ӱ����.html"],
-    [/亲密关系/g, "ѧ������.html"],
-    [/梦的解析/g, "ѧ������.html"],
-    [/路西法效应/g, "Ӱ����.html"],
-    [/操纵心理学/g, "ѧ������.html"],
-    [/幸福的婚姻/g, "ѧ������.html"],
-    [/正面管教/g, "ѧ������.html"],
-    [/如何说孩子才会听/g, "ѧ������.html"],
-    [/爱的五种语言/g, "ѧ������.html"],
-    [/养育/g, "ѧ������.html"],
-    [/父母/g, "ѧ������.html"],
-    [/稀缺/g, "ѧ������.html"],
-    [/被讨厌的勇气/g, "�Ǳ�����ͨ.html"],
-    [/自卑与超越/g, "ѧ������.html"],
-    [/自卑/g, "ѧ������.html"],
-    [/自我/g, "ѧ������.html"],
-    [/人格/g, "ѧ������.html"],
-    [/情绪/g, "ѧ������.html"],
-    [/意志力/g, "ѧ������.html"],
-    [/自控力/g, "ѧ������.html"],
-    [/少有人走的路/g, "ѧ������.html"],
-    [/学会提问/g, "̸�е�����.html"],
-    [/清醒思考/g, "˼��������.html"],
-    [/清醒思考的艺术/g, "˼��������.html"],
-    [/掌控习惯/g, "�ײ��߼�.html"],
+    // Investment & Finance - Pattern matches
+    "投资": "ԭ��.html",
+    "聪明的投资者": "ԭ��.html",
+    "穷查理宝典": "ԭ��.html",
+    "巴菲特": "ԭ��.html",
+    "原则": "ԭ��.html",
+    "证券分析": "ԭ��.html",
+    "漫步华尔街": "ԭ��.html",
+    "投资最重要的事": "ԭ��.html",
+    "随机漫步的傻瓜": "ԭ��.html",
+    "非理性繁荣": "ԭ��.html",
+    "估值": "ԭ��.html",
+    "指数基金": "ԭ��.html",
+    "资产配置": "ԭ��.html",
+    "财务自由": "ԭ��.html",
+    "穷爸爸富爸爸": "ԭ��.html",
+    "小狗钱钱": "ԭ��.html",
+    "纳瓦尔宝典": "ԭ��.html",
+    "金钱心理学": "ԭ��.html",
+    "思考致富": "ԭ��.html",
+    "芒格": "ԭ��.html",
+    "慢慢变富": "ԭ��.html",
+    "有钱人": "ԭ��.html",
+    "富有的习惯": "ԭ��.html",
+    "贫穷的本质": "ԭ��.html",
+    "钱从哪里来": "ԭ��.html",
+    "你的第一本理财书": "ԭ��.html",
 
-    // Investment & Finance
-    [/投资/g, "ԭ��.html"],
-    [/聪明的投资者/g, "ԭ��.html"],
-    [/穷查理宝典/g, "ԭ��.html"],
-    [/巴菲特/g, "ԭ��.html"],
-    [/原则/g, "ԭ��.html"],
-    [/证券分析/g, "ԭ��.html"],
-    [/漫步华尔街/g, "ԭ��.html"],
-    [/投资最重要的事/g, "ԭ��.html"],
-    [/随机漫步的傻瓜/g, "ԭ��.html"],
-    [/非理性繁荣/g, "ԭ��.html"],
-    [/估值/g, "ԭ��.html"],
-    [/指数基金/g, "ԭ��.html"],
-    [/资产配置/g, "ԭ��.html"],
-    [/财务自由/g, "ԭ��.html"],
-    [/穷爸爸富爸爸/g, "ԭ��.html"],
-    [/小狗钱钱/g, "ԭ��.html"],
-    [/纳瓦尔宝典/g, "ԭ��.html"],
-    [/金钱心理学/g, "ԭ��.html"],
-    [/思考致富/g, "ԭ��.html"],
-    [/芒格/g, "ԭ��.html"],
-    [/慢慢变富/g, "ԭ��.html"],
-    [/有钱人/g, "ԭ��.html"],
-    [/富有的习惯/g, "ԭ��.html"],
-    [/贫穷的本质/g, "ԭ��.html"],
-    [/钱从哪里来/g, "ԭ��.html"],
-    [/你的第一本理财书/g, "ԭ��.html"],
+    // Biography & Leadership - Pattern matches
+    "传记": "ԾǨ.html",
+    "美国恺撒": "ԾǨ.html",
+    "十二位对抗诸神的人": "ԾǨ.html",
+    "成吉思汗": "ԾǨ.html",
+    "富兰克林自传": "ԾǨ.HTML",
+    "苏东坡": "ԾǨ.HTML",
+    "曾国藩": "ԾǨ.HTML",
+    "乔布斯": "ԾǨ.HTML",
+    "马斯克传": "ԾǨ.HTML",
+    "毛选": "ԾǨ.HTML",
+    "稻盛和夫": "ԾǨ.HTML",
+    "贝索斯": "ԾǨ.HTML",
+    "甘地自传": "ԾǨ.HTML",
+    "曼德拉传": "ԾǨ.HTML",
+    "曹操": "ԾǨ.HTML",
+    "褚时健": "ԾǨ.HTML",
+    "张居正": "ԾǨ.HTML",
+    "左宗棠": "ԾǨ.HTML",
+    "袁隆平": "ԾǨ.HTML",
+    "居里夫人传": "ԾǨ.HTML",
+    "海伦凯勒": "ԾǨ.HTML",
+    "苏格拉底": "ԾǨ.HTML",
 
-    // Biography & Leadership
-    [/传记/g, "ԾǨ.html"],
-    [/美国恺撒/g, "ԾǨ.html"],
-    [/十二位对抗诸神的人/g, "ԾǨ.html"],
-    [/成吉思汗/g, "ԾǨ.html"],
-    [/富兰克林自传/g, "ԾǨ.HTML"],
-    [/苏东坡/g, "ԾǨ.HTML"],
-    [/曾国藩/g, "ԾǨ.HTML"],
-    [/乔布斯/g, "ԾǨ.HTML"],
-    [/马斯克传/g, "ԾǨ.HTML"],
-    [/毛选/g, "ԾǨ.HTML"],
-    [/稻盛和夫/g, "ԾǨ.HTML"],
-    [/贝索斯/g, "ԾǨ.HTML"],
-    [/甘地自传/g, "ԾǨ.HTML"],
-    [/曼德拉传/g, "ԾǨ.HTML"],
-    [/曹操/g, "ԾǨ.HTML"],
-    [/褚时健/g, "ԾǨ.HTML"],
-    [/张居正/g, "ԾǨ.HTML"],
-    [/左宗棠/g, "ԾǨ.HTML"],
-    [/袁隆平/g, "ԾǨ.HTML"],
-    [/居里夫人传/g, "ԾǨ.HTML"],
-    [/海伦凯勒/g, "ԾǨ.HTML"],
-    [/苏格拉底/g, "ԾǨ.HTML"],
+    // Art & Aesthetics - Pattern matches
+    "艺术": "Ӱ����.html",
+    "吴哥之美": "Ӱ����.html",
+    "艺术的故事": "Ӱ����.html",
+    "美的历程": "Ӱ����.html",
+    "谈美": "Ӱ����.html",
+    "观看之道": "Ӱ����.html",
+    "艺术精神": "Ӱ����.html",
 
-    // Art & Aesthetics
-    [/艺术/g, "Ӱ����.html"],
-    [/吴哥之美/g, "Ӱ����.html"],
-    [/艺术的故事/g, "Ӱ����.html"],
-    [/美的历程/g, "Ӱ����.html"],
-    [/谈美/g, "Ӱ����.html"],
-    [/观看之道/g, "Ӱ����.html"],
-    [/艺术精神/g, "Ӱ����.html"],
+    // Philosophy & Religion - Pattern matches
+    "哲学": "Ӱ����.html",
+    "宗教": "Ӱ����.html",
+    "纯粹理性批判": "Ӱ����.html",
+    "存在与时间": "Ӱ����.html",
+    "查拉图斯特拉如是说": "Ӱ����.html",
+    "禅与摩托车维修艺术": "Ӱ����.html",
+    "悉达多": "Ӱ����.html",
+    "心经": "Ӱ����.html",
+    "蒙田随笔": "Ӱ����.html",
+    "黄庭经": "Ӱ����.html",
+    "太上感应篇": "Ӱ����.html",
+    "庄子": "Ӱ����.html",
+    "周易参同契": "Ӱ����.html",
+    "抱朴子内篇": "Ӱ����.html",
+    "养生延命录": "Ӱ����.html",
+    "太乙金华宗旨": "Ӱ����.html",
+    "云笈七签": "Ӱ����.html",
+    "性命圭旨": "Ӱ����.html",
+    "乐育堂语录": "Ӱ����.html",
+    "炁体源流": "Ӱ����.html",
+    "礼记·月令": "Ӱ����.html",
+    "黄帝内经": "Ӱ����.html",
+    "千金方": "Ӱ����.html",
+    "本草纲目": "Ӱ����.html",
+    "遵生八笺": "Ӱ����.html",
+    "丹道法诀": "Ӱ����.html",
+    "道的呼吸": "Ӱ����.html",
+    "道家养生学": "Ӱ����.html",
+    "道教与养生": "Ӱ����.html",
+    "道医学": "Ӱ����.html",
+    "金花的秘密": "Ӱ����.html",
+    "马王堆房中术": "Ӱ����.html",
+    "容成阴道": "Ӱ����.html",
+    "养性延命录·御女损益篇": "Ӱ����.html",
+    "素女经": "Ӱ����.html",
+    "洞玄子": "Ӱ����.html",
+    "房中补益": "Ӱ����.html",
+    "三元延寿参赞书": "Ӱ����.html",
+    "遵生八笺·延年却病笺": "Ӱ����.html",
+    "摄生总要": "Ӱ����.html",
+    "道教与性": "Ӱ����.html",
+    "中国古代房内考": "Ӱ����.html",
+    "道家性养生研究": "Ӱ����.html",
+    "性理学": "Ӱ����.html",
+    "悟真篇": "Ӱ����.html",
+    "无根树词": "Ӱ����.html",
+    "钟吕传道集": "Ӱ����.html",
+    "方壶外史": "Ӱ����.html",
+    "道窍谈": "Ӱ����.html",
+    "三车秘旨": "Ӱ����.html",
+    "金丹真传": "Ӱ����.html",
+    "大成捷要": "Ӱ����.html",
+    "青娥功": "Ӱ����.html",
+    "道教南宗与双修": "Ӱ����.html",
 
-    // Philosophy & Religion
-    [/哲学/g, "Ӱ����.html"],
-    [/宗教/g, "Ӱ����.html"],
-    [/纯粹理性批判/g, "Ӱ����.html"],
-    [/存在与时间/g, "Ӱ����.html"],
-    [/查拉图斯特拉如是说/g, "Ӱ����.html"],
-    [/禅与摩托车维修艺术/g, "Ӱ����.html"],
-    [/悉达多/g, "Ӱ����.html"],
-    [/心经/g, "Ӱ����.html"],
-    [/蒙田随笔/g, "Ӱ����.html"],
-    [/黄庭经/g, "Ӱ����.html"],
-    [/太上感应篇/g, "Ӱ����.html"],
-    [/庄子/g, "Ӱ����.html"],
-    [/周易参同契/g, "Ӱ����.html"],
-    [/抱朴子内篇/g, "Ӱ����.html"],
-    [/养生延命录/g, "Ӱ����.html"],
-    [/太乙金华宗旨/g, "Ӱ����.html"],
-    [/云笈七签/g, "Ӱ����.html"],
-    [/性命圭旨/g, "Ӱ����.html"],
-    [/乐育堂语录/g, "Ӱ����.html"],
-    [/炁体源流/g, "Ӱ����.html"],
-    [/礼记·月令/g, "Ӱ����.html"],
-    [/黄帝内经/g, "Ӱ����.html"],
-    [/千金方/g, "Ӱ����.html"],
-    [/本草纲目/g, "Ӱ����.html"],
-    [/遵生八笺/g, "Ӱ����.html"],
-    [/丹道法诀/g, "Ӱ����.html"],
-    [/道的呼吸/g, "Ӱ����.html"],
-    [/道家养生学/g, "Ӱ����.html"],
-    [/道教与养生/g, "Ӱ����.html"],
-    [/道医学/g, "Ӱ����.html"],
-    [/金花的秘密/g, "Ӱ����.html"],
-    [/马王堆房中术/g, "Ӱ����.html"],
-    [/容成阴道/g, "Ӱ����.html"],
-    [/养性延命录·御女损益篇/g, "Ӱ����.html"],
-    [/素女经/g, "Ӱ����.html"],
-    [/洞玄子/g, "Ӱ����.html"],
-    [/房中补益/g, "Ӱ����.html"],
-    [/三元延寿参赞书/g, "Ӱ����.html"],
-    [/遵生八笺·延年却病笺/g, "Ӱ����.html"],
-    [/摄生总要/g, "Ӱ����.html"],
-    [/道教与性/g, "Ӱ����.html"],
-    [/中国古代房内考/g, "Ӱ����.html"],
-    [/道家性养生研究/g, "Ӱ����.html"],
-    [/性理学/g, "Ӱ����.html"],
-    [/悟真篇/g, "Ӱ����.html"],
-    [/无根树词/g, "Ӱ����.html"],
-    [/钟吕传道集/g, "Ӱ����.html"],
-    [/方壶外史/g, "Ӱ����.html"],
-    [/道窍谈/g, "Ӱ����.html"],
-    [/三车秘旨/g, "Ӱ����.html"],
-    [/金丹真传/g, "Ӱ����.html"],
-    [/大成捷要/g, "Ӱ����.html"],
-    [/青娥功/g, "Ӱ����.html"],
-    [/道教南宗与双修/g, "Ӱ����.html"],
-
-    // Literature & Fiction
-    [/百年孤独/g, "ѧ������.html"],
-    [/1984/g, "ѧ������.html"],
-    [/红楼梦/g, "ѧ������.html"],
-    [/悲惨世界/g, "ѧ������.html"],
-    [/罪与罚/g, "ѧ������.html"],
-    [/简·爱/g, "ѧ������.html"],
-    [/傲慢与偏见/g, "ѧ������.html"],
-    [/呼啸山庄/g, "ѧ������.html"],
-    [/双城记/g, "ѧ������.html"],
-    [/老人与海/g, "ѧ������.html"],
-    [/了不起的盖茨比/g, "ѧ������.html"],
-    [/麦田里的守望者/g, "ѧ������.html"],
-    [/堂吉诃德/g, "ѧ������.html"],
-    [/变形记/g, "ѧ������.html"],
-    [/安娜·卡列尼娜/g, "ѧ������.html"]
-  ];
+    // Literature & Fiction - Pattern matches
+    "百年孤独": "ѧ������.html",
+    "1984": "ѧ������.html",
+    "红楼梦": "ѧ������.html",
+    "悲惨世界": "ѧ������.html",
+    "罪与罚": "ѧ������.html",
+    "简·爱": "ѧ������.html",
+    "傲慢与偏见": "ѧ������.html",
+    "呼啸山庄": "ѧ������.html",
+    "双城记": "ѧ������.html",
+    "老人与海": "ѧ������.html",
+    "了不起的盖茨比": "ѧ������.html",
+    "麦田里的守望者": "ѧ������.html",
+    "堂吉诃德": "ѧ������.html",
+    "变形记": "ѧ������.html",
+    "安娜·卡列尼娜": "ѧ������.html"
+  };
 
   // Function to find the best matching note file for a book title
-  function findNoteFile(bookTitle) {
+  function findBestNoteFile(bookTitle) {
     const cleanTitle = bookTitle.replace(/[《》]/g, '').trim();
     
-    // Try exact pattern matches first
-    for (const [pattern, fileName] of titlePatterns) {
-      if (pattern.test(cleanTitle)) {
-        return notesDir + fileName;
-      }
+    // Try direct pattern matches first
+    if (noteFiles[cleanTitle]) {
+      return "notes/" + noteFiles[cleanTitle];
     }
     
     // Try partial matches
-    for (const [pattern, fileName] of titlePatterns) {
-      if (cleanTitle.includes(pattern.source.replace(/\\/g, ''))) {
-        return notesDir + fileName;
+    for (const [pattern, fileName] of Object.entries(noteFiles)) {
+      if (cleanTitle.includes(pattern) || pattern.includes(cleanTitle.slice(0, pattern.length))) {
+        return "notes/" + fileName;
       }
     }
     
-    // Fallback: try to match by removing common characters and searching
-    const simplifiedTitle = cleanTitle
-      .replace(/[，。！？、；：""''（）【】《》\s]/g, '')
-      .replace(/[a-zA-Z]/g, '')
-      .replace(/[\u4e00-\u9fa5]{2,}/g, match => match.slice(-2)); // Keep last 2 characters
-    
-    if (simplifiedTitle.length > 0) {
-      // Return a generic note file as fallback
-      return notesDir + "˼��������.html"; // Default thought process notes
-    }
-    
-    return null;
+    // Fallback: return a generic note file with the book title as reference
+    // This ensures every book has at least one link
+    return "notes/˼��������.html"; // Default thought process notes
   }
 
   // Build the navigation links object
-  booksByCategory[1].concat(
-    booksByCategory[2], booksByCategory[3], booksByCategory[4],
-    booksByCategory[5], booksByCategory[6], booksByCategory[7],
-    booksByCategory[8], booksByCategory[9]
-  ).forEach(([title, author]) => {
-    const link = findNoteFile(title);
+  const navigationLinks = {};
+  const allBooks = [];
+  
+  // Collect all books from all categories
+  for (let i = 1; i <= 9; i++) {
+    if (booksByCategory[i]) {
+      allBooks.push(...booksByCategory[i]);
+    }
+  }
+  
+  // Create links for all books
+  allBooks.forEach(([title, author]) => {
+    const link = findBestNoteFile(title);
     if (link) {
       navigationLinks[title] = link;
     }
@@ -1431,8 +1421,8 @@ function createNavigationLinks() {
   return navigationLinks;
 }
 
-// Generate navigation links automatically
-const navigationLinks = createNavigationLinks();
+// Generate navigation links with improved reliability
+const navigationLinks = createReliableNavigationLinks();
 
 // Current reading books
 const currentReading = [
