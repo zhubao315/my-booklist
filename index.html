@@ -1150,232 +1150,209 @@ const booksByCategory = {
   ]
 };
 
-// Create a comprehensive and reliable navigation links mapping
-function createReliableNavigationLinks() {
-  // Standardized note file mappings based on actual filenames in notes directory
-  const noteFiles = {
+// Create a comprehensive and reliable navigation links mapping using only safe URLs
+function createSafeNavigationLinks() {
+  // Safe note file mappings using only ASCII characters
+  const safeNoteFiles = {
     // Historical & Social Science - Direct matches
     "civilization": "civilization.html",
     "iliad": "iliad.html",
     "road-to-serfdom": "road-to-serfdom.html",
 
-    // Self-improvement classics - Pattern matches
-    "思考，快与慢": "˼�� 快 慢 2.html",
-    "思考 快与慢": "˼�� 快 慢 2.html",
-    "思考的快与慢": "˼���Ŀ�����.html",
-    "思考的艺术": "˼���Ŀ�����.html",
-    "原则": "ԭ��.html",
-    "原子习惯": "原子习惯.html",
-    "深度工作": "深度工作.html",
-    "刻意练习": "������ϰ.html",
-    "高效能人士的七个习惯": "�׸�Ч��ʿ.html",
-    "被讨厌的勇气": "�Ǳ�����ͨ.html",
-    "非暴力沟通": "�Ǳ�����ͨ.html",
-    "心流": "Ӱ����.html",
-    "影响力": "Ӱ����.html",
-    "系统思考": "ϵͳ˼��.html",
-    "系统之美": "Ӱ����.html",
-    "认知天性": "˼��������.html",
-    "认知觉醒": "˼��������.html",
-    "终身成长": "ԾǨ.html",
-    "跃迁": "ԾǨ 2.html",
-    "远见": "Զ��.html",
-    "精进": "ԾǨ.html",
-    "执行": "ִ��.html",
-    "学习之道": "ѧ������.html",
-    "如何阅读一本书": "�ú�ѧϰ.html",
-    "如何高效学习": "ѧ������.html",
-    "学会提问": "̸�е�����.html",
-    "反脆弱": "Ӱ����.html",
-    "反直觉思考": "˼�� ͼƬ 2.html",
-    "习惯的力量": "�ײ��߼�.html",
-    "掌控习惯": "�ײ��߼�.html",
-    "掌控时间": "�׸�Ч��ʿ.html",
-    "精力管理": "�׸�Ч��ʿ.html",
-    "时间管理": "�׸�Ч��ʿ.html",
-    "番茄工作法": "�ú�ѧϰ.html",
-    "拖延心理学": "ѧ������.html",
-    "奇特的一生": "�ú�ѧϰ 3.html",
+    // Self-improvement classics - ASCII-safe names
+    "think-fast-slow": "think-fast-slow.html",
+    "principles": "principles.html",
+    "atomic-habits": "atomic-habits.html",
+    "deep-work": "deep-work.html",
+    "deliberate-practice": "deliberate-practice.html",
+    "seven-habits": "seven-habits.html",
+    "crucial-accountability": "crucial-accountability.html",
+    "flow": "flow.html",
+    "influence": "influence.html",
+    "systems-thinking": "systems-thinking.html",
+    "cognitive-nature": "cognitive-nature.html",
+    "lifelong-growth": "lifelong-growth.html",
+    "career-planning": "career-planning.html",
+    "executive": "executive.html",
+    "learning-method": "learning-method.html",
+    "how-read-book": "how-read-book.html",
+    "ask-questions": "ask-questions.html",
+    "anti-fragile": "anti-fragile.html",
+    "intuition": "intuition.html",
+    "habits-power": "habits-power.html",
+    "mastery": "mastery.html",
 
-    // Business & Innovation - Pattern matches
-    "从0到1": "�� 0 �� 1.html",
-    "精益创业": "�ú�ѧϰ.html",
-    "创新者的窘境": "Ӱ����.html",
-    "定位": "�ײ��߼�.html",
-    "增长黑客": "˼��������.html",
-    "商业模式": "�ײ��߼�.html",
-    "商业模式新生代": "�ú�ѧϰ 2.html",
-    "创业维艰": "Ӱ����.html",
-    "重新定义公司": "˼��������.html",
-    "创新者": "Ӱ����.html",
-    "颠覆创新": "Ӱ����.html",
-    "创业": "ԾǨ.html",
-    "商业": "�ײ��߼�.html",
+    // Business & Innovation - ASCII-safe names
+    "from-zero-one": "from-zero-one.html",
+    "lean-startup": "lean-startup.html",
+    "innovator-dilemma": "innovator-dilemma.html",
+    "positioning": "positioning.html",
+    "growth-hackers": "growth-hackers.html",
+    "business-model": "business-model.html",
+    "startup-strategy": "startup-strategy.html",
+    "entrepreneur-hardship": "entrepreneur-hardship.html",
+    "reimagine-company": "reimagine-company.html",
+    "innovators": "innovators.html",
+    "disruptive-innovation": "disruptive-innovation.html",
+    "entrepreneurship": "entrepreneurship.html",
+    "business-strategy": "business-strategy.html",
 
-    // Psychology & Philosophy - Pattern matches
-    "心理学": "ѧ������.html",
-    "心理学与生活": "ѧ������.html",
-    "津巴多": "Ӱ����.html",
-    "社会心理学": "ѧ������.html",
-    "社会性动物": "Ӱ����.html",
-    "亲密关系": "ѧ������.html",
-    "梦的解析": "ѧ������.html",
-    "路西法效应": "Ӱ����.html",
-    "操纵心理学": "ѧ������.html",
-    "幸福的婚姻": "ѧ������.html",
-    "正面管教": "ѧ������.html",
-    "如何说孩子才会听": "ѧ������.html",
-    "爱的五种语言": "ѧ������.html",
-    "养育": "ѧ������.html",
-    "父母": "ѧ������.html",
-    "稀缺": "ѧ������.html",
-    "被讨厌的勇气": "�Ǳ�����ͨ.html",
-    "自卑与超越": "ѧ������.html",
-    "自卑": "ѧ������.html",
-    "自我": "ѧ������.html",
-    "人格": "ѧ������.html",
-    "情绪": "ѧ������.html",
-    "意志力": "ѧ������.html",
-    "自控力": "ѧ������.html",
-    "少有人走的路": "ѧ������.html",
-    "学会提问": "̸�е�����.html",
-    "清醒思考": "˼��������.html",
-    "清醒思考的艺术": "˼��������.html",
-    "掌控习惯": "�ײ��߼�.html",
+    // Psychology & Philosophy - ASCII-safe names
+    "psychology": "psychology.html",
+    "psychology-life": "psychology-life.html",
+    "zimbardo": "zimbardo.html",
+    "social-psychology": "social-psychology.html",
+    "social-animals": "social-animals.html",
+    "close-relationships": "close-relationships.html",
+    "dream-analysis": "dream-analysis.html",
+    "lucifer-effect": "lucifer-effect.html",
+    "psychological-manipulation": "psychological-manipulation.html",
+    "happy-marriage": "happy-marriage.html",
+    "positive-discipline": "positive-discipline.html",
+    "talk-kids": "talk-kids.html",
+    "five-languages-love": "five-languages-love.html",
+    "parenting": "parenting.html",
+    "poverty-essence": "poverty-essence.html",
+    "self-esteem": "self-esteem.html",
+    "personality": "personality.html",
+    "emotions": "emotions.html",
+    "willpower": "willpower.html",
+    "self-control": "self-control.html",
+    "few-roads": "few-roads.html",
+    "critical-thinking": "critical-thinking.html",
+    "conscious-thinking": "conscious-thinking.html",
+    "master-habits": "master-habits.html",
 
-    // Investment & Finance - Pattern matches
-    "投资": "ԭ��.html",
-    "聪明的投资者": "ԭ��.html",
-    "穷查理宝典": "ԭ��.html",
-    "巴菲特": "ԭ��.html",
-    "原则": "ԭ��.html",
-    "证券分析": "ԭ��.html",
-    "漫步华尔街": "ԭ��.html",
-    "投资最重要的事": "ԭ��.html",
-    "随机漫步的傻瓜": "ԭ��.html",
-    "非理性繁荣": "ԭ��.html",
-    "估值": "ԭ��.html",
-    "指数基金": "ԭ��.html",
-    "资产配置": "ԭ��.html",
-    "财务自由": "ԭ��.html",
-    "穷爸爸富爸爸": "ԭ��.html",
-    "小狗钱钱": "ԭ��.html",
-    "纳瓦尔宝典": "ԭ��.html",
-    "金钱心理学": "ԭ��.html",
-    "思考致富": "ԭ��.html",
-    "芒格": "ԭ��.html",
-    "慢慢变富": "ԭ��.html",
-    "有钱人": "ԭ��.html",
-    "富有的习惯": "ԭ��.html",
-    "贫穷的本质": "ԭ��.html",
-    "钱从哪里来": "ԭ��.html",
-    "你的第一本理财书": "ԭ��.html",
+    // Investment & Finance - ASCII-safe names
+    "investor-smart": "investor-smart.html",
+    "buffett-principles": "buffett-principles.html",
+    "wealth-building": "wealth-building.html",
+    "security-analysis": "security-analysis.html",
+    "wall-street": "wall-street.html",
+    "important-investment": "important-investment.html",
+    "random-walk": "random-walk.html",
+    "irrational-exuberance": "irrational-exuberance.html",
+    "valuation": "valuation.html",
+    "index-funds": "index-funds.html",
+    "asset-allocation": "asset-allocation.html",
+    "financial-freedom": "financial-freedom.html",
+    "rich-dad-poor-dad": "rich-dad-poor-dad.html",
+    "little-money-dog": "little-money-dog.html",
+    "navarro-principles": "navarro-principles.html",
+    "money-psychology": "money-psychology.html",
+    "think-rich": "think-rich.html",
+    "munger-way": "munger-way.html",
+    "slow-wealth": "slow-wealth.html",
+    "rich-thinking": "rich-thinking.html",
+    "rich-habits": "rich-habits.html",
+    "poverty-depth": "poverty-depth.html",
+    "wealth-source": "wealth-source.html",
+    "first-finance-book": "first-finance-book.html",
 
-    // Biography & Leadership - Pattern matches
-    "传记": "ԾǨ.html",
-    "美国恺撒": "ԾǨ.html",
-    "十二位对抗诸神的人": "ԾǨ.html",
-    "成吉思汗": "ԾǨ.html",
-    "富兰克林自传": "ԾǨ.HTML",
-    "苏东坡": "ԾǨ.HTML",
-    "曾国藩": "ԾǨ.HTML",
-    "乔布斯": "ԾǨ.HTML",
-    "马斯克传": "ԾǨ.HTML",
-    "毛选": "ԾǨ.HTML",
-    "稻盛和夫": "ԾǨ.HTML",
-    "贝索斯": "ԾǨ.HTML",
-    "甘地自传": "ԾǨ.HTML",
-    "曼德拉传": "ԾǨ.HTML",
-    "曹操": "ԾǨ.HTML",
-    "褚时健": "ԾǨ.HTML",
-    "张居正": "ԾǨ.HTML",
-    "左宗棠": "ԾǨ.HTML",
-    "袁隆平": "ԾǨ.HTML",
-    "居里夫人传": "ԾǨ.HTML",
-    "海伦凯勒": "ԾǨ.HTML",
-    "苏格拉底": "ԾǨ.HTML",
+    // Biography & Leadership - ASCII-safe names
+    "biography": "biography.html",
+    "american-caesar": "american-caesar.html",
+    "twelve-defying-gods": "twelve-defying-gods.html",
+    "genghis-khan": "genghis-khan.html",
+    "benjamin-franklin": "benjamin-franklin.html",
+    "su-dongpo": "su-dongpo.html",
+    "confucius": "confucius.html",
+    "jobs": "jobs.html",
+    "elon-musk": "elon-musk.html",
+    "mao-selections": "mao-selections.html",
+    "kazuo-ishikawa": "kazuo-ishikawa.html",
+    "jeff-bezos": "jeff-bezos.html",
+    "gandhi": "gandhi.html",
+    "nelson-mandela": "nelson-mandela.html",
+    "caocao": "caocao.html",
+    "du-shijian": "du-shijian.html",
+    "zhang-juzheng": "zhang-juzheng.html",
+    "zuozongtang": "zuozongtang.html",
+    "yuan-longping": "yuan-longping.html",
+    "marie-curie": "marie-curie.html",
+    "helen-keller": "helen-keller.html",
+    "socrates": "socrates.html",
 
-    // Art & Aesthetics - Pattern matches
-    "艺术": "Ӱ����.html",
-    "吴哥之美": "Ӱ����.html",
-    "艺术的故事": "Ӱ����.html",
-    "美的历程": "Ӱ����.html",
-    "谈美": "Ӱ����.html",
-    "观看之道": "Ӱ����.html",
-    "艺术精神": "Ӱ����.html",
+    // Art & Aesthetics - ASCII-safe names
+    "art": "art.html",
+    "anguo-beauty": "anguo-beauty.html",
+    "art-story": "art-story.html",
+    "beauty-history": "beauty-history.html",
+    "discussing-beauty": "discussing-beauty.html",
+    "viewing-ways": "viewing-ways.html",
+    "art-spirit": "art-spirit.html",
 
-    // Philosophy & Religion - Pattern matches
-    "哲学": "Ӱ����.html",
-    "宗教": "Ӱ����.html",
-    "纯粹理性批判": "Ӱ����.html",
-    "存在与时间": "Ӱ����.html",
-    "查拉图斯特拉如是说": "Ӱ����.html",
-    "禅与摩托车维修艺术": "Ӱ����.html",
-    "悉达多": "Ӱ����.html",
-    "心经": "Ӱ����.html",
-    "蒙田随笔": "Ӱ����.html",
-    "黄庭经": "Ӱ����.html",
-    "太上感应篇": "Ӱ����.html",
-    "庄子": "Ӱ����.html",
-    "周易参同契": "Ӱ����.html",
-    "抱朴子内篇": "Ӱ����.html",
-    "养生延命录": "Ӱ����.html",
-    "太乙金华宗旨": "Ӱ����.html",
-    "云笈七签": "Ӱ����.html",
-    "性命圭旨": "Ӱ����.html",
-    "乐育堂语录": "Ӱ����.html",
-    "炁体源流": "Ӱ����.html",
-    "礼记·月令": "Ӱ����.html",
-    "黄帝内经": "Ӱ����.html",
-    "千金方": "Ӱ����.html",
-    "本草纲目": "Ӱ����.html",
-    "遵生八笺": "Ӱ����.html",
-    "丹道法诀": "Ӱ����.html",
-    "道的呼吸": "Ӱ����.html",
-    "道家养生学": "Ӱ����.html",
-    "道教与养生": "Ӱ����.html",
-    "道医学": "Ӱ����.html",
-    "金花的秘密": "Ӱ����.html",
-    "马王堆房中术": "Ӱ����.html",
-    "容成阴道": "Ӱ����.html",
-    "养性延命录·御女损益篇": "Ӱ����.html",
-    "素女经": "Ӱ����.html",
-    "洞玄子": "Ӱ����.html",
-    "房中补益": "Ӱ����.html",
-    "三元延寿参赞书": "Ӱ����.html",
-    "遵生八笺·延年却病笺": "Ӱ����.html",
-    "摄生总要": "Ӱ����.html",
-    "道教与性": "Ӱ����.html",
-    "中国古代房内考": "Ӱ����.html",
-    "道家性养生研究": "Ӱ����.html",
-    "性理学": "Ӱ����.html",
-    "悟真篇": "Ӱ����.html",
-    "无根树词": "Ӱ����.html",
-    "钟吕传道集": "Ӱ����.html",
-    "方壶外史": "Ӱ����.html",
-    "道窍谈": "Ӱ����.html",
-    "三车秘旨": "Ӱ����.html",
-    "金丹真传": "Ӱ����.html",
-    "大成捷要": "Ӱ����.html",
-    "青娥功": "Ӱ����.html",
-    "道教南宗与双修": "Ӱ����.html",
+    // Philosophy & Religion - ASCII-safe names
+    "philosophy": "philosophy.html",
+    "religion": "religion.html",
+    "critique-rational": "critique-rational.html",
+    "being-time": "being-time.html",
+    "thus-spoke-zarathustra": "thus-spoke-zarathustra.html",
+    "zen-motorcycle": "zen-motorcycle.html",
+    "siddhartha": "siddhartha.html",
+    "heart-sutra": "heart-sutra.html",
+    "montaigne-essays": "montaigne-essays.html",
+    "yellow-court": "yellow-court.html",
+    "taishang-inductions": "taishang-inductions.html",
+    "zhuangzi": "zhuangzi.html",
+    "talisman-hexagram": "talisman-hexagram.html",
+    "baopu-zi-inner": "baopu-zi-inner.html",
+    "prolonging-life": "prolonging-life.html",
+    "golden-prescription": "golden-prescription.html",
+    "seven-signs": "seven-signs.html",
+    "guizhi": "guizhi.html",
+    "joyful-classroom": "joyful-classroom.html",
+    "qi-body-source": "qi-body-source.html",
+    "monthly-commandments": "monthly-commandments.html",
+    "yellow-emperor": "yellow-emperor.html",
+    "thousand-gold": "thousand-gold.html",
+    "bencaogen": "bencaogen.html",
+    "eight-fold-note": "eight-fold-note.html",
+    "dan-dao-methods": "dan-dao-methods.html",
+    "dao-breathing": "dao-breathing.html",
+    "daojia-health": "daojia-health.html",
+    "dao-medicine": "dao-medicine.html",
+    "secret-golden": "secret-golden.html",
+    "warring-states-sexual": "warring-states-sexual.html",
+    "rongcheng-vagina": "rongcheng-vagina.html",
+    "nurture-extension": "nurture-extension.html",
+    "plain-woman": "plain-woman.html",
+    "dunhuang": "dunhuang.html",
+    "benefits-sex": "benefits-sex.html",
+    "three-yuan-extend": "three-yuan-extend.html",
+    "eight-fold-note-prevent": "eight-fold-note-prevent.html",
+    "collective-health": "collective-health.html",
+    "daoism-sex": "daoism-sex.html",
+    "ancient-chinese-sexual": "ancient-chinese-sexual.html",
+    "daojia-sex-health": "daojia-sex-health.html",
+    "sexual-philosophy": "sexual-philosophy.html",
+    "wisdom-tan": "wisdom-tan.html",
+    "tree-without-root": "tree-without-root.html",
+    "zhonglü-transmit": "zhonglü-transmit.html",
+    "fanghu-wai-shi": "fanghu-wai-shi.html",
+    "dao-qiao-talk": "dao-qiao-talk.html",
+    "three-car-secret": "three-car-secret.html",
+    "true-golden": "true-golden.html",
+    "great-completion": "great-completion.html",
+    "blue-eyed-girl": "blue-eyed-girl.html",
+    "daoist-south-school": "daoist-south-school.html",
 
-    // Literature & Fiction - Pattern matches
-    "百年孤独": "ѧ������.html",
-    "1984": "ѧ������.html",
-    "红楼梦": "ѧ������.html",
-    "悲惨世界": "ѧ������.html",
-    "罪与罚": "ѧ������.html",
-    "简·爱": "ѧ������.html",
-    "傲慢与偏见": "ѧ������.html",
-    "呼啸山庄": "ѧ������.html",
-    "双城记": "ѧ������.html",
-    "老人与海": "ѧ������.html",
-    "了不起的盖茨比": "ѧ������.html",
-    "麦田里的守望者": "ѧ������.html",
-    "堂吉诃德": "ѧ������.html",
-    "变形记": "ѧ������.html",
-    "安娜·卡列尼娜": "ѧ������.html"
+    // Literature & Fiction - ASCII-safe names
+    "one-hundred-years-solitude": "one-hundred-years-solitude.html",
+    "nineteen-eighty-four": "nineteen-eighty-four.html",
+    "dream-of-red-chamber": "dream-of-red-chamber.html",
+    "les-miserables": "les-miserables.html",
+    "crime-punishment": "crime-punishment.html",
+    "jane-eyre": "jane-eyre.html",
+    "pride-prejudice": "pride-prejudice.html",
+    "wuthering-heights": "wuthering-heights.html",
+    "tale-two-cities": "tale-two-cities.html",
+    "old-man-sea": "old-man-sea.html",
+    "great-gatsby": "great-gatsby.html",
+    "catcher-rye": "catcher-rye.html",
+    "don-quixote": "don-quixote.html",
+    "metamorphosis": "metamorphosis.html",
+    "anna-karenina": "anna-karenina.html"
   };
 
   // Function to find the best matching note file for a book title
@@ -1383,20 +1360,19 @@ function createReliableNavigationLinks() {
     const cleanTitle = bookTitle.replace(/[《》]/g, '').trim();
     
     // Try direct pattern matches first
-    if (noteFiles[cleanTitle]) {
-      return "notes/" + noteFiles[cleanTitle];
+    if (safeNoteFiles[cleanTitle]) {
+      return "notes/" + safeNoteFiles[cleanTitle];
     }
     
     // Try partial matches
-    for (const [pattern, fileName] of Object.entries(noteFiles)) {
+    for (const [pattern, fileName] of Object.entries(safeNoteFiles)) {
       if (cleanTitle.includes(pattern) || pattern.includes(cleanTitle.slice(0, pattern.length))) {
         return "notes/" + fileName;
       }
     }
     
-    // Fallback: return a generic note file with the book title as reference
-    // This ensures every book has at least one link
-    return "notes/˼��������.html"; // Default thought process notes
+    // Fallback: return a generic note file with ASCII-safe name
+    return "notes/thinking-process.html"; // Default thought process notes
   }
 
   // Build the navigation links object
@@ -1421,14 +1397,35 @@ function createReliableNavigationLinks() {
   return navigationLinks;
 }
 
-// Generate navigation links with improved reliability
-const navigationLinks = createReliableNavigationLinks();
+// Generate navigation links with ASCII-safe URLs
+const navigationLinks = createSafeNavigationLinks();
 
-// Current reading books
+// Current reading books - ensure these have working links too
 const currentReading = [
-  { title: "第二座山", author: "大卫·布鲁克斯", tag: "道德喜乐", description: "从个人主义走向关系主义", goal: "理解承诺与奉献的力量" },
-  { title: "重启人生", author: "亚瑟·布鲁克斯", tag: "职业转型", description: "应对职业倦怠与中年危机", goal: "从流体智力向晶体智力转型" },
-  { title: "与塞涅卡共进早餐", author: "大卫·菲德勒", tag: "斯多葛哲学", description: "古老智慧应对现代焦虑", goal: "内心宁静与情绪管理" }
+  { 
+    title: "第二座山", 
+    author: "大卫·布鲁克斯", 
+    tag: "道德喜乐", 
+    description: "从个人主义走向关系主义", 
+    goal: "理解承诺与奉献的力量",
+    noteLink: navigationLinks["第二座山"] || "notes/career-transition.html"
+  },
+  { 
+    title: "重启人生", 
+    author: "亚瑟·布鲁克斯", 
+    tag: "职业转型", 
+    description: "应对职业倦怠与中年危机", 
+    goal: "从流体智力向晶体智力转型",
+    noteLink: navigationLinks["重启人生"] || "notes/career-transition.html"
+  },
+  { 
+    title: "与塞涅卡共进早餐", 
+    author: "大卫·菲德勒", 
+    tag: "斯多葛哲学", 
+    description: "古老智慧应对现代焦虑", 
+    goal: "内心宁静与情绪管理",
+    noteLink: navigationLinks["与塞涅卡共进早餐"] || "notes/stoicism.html"
+  }
 ];
 
 // Initialize navigation
@@ -1508,7 +1505,7 @@ function renderContent() {
 
       filteredCurrent.forEach(book => {
         html += `
-          <div class="reading-card">
+          <div class="reading-card" onclick="window.location.href='${book.noteLink}'">
             <h3>${book.title}</h3>
             <div class="author">${book.author}</div>
             <span class="tag">${book.tag}</span>
