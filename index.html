@@ -473,4 +473,18 @@ function render() {
 
   // Guide
   if (activeCategory === 'guide' || activeCategory === 'all') {
-    html += `<section class="section"><div class="section-header"><h2 class="section-title">💡 阅读指南</h2></div><div class="guide-grid"><div class="guide-card"><h3>🎯 按需选择</h3><ul><li><strong>需要解决问题</strong> → 实用技能类</li><li><strong>追求自我成长</strong> → 认知成长类</li><li><strong>理解社会运行</strong> → 历史社科类</li><li><strong>把握科技趋势</strong> → 科技科普类</li><li><strong>建立财富观念</strong> → 投资理财类</li></ul></div><div class="guide-card"><h3>📅 按场景阅读</h3><ul><li><strong>通勤碎片时间</strong>：认知成长类</li><li><strong>周末深度阅读</strong>：历史社科、哲学宗教</li><li><strong>工作学习间隙</strong>：实用技能类</li><li><strong>睡前放松时光</strong>：文学虚构、艺术美学</li></ul></div><div class="guide-card"><h3>🔄 阅读方法</h3><ul><li><strong>主题阅读</strong>：围绕一个主题读多本书</li><li><strong>对比阅读</strong>：不同观点的书籍对照</li>
+    html += `<section class="section"><div class="section-header"><h2 class="section-title">💡 阅读指南</h2></div><div class="guide-grid"><div class="guide-card"><h3>🎯 按需选择</h3><ul><li><strong>需要解决问题</strong> → 实用技能类</li><li><strong>追求自我成长</strong> → 认知成长类</li><li><strong>理解社会运行</strong> → 历史社科类</li><li><strong>把握科技趋势</strong> → 科技科普类</li><li><strong>建立财富观念</strong> → 投资理财类</li></ul></div><div class="guide-card"><h3>📅 按场景阅读</h3><ul><li><strong>通勤碎片时间</strong>：认知成长类</li><li><strong>周末深度阅读</strong>：历史社科、哲学宗教</li><li><strong>工作学习间隙</strong>：实用技能类</li><li><strong>睡前放松时光</strong>：文学虚构、艺术美学</li></ul></div><div class="guide-card"><h3>🔄 阅读方法</h3><ul><li><strong>主题阅读</strong>：围绕一个主题读多本书</li><li><strong>对比阅读</strong>：不同观点的书籍对照</li><li><strong>深度笔记</strong>：每本书记录核心收获</li><li><strong>实践应用</strong>：将书中智慧应用于生活</li></ul></div></div></section>`;
+  }
+
+  if (!html) {
+    html = `<div class="empty-state"><div class="empty-state-icon">📚</div><div class="empty-state-text">暂无内容</div></div>`;
+  }
+
+  main.innerHTML = html;
+}
+
+initNav();
+render();
+</script>
+</body>
+</html>
