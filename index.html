@@ -395,6 +395,59 @@ const currentReading = [
   { title: "与塞涅卡共进早餐", author: "大卫·菲德勒", tag: "斯多葛哲学", desc: "古老智慧应对现代焦虑，在不确定的时代找到内心平静", goal: "掌握控制二分法", noteLink: "notes/breakfast-with-seneca.html", progress: 80, status: "实践应用中" }
 ];
 
+// 笔记文件映射 - 中文书名到笔记文件
+const noteFiles = {
+  // 当前阅读
+  "第二座山": "second-mountain.html",
+  "重启人生": "restart-life.html",
+  "与塞涅卡共进早餐": "breakfast-with-seneca.html",
+  // 认知成长类
+  "思考，快与慢": "think-fast-slow.html",
+  "原则": "principles.html",
+  "原子习惯": "atomic-habits.html",
+  "深度工作": "deep-work.html",
+  "刻意练习": "deliberate-practice.html",
+  "高效能人士的七个习惯": "seven-habits.html",
+  "非暴力沟通": "nonviolent-communication.html",
+  "心流": "flow.html",
+  "影响力": "influence.html",
+  "反脆弱": "anti-fragile.html",
+  "习惯的力量": "power-of-habits.html",
+  "终身成长": "lifelong-growth.html",
+  "如何阅读一本书": "how-read-book.html",
+  "系统思考": "systems-thinking.html",
+  "认知觉醒": "cognitive-awareness.html",
+  "批判性思维": "critical-thinking.html",
+  "自卑与超越": "self-esteem-superiority.html",
+  // 文学类
+  "百年孤独": "one-hundred-years-of-solitude.html",
+  "1984": "nineteen-eighty-four.html",
+  // 科技类
+  "时间简史": "a-brief-history-of-time.html",
+  "人类简史": "sapiens.html",
+  // 投资类
+  "巴菲特致股东的信": "buffett-letters.html",
+  "纳瓦尔宝典": "navarro-principles.html",
+  // 商业类
+  "从0到1": "from-zero-to-one.html",
+  "精益创业": "the-lean-startup.html",
+  "创新者的窘境": "innovators-dilemma.html",
+  // 传记类
+  "史蒂夫·乔布斯": "steve-jobs.html",
+  // 哲学类
+  "斯多葛": "stoicism.html",
+  // 历史类
+  "资治通鉴": "zizhi-tongjian.html",
+  "国富论": "the-wealth-of-nations.html"
+};
+
+function getNoteLink(title) {
+  if (noteFiles[title]) {
+    return `notes/${noteFiles[title]}`;
+  }
+  return null;
+}
+
 const booksByCategory = {
   1: [["百年孤独","马尔克斯"],["1984","奥威尔"],["红楼梦","曹雪芹"],["悲惨世界","雨果"],["罪与罚","陀思妥耶夫斯基"],["简·爱","勃朗特"],["傲慢与偏见","奥斯汀"],["呼啸山庄","勃朗特"],["双城记","狄更斯"],["老人与海","海明威"],["了不起的盖茨比","菲茨杰拉德"],["麦田里的守望者","塞林格"],["堂吉诃德","塞万提斯"],["变形记","卡夫卡"],["安娜·卡列尼娜","托尔斯泰"]],
   2: [["从优秀到卓越","柯林斯"],["从0到1","蒂尔"],["精益创业","莱斯"],["高效能人士的七个习惯","柯维"],["创新者的窘境","克里斯坦森"],["创业维艰","霍洛维茨"],["重新定义公司","施密特"],["定位","里斯"],["增长黑客","埃利斯"],["引爆点","格拉德威尔"],["疯传","伯杰"],["上瘾","艾亚尔"],["流量池","杨飞"]],
@@ -466,7 +519,12 @@ function render() {
     const filtered = books.filter(([t, a]) => !q || t.toLowerCase().includes(q) || a.toLowerCase().includes(q));
     html += `<section class="section"><div class="section-header"><h2 class="section-title">${cat.emoji} ${cat.name}</h2><span class="section-count">${filtered.length}本</span></div><p class="section-desc">${cat.desc}</p><div class="book-list">`;
     filtered.forEach(([title, author], i) => {
-      html += `<div class="book-item"><span class="book-item-number">${String(i+1).padStart(2,'0')}</span><div class="book-item-info"><h4>${title}</h4><p>${author}</p></div></div>`;
+      const noteLink = getNoteLink(title);
+      if (noteLink) {
+        html += `<a href="${noteLink}" class="book-item" style="text-decoration:none;color:inherit;"><span class="book-item-number">${String(i+1).padStart(2,'0')}</span><div class="book-item-info"><h4>${title} 📝</h4><p>${author}</p></div></a>`;
+      } else {
+        html += `<div class="book-item"><span class="book-item-number">${String(i+1).padStart(2,'0')}</span><div class="book-item-info"><h4>${title}</h4><p>${author}</p></div></div>`;
+      }
     });
     html += '</div></section>';
   }
