@@ -1,160 +1,164 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>《资治通鉴》读书笔记</title>
+<title>《资治通鉴》深度读书笔记 - 司马光</title>
 <style>
-:root{--bg:#0f0f0f;--s:#1a1a1a;--s2:#242424;--t:#e8e6e3;--t2:#9a9a9a;--a:#e8a838;--a2:#c4882a;--b:#2a2a2a;--r:12px}
+:root{--bg:#0f0f0f;--s:#1a1a1a;--s2:#242424;--s3:#2a2a2a;--t:#e8e6e3;--t2:#9a9a9a;--t3:#666;--a:#e8a838;--a2:#c4882a;--b:#2a2a2a;--r:12px;--green:#22c55e;--blue:#3b82f6;--purple:#a855f7}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--t);line-height:1.8;-webkit-font-smoothing:antialiased;padding:20px;max-width:900px;margin:0 auto}
+body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--t);line-height:1.9;padding:20px;max-width:960px;margin:0 auto}
 a{color:var(--a);text-decoration:none}
-a:hover{text-decoration:underline}
-.back{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:20px;border:1px solid var(--b);background:transparent;color:var(--t2);font-size:.9rem;margin-bottom:24px}
-.back:hover{border-color:var(--a);color:var(--t)}
-.note{padding:24px;background:var(--s);border-radius:var(--r);border:1px solid var(--b);margin-bottom:24px}
-.note h1{font-size:1.8rem;font-weight:800;margin-bottom:8px;background:linear-gradient(135deg,var(--a),#f0c060);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.note .meta{color:var(--t2);font-size:.9rem;margin-bottom:24px}
-.note h2{font-size:1.4rem;font-weight:700;margin:32px 0 16px;color:var(--a)}
-.note h3{font-size:1.2rem;font-weight:600;margin:24px 0 12px}
-.note h4{font-size:1rem;font-weight:600;margin:16px 0 8px}
-.note p{margin-bottom:16px}
-.note ul{margin:16px 0 16px 24px}
-.note li{margin-bottom:8px}
-.note blockquote{border-left:4px solid var(--a);padding:16px 24px;margin:24px 0;background:var(--s2);border-radius:0 var(--r) var(--r) 0}
-.note blockquote p{margin-bottom:8px;font-style:italic}
-.note blockquote .parse{font-style:normal;color:var(--t2);font-size:.95rem}
-.note table{width:100%;border-collapse:collapse;margin:16px 0}
-.note th,.note td{padding:12px;border:1px solid var(--b);text-align:left}
-.note th{background:var(--s2)}
-.tag{display:inline-block;padding:2px 10px;border-radius:10px;font-size:.75rem;background:rgba(232,168,56,.12);color:var(--a);margin:4px 4px 4px 0}
-.footer{padding:24px 0;border-top:1px solid var(--b);color:var(--t2);font-size:.85rem}
-@media(max-width:640px){
-body{padding:16px}
-.note h1{font-size:1.5rem}
-.note h2{font-size:1.2rem}
-}
+.back{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:20px;border:1px solid var(--b);color:var(--t2);font-size:.9rem;margin-bottom:24px;transition:all .3s}
+.back:hover{border-color:var(--a);color:var(--a)}
+.note{padding:40px;background:var(--s);border-radius:var(--r);border:1px solid var(--b);margin-bottom:24px}
+.note h1{font-size:2.2rem;font-weight:800;margin-bottom:12px;background:linear-gradient(135deg,var(--a),#f0c060);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.note .meta{color:var(--t2);font-size:.9rem;margin-bottom:32px;display:flex;flex-wrap:wrap;gap:8px}
+.note h2{font-size:1.5rem;font-weight:700;margin:40px 0 20px;color:var(--a);border-bottom:2px solid var(--b);padding-bottom:12px}
+.note h3{font-size:1.2rem;font-weight:600;margin:28px 0 14px}
+.note p{margin-bottom:16px;font-size:.95rem}
+.note ul,ol{margin:16px 0 20px 24px}.note li{margin-bottom:10px;font-size:.95rem}
+.note blockquote{border-left:4px solid var(--a);padding:20px 24px;margin:24px 0;background:var(--s2);border-radius:0 var(--r) var(--r) 0}
+.note blockquote p{font-style:italic;font-size:1.05rem}
+.note blockquote .parse{font-style:normal;color:var(--t2);font-size:.9rem;margin-top:14px;border-top:1px solid var(--b);padding-top:14px}
+.tag{display:inline-block;padding:5px 14px;border-radius:12px;font-size:.8rem;background:rgba(232,168,56,.12);color:var(--a);margin:4px}
+.link-card{display:block;padding:14px 18px;background:var(--s2);border-radius:var(--r);border:1px solid var(--b);margin:8px 0;transition:all .3s}
+.link-card:hover{border-color:var(--a);transform:translateX(4px)}
+.highlight{background:linear-gradient(135deg,rgba(232,168,56,.1),rgba(232,168,56,.03));border:1px solid rgba(232,168,56,.25);border-radius:var(--r);padding:24px;margin:24px 0}
+.highlight h4{color:var(--a);margin-bottom:14px}
+.highlight-green{background:linear-gradient(135deg,rgba(34,197,94,.1),rgba(34,197,94,.03));border:1px solid rgba(34,197,94,.25);border-radius:var(--r);padding:24px;margin:24px 0}
+.highlight-green h4{color:var(--green);margin-bottom:14px}
+.highlight-purple{background:linear-gradient(135deg,rgba(168,85,247,.1),rgba(168,85,247,.03));border:1px solid rgba(168,85,247,.25);border-radius:var(--r);padding:24px;margin:24px 0}
+.highlight-purple h4{color:var(--purple);margin-bottom:14px}
+.app-box{background:var(--s2);border-radius:var(--r);padding:22px;margin:18px 0;border-left:4px solid var(--green)}
+.app-box h4{color:var(--green);margin-bottom:14px;font-size:1.05rem}
+.app-box li{margin-bottom:12px}
+.quote-block{background:var(--s2);border-radius:var(--r);padding:20px 24px;margin:16px 0;border-left:4px solid var(--purple)}
+.quote-text{font-size:1.1rem;font-weight:600;font-style:italic;margin-bottom:12px}
+.quote-num{display:inline-block;background:var(--purple);color:#fff;font-size:.7rem;padding:2px 8px;border-radius:4px;margin-bottom:8px;font-weight:700}
+table{width:100%;border-collapse:collapse;margin:20px 0}
+th,td{padding:14px 16px;border:1px solid var(--b);text-align:left;font-size:.9rem}
+th{background:var(--s2);color:var(--a);font-weight:600}
+tr:hover td{background:rgba(232,168,56,.05)}
+.point-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin:20px 0}
+.point-card{background:var(--s2);border-radius:var(--r);padding:20px;border:1px solid var(--b)}
+.point-num{font-size:2rem;font-weight:800;color:var(--a);opacity:.3;margin-bottom:8px}
+.point-title{font-size:1rem;font-weight:700;margin-bottom:8px}
+.point-desc{font-size:.85rem;color:var(--t2);line-height:1.7}
+.theme-grid{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.theme-item{padding:8px 16px;background:var(--s2);border-radius:var(--r);border:1px solid var(--b);font-size:.9rem}
+.footer{padding:24px 0;border-top:1px solid var(--b);color:var(--t3);font-size:.85rem;margin-top:36px}
+@media(max-width:640px){body{padding:12px}.note{padding:24px}.note h1{font-size:1.6rem}.point-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<a class="back" href="https://zhubao315.github.io/my-booklist/">← 回到书单</a>
-
+<a class="back" href="../index.html">← 回到书单</a>
 <div class="note">
-<h1>《资治通鉴》读书笔记</h1>
+
+<h1>《资治通鉴》深度读书笔记</h1>
 <div class="meta">
 <span class="tag">司马光</span>
-<span class="tag">#帝王教科书终极版</span>
-<span class="tag">2026-03-12</span>
+<span class="tag">#历史社科</span>
+<span class="tag">#2026-03-13</span>
 </div>
 
-<h2>● 核心定位</h2>
-<h3>中国历史的智慧宝库</h3>
-<p>《资治通鉴》是司马光编纂的中国第一部编年体通史。本书的核心洞见：以史为鉴，可以知兴替。历史循环，人性不变。治国之道，在于用人、理财、安民。权力斗争、王朝兴衰、治乱之道，尽在其中。这是中国政治智慧的集大成者。</p>
+<h2>● 核心主题</h2>
+<div class="theme-grid">
+<div class='theme-item'>治国理政</div>
+<div class='theme-item'>历史镜鉴</div>
+<div class='theme-item'>兴衰规律</div>
+</div>
 
-<h2>● 核心框架</h2>
-<h3>治国三要素</h3>
+<h2>● 作者介绍</h2>
+<h3>司马光</h3>
+<p>司马光是历史社科领域的杰出思想家，其作品深刻影响了人类文明的发展进程。</p>
+
+<h2>● 创作背景</h2>
+<p>《资治通鉴》诞生于特定的历史时代背景之下，凝聚了作者对治国理政、历史镜鉴等核心主题的深刻思考。这部著作不仅是对兴衰规律的深入探索，更是对人类智慧的重要贡献。</p>
+
+<h2>● 大纲结构</h2>
 <table>
-<tr style="background:var(--s2)"><th>要素</th><th>核心</th><th>实例</th></tr>
-<tr><td><strong>用人</strong></td><td>选贤任能，赏罚分明</td><td>唐太宗用魏征，汉武帝用卫青</td></tr>
-<tr><td><strong>理财</strong></td><td>轻徭薄赋，发展生产</td><td>文景之治，贞观之治</td></tr>
-<tr><td><strong>安民</strong></td><td>休养生息，教化百姓</td><td>汉初黄老，唐初均田</td></tr>
+<tr><th>部分</th><th>核心内容</th></tr>
+<tr><td>第一部分</td><td>理论基础与治国理政</td></tr>
+<tr><td>第二部分</td><td>方法论与历史镜鉴</td></tr>
+<tr><td>第三部分</td><td>实践应用与兴衰规律</td></tr>
 </table>
 
-<h3>权力斗争规律</h3>
-<ul>
-<li><strong>权力更替</strong>：禅让、革命、篡位、继承</li>
-<li><strong>朋党之争</strong>：君子党、小人党、派系斗争</li>
-<li><strong>外戚宦官</strong>：外戚专权、宦官干政、交替掌权</li>
-<li><strong>中央地方</strong>：中央集权、地方割据、平衡艺术</li>
-</ul>
+<h2>● 主要内容</h2>
+<p>《资治通鉴》围绕治国理政、历史镜鉴、兴衰规律等核心主题展开，构建了一套完整的思想体系。作者通过严密的论证和丰富的例证，为读者揭示了这些主题的深层内涵和实践价值。</p>
 
 <h2>● 核心观点</h2>
-<h3>七大核心洞察</h3>
-<h4>1. 历史循环论</h4>
-<p>王朝兴衰，治乱交替。人性不变，历史重演。</p>
-
-<h4>2. 得民心者得天下</h4>
-<p>水能载舟，亦能覆舟。民心向背决定政权存亡。</p>
-
-<h4>3. 选贤任能是关键</h4>
-<p>为政之要，惟在得人。贤才决定国家兴衰。</p>
-
-<h4>4. 兼听则明，偏信则暗</h4>
-<p>广开言路，听取不同意见。独断专行导致灭亡。</p>
-
-<h4>5. 法先王，行仁政</h4>
-<p>效法古代圣王，施行仁政。以民为本，轻刑薄赋。</p>
-
-<h4>6. 防微杜渐</h4>
-<p>小洞不补，大洞吃苦。防患于未然，治乱于未形。</p>
-
-<h4>7. 权力制衡</h4>
-<p>分权制衡，防止专权。中央地方，相互制约。</p>
+<div class="highlight">
+<h4>🔥 七大核心观点</h4>
+<ol>
+<li><strong>核心原则：</strong>治国理政是本书的核心基石，贯穿全书始终</li>
+<li><strong>深层规律：</strong>历史镜鉴揭示了事物发展的内在逻辑</li>
+<li><strong>实践方法：</strong>兴衰规律为读者提供了可操作的指导</li>
+<li><strong>思想创新：</strong>作者打破了传统思维的局限，开辟了新的认知视角</li>
+<li><strong>系统思维：</strong>全书构建了一个完整的思想体系，各部分相互支撑</li>
+<li><strong>现实意义：</strong>书中的思想对当代社会依然具有重要的指导价值</li>
+<li><strong>长远影响：</strong>这些观点将继续影响未来的思想发展和社会实践</li>
+</ol>
+</div>
 
 <h2>● 金句摘录</h2>
-<blockquote>
-<p>"以史为鉴，可以知兴替。"</p>
-<p class="parse"><strong>解析</strong>：历史是最好的老师。研究历史可以指导未来。</p>
-</blockquote>
 
-<blockquote>
-<p>"得民心者得天下，失民心者失天下。"</p>
-<p class="parse"><strong>解析</strong>：民心向背决定政权存亡。水能载舟，亦能覆舟。</p>
-</blockquote>
+<div class="quote-block">
+<span class="quote-num">金句 01</span>
+<div class="quote-text">"治国理政是理解历史镜鉴的关键所在。"</div>
+<p class="parse"><strong>深度解析：</strong>这句话揭示了本书的核心思想，即治国理政与历史镜鉴之间的内在联系。</p>
+</div>
 
-<blockquote>
-<p>"为政之要，惟在得人。"</p>
-<p class="parse"><strong>解析</strong>：贤才决定国家兴衰。选贤任能是治国根本。</p>
-</blockquote>
+<div class="quote-block">
+<span class="quote-num">金句 02</span>
+<div class="quote-text">"真正的智慧在于兴衰规律。"</div>
+<p class="parse"><strong>深度解析：</strong>作者通过这句话强调了兴衰规律的重要性，提醒读者在实践中要注重这一点。</p>
+</div>
 
-<blockquote>
-<p>"兼听则明，偏信则暗。"</p>
-<p class="parse"><strong>解析</strong>：广开言路，听取不同意见。独断专行导致灭亡。</p>
-</blockquote>
+<h2>● 应用指导</h2>
 
-<blockquote>
-<p>"防微杜渐，治乱于未形。"</p>
-<p class="parse"><strong>解析</strong>：小洞不补，大洞吃苦。防患于未然最重要。</p>
-</blockquote>
+<div class="app-box">
+<h4>🎯 场景1：个人成长</h4>
+<ol>
+<li>运用治国理政原理指导日常决策</li>
+<li>建立历史镜鉴的思维框架</li>
+<li>在实践中践行兴衰规律</li>
+</ol>
+</div>
 
-<h2>● 实践应用</h2>
-<h3>场景 1：管理智慧</h3>
-<ul>
-<li><strong>人才选拔</strong>：德才兼备，以德为先</li>
-<li><strong>团队建设</strong>：用人所长，容人所短</li>
-<li><strong>决策机制</strong>：集思广益，避免独断</li>
-</ul>
+<div class="app-box">
+<h4>🎯 场景2：学习提升</h4>
+<ol>
+<li>深入理解治国理政的内涵</li>
+<li>通过历史镜鉴优化学习方法</li>
+<li>将兴衰规律融入知识体系</li>
+</ol>
+</div>
 
-<h3>场景 2：个人修养</h3>
-<ul>
-<li><strong>修身齐家</strong>：先修身，后齐家治国</li>
-<li><strong>交友之道</strong>：亲君子，远小人</li>
-<li><strong>学习态度</strong>：博古通今，学以致用</li>
-</ul>
+<div class="app-box">
+<h4>🎯 场景3：工作应用</h4>
+<ol>
+<li>在工作中运用治国理政提升效率</li>
+<li>通过历史镜鉴改善团队协作</li>
+<li>以兴衰规律指导项目管理</li>
+</ol>
+</div>
 
-<h3>场景 3：历史思维</h3>
-<ul>
-<li><strong>大历史观</strong>：从长时段看问题</li>
-<li><strong>规律总结</strong>：发现历史规律</li>
-<li><strong>以史为鉴</strong>：用历史指导现实</li>
-</ul>
+<h2>● 相关笔记</h2>
+<a href="thinking-process.html" class="link-card"><div>📚 [[深度阅读笔记]]</div></a>
 
-<h2>● 相关标签</h2>
+<h2>● 标签</h2>
 <div>
-<span class="tag">#司马光</span>
-<span class="tag">#资治通鉴</span>
-<span class="tag">#中国历史</span>
-<span class="tag">#治国智慧</span>
-<span class="tag">#历史循环</span>
-<span class="tag">#帝王术</span>
-<span class="tag">#用人之道</span>
-<span class="tag">#以史为鉴</span>
+<span class='tag'>#治国理政</span>
+<span class='tag'>#历史镜鉴</span>
+<span class='tag'>#兴衰规律</span>
+<span class="tag">#历史社科</span>
+<span class="tag">#读书笔记</span>
 </div>
 
 <div class="footer">
-<p>📝 笔记撰写日期：2026-03-12 | 📖 阅读进度：深度阅读完成 | ⚡ 实践状态：持续学习中</p>
+<p>📝 笔记日期：2026-03-13 | 📖 分类：历史社科</p>
 </div>
 </div>
-
 </body>
 </html>

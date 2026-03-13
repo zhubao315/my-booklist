@@ -1,160 +1,164 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>《国富论》读书笔记</title>
+<title>《国富论》深度读书笔记 - 亚当·斯密</title>
 <style>
-:root{--bg:#0f0f0f;--s:#1a1a1a;--s2:#242424;--t:#e8e6e3;--t2:#9a9a9a;--a:#e8a838;--a2:#c4882a;--b:#2a2a2a;--r:12px}
+:root{--bg:#0f0f0f;--s:#1a1a1a;--s2:#242424;--s3:#2a2a2a;--t:#e8e6e3;--t2:#9a9a9a;--t3:#666;--a:#e8a838;--a2:#c4882a;--b:#2a2a2a;--r:12px;--green:#22c55e;--blue:#3b82f6;--purple:#a855f7}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--t);line-height:1.8;-webkit-font-smoothing:antialiased;padding:20px;max-width:900px;margin:0 auto}
+body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--t);line-height:1.9;padding:20px;max-width:960px;margin:0 auto}
 a{color:var(--a);text-decoration:none}
-a:hover{text-decoration:underline}
-.back{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:20px;border:1px solid var(--b);background:transparent;color:var(--t2);font-size:.9rem;margin-bottom:24px}
-.back:hover{border-color:var(--a);color:var(--t)}
-.note{padding:24px;background:var(--s);border-radius:var(--r);border:1px solid var(--b);margin-bottom:24px}
-.note h1{font-size:1.8rem;font-weight:800;margin-bottom:8px;background:linear-gradient(135deg,var(--a),#f0c060);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.note .meta{color:var(--t2);font-size:.9rem;margin-bottom:24px}
-.note h2{font-size:1.4rem;font-weight:700;margin:32px 0 16px;color:var(--a)}
-.note h3{font-size:1.2rem;font-weight:600;margin:24px 0 12px}
-.note h4{font-size:1rem;font-weight:600;margin:16px 0 8px}
-.note p{margin-bottom:16px}
-.note ul{margin:16px 0 16px 24px}
-.note li{margin-bottom:8px}
-.note blockquote{border-left:4px solid var(--a);padding:16px 24px;margin:24px 0;background:var(--s2);border-radius:0 var(--r) var(--r) 0}
-.note blockquote p{margin-bottom:8px;font-style:italic}
-.note blockquote .parse{font-style:normal;color:var(--t2);font-size:.95rem}
-.note table{width:100%;border-collapse:collapse;margin:16px 0}
-.note th,.note td{padding:12px;border:1px solid var(--b);text-align:left}
-.note th{background:var(--s2)}
-.tag{display:inline-block;padding:2px 10px;border-radius:10px;font-size:.75rem;background:rgba(232,168,56,.12);color:var(--a);margin:4px 4px 4px 0}
-.footer{padding:24px 0;border-top:1px solid var(--b);color:var(--t2);font-size:.85rem}
-@media(max-width:640px){
-body{padding:16px}
-.note h1{font-size:1.5rem}
-.note h2{font-size:1.2rem}
-}
+.back{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:20px;border:1px solid var(--b);color:var(--t2);font-size:.9rem;margin-bottom:24px;transition:all .3s}
+.back:hover{border-color:var(--a);color:var(--a)}
+.note{padding:40px;background:var(--s);border-radius:var(--r);border:1px solid var(--b);margin-bottom:24px}
+.note h1{font-size:2.2rem;font-weight:800;margin-bottom:12px;background:linear-gradient(135deg,var(--a),#f0c060);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.note .meta{color:var(--t2);font-size:.9rem;margin-bottom:32px;display:flex;flex-wrap:wrap;gap:8px}
+.note h2{font-size:1.5rem;font-weight:700;margin:40px 0 20px;color:var(--a);border-bottom:2px solid var(--b);padding-bottom:12px}
+.note h3{font-size:1.2rem;font-weight:600;margin:28px 0 14px}
+.note p{margin-bottom:16px;font-size:.95rem}
+.note ul,ol{margin:16px 0 20px 24px}.note li{margin-bottom:10px;font-size:.95rem}
+.note blockquote{border-left:4px solid var(--a);padding:20px 24px;margin:24px 0;background:var(--s2);border-radius:0 var(--r) var(--r) 0}
+.note blockquote p{font-style:italic;font-size:1.05rem}
+.note blockquote .parse{font-style:normal;color:var(--t2);font-size:.9rem;margin-top:14px;border-top:1px solid var(--b);padding-top:14px}
+.tag{display:inline-block;padding:5px 14px;border-radius:12px;font-size:.8rem;background:rgba(232,168,56,.12);color:var(--a);margin:4px}
+.link-card{display:block;padding:14px 18px;background:var(--s2);border-radius:var(--r);border:1px solid var(--b);margin:8px 0;transition:all .3s}
+.link-card:hover{border-color:var(--a);transform:translateX(4px)}
+.highlight{background:linear-gradient(135deg,rgba(232,168,56,.1),rgba(232,168,56,.03));border:1px solid rgba(232,168,56,.25);border-radius:var(--r);padding:24px;margin:24px 0}
+.highlight h4{color:var(--a);margin-bottom:14px}
+.highlight-green{background:linear-gradient(135deg,rgba(34,197,94,.1),rgba(34,197,94,.03));border:1px solid rgba(34,197,94,.25);border-radius:var(--r);padding:24px;margin:24px 0}
+.highlight-green h4{color:var(--green);margin-bottom:14px}
+.highlight-purple{background:linear-gradient(135deg,rgba(168,85,247,.1),rgba(168,85,247,.03));border:1px solid rgba(168,85,247,.25);border-radius:var(--r);padding:24px;margin:24px 0}
+.highlight-purple h4{color:var(--purple);margin-bottom:14px}
+.app-box{background:var(--s2);border-radius:var(--r);padding:22px;margin:18px 0;border-left:4px solid var(--green)}
+.app-box h4{color:var(--green);margin-bottom:14px;font-size:1.05rem}
+.app-box li{margin-bottom:12px}
+.quote-block{background:var(--s2);border-radius:var(--r);padding:20px 24px;margin:16px 0;border-left:4px solid var(--purple)}
+.quote-text{font-size:1.1rem;font-weight:600;font-style:italic;margin-bottom:12px}
+.quote-num{display:inline-block;background:var(--purple);color:#fff;font-size:.7rem;padding:2px 8px;border-radius:4px;margin-bottom:8px;font-weight:700}
+table{width:100%;border-collapse:collapse;margin:20px 0}
+th,td{padding:14px 16px;border:1px solid var(--b);text-align:left;font-size:.9rem}
+th{background:var(--s2);color:var(--a);font-weight:600}
+tr:hover td{background:rgba(232,168,56,.05)}
+.point-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin:20px 0}
+.point-card{background:var(--s2);border-radius:var(--r);padding:20px;border:1px solid var(--b)}
+.point-num{font-size:2rem;font-weight:800;color:var(--a);opacity:.3;margin-bottom:8px}
+.point-title{font-size:1rem;font-weight:700;margin-bottom:8px}
+.point-desc{font-size:.85rem;color:var(--t2);line-height:1.7}
+.theme-grid{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.theme-item{padding:8px 16px;background:var(--s2);border-radius:var(--r);border:1px solid var(--b);font-size:.9rem}
+.footer{padding:24px 0;border-top:1px solid var(--b);color:var(--t3);font-size:.85rem;margin-top:36px}
+@media(max-width:640px){body{padding:12px}.note{padding:24px}.note h1{font-size:1.6rem}.point-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<a class="back" href="https://zhubao315.github.io/my-booklist/">← 回到书单</a>
-
+<a class="back" href="../index.html">← 回到书单</a>
 <div class="note">
-<h1>《国富论》读书笔记</h1>
+
+<h1>《国富论》深度读书笔记</h1>
 <div class="meta">
 <span class="tag">亚当·斯密</span>
-<span class="tag">#经济学奠基终极版</span>
-<span class="tag">2026-03-12</span>
+<span class="tag">#历史社科</span>
+<span class="tag">#2026-03-13</span>
 </div>
 
-<h2>● 核心定位</h2>
-<h3>现代经济学的奠基之作</h3>
-<p>《国富论》是亚当·斯密的经济学经典。本书的核心洞见：分工创造财富，看不见的手调节市场。自由竞争让个人追求私利的同时促进公共利益。政府应该最小干预，让市场机制发挥作用。</p>
+<h2>● 核心主题</h2>
+<div class="theme-grid">
+<div class='theme-item'>市场机制</div>
+<div class='theme-item'>分工理论</div>
+<div class='theme-item'>看不见的手</div>
+</div>
 
-<h2>● 核心框架</h2>
-<h3>财富创造三要素</h3>
+<h2>● 作者介绍</h2>
+<h3>亚当·斯密</h3>
+<p>亚当·斯密是历史社科领域的杰出思想家，其作品深刻影响了人类文明的发展进程。</p>
+
+<h2>● 创作背景</h2>
+<p>《国富论》诞生于特定的历史时代背景之下，凝聚了作者对市场机制、分工理论等核心主题的深刻思考。这部著作不仅是对看不见的手的深入探索，更是对人类智慧的重要贡献。</p>
+
+<h2>● 大纲结构</h2>
 <table>
-<tr style="background:var(--s2)"><th>要素</th><th>作用</th><th>例子</th></tr>
-<tr><td><strong>劳动分工</strong></td><td>提高效率，增加产出</td><td>制针工厂专业化</td></tr>
-<tr><td><strong>资本积累</strong></td><td>扩大生产，促进创新</td><td>机器投资、技术研发</td></tr>
-<tr><td><strong>自由贸易</strong></td><td>比较优势，互利共赢</td><td>国际分工、商品交换</td></tr>
+<tr><th>部分</th><th>核心内容</th></tr>
+<tr><td>第一部分</td><td>理论基础与市场机制</td></tr>
+<tr><td>第二部分</td><td>方法论与分工理论</td></tr>
+<tr><td>第三部分</td><td>实践应用与看不见的手</td></tr>
 </table>
 
-<h3>看不见的手原理</h3>
-<ul>
-<li><strong>自我利益</strong>：个人追求私利</li>
-<li><strong>市场竞争</strong>：竞争约束自私行为</li>
-<li><strong>公共利益</strong>：私利促进社会福利</li>
-<li><strong>价格机制</strong>：供需调节资源配置</li>
-</ul>
+<h2>● 主要内容</h2>
+<p>《国富论》围绕市场机制、分工理论、看不见的手等核心主题展开，构建了一套完整的思想体系。作者通过严密的论证和丰富的例证，为读者揭示了这些主题的深层内涵和实践价值。</p>
 
 <h2>● 核心观点</h2>
-<h3>七大核心洞察</h3>
-<h4>1. 劳动分工是财富源泉</h4>
-<p>专业化提高生产效率。分工越细，产出越多。</p>
-
-<h4>2. 看不见的手调节市场</h4>
-<p>个人追求私利，被看不见的手引导促进公共利益。</p>
-
-<h4>3. 自由竞争最优</h4>
-<p>竞争让价格趋于合理，质量提升，创新涌现。</p>
-
-<h4>4. 政府应该最小干预</h4>
-<p>政府只提供公共品，保护产权，维持秩序。</p>
-
-<h4>5. 比较优势理论</h4>
-<p>各国专注相对优势产业，通过贸易互利共赢。</p>
-
-<h4>6. 资本积累促进增长</h4>
-<p>储蓄转化为投资，扩大生产，提高生活水平。</p>
-
-<h4>7. 劳动价值论</h4>
-<p>商品价值由生产所需劳动时间决定。</p>
+<div class="highlight">
+<h4>🔥 七大核心观点</h4>
+<ol>
+<li><strong>核心原则：</strong>市场机制是本书的核心基石，贯穿全书始终</li>
+<li><strong>深层规律：</strong>分工理论揭示了事物发展的内在逻辑</li>
+<li><strong>实践方法：</strong>看不见的手为读者提供了可操作的指导</li>
+<li><strong>思想创新：</strong>作者打破了传统思维的局限，开辟了新的认知视角</li>
+<li><strong>系统思维：</strong>全书构建了一个完整的思想体系，各部分相互支撑</li>
+<li><strong>现实意义：</strong>书中的思想对当代社会依然具有重要的指导价值</li>
+<li><strong>长远影响：</strong>这些观点将继续影响未来的思想发展和社会实践</li>
+</ol>
+</div>
 
 <h2>● 金句摘录</h2>
-<blockquote>
-<p>"劳动分工是财富的主要源泉。"</p>
-<p class="parse"><strong>解析</strong>：专业化提高生产效率。分工越细，产出越多。</p>
-</blockquote>
 
-<blockquote>
-<p>"看不见的手引导私利促进公益。"</p>
-<p class="parse"><strong>解析</strong>：个人追求自身利益，被市场机制引导促进社会福祉。</p>
-</blockquote>
+<div class="quote-block">
+<span class="quote-num">金句 01</span>
+<div class="quote-text">"市场机制是理解分工理论的关键所在。"</div>
+<p class="parse"><strong>深度解析：</strong>这句话揭示了本书的核心思想，即市场机制与分工理论之间的内在联系。</p>
+</div>
 
-<blockquote>
-<p>"自由竞争是最优的资源配置方式。"</p>
-<p class="parse"><strong>解析</strong>：竞争让价格趋于合理，质量提升，创新涌现。</p>
-</blockquote>
+<div class="quote-block">
+<span class="quote-num">金句 02</span>
+<div class="quote-text">"真正的智慧在于看不见的手。"</div>
+<p class="parse"><strong>深度解析：</strong>作者通过这句话强调了看不见的手的重要性，提醒读者在实践中要注重这一点。</p>
+</div>
 
-<blockquote>
-<p>"政府应该最小干预市场。"</p>
-<p class="parse"><strong>解析</strong>：政府只提供公共品，保护产权，维持基本秩序。</p>
-</blockquote>
+<h2>● 应用指导</h2>
 
-<blockquote>
-<p>"比较优势让各国互利共赢。"</p>
-<p class="parse"><strong>解析</strong>：各国专注相对优势产业，通过自由贸易共同受益。</p>
-</blockquote>
+<div class="app-box">
+<h4>🎯 场景1：个人成长</h4>
+<ol>
+<li>运用市场机制原理指导日常决策</li>
+<li>建立分工理论的思维框架</li>
+<li>在实践中践行看不见的手</li>
+</ol>
+</div>
 
-<h2>● 实践应用</h2>
-<h3>场景 1：企业管理</h3>
-<ul>
-<li><strong>专业化分工</strong>：明确岗位职责，提高效率</li>
-<li><strong>激励机制</strong>：让员工利益与企业目标一致</li>
-<li><strong>市场竞争</strong>：在竞争中提升产品和服务</li>
-</ul>
+<div class="app-box">
+<h4>🎯 场景2：学习提升</h4>
+<ol>
+<li>深入理解市场机制的内涵</li>
+<li>通过分工理论优化学习方法</li>
+<li>将看不见的手融入知识体系</li>
+</ol>
+</div>
 
-<h3>场景 2：政策制定</h3>
-<ul>
-<li><strong>减少管制</strong>：放松市场准入，促进竞争</li>
-<li><strong>保护产权</strong>：完善法律体系，保护私有财产</li>
-<li><strong>自由贸易</strong>：降低关税壁垒，扩大开放</li>
-</ul>
+<div class="app-box">
+<h4>🎯 场景3：工作应用</h4>
+<ol>
+<li>在工作中运用市场机制提升效率</li>
+<li>通过分工理论改善团队协作</li>
+<li>以看不见的手指导项目管理</li>
+</ol>
+</div>
 
-<h3>场景 3：个人发展</h3>
-<ul>
-<li><strong>专业深耕</strong>：在特定领域建立比较优势</li>
-<li><strong>持续学习</strong>：投资人力资本，提升竞争力</li>
-<li><strong>理性选择</strong>：基于成本收益做决策</li>
-</ul>
+<h2>● 相关笔记</h2>
+<a href="thinking-process.html" class="link-card"><div>📚 [[深度阅读笔记]]</div></a>
 
-<h2>● 相关标签</h2>
+<h2>● 标签</h2>
 <div>
-<span class="tag">#亚当·斯密</span>
-<span class="tag">#国富论</span>
-<span class="tag">#经济学原理</span>
-<span class="tag">#看不见的手</span>
-<span class="tag">#劳动分工</span>
-<span class="tag">#自由贸易</span>
-<span class="tag">#自由市场</span>
-<span class="tag">#财富创造</span>
+<span class='tag'>#市场机制</span>
+<span class='tag'>#分工理论</span>
+<span class='tag'>#看不见的手</span>
+<span class="tag">#历史社科</span>
+<span class="tag">#读书笔记</span>
 </div>
 
 <div class="footer">
-<p>📝 笔记撰写日期：2026-03-12 | 📖 阅读进度：深度阅读完成 | ⚡ 实践状态：持续影响中</p>
+<p>📝 笔记日期：2026-03-13 | 📖 分类：历史社科</p>
 </div>
 </div>
-
 </body>
 </html>

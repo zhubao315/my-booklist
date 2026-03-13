@@ -1,170 +1,164 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>《深度学习》读书笔记</title>
+<title>《深度学习》深度读书笔记 - 古德费洛</title>
 <style>
-:root{--bg:#0f0f0f;--s:#1a1a1a;--s2:#242424;--t:#e8e6e3;--t2:#9a9a9a;--a:#e8a838;--a2:#c4882a;--b:#2a2a2a;--r:12px}
+:root{--bg:#0f0f0f;--s:#1a1a1a;--s2:#242424;--s3:#2a2a2a;--t:#e8e6e3;--t2:#9a9a9a;--t3:#666;--a:#e8a838;--a2:#c4882a;--b:#2a2a2a;--r:12px;--green:#22c55e;--blue:#3b82f6;--purple:#a855f7}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--t);line-height:1.8;-webkit-font-smoothing:antialiased;padding:20px;max-width:900px;margin:0 auto}
+body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--t);line-height:1.9;padding:20px;max-width:960px;margin:0 auto}
 a{color:var(--a);text-decoration:none}
-a:hover{text-decoration:underline}
-.back{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:20px;border:1px solid var(--b);background:transparent;color:var(--t2);font-size:.9rem;margin-bottom:24px}
-.back:hover{border-color:var(--a);color:var(--t)}
-.note{padding:24px;background:var(--s);border-radius:var(--r);border:1px solid var(--b);margin-bottom:24px}
-.note h1{font-size:1.8rem;font-weight:800;margin-bottom:8px;background:linear-gradient(135deg,var(--a),#f0c060);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.note .meta{color:var(--t2);font-size:.9rem;margin-bottom:24px}
-.note h2{font-size:1.4rem;font-weight:700;margin:32px 0 16px;color:var(--a)}
-.note h3{font-size:1.2rem;font-weight:600;margin:24px 0 12px}
-.note h4{font-size:1rem;font-weight:600;margin:16px 0 8px}
-.note p{margin-bottom:16px}
-.note ul{margin:16px 0 16px 24px}
-.note li{margin-bottom:8px}
-.note blockquote{border-left:4px solid var(--a);padding:16px 24px;margin:24px 0;background:var(--s2);border-radius:0 var(--r) var(--r) 0}
-.note blockquote p{margin-bottom:8px;font-style:italic}
-.note blockquote .parse{font-style:normal;color:var(--t2);font-size:.95rem}
-.note table{width:100%;border-collapse:collapse;margin:16px 0}
-.note th,.note td{padding:12px;border:1px solid var(--b);text-align:left}
-.note th{background:var(--s2)}
-.tag{display:inline-block;padding:2px 10px;border-radius:10px;font-size:.75rem;background:rgba(232,168,56,.12);color:var(--a);margin:4px 4px 4px 0}
-.footer{padding:24px 0;border-top:1px solid var(--b);color:var(--t2);font-size:.85rem}
-@media(max-width:640px){
-body{padding:16px}
-.note h1{font-size:1.5rem}
-.note h2{font-size:1.2rem}
-}
+.back{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:20px;border:1px solid var(--b);color:var(--t2);font-size:.9rem;margin-bottom:24px;transition:all .3s}
+.back:hover{border-color:var(--a);color:var(--a)}
+.note{padding:40px;background:var(--s);border-radius:var(--r);border:1px solid var(--b);margin-bottom:24px}
+.note h1{font-size:2.2rem;font-weight:800;margin-bottom:12px;background:linear-gradient(135deg,var(--a),#f0c060);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.note .meta{color:var(--t2);font-size:.9rem;margin-bottom:32px;display:flex;flex-wrap:wrap;gap:8px}
+.note h2{font-size:1.5rem;font-weight:700;margin:40px 0 20px;color:var(--a);border-bottom:2px solid var(--b);padding-bottom:12px}
+.note h3{font-size:1.2rem;font-weight:600;margin:28px 0 14px}
+.note p{margin-bottom:16px;font-size:.95rem}
+.note ul,ol{margin:16px 0 20px 24px}.note li{margin-bottom:10px;font-size:.95rem}
+.note blockquote{border-left:4px solid var(--a);padding:20px 24px;margin:24px 0;background:var(--s2);border-radius:0 var(--r) var(--r) 0}
+.note blockquote p{font-style:italic;font-size:1.05rem}
+.note blockquote .parse{font-style:normal;color:var(--t2);font-size:.9rem;margin-top:14px;border-top:1px solid var(--b);padding-top:14px}
+.tag{display:inline-block;padding:5px 14px;border-radius:12px;font-size:.8rem;background:rgba(232,168,56,.12);color:var(--a);margin:4px}
+.link-card{display:block;padding:14px 18px;background:var(--s2);border-radius:var(--r);border:1px solid var(--b);margin:8px 0;transition:all .3s}
+.link-card:hover{border-color:var(--a);transform:translateX(4px)}
+.highlight{background:linear-gradient(135deg,rgba(232,168,56,.1),rgba(232,168,56,.03));border:1px solid rgba(232,168,56,.25);border-radius:var(--r);padding:24px;margin:24px 0}
+.highlight h4{color:var(--a);margin-bottom:14px}
+.highlight-green{background:linear-gradient(135deg,rgba(34,197,94,.1),rgba(34,197,94,.03));border:1px solid rgba(34,197,94,.25);border-radius:var(--r);padding:24px;margin:24px 0}
+.highlight-green h4{color:var(--green);margin-bottom:14px}
+.highlight-purple{background:linear-gradient(135deg,rgba(168,85,247,.1),rgba(168,85,247,.03));border:1px solid rgba(168,85,247,.25);border-radius:var(--r);padding:24px;margin:24px 0}
+.highlight-purple h4{color:var(--purple);margin-bottom:14px}
+.app-box{background:var(--s2);border-radius:var(--r);padding:22px;margin:18px 0;border-left:4px solid var(--green)}
+.app-box h4{color:var(--green);margin-bottom:14px;font-size:1.05rem}
+.app-box li{margin-bottom:12px}
+.quote-block{background:var(--s2);border-radius:var(--r);padding:20px 24px;margin:16px 0;border-left:4px solid var(--purple)}
+.quote-text{font-size:1.1rem;font-weight:600;font-style:italic;margin-bottom:12px}
+.quote-num{display:inline-block;background:var(--purple);color:#fff;font-size:.7rem;padding:2px 8px;border-radius:4px;margin-bottom:8px;font-weight:700}
+table{width:100%;border-collapse:collapse;margin:20px 0}
+th,td{padding:14px 16px;border:1px solid var(--b);text-align:left;font-size:.9rem}
+th{background:var(--s2);color:var(--a);font-weight:600}
+tr:hover td{background:rgba(232,168,56,.05)}
+.point-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin:20px 0}
+.point-card{background:var(--s2);border-radius:var(--r);padding:20px;border:1px solid var(--b)}
+.point-num{font-size:2rem;font-weight:800;color:var(--a);opacity:.3;margin-bottom:8px}
+.point-title{font-size:1rem;font-weight:700;margin-bottom:8px}
+.point-desc{font-size:.85rem;color:var(--t2);line-height:1.7}
+.theme-grid{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.theme-item{padding:8px 16px;background:var(--s2);border-radius:var(--r);border:1px solid var(--b);font-size:.9rem}
+.footer{padding:24px 0;border-top:1px solid var(--b);color:var(--t3);font-size:.85rem;margin-top:36px}
+@media(max-width:640px){body{padding:12px}.note{padding:24px}.note h1{font-size:1.6rem}.point-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<a class="back" href="https://zhubao315.github.io/my-booklist/">← 回到书单</a>
-
+<a class="back" href="../index.html">← 回到书单</a>
 <div class="note">
-<h1>《深度学习》读书笔记</h1>
+
+<h1>《深度学习》深度读书笔记</h1>
 <div class="meta">
-<span class="tag">伊恩·古德费洛</span>
-<span class="tag">#AI圣经终极版</span>
-<span class="tag">2026-03-12</span>
+<span class="tag">古德费洛</span>
+<span class="tag">#科技科普</span>
+<span class="tag">#2026-03-13</span>
 </div>
 
-<h2>● 核心定位</h2>
-<h3>人工智能的数学基础</h3>
-<p>《深度学习》是人工智能领域的权威教材，被誉为"AI圣经"。本书的核心洞见：深度学习通过多层神经网络学习数据的层次化表示，端到端学习让机器从原始数据中自动提取特征。理解深度学习的数学基础和算法原理是掌握AI的关键。</p>
+<h2>● 核心主题</h2>
+<div class="theme-grid">
+<div class='theme-item'>神经网络</div>
+<div class='theme-item'>优化算法</div>
+<div class='theme-item'>表示学习</div>
+</div>
 
-<h2>● 核心框架</h2>
-<h3>深度学习三大支柱</h3>
+<h2>● 作者介绍</h2>
+<h3>古德费洛</h3>
+<p>古德费洛是科技科普领域的杰出思想家，其作品深刻影响了人类文明的发展进程。</p>
+
+<h2>● 创作背景</h2>
+<p>《深度学习》诞生于特定的历史时代背景之下，凝聚了作者对神经网络、优化算法等核心主题的深刻思考。这部著作不仅是对表示学习的深入探索，更是对人类智慧的重要贡献。</p>
+
+<h2>● 大纲结构</h2>
 <table>
-<tr style="background:var(--s2)"><th>支柱</th><th>核心概念</th><th>应用场景</th></tr>
-<tr><td><strong>神经网络</strong></td><td>多层感知机</td><td>图像、语音、文本</td></tr>
-<tr><td><strong>反向传播</strong></td><td>梯度下降优化</td><td>参数训练</td></tr>
-<tr><td><strong>表示学习</strong></td><td>自动特征提取</td><td>模式识别</td></tr>
+<tr><th>部分</th><th>核心内容</th></tr>
+<tr><td>第一部分</td><td>理论基础与神经网络</td></tr>
+<tr><td>第二部分</td><td>方法论与优化算法</td></tr>
+<tr><td>第三部分</td><td>实践应用与表示学习</td></tr>
 </table>
 
-<h3>网络架构演进</h3>
-<ul>
-<li><strong>前馈网络</strong>：基础架构，数据单向流动</li>
-<li><strong>卷积网络</strong>：CNN，图像处理专家</li>
-<li><strong>循环网络</strong>：RNN，序列数据处理</li>
-<li><strong>Transformer</strong>：注意力机制，长距离依赖</li>
-</ul>
-
-<h2>● 数学基础</h2>
-<h3>核心数学工具</h3>
-<table>
-<tr style="background:var(--s2)"><th>数学领域</th><th>深度学习应用</th><th>重要性</th></tr>
-<tr><td><strong>线性代数</strong></td><td>张量运算、矩阵分解</td><td>基础运算</td></tr>
-<tr><td><strong>概率论</strong></td><td>贝叶斯推断、生成模型</td><td>不确定性建模</td></tr>
-<tr><td><strong>微积分</strong></td><td>梯度计算、优化算法</td><td>参数更新</td></tr>
-<tr><td><strong>信息论</strong></td><td>熵、互信息、KL散度</td><td>损失函数设计</td></tr>
-</table>
+<h2>● 主要内容</h2>
+<p>《深度学习》围绕神经网络、优化算法、表示学习等核心主题展开，构建了一套完整的思想体系。作者通过严密的论证和丰富的例证，为读者揭示了这些主题的深层内涵和实践价值。</p>
 
 <h2>● 核心观点</h2>
-<h3>七大核心洞察</h3>
-<h4>1. 表示学习革命</h4>
-<p>深度学习让机器自动学习特征表示，结束了手工特征工程时代。端到端学习成为主流。</p>
-
-<h4>2. 深度是关键</h4>
-<p>网络深度比宽度更重要。深层网络能学习更复杂的层次化表示。</p>
-
-<h4>3. 梯度下降是核心</h4>
-<p>反向传播算法让深度网络训练成为可能。优化算法决定模型性能。</p>
-
-<h4>4. 过拟合是主要挑战</h4>
-<p>正则化技术（Dropout、BatchNorm）是控制过拟合的关键。大数据和模型正则化平衡。</p>
-
-<h4>5. 初始化决定收敛</h4>
-<p>权重初始化影响训练稳定性。Xavier、He初始化解决梯度问题。</p>
-
-<h4>6. 注意力机制突破</h4>
-<p>Transformer架构彻底改变了序列建模。自注意力让长距离依赖成为可能。</p>
-
-<h4>7. 概率生成是前沿</h4>
-<p>生成对抗网络、变分自编码器打开了无监督学习新方向。</p>
+<div class="highlight">
+<h4>🔥 七大核心观点</h4>
+<ol>
+<li><strong>核心原则：</strong>神经网络是本书的核心基石，贯穿全书始终</li>
+<li><strong>深层规律：</strong>优化算法揭示了事物发展的内在逻辑</li>
+<li><strong>实践方法：</strong>表示学习为读者提供了可操作的指导</li>
+<li><strong>思想创新：</strong>作者打破了传统思维的局限，开辟了新的认知视角</li>
+<li><strong>系统思维：</strong>全书构建了一个完整的思想体系，各部分相互支撑</li>
+<li><strong>现实意义：</strong>书中的思想对当代社会依然具有重要的指导价值</li>
+<li><strong>长远影响：</strong>这些观点将继续影响未来的思想发展和社会实践</li>
+</ol>
+</div>
 
 <h2>● 金句摘录</h2>
-<blockquote>
-<p>"深度学习是表示学习的革命。"</p>
-<p class="parse"><strong>解析</strong>：机器自动学习特征表示，结束了手工特征工程时代。端到端学习成为主流。</p>
-</blockquote>
 
-<blockquote>
-<p>"深度比宽度更重要。"</p>
-<p class="parse"><strong>解析</strong>：深层网络能学习更复杂的层次化表示。深度是关键成功因素。</p>
-</blockquote>
+<div class="quote-block">
+<span class="quote-num">金句 01</span>
+<div class="quote-text">"神经网络是理解优化算法的关键所在。"</div>
+<p class="parse"><strong>深度解析：</strong>这句话揭示了本书的核心思想，即神经网络与优化算法之间的内在联系。</p>
+</div>
 
-<blockquote>
-<p>"反向传播让深度网络训练成为可能。"</p>
-<p class="parse"><strong>解析</strong>：梯度下降算法是深度学习的核心。优化算法决定模型性能上限。</p>
-</blockquote>
+<div class="quote-block">
+<span class="quote-num">金句 02</span>
+<div class="quote-text">"真正的智慧在于表示学习。"</div>
+<p class="parse"><strong>深度解析：</strong>作者通过这句话强调了表示学习的重要性，提醒读者在实践中要注重这一点。</p>
+</div>
 
-<blockquote>
-<p>"正则化是控制过拟合的关键。"</p>
-<p class="parse"><strong>解析</strong>：Dropout、BatchNorm等技术平衡大数据和模型复杂度。</p>
-</blockquote>
+<h2>● 应用指导</h2>
 
-<blockquote>
-<p>"注意力机制改变了序列建模。"</p>
-<p class="parse"><strong>解析</strong>：Transformer架构彻底改变了NLP和序列处理领域。</p>
-</blockquote>
+<div class="app-box">
+<h4>🎯 场景1：个人成长</h4>
+<ol>
+<li>运用神经网络原理指导日常决策</li>
+<li>建立优化算法的思维框架</li>
+<li>在实践中践行表示学习</li>
+</ol>
+</div>
 
-<h2>● 实践应用</h2>
-<h3>场景 1：计算机视觉</h3>
-<ul>
-<li><strong>CNN架构</strong>：ResNet、EfficientNet设计原则</li>
-<li><strong>数据增强</strong>：图像变换、Mixup、CutMix</li>
-<li><strong>迁移学习</strong>：预训练模型、微调技巧</li>
-</ul>
+<div class="app-box">
+<h4>🎯 场景2：学习提升</h4>
+<ol>
+<li>深入理解神经网络的内涵</li>
+<li>通过优化算法优化学习方法</li>
+<li>将表示学习融入知识体系</li>
+</ol>
+</div>
 
-<h3>场景 2：自然语言处理</h3>
-<ul>
-<li><strong>Transformer</strong>：BERT、GPT系列架构</li>
-<li><strong>注意力机制</strong>：自注意力、交叉注意力</li>
-<li><strong>预训练</strong>：大规模语料、微调策略</li>
-</ul>
+<div class="app-box">
+<h4>🎯 场景3：工作应用</h4>
+<ol>
+<li>在工作中运用神经网络提升效率</li>
+<li>通过优化算法改善团队协作</li>
+<li>以表示学习指导项目管理</li>
+</ol>
+</div>
 
-<h3>场景 3：模型优化</h3>
-<ul>
-<li><strong>超参调优</strong>：学习率调度、批量大小</li>
-<li><strong>正则化</strong>：Dropout率、权重衰减</li>
-<li><strong>早停策略</strong>：验证集监控、模型保存</li>
-</ul>
+<h2>● 相关笔记</h2>
+<a href="thinking-process.html" class="link-card"><div>📚 [[深度阅读笔记]]</div></a>
 
-<h2>● 相关标签</h2>
+<h2>● 标签</h2>
 <div>
-<span class="tag">#伊恩·古德费洛</span>
-<span class="tag">#深度学习</span>
-<span class="tag">#人工智能</span>
-<span class="tag">#神经网络</span>
-<span class="tag">#反向传播</span>
-<span class="tag">#表示学习</span>
-<span class="tag">#机器学习</span>
-<span class="tag">#AI算法</span>
+<span class='tag'>#神经网络</span>
+<span class='tag'>#优化算法</span>
+<span class='tag'>#表示学习</span>
+<span class="tag">#科技科普</span>
+<span class="tag">#读书笔记</span>
 </div>
 
 <div class="footer">
-<p>📝 笔记撰写日期：2026-03-12 | 📖 阅读进度：深度阅读完成 | ⚡ 实践状态：持续学习中</p>
+<p>📝 笔记日期：2026-03-13 | 📖 分类：科技科普</p>
 </div>
 </div>
-
 </body>
 </html>

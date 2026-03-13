@@ -3,84 +3,297 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>《黑客与画家》读书笔记 - 格雷厄姆</title>
+<title>《黑客与画家》深度读书笔记 - 保罗·格雷厄姆</title>
 <style>
-:root{--bg:#0f0f0f;--s:#1a1a1a;--s2:#242424;--t:#e8e6e3;--t2:#9a9a9a;--a:#e8a838;--a2:#c4882a;--b:#2a2a2a;--r:12px}
+:root{--bg:#0f0f0f;--s:#1a1a1a;--s2:#242424;--s3:#2a2a2a;--t:#e8e6e3;--t2:#9a9a9a;--t3:#666;--a:#e8a838;--a2:#c4882a;--b:#2a2a2a;--r:12px;--green:#22c55e;--blue:#3b82f6;--purple:#a855f7;--red:#ef4444}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--t);line-height:1.8;padding:20px;max-width:900px;margin:0 auto}
-a{color:var(--a);text-decoration:none}.back{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:20px;border:1px solid var(--b);color:var(--t2);font-size:.9rem;margin-bottom:24px}
-.note{padding:32px;background:var(--s);border-radius:var(--r);border:1px solid var(--b);margin-bottom:24px}
-.note h1{font-size:1.8rem;font-weight:800;margin-bottom:8px;background:linear-gradient(135deg,var(--a),#f0c060);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.note .meta{color:var(--t2);font-size:.9rem;margin-bottom:24px;display:flex;flex-wrap:wrap;gap:8px}
-.note h2{font-size:1.3rem;font-weight:700;margin:28px 0 14px;color:var(--a);border-bottom:1px solid var(--b);padding-bottom:8px}
-.note h3{font-size:1.1rem;font-weight:600;margin:20px 0 10px}
-.note p{margin-bottom:14px}.note ul,ol{margin:14px 0 14px 24px}.note li{margin-bottom:6px}
-.note blockquote{border-left:4px solid var(--a);padding:14px 20px;margin:20px 0;background:var(--s2);border-radius:0 var(--r) var(--r) 0}
-.note blockquote p{font-style:italic}.note blockquote .parse{font-style:normal;color:var(--t2);font-size:.9rem;margin-top:10px;border-top:1px solid var(--b);padding-top:10px}
-.tag{display:inline-block;padding:4px 12px;border-radius:12px;font-size:.8rem;background:rgba(232,168,56,.12);color:var(--a);margin:4px}
-.link-card{display:block;padding:12px 16px;background:var(--s2);border-radius:var(--r);border:1px solid var(--b);margin:6px 0;transition:all .3s}
-.highlight-box{background:linear-gradient(135deg,rgba(232,168,56,.08),rgba(232,168,56,.03));border:1px solid rgba(232,168,56,.25);border-radius:var(--r);padding:18px;margin:18px 0}
-.highlight-box h4{color:var(--a);margin-bottom:10px}
-.footer{padding:20px 0;border-top:1px solid var(--b);color:var(--t2);font-size:.85rem;margin-top:24px}
-.theme-grid{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
-.theme-item{padding:8px 16px;background:var(--s2);border-radius:var(--r);border:1px solid var(--b);font-size:.9rem;color:var(--t)}
-@media(max-width:640px){body{padding:16px}.note{padding:20px}.note h1{font-size:1.4rem}}
+body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--t);line-height:1.9;padding:20px;max-width:960px;margin:0 auto}
+a{color:var(--a);text-decoration:none}
+.back{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:20px;border:1px solid var(--b);color:var(--t2);font-size:.9rem;margin-bottom:24px;transition:all .3s}
+.back:hover{border-color:var(--a);color:var(--a)}
+.note{padding:40px;background:var(--s);border-radius:var(--r);border:1px solid var(--b);margin-bottom:24px}
+.note h1{font-size:2.2rem;font-weight:800;margin-bottom:8px;background:linear-gradient(135deg,var(--a),#f0c060);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.note .subtitle{font-size:1.1rem;color:var(--t2);margin-bottom:16px}
+.note .meta{color:var(--t2);font-size:.9rem;margin-bottom:32px;display:flex;flex-wrap:wrap;gap:8px}
+.note h2{font-size:1.5rem;font-weight:700;margin:40px 0 20px;color:var(--a);border-bottom:2px solid var(--b);padding-bottom:12px}
+.note h3{font-size:1.2rem;font-weight:600;margin:28px 0 14px;color:var(--t)}
+.note h4{font-size:1.05rem;font-weight:600;margin:20px 0 10px}
+.note p{margin-bottom:16px;color:var(--t);font-size:.95rem}
+.note ul,ol{margin:16px 0 20px 24px}.note li{margin-bottom:10px;font-size:.95rem}
+.note blockquote{border-left:4px solid var(--a);padding:20px 24px;margin:24px 0;background:var(--s2);border-radius:0 var(--r) var(--r) 0}
+.note blockquote p{font-style:italic;font-size:1.05rem;line-height:1.8}
+.note blockquote .parse{font-style:normal;color:var(--t2);font-size:.9rem;margin-top:14px;border-top:1px solid var(--b);padding-top:14px}
+.tag{display:inline-block;padding:5px 14px;border-radius:12px;font-size:.8rem;background:rgba(232,168,56,.12);color:var(--a);margin:4px}
+.link-card{display:block;padding:14px 18px;background:var(--s2);border-radius:var(--r);border:1px solid var(--b);margin:8px 0;transition:all .3s}
+.link-card:hover{border-color:var(--a);transform:translateX(4px)}
+.highlight{background:linear-gradient(135deg,rgba(232,168,56,.1),rgba(232,168,56,.03));border:1px solid rgba(232,168,56,.25);border-radius:var(--r);padding:24px;margin:24px 0}
+.highlight h4{color:var(--a);margin-bottom:14px;font-size:1.1rem}
+.highlight-blue{background:linear-gradient(135deg,rgba(59,130,246,.1),rgba(59,130,246,.03));border:1px solid rgba(59,130,246,.25);border-radius:var(--r);padding:24px;margin:24px 0}
+.highlight-blue h4{color:var(--blue);margin-bottom:14px}
+.highlight-purple{background:linear-gradient(135deg,rgba(168,85,247,.1),rgba(168,85,247,.03));border:1px solid rgba(168,85,247,.25);border-radius:var(--r);padding:24px;margin:24px 0}
+.highlight-purple h4{color:var(--purple);margin-bottom:14px}
+.app-box{background:var(--s2);border-radius:var(--r);padding:22px;margin:18px 0;border-left:4px solid var(--green)}
+.app-box h4{color:var(--green);margin-bottom:14px;font-size:1.05rem}
+.app-box ol{margin-left:20px}
+.app-box li{margin-bottom:12px}
+.quote-block{background:var(--s2);border-radius:var(--r);padding:20px 24px;margin:16px 0;border-left:4px solid var(--purple)}
+.quote-block .quote-text{font-size:1.1rem;font-weight:600;color:var(--t);margin-bottom:12px;font-style:italic}
+.quote-block .quote-num{display:inline-block;background:var(--purple);color:#fff;font-size:.7rem;padding:2px 8px;border-radius:4px;margin-bottom:8px;font-weight:700}
+table{width:100%;border-collapse:collapse;margin:20px 0}
+th,td{padding:14px 16px;border:1px solid var(--b);text-align:left;font-size:.9rem}
+th{background:var(--s2);color:var(--a);font-weight:600}
+tr:hover td{background:rgba(232,168,56,.05)}
+.footer{padding:24px 0;border-top:1px solid var(--b);color:var(--t3);font-size:.85rem;margin-top:36px}
+.author-card{background:var(--s2);border-radius:var(--r);padding:24px;margin:20px 0;display:flex;gap:24px;align-items:flex-start;flex-wrap:wrap}
+.author-avatar{width:80px;height:80px;background:linear-gradient(135deg,var(--a),var(--a2));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;flex-shrink:0}
+.author-info{flex:1;min-width:200px}
+.author-info h3{margin:0 0 8px}
+.author-info p{margin:0;color:var(--t2);font-size:.9rem}
+.point-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin:20px 0}
+.point-card{background:var(--s2);border-radius:var(--r);padding:20px;border:1px solid var(--b)}
+.point-num{font-size:2rem;font-weight:800;color:var(--a);opacity:.3;margin-bottom:8px}
+.point-title{font-size:1rem;font-weight:700;margin-bottom:8px}
+.point-desc{font-size:.85rem;color:var(--t2);line-height:1.7}
+@media(max-width:640px){body{padding:12px}.note{padding:24px}.note h1{font-size:1.6rem}.author-card{flex-direction:column;align-items:center;text-align:center}.point-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <a class="back" href="../index.html">← 回到书单</a>
 <div class="note">
-<h1>《黑客与画家》读书笔记</h1>
+
+<h1>《黑客与画家》深度读书笔记</h1>
+<p class="subtitle">Hackers and Painters · 硅谷创业教父的思考录</p>
 <div class="meta">
-<span class="tag">格雷厄姆</span>
-<span class="tag">#科技科普</span>
-<span class="tag">#编程思维</span>
-<span class="tag">#创业精神</span>
-<span class="tag">#反叛创新</span>
+<span class="tag">保罗·格雷厄姆</span>
+<span class="tag">#创业</span>
+<span class="tag">#编程</span>
+<span class="tag">#创造力</span>
+<span class="tag">#硅谷</span>
+<span class="tag">#技术思维</span>
+<span class="tag">2026-03-13</span>
 </div>
 
-<h2>● 核心主题</h2>
-<div class="theme-grid">
-<div class="theme-item">编程思维</div>
-<div class="theme-item">创业精神</div>
-<div class="theme-item">反叛创新</div>
+<div class="highlight-blue">
+<h4>📖 核心定位</h4>
+<p>硅谷创业教父、Y Combinator创始人保罗·格雷厄姆的经典文集。这本书不是一本传统的"创业指南"，而是一位同时精通编程与绘画的思想者，对技术、创造力、财富、社会规范的深度思考。黑客与画家的共同点是：他们都是创造者（makers），都在用双手将想法变为现实。</p>
+<p style="margin-top:12px;color:var(--a);font-weight:600;">💡 理解创造者思维与财富创造本质的必读书——一本关于"如何做伟大的工作"的书。</p>
 </div>
 
-<h2>● 内容概要</h2>
-<p>《黑客与画家》是格雷厄姆的经典著作，编程思维、创业精神、反叛创新是本书的核心主题。这本书值得深度阅读和反复思考。</p>
+<h2>● 一、作者介绍</h2>
 
-<div class="highlight-box">
-<h4>🎯 阅读收获</h4>
-<ul>
-<li><strong>核心洞见</strong>：编程思维</li>
-<li><strong>实践价值</strong>：创业精神</li>
-<li><strong>思维启发</strong>：反叛创新</li>
-</ul>
+<div class="author-card">
+<div class="author-avatar">💻</div>
+<div class="author-info">
+<h3>保罗·格雷厄姆（Paul Graham，1964-）</h3>
+<p>美国程序员、创业家、作家、风险投资人。拥有哈佛大学计算机科学博士学位和罗德岛设计学院的艺术学位。2005年联合创办Y Combinator——全球最成功的创业孵化器，孵化了Airbnb、Dropbox、Stripe、Reddit等超过4000家创业公司。</p>
+</div>
 </div>
 
-<h2>● 待补充</h2>
-<p>📝 此笔记正在完善中，后续将补充：</p>
-<ul>
-<li>作者详细介绍</li>
-<li>创作背景分析</li>
-<li>章节大纲</li>
-<li>金句摘录</li>
-<li>应用指导</li>
-</ul>
+<h3>独特的跨界背景</h3>
+<div class="point-grid">
+<div class="point-card">
+<div class="point-num">01</div>
+<div class="point-title">程序员+画家</div>
+<div class="point-desc">拥有计算机博士和艺术学位的罕见跨界背景，既能写出Lisp方言Viaweb，也能画出正统油画。这让他对"创造"有独特视角</div>
+</div>
+<div class="point-card">
+<div class="point-num">02</div>
+<div class="point-title">Y Combinator创始人</div>
+<div class="point-desc">创办了改变创业生态的YC，"创业孵化器"模式的发明者。YC校友公司总估值超过6000亿美元</div>
+</div>
+<div class="point-card">
+<div class="point-num">03</div>
+<div class="point-title">思想型创业者</div>
+<div class="point-desc">格雷厄姆不仅是成功的创业者和投资人，更是一位思想深刻的散文家。他的文章被硅谷创业者奉为经典</div>
+</div>
+</div>
 
-<h2>● 相关笔记</h2>
-<a href="../index.html" class="link-card"><div>📚 返回书单查看更多笔记</div></a>
+<h2>● 二、创作背景</h2>
 
-<h2>● 标签</h2>
+<p>本书收录了格雷厄姆<strong>2001-2004年</strong>间发表的文章，正值互联网泡沫破裂后的反思期。格雷厄姆在创办Viaweb（后被雅虎收购）并进入风险投资领域后，将自己对技术、创业和创造力的系统思考整理成书。</p>
+
+<div class="highlight">
+<h4>🔍 格雷厄姆的核心问题</h4>
+<ol>
+<li><strong>黑客（程序员）与画家有什么共同点？</strong></li>
+<li><strong>财富是如何被创造的？与赚钱有什么区别？</strong></li>
+<li><strong>如何做出伟大的工作？</strong></li>
+<li><strong>技术进步与社会规范的冲突如何影响创新？</strong></li>
+</ol>
+</div>
+
+<h2>● 三、全书大纲</h2>
+
+<table>
+<thead>
+<tr><th>章节</th><th>核心主题</th><th>关键洞见</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>为什么书呆子不受欢迎</strong></td><td>学校教育与真实世界的错位</td><td>中学的"社交游戏"与真实世界的成功标准完全脱节</td></tr>
+<tr><td><strong>黑客与画家</strong></td><td>创造者的共性</td><td>黑客和画家都是makers，而非scientists——通过动手而非理论来创造</td></tr>
+<tr><td><strong>不能说的话</strong></td><td>社会规范与思想禁区</td><td>每个时代都有"不能说的话"——识别它们是创新的起点</td></tr>
+<tr><td><strong>良好的坏品味</strong></td><td>反叛与创新</td><td>真正的创新往往最初被认为是"有品味"的反面</td></tr>
+<tr><td><strong>另一条路</strong></td><td>互联网创业之路</td><td>小团队+互联网=可以挑战大公司的力量</td></tr>
+<tr><td><strong>如何创造财富</strong></td><td>财富创造的本质</td><td>创业的本质是创造财富，而非转移财富</td></tr>
+<tr><td><strong>关注贫富分化</strong></td><td>财富与社会公正</td><td>技术致富不同于寻租致富——关键看是否创造了新价值</td></tr>
+<tr><td><strong>防止垃圾信息的一种方法</strong></td><td>贝叶斯过滤</td><td>用概率论和统计方法对抗信息噪音</td></tr>
+<tr><td><strong>设计者的品味</strong></td><td>品味与好设计</td><td>好设计的统一原则——简洁、有用、耐看</td></tr>
+<tr><td><strong>编程语言解析</strong></td><td>Lisp与语言的力量</td><td>编程语言的表达力差异巨大——Lisp是最强大的语言之一</td></tr>
+</tbody>
+</table>
+
+<h2>● 四、主要内容详细解读</h2>
+
+<h3>核心主题一：黑客与画家的共同本质</h3>
+<div class="highlight-purple">
+<h4>🏛️ Maker vs Scientist</h4>
+<p>格雷厄姆提出，<strong>黑客（优秀程序员）和画家都是"创造者"（makers）</strong>，而非"科学家"。科学家追求发现真理，创造者追求做出好的作品。程序员写代码不是为了证明定理，而是为了让程序运行起来——就像画家不是为了研究颜料化学，而是为了画出好画。</p>
+<p style="margin-top:12px;">这意味着：好的编程方法更接近绘画方法——<strong>先画草图，再逐步细化</strong>，而不是一开始就制定完整的计划。</p>
+</div>
+
+<h3>核心主题二：如何创造财富</h3>
+<p>格雷厄姆对"财富"的定义极为精准：<strong>财富 ≠ 金钱。财富是人们需要的东西</strong>。金钱只是财富交换的媒介。创造财富的本质是做出人们需要的东西——一台计算机、一栋房子、一顿饭。</p>
+<p>创业是创造财富最高效的方式之一，因为：<strong>小团队的杠杆效应极大</strong>——几个人+互联网，可以创造出服务数百万人的产品，而大公司的官僚体制往往扼杀创新。</p>
+
+<h3>核心主题三：不能说的话</h3>
+<p>格雷厄姆提出了一个极有价值的思维工具：要找到真正有价值的创业想法，先找到"不能说的话"——那些<strong>被社会规范压制但可能是正确</strong>的观点。每一代人都认为自己已经很开放了，但实际上每一代人都有自己的思想禁区。能识别并突破这些禁区的人，往往能获得巨大的竞争优势。</p>
+
+<h2>● 五、七大核心观点</h2>
+
+<div class="point-grid">
+<div class="point-card">
+<div class="point-num">01</div>
+<div class="point-title">创造者以作品说话</div>
+<div class="point-desc">黑客与画家的共同点：都是"创造者"——通过动手做出东西来表达自己，而非通过论文和理论</div>
+</div>
+<div class="point-card">
+<div class="point-num">02</div>
+<div class="point-title">财富是创造出来的，不是分出来的</div>
+<div class="point-desc">创业的本质是创造新财富（做出人们需要的东西），而非重新分配已有财富。财富创造让所有人受益</div>
+</div>
+<div class="point-card">
+<div class="point-num">03</div>
+<div class="point-title">小团队+互联网=颠覆力量</div>
+<div class="point-desc">技术赋予了小团队前所未有的杠杆——几个人可以创造出服务数百万人的产品，颠覆大公司</div>
+</div>
+<div class="point-card">
+<div class="point-num">04</div>
+<div class="point-title">找到"不能说的话"</div>
+<div class="point-desc">每个时代都有被压制但可能是正确的观点。识别并勇敢表达这些观点，是创新和创业的突破口</div>
+</div>
+<div class="point-card">
+<div class="point-num">05</div>
+<div class="point-title">好品味是可培养的</div>
+<div class="point-desc">设计和编程中的"品味"不是天赋，而是可以像绘画技法一样通过大量练习和反思来提升的技能</div>
+</div>
+<div class="point-card">
+<div class="point-num">06</div>
+<div class="point-title">编程语言的选择至关重要</div>
+<div class="point-desc">不同编程语言的表达力差异巨大。选择更强大的语言（如Lisp），可以让小团队获得巨大的竞争优势</div>
+</div>
+<div class="point-card">
+<div class="point-num">07</div>
+<div class="point-title">中学的"受欢迎"游戏是陷阱</div>
+<div class="point-desc">学校里的社交游戏与真实世界的成功标准脱节。不被中学社交规则接纳的人，往往在真实世界中更成功</div>
+</div>
+</div>
+
+<h2>● 六、金句摘录与深度解析</h2>
+
+<div class="quote-block">
+<span class="quote-num">金句 01</span>
+<div class="quote-text">"如果你想创造财富，你的目标就是做出人们需要的东西。如果你想致富，最好的办法就是和一群同样聪明的人一起工作，去创造人们真正需要的东西。"</div>
+<p class="parse"><strong>深度解析：</strong>格雷厄姆将"创造财富"与"赚钱"清晰地区分开来。赚钱可以是零和博弈（比如投机），但创造财富是正和博弈——你做出的产品让世界变得更好，所有人都受益。这是理解创业本质的关键。</p>
+</div>
+
+<div class="quote-block">
+<span class="quote-num">金句 02</span>
+<div class="quote-text">"画家在画画的时候，不会一开始就把整幅画的每一个细节都设计好。他们会先画草图，然后不断修改。黑客也应该这样做。"</div>
+<p class="parse"><strong>深度解析：</strong>这挑战了传统的"瀑布式"软件开发方法论。格雷厄姆主张"迭代式"开发——先做出一个能用的原型，然后不断改进。这种方法后来被精益创业（Lean Startup）继承并发扬光大。</p>
+</div>
+
+<div class="quote-block">
+<span class="quote-num">金句 03</span>
+<div class="quote-text">"每一个时代的人们都会对某些话题感到恐惧，不敢公开讨论。能够识别这些'不能说的话'，本身就是一种强大的力量。"</div>
+<p class="parse"><strong>深度解析：</strong>这是格雷厄姆最具洞察力的观点之一。如果你能发现那些被社会压制但可能是正确的观点，你就找到了竞争对手不敢触碰的领域——这正是创业机会的金矿。</p>
+</div>
+
+<div class="quote-block">
+<span class="quote-num">金句 04</span>
+<div class="quote-text">"如果你做了一件人们需要的事情，你实际上就让整个世界变富了一点点。你不是在从别人那里抢蛋糕，而是在把蛋糕做大。"</div>
+<p class="parse"><strong>深度解析：</strong>这句话是对"零和思维"最有力的反驳。真正的创新和创业不是"剥削"，而是价值创造。一个程序员写出了一款好软件，全世界使用它的人生产力都提升了——这是对全人类的贡献。</p>
+</div>
+
+<div class="quote-block">
+<span class="quote-num">金句 05</span>
+<div class="quote-text">"在中学里，最'聪明'的学生往往是那些最不受同伴欢迎的。但多年以后，这些'书呆子'会发现，现实世界远比中学公平——在这里，做出好东西才是最重要的。"</div>
+<p class="parse"><strong>深度解析：</strong>格雷厄姆为所有在中学时代被排挤的"书呆子"正名。中学是一个人为的、扭曲的社交环境——它的评价标准与真实世界完全脱节。一旦进入真实世界，做出好东西的能力才是最重要的竞争力。</p>
+</div>
+
+<h2>● 七、应用指导</h2>
+
+<div class="app-box">
+<h4>🎯 场景1：创业与产品开发</h4>
+<p><strong>核心原理：</strong>创造财富的本质是做出人们需要的东西，小团队的迭代速度是核心竞争力。</p>
+<ol>
+<li><strong>先做出能用的东西：</strong>不要在"完美计划"上浪费时间。先做出最小可用产品（MVP），让用户告诉你哪里需要改进</li>
+<li><strong>选择最有表达力的工具：</strong>格雷厄姆用Lisp打败了用C++和Perl的竞争对手。在创业中，选择能让你更快迭代的工具和技术栈</li>
+<li><strong>找"不能说的话"作为创业方向：</strong>问自己：哪些观点被社会压制但可能是正确的？这些领域往往竞争最少、机会最大</li>
+</ol>
+</div>
+
+<div class="app-box">
+<h4>🎯 场景2：职业发展与创造力培养</h4>
+<p><strong>核心原理：</strong>成为一个"创造者"（maker），而非仅仅是"思考者"（thinker）。</p>
+<ol>
+<li><strong>用作品集而非简历说话：</strong>格雷厄姆建议：不要用简历证明自己的能力，用你做出的东西。建立一个能展示你实际能力的"作品集"</li>
+<li><strong>培养"设计品味"：</strong>大量阅读好的代码、好的设计、好的文章——然后反思它们为什么好。品味是可以通过刻意练习提升的</li>
+<li><strong>不要被"中学游戏"束缚：</strong>如果你在传统评价体系中不突出，不要气馁。真实世界评价的是你做出的东西，而非你在这个体系中的排名</li>
+</ol>
+</div>
+
+<div class="app-box">
+<h4>🎯 场景3：思考与决策</h4>
+<p><strong>核心原理：</strong>识别"不能说的话"和"流行的谬误"，是做出正确判断的前提。</p>
+<ol>
+<li><strong>练习"反对派思维"：</strong>每周花15分钟思考：目前哪些观点被所有人接受但可能是错的？哪些观点被所有人反对但可能是对的？</li>
+<li><strong>区分"财富创造"和"财富转移"：</strong>在评估一个机会或一个行业时，问自己：这是在创造新价值，还是在重新分配已有价值？前者让世界变好，后者往往是零和博弈</li>
+<li><strong>逆向思考社会规范：</strong>当所有人都认为某件事"不能做"或"不应该做"时，问自己：这个规范的真正原因是什么？它是保护了谁的利益？</li>
+</ol>
+</div>
+
+<h2>● 八、相关笔记</h2>
+<a href="zero-to-one.html" class="link-card"><div>📚 [[从0到1：创业思维与垄断创新]]</div></a>
+<a href="steve-jobs.html" class="link-card"><div>📚 [[史蒂夫·乔布斯传：创造者的人生]]</div></a>
+<a href="the-lean-startup.html" class="link-card"><div>📚 [[精益创业：MVP与迭代开发]]</div></a>
+<a href="think-fast-slow.html" class="link-card"><div>📚 [[思考，快与慢：认知偏误]]</div></a>
+<a href="principles.html" class="link-card"><div>📚 [[原则：系统化决策]]</div></a>
+<a href="deep-work.html" class="link-card"><div>📚 [[深度工作：专注力的价值]]</div></a>
+<a href="mastery.html" class="link-card"><div>📚 [[大师之路：精通的路径]]</div></a>
+<a href="from-zero-to-one.html" class="link-card"><div>📚 [[从0到1：创造未来的商业秘密]]</div></a>
+<a href="innovators-dilemma.html" class="link-card"><div>📚 [[创新者的窘境：大公司为何失败]]</div></a>
+<a href="flow.html" class="link-card"><div>📚 [[心流：最优体验心理学]]</div></a>
+
+<h2>● 九、标签</h2>
 <div>
-<span class="tag">#编程思维</span><span class="tag">#创业精神</span><span class="tag">#反叛创新</span>
-<span class="tag">#科技科普</span>
-<span class="tag">#读书笔记</span>
+<span class="tag">#保罗·格雷厄姆</span>
+<span class="tag">#黑客与画家</span>
+<span class="tag">#Y Combinator</span>
+<span class="tag">#创业思维</span>
+<span class="tag">#财富创造</span>
+<span class="tag">#编程哲学</span>
+<span class="tag">#创造力</span>
+<span class="tag">#硅谷</span>
+<span class="tag">#设计品味</span>
+<span class="tag">#技术思维</span>
+<span class="tag">#Maker文化</span>
+<span class="tag">#迭代开发</span>
 </div>
 
 <div class="footer">
-<p>📝 笔记日期：2026-03-13 | 📖 分类：科技科普</p>
+<p>📝 笔记日期：2026-03-13 | 📖 阅读状态：已读完 | 📚 分类：科技科普类</p>
 </div>
+
 </div>
 </body>
 </html>
