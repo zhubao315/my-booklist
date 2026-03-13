@@ -3,158 +3,226 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>《1984》读书笔记</title>
+<title>《1984》深度读书笔记 - 乔治·奥威尔</title>
 <style>
-:root{--bg:#0f0f0f;--s:#1a1a1a;--s2:#242424;--t:#e8e6e3;--t2:#9a9a9a;--a:#e8a838;--a2:#c4882a;--b:#2a2a2a;--r:12px}
+:root{--bg:#0f0f0f;--s:#1a1a1a;--s2:#242424;--t:#e8e6e3;--t2:#9a9a9a;--a:#e8a838;--a2:#c4882a;--b:#2a2a2a;--r:12px;--green:#22c55e;--blue:#3b82f6}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--t);line-height:1.8;-webkit-font-smoothing:antialiased;padding:20px;max-width:900px;margin:0 auto}
-a{color:var(--a);text-decoration:none}
-a:hover{text-decoration:underline}
-.back{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:20px;border:1px solid var(--b);background:transparent;color:var(--t2);font-size:.9rem;margin-bottom:24px}
-.back:hover{border-color:var(--a);color:var(--t)}
-.note{padding:24px;background:var(--s);border-radius:var(--r);border:1px solid var(--b);margin-bottom:24px}
-.note h1{font-size:1.8rem;font-weight:800;margin-bottom:8px;background:linear-gradient(135deg,var(--a),#f0c060);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.note .meta{color:var(--t2);font-size:.9rem;margin-bottom:24px}
-.note h2{font-size:1.4rem;font-weight:700;margin:32px 0 16px;color:var(--a)}
-.note h3{font-size:1.2rem;font-weight:600;margin:24px 0 12px}
-.note h4{font-size:1rem;font-weight:600;margin:16px 0 8px}
-.note p{margin-bottom:16px}
-.note ul{margin:16px 0 16px 24px}
-.note li{margin-bottom:8px}
-.note blockquote{border-left:4px solid var(--a);padding:16px 24px;margin:24px 0;background:var(--s2);border-radius:0 var(--r) var(--r) 0}
-.note blockquote p{margin-bottom:8px;font-style:italic}
-.note blockquote .parse{font-style:normal;color:var(--t2);font-size:.95rem}
-.note table{width:100%;border-collapse:collapse;margin:16px 0}
-.note th,.note td{padding:12px;border:1px solid var(--b);text-align:left}
-.note th{background:var(--s2)}
-.tag{display:inline-block;padding:2px 10px;border-radius:10px;font-size:.75rem;background:rgba(232,168,56,.12);color:var(--a);margin:4px 4px 4px 0}
-.footer{padding:24px 0;border-top:1px solid var(--b);color:var(--t2);font-size:.85rem}
-@media(max-width:640px){
-body{padding:16px}
-.note h1{font-size:1.5rem}
-.note h2{font-size:1.2rem}
-}
+body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--t);line-height:1.9;padding:20px;max-width:900px;margin:0 auto}
+a{color:var(--a);text-decoration:none}.back{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:20px;border:1px solid var(--b);color:var(--t2);font-size:.9rem;margin-bottom:24px}
+.note{padding:36px;background:var(--s);border-radius:var(--r);border:1px solid var(--b);margin-bottom:24px}
+.note h1{font-size:2rem;font-weight:800;margin-bottom:12px;background:linear-gradient(135deg,var(--a),#f0c060);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.note .meta{color:var(--t2);font-size:.9rem;margin-bottom:28px;display:flex;flex-wrap:wrap;gap:8px}
+.note h2{font-size:1.4rem;font-weight:700;margin:36px 0 18px;color:var(--a);border-bottom:1px solid var(--b);padding-bottom:10px}
+.note h3{font-size:1.15rem;font-weight:600;margin:24px 0 12px;color:var(--t)}
+.note h4{font-size:1rem;font-weight:600;margin:18px 0 10px}
+.note p{margin-bottom:16px}.note ul,ol{margin:16px 0 18px 24px}.note li{margin-bottom:8px}
+.note blockquote{border-left:4px solid var(--a);padding:18px 24px;margin:24px 0;background:var(--s2);border-radius:0 var(--r) var(--r) 0}
+.note blockquote p{font-style:italic;font-size:1.1rem}.note blockquote .parse{font-style:normal;color:var(--t2);font-size:.95rem;margin-top:14px;border-top:1px solid var(--b);padding-top:14px}
+.note table{width:100%;border-collapse:collapse;margin:18px 0}.note th,.note td{padding:12px 16px;border:1px solid var(--b);text-align:left}.note th{background:var(--s2);color:var(--a);font-weight:600}
+.tag{display:inline-block;padding:5px 14px;border-radius:12px;font-size:.8rem;background:rgba(232,168,56,.12);color:var(--a);margin:4px}
+.link-card{display:block;padding:14px 18px;background:var(--s2);border-radius:var(--r);border:1px solid var(--b);margin:8px 0;transition:all .3s}.link-card:hover{border-color:var(--a);transform:translateX(4px)}
+.highlight{background:linear-gradient(135deg,rgba(232,168,56,.1),rgba(232,168,56,.05));border:1px solid rgba(232,168,56,.3);border-radius:var(--r);padding:22px;margin:22px 0}
+.highlight h4{color:var(--a);margin-bottom:14px}
+.app-box{background:var(--s2);border-radius:var(--r);padding:20px;margin:16px 0;border-left:4px solid var(--green)}
+.app-box h4{color:var(--green);margin-bottom:12px}
+.footer{padding:24px 0;border-top:1px solid var(--b);color:var(--t2);font-size:.85rem;margin-top:32px}
+@media(max-width:640px){body{padding:14px}.note{padding:20px}.note h1{font-size:1.5rem}}
 </style>
 </head>
 <body>
-<a class="back" href="https://zhubao315.github.io/my-booklist/">← 回到书单</a>
-
+<a class="back" href="../index.html">← 回到书单</a>
 <div class="note">
-<h1>《1984》读书笔记</h1>
+
+<h1>《1984》深度读书笔记</h1>
 <div class="meta">
 <span class="tag">乔治·奥威尔</span>
-<span class="tag">#反乌托邦经典终极版</span>
-<span class="tag">2026-03-12</span>
+<span class="tag">#反乌托邦</span>
+<span class="tag">#极权主义</span>
+<span class="tag">#政治寓言</span>
+<span class="tag">2026-03-13</span>
 </div>
 
-<h2>● 核心定位</h2>
-<h3>极权主义的预警</h3>
-<p>《1984》是乔治·奥威尔的反乌托邦经典之作。本书的核心洞见：极权主义通过控制思想、历史和语言来统治人民。老大哥无所不在，真理部制造谎言。个人自由在集体主义面前脆弱不堪。这部小说是对权力滥用的永恒警示。</p>
+<h2>● 作者介绍</h2>
+<h3>乔治·奥威尔（George Orwell, 1903-1950）</h3>
+<p>英国作家、记者、社会评论家，原名埃里克·亚瑟·布莱尔（Eric Arthur Blair）。他出生于英属印度莫蒂哈里，成长于英国，曾在缅甸担任殖民警察，这段经历让他深刻认识到帝国主义的暴力本质。</p>
 
-<h2>● 核心框架</h2>
-<h3>极权统治三支柱</h3>
+<p><strong>一生轨迹：</strong>伊顿公学毕业后未上大学，选择到缅甸当警察→辞职后经历巴黎和伦敦的贫困生活→西班牙内战中加入共和军对抗法西斯→二战期间为BBC工作→创作《动物农场》和《1984》→1950年因肺结核去世，年仅46岁。</p>
+
+<p><strong>核心精神：</strong>奥威尔一生追求"政治写作变成一种艺术"。他反对一切形式的极权主义——无论是左翼的斯大林主义还是右翼的法西斯主义——因为他相信极权主义的本质不分左右。</p>
+
+<h2>● 创作背景</h2>
+<h3>在极权阴影下写就的警示</h3>
+<p>《1984》写于1948年（书名是将"48"倒过来），出版于1949年。彼时的欧洲刚刚走出二战的废墟，冷战铁幕正在降下。</p>
+
+<p><strong>直接触发：</strong>奥威尔亲历了西班牙内战中苏联支持的共产党对其他左翼力量的清洗，亲眼目睹了历史如何被篡改——报纸上的报道与他亲历的事实完全相反。这让他意识到：<strong>控制过去的人控制未来，控制现在的人控制过去。</strong></p>
+
+<p><strong>苏联的影响：</strong>斯大林时代的大清洗、古拉格、宣传机器的运作方式为小说提供了大量素材。但奥威尔的批判指向的是<strong>极权主义本身</strong>，而非某一特定国家。</p>
+
+<h2>● 大纲结构</h2>
 <table>
-<tr style="background:var(--s2)"><th>机制</th><th>工具</th><th>目的</th></tr>
-<tr><td><strong>思想控制</strong></td><td>新话、思想警察</td><td>消除异端思想</td></tr>
-<tr><td><strong>历史操控</strong></td><td>真理部、记忆洞</td><td>控制过去以控制未来</td></tr>
-<tr><td><strong>语言改造</strong></td><td>新话、双重思想</td><td>限制表达自由</td></tr>
+<tr><th>部分</th><th>内容</th><th>核心主题</th></tr>
+<tr><td><strong>第一部</strong></td><td>温斯顿的觉醒：日记、"思想罪"、对"老大哥"的怀疑</td><td>个体意识的觉醒</td></tr>
+<tr><td><strong>第二部</strong></td><td>与茱莉亚的禁忌之爱、接触"兄弟会"</td><td>爱与反抗的可能</td></tr>
+<tr><td><strong>第三部</strong></td><td>被捕、101房间的酷刑、最终被"改造"</td><td>极权对人性的彻底摧毁</td></tr>
 </table>
 
-<h3>控制手段详解</h3>
+<h2>● 主要内容</h2>
+<h3>大洋国的恐怖世界</h3>
+<p>故事发生在1984年的大洋国（原英国），世界被三个超级大国瓜分——大洋国、欧亚国、东亚国——它们永远处于战争状态。大洋国由"英社"（英国社会主义）统治，最高领袖是"老大哥"（Big Brother），他可能根本不存在。</p>
+
+<p><strong>核心机构：</strong></p>
 <ul>
-<li><strong>电幕</strong>：全方位监控，无隐私</li>
-<li><strong>思想罪</strong>：思想即犯罪，预防性逮捕</li>
-<li><strong>双重思想</strong>：同时相信两个矛盾观点</li>
-<li><strong>新话</strong>：简化语言，限制思想</li>
+<li><strong>真理部：</strong>负责篡改历史，让过去的记录永远符合当下的政治需要</li>
+<li><strong>和平部：</strong>负责战争</li>
+<li><strong>友爱部：</strong>负责酷刑和思想改造</li>
+<li><strong>富裕部：</strong>负责制造匮乏</li>
 </ul>
 
+<p><strong>思想控制工具：</strong></p>
+<ul>
+<li><strong>新话（Newspeak）：</strong>不断缩减的语言系统，目的是让"异端思想"在语言层面变得不可能表达——如果你没有词汇来表达自由的概念，你就无法思考自由</li>
+<li><strong>双重思想：</strong>同时接受两种相互矛盾的信念，并相信两者都是真的</li>
+<li><strong>电幕：</strong>无处不在的监控设备，可以同时播放宣传和监视公民</li>
+</ul>
+
+<h3>温斯顿的反叛与毁灭</h3>
+<p>温斯顿·史密斯是真理部的一名普通职员，他的工作就是篡改历史记录。但内心深处，他知道这都是谎言。他开始写日记（思想罪），与茱莉亚发生秘密恋情，最终被思想警察逮捕。</p>
+
+<p>在友爱部，奥布莱恩对他进行了系统性的精神摧毁。101房间里，温斯顿被面对自己最大的恐惧——老鼠。在那一刻，他背叛了茱莉亚，喊出了"去咬茱莉亚！"——这是极权主义的最终胜利：<strong>不仅让你服从，还让你从灵魂深处热爱服从。</strong></p>
+
 <h2>● 核心观点</h2>
-<h3>七大核心洞察</h3>
-<h4>1. 权力即目的</h4>
-<p>党不是为了统治而统治，而是为了权力本身。权力不是为了服务，权力就是目的。</p>
+<div class="highlight">
+<h4>🔥 七大核心观点</h4>
+<ol>
+<li><strong>极权主义的终极目标不是控制行为，而是控制思想。</strong>——肉体服从只是第一步，真正的胜利是让人心甘情愿地接受谎言</li>
+<li><strong>"谁控制过去，谁就控制未来；谁控制现在，谁就控制过去。"</strong>——历史不是事实，而是权力的叙事工具</li>
+<li><strong>语言的缩减等于思想的缩减。</strong>——新话的设计原理：消灭词汇就是消灭思想的可能性</li>
+<li><strong>双重思想是极权社会的精神支柱。</strong>——同时相信两个矛盾命题的能力，是极权主义对人类理性的终极破坏</li>
+<li><strong>永久战争是维持极权统治的必要手段。</strong>——战争不是为了胜利，而是为了消耗资源、制造恐惧、维持等级制度</li>
+<li><strong>隐私的消失意味着自由的消失。</strong>——当每一个思想都可能被监视，真正的思想自由就不复存在</li>
+<li><strong>"老大哥在看着你。"</strong>——无所不在的监视不仅是技术手段，更是心理武器——即使无人观看，你也会自我审查</li>
+</ol>
+</div>
 
-<h4>2. 控制过去控制未来</h4>
-<p>谁控制过去就控制未来，谁控制现在就控制过去。历史可以被任意修改。</p>
+<h2>● 主题分析</h2>
+<h3>极权主义的运作机制</h3>
+<p>奥威尔揭示了极权统治的四个核心机制：</p>
+<ul>
+<li><strong>信息垄断：</strong>真理部篡改所有历史记录，使人民无法通过过去验证当下的真实性</li>
+<li><strong>语言操控：</strong>新话系统性地消灭了批评性思维所需的概念工具</li>
+<li><strong>情感管制：</strong>性本能被压制和引导至对党的忠诚上，爱和私人情感被视为威胁</li>
+<li><strong>恐惧内化：</strong>思想警察和101房间确保恐惧不仅仅是外在的，而是深入骨髓的</li>
+</ul>
 
-<h4>3. 语言限制思想</h4>
-<p>新话通过简化语言来限制思想。没有词汇表达自由，自由就不存在。</p>
+<h2>● 人物解读</h2>
+<p><strong>温斯顿·史密斯：</strong>一个"最后一个人"的象征——在所有人都已彻底屈服的环境中，他保留了一丝怀疑和记忆。他的悲剧在于：他以为自己的反抗是独特的，实际上连他的反抗都是被设计和允许的。奥布莱恩告诉他："我们不是摧毁异端者，我们是改造他。"</p>
 
-<h4>4. 双重思想是生存策略</h4>
-<p>同时相信两个矛盾观点。现实可以被主观改变。</p>
+<p><strong>茱莉亚：</strong>务实的反叛者。她不像温斯顿那样思考理论问题，她的反抗是身体性的——性、快乐、私人生活。她代表了人性中本能层面的抵抗，但也因此更容易被瓦解。</p>
 
-<h4>5. 恐惧是统治工具</h4>
-<p>通过恐惧让人民服从。老大哥的恐怖无处不在。</p>
+<p><strong>奥布莱恩：</strong>极权主义的人格化。他既是温斯顿的迫害者，又是他的"导师"。他代表了一种清醒的邪恶——他知道自己在做什么，并且为此感到骄傲。他关于权力本质的独白是全书最令人不寒而栗的段落。</p>
 
-<h4>6. 个人在集体面前脆弱</h4>
-<p>集体主义吞噬个人自由。个体价值被完全否定。</p>
+<h2>● 写作技巧</h2>
+<p><strong>1. 预言性写作：</strong>奥威尔并非在预测未来，而是在<strong>放大当下</strong>。1984年的每一项极权技术——监控、篡改历史、语言操控——在1948年都已存在，只是被推到了逻辑的极致。</p>
 
-<h4>7. 爱情是政治反抗</h4>
-<p>温斯顿与朱莉娅的爱情是对体制的反抗。</p>
+<p><strong>2. 极简主义风格：</strong>小说的语言刻意朴素、灰暗，没有任何华丽的修辞——这种风格本身就是对极权社会精神贫瘠的模仿。读者感受到的压抑，不仅来自情节，更来自语言本身的匮乏感。</p>
+
+<p><strong>3. 元文本层次：</strong>温斯顿阅读的"戈斯坦因的书"实际上是奥威尔自己对极权主义的理论分析，嵌入叙事之中，既是情节推进又是思想阐释。</p>
+
+<h2>● 文学价值</h2>
+<p>《1984》是20世纪最重要的政治小说之一，它创造的词汇——"老大哥"、"双重思想"、"新话"、"思想警察"——已经成为我们日常语言的一部分。这部小说的力量在于：<strong>它不仅是对特定政体的批判，更是对权力本质的永恒追问。</strong></p>
+
+<p>在信息时代，奥威尔的警告变得更加紧迫——大数据监控、算法推送、信息茧房、语言审查——《1984》不再是一本关于过去的书，而是一本关于当下的手册。</p>
 
 <h2>● 金句摘录</h2>
-<blockquote>
-<p>"谁控制过去就控制未来，谁控制现在就控制过去。"</p>
-<p class="parse"><strong>解析</strong>：历史可以被任意修改。控制过去就控制现在。</p>
-</blockquote>
-
-<blockquote>
-<p>"权力不是手段，权力就是目的。"</p>
-<p class="parse"><strong>解析</strong>：党不是为了服务而统治，而是为了权力本身。</p>
-</blockquote>
 
 <blockquote>
 <p>"战争即和平，自由即奴役，无知即力量。"</p>
-<p class="parse"><strong>解析</strong>：双重思想让矛盾成为现实。极权主义的口号。</p>
+<p class="parse"><strong>深度解析：</strong>英社的三句口号是双重思想的经典表达。每句话都包含一个悖论，而双重思想的训练使人能够同时接受其字面意思和矛盾含义。这正是极权主义的逻辑：通过摧毁逻辑本身来消灭反抗的可能。</p>
 </blockquote>
 
 <blockquote>
-<p>"思想罪不会带来死亡，思想罪就是死亡。"</p>
-<p class="parse"><strong>解析</strong>：思想本身就是犯罪。预防性思想控制。</p>
+<p>"如果你想保守一个秘密，你必须对自己也隐瞒它。"</p>
+<p class="parse"><strong>深度解析：</strong>奥威尔揭示了思想控制的最高境界：真正的安全不在于不让别人发现你的思想，而在于你自己都不知道自己在想什么。这是双重思想的日常实践——将分裂变成习惯。</p>
 </blockquote>
 
 <blockquote>
-<p>"在极权主义下，个人是脆弱的。"</p>
-<p class="parse"><strong>解析</strong>：集体主义吞噬个人自由。个体价值被否定。</p>
+<p>"自由就是可以说二加二等于四的自由。承认这一点，其他一切都会随之而来。"</p>
+<p class="parse"><strong>深度解析：</strong>这不是数学问题，而是认识论问题。如果连最基本的客观事实都可以被权力否定，那么一切真理都不复存在。温斯顿的坚持——二加二等于四——是对客观现实的最基本捍卫，也是对极权主义"现实控制"的最根本抵抗。</p>
 </blockquote>
 
-<h2>● 实践应用</h2>
-<h3>场景 1：识别极权主义</h3>
-<ul>
-<li><strong>历史修正</strong>：警惕历史被篡改</li>
-<li><strong>语言控制</strong>：注意语言被简化和操控</li>
-<li><strong>思想警察</strong>：反对思想监控</li>
-</ul>
+<blockquote>
+<p>"在普遍欺骗的时代，说出真相是一种革命行为。"</p>
+<p class="parse"><strong>深度解析：</strong>当整个社会都运转在谎言之上时，哪怕是最基本的真话都具有颠覆性的力量。这句话也是奥威尔对自己写作使命的定义——在一个充满宣传和伪善的世界里，坚持说真话本身就是一种抵抗。</p>
+</blockquote>
 
-<h3>场景 2：保护个人自由</h3>
-<ul>
-<li><strong>独立思考</strong>：保持批判性思维</li>
-<li><strong>多元信息</strong>：获取不同观点</li>
-<li><strong>隐私保护</strong>：防止信息过度收集</li>
-</ul>
+<blockquote>
+<p>"如果你想象未来的样子，想象一只靴子踩在人脸上——永远如此。"</p>
+<p class="parse"><strong>深度解析：</strong>这是奥布莱恩对权力本质的冷酷描述。极权主义的目的不是建立天堂，而是维持权力本身。"永远"二字是关键——这不是一个阶段，而是一种永恒状态。这是对人性最黑暗的预言。</p>
+</blockquote>
 
-<h3>场景 3：民主监督</h3>
-<ul>
-<li><strong>权力制衡</strong>：防止权力过度集中</li>
-<li><strong>透明政府</strong>：推动信息公开</li>
-<li><strong>公民参与</strong>：积极参与公共事务</li>
-</ul>
+<h2>● 应用指导</h2>
 
-<h2>● 相关标签</h2>
+<div class="app-box">
+<h4>🎯 场景1：信息时代的批判性思维</h4>
+<p><strong>核心问题：</strong>如何在信息过载的时代保持独立判断？</p>
+<p><strong>实践方法：</strong></p>
+<ol>
+<li><strong>追踪信息来源：</strong>每一条重要信息，追问：谁说的？基于什么证据？有什么利益动机？</li>
+<li><strong>阅读"对立面"：</strong>主动阅读与你观点相反的高质量内容，避免信息茧房</li>
+<li><strong>警惕情绪操控：</strong>当一则信息让你感到强烈愤怒或恐惧时，先停下来——这正是操控的信号</li>
+</ol>
+</div>
+
+<div class="app-box">
+<h4>🎯 场景2：保护个人隐私与思想自由</h4>
+<p><strong>核心问题：</strong>在无处不在的数字监控下，如何保留思想的自由空间？</p>
+<p><strong>实践方法：</strong></p>
+<ol>
+<li><strong>建立"离线空间"：</strong>每天留出不被屏幕和通知打扰的时间，让思想自由漫游</li>
+<li><strong>写私人日记：</strong>手写的私密文字是最难被数字化监控的思考形式</li>
+<li><strong>减少自我审查：</strong>意识到自己在哪些话题上已经习惯性地自我沉默——这本身就是值得追问的信号</li>
+</ol>
+</div>
+
+<div class="app-box">
+<h4>🎯 场景3：语言觉察——对抗"新话化"</h4>
+<p><strong>核心问题：</strong>如何防止语言的萎缩导致思想的萎缩？</p>
+<p><strong>实践方法：</strong></p>
+<ol>
+<li><strong>丰富词汇量：</strong>阅读文学作品，使用精确的词汇——当你能用不同的词描述不同的感受时，你的思想就在变得更精细</li>
+<li><strong>警惕空洞口号：</strong>当一种表达被过度使用以至于失去具体含义时（如"赋能"、"抓手"、"闭环"），它就在执行新话的功能</li>
+<li><strong>坚持精确表达：</strong>用具体的语言替代模糊的套话——这是每天都可以做的思想抵抗</li>
+</ol>
+</div>
+
+<h2>● 相关笔记</h2>
+<a href="hundred-years-solitude.html" class="link-card"><div>📚 [[百年孤独：马尔克斯的魔幻孤独]]</div></a>
+<a href="crime-punishment.html" class="link-card"><div>📚 [[罪与罚：陀思妥耶夫斯基的心理深渊]]</div></a>
+<a href="metamorphosis.html" class="link-card"><div>📚 [[变形记：卡夫卡的异化寓言]]</div></a>
+<a href="les-miserables.html" class="link-card"><div>📚 [[悲惨世界：雨果的人道主义史诗]]</div></a>
+<a href="dream-red-chamber.html" class="link-card"><div>📚 [[红楼梦：中国古典文学的巅峰]]</div></a>
+<a href="great-gatsby.html" class="link-card"><div>📚 [[了不起的盖茨比：美国梦的破灭]]</div></a>
+<a href="catcher-rye.html" class="link-card"><div>📚 [[麦田里的守望者：塞林格的成长迷惘]]</div></a>
+<a href="tale-two-cities.html" class="link-card"><div>📚 [[双城记：狄更斯的革命与救赎]]</div></a>
+<a href="old-man-sea.html" class="link-card"><div>📚 [[老人与海：海明威的硬汉精神]]</div></a>
+<a href="don-quixote.html" class="link-card"><div>📚 [[堂吉诃德：塞万提斯的骑士与现实]]</div></a>
+
+<h2>● 标签</h2>
 <div>
 <span class="tag">#乔治·奥威尔</span>
-<span class="tag">#1984</span>
 <span class="tag">#反乌托邦</span>
 <span class="tag">#极权主义</span>
+<span class="tag">#政治寓言</span>
 <span class="tag">#思想控制</span>
-<span class="tag">#双重思想</span>
-<span class="tag">#新话</span>
-<span class="tag">#自由警示</span>
+<span class="tag">#监控社会</span>
+<span class="tag">#语言与权力</span>
+<span class="tag">#20世纪经典</span>
 </div>
 
 <div class="footer">
-<p>📝 笔记撰写日期：2026-03-12 | 📖 阅读进度：深度阅读完成 | ⚡ 实践状态：持续警示中</p>
-</div>
+<p>📝 笔记撰写日期：2026-03-13 | 📖 阅读状态：已读完 | 📚 分类：文学虚构类</p>
 </div>
 
+</div>
 </body>
 </html>

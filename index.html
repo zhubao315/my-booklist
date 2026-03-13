@@ -263,27 +263,65 @@ const currentReading = [
 ];
 
 const noteFiles = {
+  // 当前阅读
   "第二座山": "second-mountain.html", "重启人生": "restart-life.html", "与塞涅卡共进早餐": "breakfast-with-seneca.html",
-  "思考，快与慢": "think-fast-slow.html", "原则": "principles.html", "原子习惯": "atomic-habits.html",
-  "深度工作": "deep-work.html", "刻意练习": "deliberate-practice.html", "高效能人士的七个习惯": "seven-habits.html",
-  "非暴力沟通": "nonviolent-communication.html", "心流": "flow.html", "影响力": "influence.html",
-  "反脆弱": "anti-fragile.html", "习惯的力量": "power-of-habits.html", "终身成长": "lifelong-growth.html",
-  "如何阅读一本书": "how-read-book.html", "系统思考": "systems-thinking.html", "认知觉醒": "cognitive-awareness.html",
-  "批判性思维": "critical-thinking.html", "自卑与超越": "self-esteem-superiority.html",
-  "百年孤独": "one-hundred-years-of-solitude.html", "1984": "nineteen-eighty-four.html",
-  "时间简史": "a-brief-history-of-time.html", "人类简史": "sapiens.html",
-  "巴菲特致股东的信": "buffett-letters.html", "纳瓦尔宝典": "navarro-principles.html",
-  "从0到1": "from-zero-to-one.html", "精益创业": "the-lean-startup.html", "创新者的窘境": "innovators-dilemma.html",
-  "史蒂夫·乔布斯": "steve-jobs.html", "斯多葛": "stoicism.html", "资治通鉴": "zizhi-tongjian.html", "国富论": "the-wealth-of-nations.html",
-  "艺术": "art.html", "思考的艺术": "thinking-art.html",
-  // 投资理财类 - 7本读书笔记
-  "聪明的投资者": "intelligent-investor.html",
-  "证券分析": "security-analysis.html",
-  "穷查理宝典": "poor-charlie-almanack.html",
-  "投资最重要的事": "most-important-thing.html",
-  "漫步华尔街": "random-walk.html",
-  "财务自由之路": "financial-freedom.html",
-  "巴菲特的投资原则": "buffett-principles.html"
+  // 文学虚构类
+  "百年孤独": "hundred-years-solitude.html", "1984": "nineteen-eighty-four.html",
+  "红楼梦": "dream-red-chamber.html", "悲惨世界": "les-miserables.html",
+  "罪与罚": "crime-punishment.html", "简·爱": "jane-eyre.html",
+  "傲慢与偏见": "pride-prejudice.html", "呼啸山庄": "wuthering-heights.html",
+  "双城记": "tale-two-cities.html", "老人与海": "old-man-sea.html",
+  "了不起的盖茨比": "great-gatsby.html", "麦田里的守望者": "catcher-rye.html",
+  "堂吉诃德": "don-quixote.html", "变形记": "metamorphosis.html",
+  "安娜·卡列尼娜": "anna-karenina.html",
+  // 实用技能类
+  "从优秀到卓越": "good-to-great.html", "从0到1": "zero-to-one.html",
+  "精益创业": "lean-startup.html", "高效能人士的七个习惯": "seven-habits.html",
+  "创新者的窘境": "innovators-dilemma.html", "创业维艰": "hard-thing-hard.html",
+  "重新定义公司": "how-google-works.html", "定位": "positioning.html",
+  "增长黑客": "growth-hacking.html", "引爆点": "tipping-point.html",
+  "疯传": "contagious.html", "上瘾": "hooked.html", "流量池": "traffic-pool.html",
+  // 认知成长类
+  "思考，快与慢": "thinking-fast-slow.html", "金字塔原理": "minto-pyramid.html",
+  "非暴力沟通": "nonviolent-communication.html", "原则": "principles.html",
+  "第五项修炼": "fifth-discipline.html", "深度工作": "deep-work.html",
+  "如何阅读一本书": "how-read-book.html", "反脆弱": "antifragile.html",
+  "自卑与超越": "individual-psychology.html", "心流": "flow.html",
+  "影响力": "influence.html", "系统思考": "systems-thinking.html",
+  "习惯的力量": "power-of-habit.html", "终身成长": "mindset.html",
+  "原子习惯": "atomic-habits.html", "认知觉醒": "cognitive-awareness.html",
+  "批判性思维": "critical-thinking.html",
+  // 历史社科类
+  "文明的故事": "story-civilization.html", "伊利亚特": "iliad.html",
+  "通往奴役之路": "road-serfdom.html", "论语": "analects.html",
+  "道德经": "tao-te-ching.html", "史记": "shiji.html",
+  "人类简史": "sapiens.html", "资治通鉴": "zizhi-tongjian.html",
+  "理想国": "republic.html", "全球通史": "global-history.html",
+  "国富论": "the-wealth-of-nations.html", "乡土中国": "earthbound-china.html",
+  // 科技科普类
+  "时间简史": "brief-history-time.html", "黑客与画家": "hackers-painters.html",
+  "浪潮之巅": "top-tides.html", "深度学习": "deep-learning.html",
+  "生命3.0": "life-3.html", "基因传": "gene.html",
+  "复杂": "complexity.html", "信息简史": "information-history.html",
+  // 投资理财类
+  "聪明的投资者": "intelligent-investor.html", "巴菲特致股东的信": "buffett-letters.html",
+  "证券分析": "security-analysis.html", "穷查理宝典": "poor-charlie-almanack.html",
+  "投资最重要的事": "most-important-thing.html", "漫步华尔街": "random-walk-wall-street.html",
+  "财务自由之路": "financial-freedom.html", "巴菲特的投资原则": "buffett-portfolio.html",
+  "随机漫步的傻瓜": "fooled-randomness.html", "黑天鹅": "black-swan.html",
+  "非理性繁荣": "irrational-exuberance.html", "纳瓦尔宝典": "navarro-principles.html",
+  // 传记人物类
+  "史蒂夫·乔布斯": "steve-jobs.html", "埃隆·马斯克": "elon-musk.html",
+  "富兰克林自传": "benjamin-franklin.html", "苏东坡传": "su-dongpo.html",
+  "曾国藩": "zeng-guofan.html", "毛泽东": "mao-zedong.html",
+  // 艺术美学类
+  "艺术的故事": "story-art.html", "美的历程": "course-beauty.html",
+  "艺术哲学": "philosophy-art.html", "观看之道": "ways-seeing.html",
+  "中国美学史": "history-chinese-aesthetics.html", "艺术": "art.html", "思考的艺术": "thinking-art.html",
+  // 哲学宗教类
+  "沉思录": "meditations.html", "庄子": "zhuangzi.html",
+  "存在与时间": "being-time.html", "纯粹理性批判": "critique-pure-reason.html",
+  "斯多葛": "stoicism.html"
 };
 
 function getNoteLink(title) { return noteFiles[title] ? `notes/${noteFiles[title]}` : null; }

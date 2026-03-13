@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>《精益创业》深度读书笔记 - 埃里克·莱斯</title>
+<style>
+:root{--bg:#0f0f0f;--s:#1a1a1a;--s2:#242424;--t:#e8e6e3;--t2:#9a9a9a;--a:#e8a838;--a2:#c4882a;--b:#2a2a2a;--r:12px;--green:#22c55e;--blue:#3b82f6}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--t);line-height:1.9;padding:20px;max-width:900px;margin:0 auto}
+a{color:var(--a);text-decoration:none}.back{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:20px;border:1px solid var(--b);color:var(--t2);font-size:.9rem;margin-bottom:24px}
+.note{padding:36px;background:var(--s);border-radius:var(--r);border:1px solid var(--b);margin-bottom:24px}
+.note h1{font-size:2rem;font-weight:800;margin-bottom:12px;background:linear-gradient(135deg,var(--a),#f0c060);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.note .meta{color:var(--t2);font-size:.9rem;margin-bottom:28px;display:flex;flex-wrap:wrap;gap:8px}
+.note h2{font-size:1.4rem;font-weight:700;margin:36px 0 18px;color:var(--a);border-bottom:1px solid var(--b);padding-bottom:10px}
+.note h3{font-size:1.15rem;font-weight:600;margin:24px 0 12px;color:var(--t)}
+.note h4{font-size:1rem;font-weight:600;margin:18px 0 10px}
+.note p{margin-bottom:16px}.note ul,ol{margin:16px 0 18px 24px}.note li{margin-bottom:8px}
+.note blockquote{border-left:4px solid var(--a);padding:18px 24px;margin:24px 0;background:var(--s2);border-radius:0 var(--r) var(--r) 0}
+.note blockquote p{font-style:italic;font-size:1.1rem}.note blockquote .parse{font-style:normal;color:var(--t2);font-size:.95rem;margin-top:14px;border-top:1px solid var(--b);padding-top:14px}
+.note table{width:100%;border-collapse:collapse;margin:18px 0}.note th,.note td{padding:12px 16px;border:1px solid var(--b);text-align:left}.note th{background:var(--s2);color:var(--a);font-weight:600}
+.tag{display:inline-block;padding:5px 14px;border-radius:12px;font-size:.8rem;background:rgba(232,168,56,.12);color:var(--a);margin:4px}
+.link-card{display:block;padding:14px 18px;background:var(--s2);border-radius:var(--r);border:1px solid var(--b);margin:8px 0;transition:all .3s}.link-card:hover{border-color:var(--a);transform:translateX(4px)}
+.highlight{background:linear-gradient(135deg,rgba(232,168,56,.1),rgba(232,168,56,.05));border:1px solid rgba(232,168,56,.3);border-radius:var(--r);padding:22px;margin:22px 0}
+.highlight h4{color:var(--a);margin-bottom:14px}
+.app-box{background:var(--s2);border-radius:var(--r);padding:20px;margin:16px 0;border-left:4px solid var(--green)}
+.app-box h4{color:var(--green);margin-bottom:12px}
+.footer{padding:24px 0;border-top:1px solid var(--b);color:var(--t2);font-size:.85rem;margin-top:32px}
+@media(max-width:640px){body{padding:14px}.note{padding:20px}.note h1{font-size:1.5rem}}
+</style>
+</head>
+<body>
+<a class="back" href="../index.html">← 回到书单</a>
+<div class="note">
+
+<h1>《精益创业》深度读书笔记</h1>
+<div class="meta">
+<span class="tag">埃里克·莱斯</span>
+<span class="tag">#创业</span>
+<span class="tag">#精益方法</span>
+<span class="tag">#MVP</span>
+<span class="tag">2026-03-13</span>
+</div>
+
+<h2>● 作者介绍</h2>
+<h3>埃里克·莱斯（Eric Ries, 1978-）</h3>
+<p>埃里克·莱斯是硅谷连续创业者、精益创业运动的创始人，被誉为<strong>"精益创业教父"</strong>。他的方法论已经深刻改变了全球创业和企业管理的方式。</p>
+<p><strong>创业经历：</strong></p>
+<ul>
+<li>联合创立IMVU（3D社交网络），经历了从产品无人问津到年收入5000万美元的蜕变</li>
+<li>担任多家硅谷创业公司的顾问和投资者</li>
+<li>在哈佛商学院、斯坦福大学等顶级学府讲授创业课程</li>
+<li>创立了Long-Term Stock Exchange（LTSE）</li>
+</ul>
+<p><strong>核心贡献：</strong>莱斯将丰田生产系统的精益思想（Lean Manufacturing）与创业实践相结合，创造了一套适合不确定环境下的创业方法论。他的理念已从创业公司扩展到大企业创新、政府管理等领域。</p>
+
+<h2>● 创作背景</h2>
+<h3>从IMVU的惨痛教训到精益方法论</h3>
+<p>《精益创业》的灵感直接来源于莱斯在IMVU的创业经历。他和团队花了6个月开发了一款他们认为完美无缺的产品——上线后却发现<strong>根本没有人想要</strong>。</p>
+<p><strong>关键转折：</strong>这次惨痛经历让莱斯意识到，创业最大的浪费不是代码写得不好，而是花大量时间做了一个没人需要的产品。他开始系统地研究：能不能用科学方法降低创业的浪费？</p>
+<p><strong>时代背景：</strong>2008年金融危机后，创业成本急剧下降（云计算、开源软件），但创业失败率依然高达90%。莱斯认为，失败的原因不是缺乏资金或技术，而是方法论出了问题。</p>
+
+<h2>● 大纲结构</h2>
+<table>
+<tr><th>部分</th><th>章节</th><th>核心内容</th></tr>
+<tr><td><strong>第一部分</strong></td><td>愿景</td><td>创业管理的新方法，创业的定义</td></tr>
+<tr><td><strong>第二部分</strong></td><td>驾驭</td><td>开发-测量-认知循环，MVP，创新核算</td></tr>
+<tr><td><strong>第三部分</strong></td><td>加速</td><td>批量大小、增长引擎、自适应组织</td></tr>
+</table>
+
+<h2>● 主要内容</h2>
+<h3>1. 开发-测量-认知反馈循环</h3>
+<p>莱斯提出创业的核心是一个<strong>反馈循环</strong>：</p>
+<div class="highlight">
+<h4>🔄 精益创业核心循环</h4>
+<p><strong>开发（Build）→ 测量（Measure）→ 认知（Learn）→ 循环</strong></p>
+<p>这个循环的关键是<strong>速度</strong>——越快完成一次循环，你就能越快找到正确的产品方向。</p>
+</div>
+<p>传统方法是"先规划→再开发→最后发布"，精益创业则强调<strong>尽快把最小可行产品推向市场，用真实用户反馈来指导方向</strong>。</p>
+
+<h3>2. 最小可行产品（MVP）</h3>
+<p>MVP是精益创业最核心的工具。它的定义：<strong>用最少的资源和最短的时间，做出一个能验证核心假设的产品版本。</strong></p>
+<p><strong>经典案例：</strong></p>
+<ul>
+<li><strong>Dropbox：</strong>创始人做了一个3分钟的演示视频就验证了需求，获得了75000名等待用户</li>
+<li><strong>Zappos：</strong>创始人先在鞋店拍照放到网上，有人下单后才去店里买鞋寄出</li>
+<li><strong>Buffer：</strong>一个简单的落地页就验证了社交媒体调度工具的需求</li>
+</ul>
+
+<h3>3. 创新核算</h3>
+<p>莱斯提出了一套衡量创业进展的科学方法——<strong>创新核算（Innovation Accounting）</strong>。</p>
+<p><strong>三个步骤：</strong></p>
+<ol>
+<li><strong>建立基线：</strong>用MVP获取真实用户数据，建立初始指标</li>
+<li><strong>调整引擎：</strong>每次改进都看是否提升了核心指标</li>
+<li><strong>决定坚持还是转型：</strong>如果指标无法改善，果断转型</li>
+</ol>
+
+<h3>4. 转型（Pivot）</h3>
+<p>转型是精益创业最重要的概念之一。莱斯定义了<strong>10种常见的转型类型</strong>：</p>
+<ul>
+<li><strong>放大转型：</strong>把产品的一个功能独立为新产品</li>
+<li><strong>缩小转型：</strong>把整个产品缩减为一个功能</li>
+<li><strong>客户细分转型：</strong>改变目标客户群体</li>
+<li><strong>平台转型：</strong>从应用转为平台，或反之</li>
+<li><strong>价值获取转型：</strong>改变盈利模式</li>
+</ul>
+
+<h2>● 核心观点</h2>
+<div class="highlight">
+<h4>🔥 七大核心观点</h4>
+<ol>
+<li><strong>创业是人类把信念转化为产品的有组织活动。</strong>——创业不是赌博，而是科学实验</li>
+<li><strong>认知是创业最重要的产出。</strong>——了解客户真相比写出代码更重要</li>
+<li><strong>尽快推出最小可行产品（MVP）。</strong>——完美是进步的敌人，完成比完美重要</li>
+<li><strong>开发-测量-认知循环是创业的核心引擎。</strong>——速度决定生死</li>
+<li><strong>转型不是失败，而是学习的结果。</strong>——转型是创业者的权利，不是退路</li>
+<li><strong>衡量创业进展的正确方式是经证实的认知。</strong>——不是代码行数或功能数量</li>
+<li><strong>小批量优于大批量。</strong>——小批量生产减少浪费，加速反馈</li>
+</ol>
+</div>
+
+<h2>● 金句摘录</h2>
+
+<blockquote>
+<p>"唯一比失败更糟的，是成功地做了一件根本不该做的事。"</p>
+<p class="parse"><strong>深度解析：</strong>莱斯的核心洞察是：创业最大的浪费不是做错了，而是做了一件正确但没人需要的事。MVP的目的就是尽早发现这种浪费，避免在错误的方向上投入太多资源。</p>
+</blockquote>
+
+<blockquote>
+<p>"如果你不知道自己在测什么，那你就无法从失败中学到任何东西。"</p>
+<p class="parse"><strong>深度解析：</strong>科学实验需要明确的假设。创业同理——在推出产品之前，你必须明确：我要验证什么假设？什么样的数据能证明这个假设？没有假设的"测试"只是在碰运气。</p>
+</blockquote>
+
+<blockquote>
+<p>"在创业公司，只有经证实的认知才是衡量进展的唯一标准。"</p>
+<p class="parse"><strong>深度解析：</strong>传统企业管理用"里程碑"衡量进展——写完了多少代码、上线了多少功能。但精益创业认为，只有"验证了客户真实需求"才算真正的进展。一个能证明核心假设的MVP，比一万个功能更有价值。</p>
+</blockquote>
+
+<blockquote>
+<p>"转型需要勇气。承认过去的方向是错的，比坚持错误需要更大的勇气。"</p>
+<p class="parse"><strong>深度解析：</strong>人类天生有"沉没成本偏误"——已经投入了这么多，怎么能放弃？莱斯认为，聪明的创业者会定期问自己：如果今天从零开始，我还会做同样的产品吗？如果答案是否定的，就该转型了。</p>
+</blockquote>
+
+<blockquote>
+<p>"完美是精益的大敌。"</p>
+<p class="parse"><strong>深度解析：</strong>完美主义者永远无法推出产品，因为他们总觉得还不够好。但精益创业的核心理念是：与其做出一个完美的产品却没人需要，不如做出一个粗糙的产品但能验证需求。</p>
+</blockquote>
+
+<h2>● 应用指导</h2>
+
+<div class="app-box">
+<h4>🎯 场景1：一周内推出你的第一个MVP</h4>
+<p><strong>适用场景：</strong>有一个产品想法但不确定是否值得做</p>
+<p><strong>操作步骤：</strong></p>
+<ol>
+<li>Day 1：写下你要验证的核心假设（1个，不超过一句话）</li>
+<li>Day 2-3：设计MVP——可能是落地页、演示视频或简单原型</li>
+<li>Day 4-5：上线MVP并获取至少100个潜在用户的反馈</li>
+<li>Day 6-7：分析数据，决定坚持还是转型</li>
+</ol>
+</div>
+
+<div class="app-box">
+<h4>🎯 场景2：为你的业务建立创新核算体系</h4>
+<p><strong>适用场景：</strong>已经有产品，但不确定业务方向是否正确</p>
+<p><strong>操作步骤：</strong></p>
+<ol>
+<li>确定1个核心指标（唯一关键指标O.M.T.M.）</li>
+<li>收集过去30天的数据作为基线</li>
+<li>每周做一次小改进，记录指标变化</li>
+<li>连续4周无改善 → 认真考虑转型</li>
+</ol>
+</div>
+
+<div class="app-box">
+<h4>🎯 场景3：转型决策框架</h4>
+<p><strong>适用场景：</strong>产品数据不理想，需要决定是否转型</p>
+<p><strong>决策清单：</strong></p>
+<ol>
+<li>核心假设是否已被证伪？（是→必须转型）</li>
+<li>改进实验是否全部完成？（否→继续测试）</li>
+<li>转型方向是否有初步数据支持？（是→执行转型）</li>
+<li>团队是否有信心和资源执行新方向？（评估后决定）</li>
+</ol>
+</div>
+
+<h2>● 相关笔记</h2>
+<a href="zero-to-one.html" class="link-card"><div>📚 [[从0到1：垄断思维与逆向创业]]</div></a>
+<a href="innovators-dilemma.html" class="link-card"><div>📚 [[创新者的窘境：颠覆式创新的悖论]]</div></a>
+<a href="growth-hacking.html" class="link-card"><div>📚 [[增长黑客：低成本高增长策略]]</div></a>
+<a href="tipping-point.html" class="link-card"><div>📚 [[引爆点：流行背后的科学]]</div></a>
+<a href="positioning.html" class="link-card"><div>📚 [[定位：心智之战与品类战略]]</div></a>
+<a href="hackers-painters.html" class="link-card"><div>📚 [[黑客与画家：创造者的思维方式]]</div></a>
+<a href="running-lean.html" class="link-card"><div>📚 [[Running Lean：精益创业的实战指南]]</div></a>
+<a href="the-hard-thing.html" class="link-card"><div>📚 [[创业维艰：领导力与艰难抉择]]</div></a>
+<a href="rework.html" class="link-card"><div>📚 [[重来：小企业的极简商业哲学]]</div></a>
+<a href="four-steps.html" class="link-card"><div>📚 [[四步创业法：客户开发的方法论]]</div></a>
+
+<h2>● 标签</h2>
+<div>
+<span class="tag">#埃里克·莱斯</span>
+<span class="tag">#精益创业</span>
+<span class="tag">#MVP</span>
+<span class="tag">#创业方法论</span>
+<span class="tag">#反馈循环</span>
+<span class="tag">#转型</span>
+<span class="tag">#创新核算</span>
+</div>
+
+<div class="footer">
+<p>📝 笔记撰写日期：2026-03-13 | 📖 阅读状态：已读完 | 📚 分类：实用技能类</p>
+</div>
+
+</div>
+</body>
+</html>
