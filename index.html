@@ -80,6 +80,39 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(10,10,11,.9); bac
 .nav-button:hover { background: var(--s2); color: var(--t); border-color: var(--a); }
 .nav-button.active { background: linear-gradient(135deg, var(--a), var(--a2)); color: #000; border-color: var(--a); font-weight: 700; }
 
+/* Dropdown */
+.nav-dropdown { position: relative; }
+.nav-dropdown-btn { cursor: pointer; }
+.nav-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 8px;
+  background: var(--s);
+  border: 1px solid var(--b);
+  border-radius: var(--r-sm);
+  padding: 8px;
+  min-width: 180px;
+  z-index: 200;
+  box-shadow: var(--shadow);
+}
+.nav-dropdown-menu.show { display: block; }
+.nav-dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 10px 14px;
+  border: none;
+  background: transparent;
+  color: var(--t2);
+  font-size: .85rem;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all .2s;
+}
+.nav-dropdown-item:hover { background: var(--s2); color: var(--t); }
+
 /* Search */
 .search-wrapper { max-width: var(--max); margin: 24px auto 0; padding: 0 16px; }
 .search-bar { width: 100%; padding: 14px 24px; border-radius: 100px; border: 2px solid var(--b); background: var(--s); color: var(--t); font-size: 1rem; outline: none; transition: all .3s; }
@@ -389,10 +422,16 @@ const booksByCategory = {
 
 function initNav() {
   const nav = document.getElementById('navigation');
-  const items = [{ id: 'current', name: '🔥 当前阅读' }, { id: 'all', name: '📚 全部书单' }, { id: 'overview', name: '📊 分类概览' }];
-  categories.forEach(c => items.push({ id: c.id.toString(), name: `${c.emoji} ${c.name}` }));
-  items.push({ id: 'guide', name: '💡 阅读指南' });
-  items.forEach(item => {
+  // 精简导航：只显示主要入口
+  const mainNav = [
+    { id: 'current', name: '🔥 在读' },
+    { id: 'all', name: '📚 书单' },
+    { id: 'overview', name: '📊 概览' },
+    { id: 'guide', name: '💡 指南' }
+  ];
+  
+  // 分类下拉菜单
+  mainNav.forEach(item => {
     const btn = document.createElement('button');
     btn.className = `nav-button${item.id === 'current' ? ' active' : ''}`;
     btn.dataset.category = item.id;
@@ -400,12 +439,56 @@ function initNav() {
     btn.onclick = () => filterBy(item.id);
     nav.appendChild(btn);
   });
+
+  // 分类下拉
+  const dropdown = document.createElement('div');
+  dropdown.className = 'nav-dropdown';
+  dropdown.innerHTML = `<button class="nav-button nav-dropdown-btn">📂 分类 ▾</button>`;
+  
+  const dropdownMenu = document.createElement('div');
+  dropdownMenu.className = 'nav-dropdown-menu';
+  categories.forEach(c => {
+    const item = document.createElement('button');
+    item.className = 'nav-dropdown-item';
+    item.textContent = `${c.emoji} ${c.name}`;
+    item.onclick = () => {
+      filterBy(c.id.toString());
+      dropdownMenu.classList.remove('show');
+    };
+    dropdownMenu.appendChild(item);
+  });
+  
+  dropdown.appendChild(dropdownMenu);
+  dropdown.querySelector('.nav-dropdown-btn').onclick = (e) => {
+    e.stopPropagation();
+    dropdownMenu.classList.toggle('show');
+  };
+  nav.appendChild(dropdown);
+  
+  // 点击其他地方关闭下拉
+  document.addEventListener('click', () => dropdownMenu.classList.remove('show'));
 }
 
 let activeCategory = 'current';
 function filterBy(id) {
   activeCategory = id;
-  document.querySelectorAll('.nav-button').forEach(b => b.classList.toggle('active', b.dataset.category === id));
+  // 更新主导航按钮高亮
+  document.querySelectorAll('.nav-button:not(.nav-dropdown-btn)').forEach(b => {
+    b.classList.toggle('active', b.dataset.category === id);
+  });
+  // 检查是否是分类
+  const isCategory = categories.some(c => c.id.toString() === id);
+  const dropdownBtn = document.querySelector('.nav-dropdown-btn');
+  if (dropdownBtn) {
+    if (isCategory) {
+      dropdownBtn.classList.add('active');
+      const cat = categories.find(c => c.id.toString() === id);
+      dropdownBtn.textContent = `${cat.emoji} ${cat.name} ▾`;
+    } else {
+      dropdownBtn.classList.remove('active');
+      dropdownBtn.textContent = '📂 分类 ▾';
+    }
+  }
   render();
   if (id !== 'all') window.scrollTo({ top: 0, behavior: 'smooth' });
 }
