@@ -6,1839 +6,471 @@
 <title>📚 我的书单 - 深度阅读 · 终身学习</title>
 <style>
 :root {
-  --bg: #0f0f0f;
-  --s: #1a1a1a;
-  --s2: #242424;
-  --s3: #2a2a2a;
-  --t: #e8e6e3;
-  --t2: #9a9a9a;
-  --t3: #6b6b6b;
-  --a: #e8a838;
-  --a2: #c4882a;
-  --a-hover: #f0c060;
-  --b: #2a2a2a;
-  --r: 12px;
-  --max: 1200px;
-  --shadow: 0 4px 20px rgba(0,0,0,0.3);
+  --bg: #0a0a0b;
+  --bg2: #111113;
+  --s: #18181b;
+  --s2: #1f1f23;
+  --s3: #27272a;
+  --t: #fafafa;
+  --t2: #a1a1aa;
+  --t3: #71717a;
+  --a: #f59e0b;
+  --a2: #d97706;
+  --a3: #fbbf24;
+  --green: #22c55e;
+  --blue: #3b82f6;
+  --purple: #a855f7;
+  --pink: #ec4899;
+  --b: #27272a;
+  --r: 16px;
+  --r-sm: 10px;
+  --max: 1400px;
+  --shadow: 0 4px 30px rgba(0,0,0,0.4);
+  --glow: 0 0 40px rgba(245,158,11,0.15);
 }
-
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
   background: var(--bg);
   color: var(--t);
-  line-height: 1.6;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
 }
-
-/* Hero Section */
-.hero {
-  position: relative;
-  padding: 100px 20px 80px;
-  text-align: center;
-  overflow: hidden;
-  max-width: var(--max);
-  margin: 0 auto;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 800px;
-  height: 800px;
-  background: radial-gradient(circle, rgba(232,168,56,.1) 0%, transparent 70%);
+.bg-grid {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 20%, rgba(245,158,11,0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(168,85,247,0.03) 0%, transparent 50%);
   pointer-events: none;
   z-index: -1;
 }
-
+.hero {
+  position: relative;
+  padding: 120px 24px 100px;
+  text-align: center;
+  max-width: var(--max);
+  margin: 0 auto;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(245,158,11,.12) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+  animation: pulse 4s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; transform: translateX(-50%) scale(1); }
+  50% { opacity: 1; transform: translateX(-50%) scale(1.1); }
+}
 .hero h1 {
-  font-size: clamp(2.5rem, 6vw, 4rem);
-  font-weight: 800;
-  margin-bottom: 16px;
-  letter-spacing: -0.02em;
-  background: linear-gradient(135deg, var(--a), #f0c060);
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 900;
+  margin-bottom: 20px;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, var(--a) 0%, var(--a3) 50%, #fff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
-
 .hero .subtitle {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: var(--t2);
-  margin-bottom: 24px;
-  font-style: italic;
+  margin-bottom: 28px;
+  font-weight: 300;
+  letter-spacing: 0.1em;
 }
-
-.hero .description {
-  font-size: 1rem;
-  color: var(--t2);
-  margin-bottom: 32px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.8;
-}
-
-.badges {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  margin-bottom: 32px;
-  flex-wrap: wrap;
-}
-
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 20px;
-  border-radius: 24px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  border: 1px solid transparent;
-}
-
-.bc {
-  background: rgba(232,168,56,.15);
-  color: var(--a);
-  border-color: rgba(232,168,56,.3);
-}
-
-.bg {
-  background: rgba(100,200,140,.12);
-  color: #7dcea0;
-  border-color: rgba(100,200,140,.3);
-}
-
-.stats {
+.hero .stats {
   display: flex;
   justify-content: center;
   gap: 48px;
-  flex-wrap: wrap;
-  margin-top: 20px;
+  margin-top: 40px;
 }
-
-.stat-item {
-  text-align: center;
-}
-
+.stat-item { text-align: center; }
 .stat-number {
   font-size: 2.5rem;
   font-weight: 800;
-  color: var(--a);
-  display: block;
-  margin-bottom: 4px;
+  background: linear-gradient(135deg, var(--a), var(--a3));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
-
-.stat-label {
-  font-size: 0.9rem;
-  color: var(--t2);
-  font-weight: 500;
-}
-
-/* Navigation */
+.stat-label { font-size: 0.9rem; color: var(--t3); font-weight: 500; }
 nav {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(15,15,15,.95);
+  background: rgba(10,10,11,0.85);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--b);
-  padding: 16px 20px;
+  padding: 16px 0;
 }
-
 .nav-container {
   max-width: var(--max);
   margin: 0 auto;
+  padding: 0 24px;
   display: flex;
-  align-items: center;
-  gap: 16px;
+  gap: 10px;
   overflow-x: auto;
   scrollbar-width: none;
 }
-
-.nav-container::-webkit-scrollbar {
-  display: none;
-}
-
+.nav-container::-webkit-scrollbar { display: none; }
 .nav-button {
-  flex-shrink: 0;
-  padding: 12px 24px;
-  border-radius: 25px;
+  padding: 10px 20px;
+  border-radius: 100px;
   border: 1px solid var(--b);
   background: transparent;
   color: var(--t2);
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
-  white-space: nowrap;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
-
-.nav-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(232,168,56,.1), transparent);
-  transition: left 0.5s;
-}
-
-.nav-button:hover::before {
-  left: 100%;
-}
-
-.nav-button:hover {
-  border-color: var(--a2);
-  color: var(--t);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow);
-}
-
+.nav-button:hover { background: var(--s2); color: var(--t); border-color: var(--a); }
 .nav-button.active {
   background: linear-gradient(135deg, var(--a), var(--a2));
   color: #000;
   border-color: var(--a);
   font-weight: 700;
-  box-shadow: 0 4px 15px rgba(232,168,56,.3);
+  box-shadow: 0 4px 20px rgba(245,158,11,.3);
 }
-
-/* Search Bar */
-.search-wrapper {
-  max-width: var(--max);
-  margin: 32px auto 0;
-  padding: 0 20px;
-}
-
+.search-wrapper { max-width: var(--max); margin: 32px auto 0; padding: 0 24px; }
 .search-bar {
   width: 100%;
-  padding: 16px 24px;
-  border-radius: 30px;
+  padding: 18px 28px;
+  border-radius: 100px;
   border: 2px solid var(--b);
   background: var(--s);
   color: var(--t);
   font-size: 1.1rem;
   outline: none;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: var(--shadow);
+  transition: all 0.3s;
 }
-
-.search-bar::placeholder {
-  color: var(--t2);
-  opacity: 0.8;
-}
-
-.search-bar:focus {
-  border-color: var(--a);
-  box-shadow: 0 0 0 3px rgba(232,168,56,.2), var(--shadow);
-  transform: translateY(-1px);
-}
-
-/* Content Wrapper */
-.content-wrapper {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.section {
-  margin-bottom: 64px;
-  animation: fadeInUp 0.6s ease-out;
-}
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.section-header {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 16px;
-}
-
+.search-bar::placeholder { color: var(--t3); }
+.search-bar:focus { border-color: var(--a); box-shadow: 0 0 0 4px rgba(245,158,11,.1); }
+.content-wrapper { max-width: var(--max); margin: 0 auto; padding: 40px 24px; }
+.section { margin-bottom: 80px; animation: fadeInUp 0.6s ease-out; }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.section-header { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
 .section-title {
   font-size: 2rem;
   font-weight: 800;
-  background: linear-gradient(135deg, var(--a), #f0c060);
+  background: linear-gradient(135deg, var(--t), var(--t2));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  letter-spacing: -0.01em;
 }
-
 .section-count {
-  font-size: 0.9rem;
-  color: var(--t2);
-  background: var(--s2);
-  padding: 6px 16px;
-  border-radius: 20px;
+  font-size: 0.85rem;
+  color: var(--a);
+  background: rgba(245,158,11,.1);
+  padding: 6px 14px;
+  border-radius: 100px;
   font-weight: 600;
-  border: 1px solid var(--b);
 }
+.section-desc { color: var(--t3); font-size: 1rem; margin-bottom: 32px; max-width: 600px; }
 
-.section-description {
-  color: var(--t2);
-  font-size: 1.1rem;
-  margin-bottom: 32px;
-  line-height: 1.7;
-}
-
-/* Current Reading Cards */
-.current-reading-grid {
+/* ===== CURRENT READING HERO CARDS ===== */
+.current-hero {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-  margin-bottom: 48px;
+  margin-bottom: 32px;
 }
-
-.reading-card {
-  padding: 32px;
-  background: linear-gradient(135deg, var(--s) 0%, var(--s2) 100%);
-  border-radius: var(--r);
-  border: 2px solid var(--b);
+@media (max-width: 1024px) { .current-hero { grid-template-columns: 1fr; } }
+.book-hero {
   position: relative;
+  background: var(--s);
+  border-radius: var(--r);
+  border: 1px solid var(--b);
   overflow: hidden;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
 }
-
-.reading-card::before {
+.book-hero::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 6px;
-  height: 100%;
-  background: linear-gradient(135deg, var(--a), var(--a2));
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--a), var(--a3));
 }
-
-.reading-card:hover {
-  border-color: var(--a);
+.book-hero:nth-child(2)::before { background: linear-gradient(90deg, var(--purple), var(--pink)); }
+.book-hero:nth-child(3)::before { background: linear-gradient(90deg, var(--blue), var(--green)); }
+.book-hero:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(232,168,56,.15);
+  border-color: var(--a);
+  box-shadow: var(--glow), var(--shadow);
 }
-
-.reading-card h3 {
-  font-size: 1.4rem;
+.book-hero:nth-child(2):hover { border-color: var(--purple); box-shadow: 0 0 40px rgba(168,85,247,.15), var(--shadow); }
+.book-hero:nth-child(3):hover { border-color: var(--blue); box-shadow: 0 0 40px rgba(59,130,246,.15), var(--shadow); }
+.book-hero-header { padding: 28px 28px 0; }
+.book-number {
+  font-size: 0.75rem;
   font-weight: 700;
+  color: var(--a);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
   margin-bottom: 12px;
-  color: var(--t);
-  letter-spacing: -0.01em;
 }
-
-.reading-card .author {
-  color: var(--a2);
-  font-size: 1rem;
-  margin-bottom: 16px;
-  font-weight: 600;
-}
-
-.reading-card .tag {
+.book-hero:nth-child(2) .book-number { color: var(--purple); }
+.book-hero:nth-child(3) .book-number { color: var(--blue); }
+.book-hero h3 { font-size: 1.5rem; font-weight: 800; color: var(--t); margin-bottom: 8px; line-height: 1.3; }
+.book-author { font-size: 1rem; color: var(--t2); font-weight: 500; margin-bottom: 16px; }
+.book-tag {
   display: inline-block;
-  padding: 6px 16px;
-  border-radius: 20px;
+  padding: 6px 14px;
+  border-radius: 100px;
   font-size: 0.8rem;
   font-weight: 600;
-  background: rgba(232,168,56,.15);
+  background: rgba(245,158,11,.12);
   color: var(--a);
-  margin-bottom: 16px;
-  border: 1px solid rgba(232,168,56,.3);
+  border: 1px solid rgba(245,158,11,.2);
 }
-
-.reading-card .description {
-  font-size: 1rem;
-  color: var(--t2);
-  line-height: 1.7;
-  margin-bottom: 20px;
-}
-
-.reading-card .goal {
+.book-hero:nth-child(2) .book-tag { background: rgba(168,85,247,.12); color: var(--purple); border-color: rgba(168,85,247,.2); }
+.book-hero:nth-child(3) .book-tag { background: rgba(59,130,246,.12); color: var(--blue); border-color: rgba(59,130,246,.2); }
+.book-hero-body { padding: 20px 28px; flex: 1; }
+.book-desc { color: var(--t2); font-size: 0.95rem; line-height: 1.7; margin-bottom: 16px; }
+.book-goal {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: var(--s2);
+  border-radius: var(--r-sm);
   font-size: 0.9rem;
-  color: #7dcea0;
-  font-weight: 600;
-  padding: 8px 16px;
-  background: rgba(125,206,160,.1);
-  border-radius: 12px;
-  border: 1px solid rgba(125,206,160,.2);
+  color: var(--green);
+  font-weight: 500;
 }
+.book-hero-footer { padding: 16px 28px 24px; border-top: 1px solid var(--b); }
+.book-cta { display: flex; align-items: center; justify-content: space-between; color: var(--t2); font-size: 0.9rem; font-weight: 500; }
+.book-cta span:last-child { color: var(--a); transition: transform 0.3s; }
+.book-hero:hover .book-cta span:last-child { transform: translateX(4px); }
+.book-progress { display: flex; align-items: center; gap: 12px; margin-top: 12px; }
+.progress-track { flex: 1; height: 4px; background: var(--s3); border-radius: 2px; overflow: hidden; }
+.progress-fill { height: 100%; border-radius: 2px; }
+.book-hero:nth-child(1) .progress-fill { width: 65%; background: linear-gradient(90deg, var(--a), var(--a3)); }
+.book-hero:nth-child(2) .progress-fill { width: 40%; background: linear-gradient(90deg, var(--purple), var(--pink)); }
+.book-hero:nth-child(3) .progress-fill { width: 80%; background: linear-gradient(90deg, var(--blue), var(--green)); }
+.progress-label { font-size: 0.75rem; color: var(--t3); font-weight: 600; white-space: nowrap; }
 
-/* Category Overview */
-.category-overview {
+/* ===== CATEGORY GRID ===== */
+.category-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-  margin-bottom: 48px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
 }
-
 .category-card {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 24px 28px;
-  background: linear-gradient(135deg, var(--s) 0%, var(--s2) 100%);
+  gap: 16px;
+  padding: 20px 24px;
+  background: var(--s);
   border-radius: var(--r);
-  border: 2px solid var(--b);
+  border: 1px solid var(--b);
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
+  transition: all 0.3s;
 }
-
-.category-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(45deg, transparent, rgba(232,168,56,.05), transparent);
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.category-card:hover::before {
-  opacity: 1;
-}
-
-.category-card:hover {
-  border-color: var(--a);
-  transform: translateY(-6px);
-  box-shadow: 0 15px 30px rgba(232,168,56,.15);
-}
-
-.category-info {
-  z-index: 1;
-}
-
-.category-name {
-  font-weight: 700;
-  font-size: 1.1rem;
-  color: var(--t);
-  margin-bottom: 8px;
-  letter-spacing: -0.01em;
-}
-
-.category-stats {
-  font-size: 0.9rem;
-  color: var(--t2);
-  font-weight: 600;
-}
-
-.progress-container {
-  width: 80px;
-  height: 8px;
-  background: var(--s3);
-  border-radius: 4px;
-  overflow: hidden;
-  margin-top: 8px;
-  z-index: 1;
-}
-
-.progress-bar {
-  height: 100%;
-  background: linear-gradient(90deg, var(--a), var(--a2));
-  border-radius: 4px;
-  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-}
-
-.progress-bar::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,.3), transparent);
-  animation: shimmer 2s infinite;
-}
-
-@keyframes shimmer {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
-}
-
-/* Guide Cards */
-.guide-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 24px;
-  margin-bottom: 48px;
-}
-
-.guide-card {
-  padding: 32px;
-  background: linear-gradient(135deg, var(--s) 0%, var(--s2) 100%);
-  border-radius: var(--r);
-  border: 2px solid var(--b);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.guide-card:hover {
-  border-color: var(--a);
-  transform: translateY(-4px);
-  box-shadow: 0 12px 25px rgba(232,168,56,.1);
-}
-
-.guide-card h3 {
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-  color: var(--a);
-  letter-spacing: -0.01em;
-}
-
-.guide-card p {
-  color: var(--t2);
-  font-size: 1rem;
-  line-height: 1.8;
-  margin-bottom: 16px;
-}
-
-.guide-card ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.guide-card li {
-  color: var(--t2);
-  font-size: 0.95rem;
-  margin-bottom: 12px;
-  padding-left: 20px;
-  position: relative;
-}
-
-.guide-card li::before {
-  content: '•';
-  color: var(--a);
-  font-weight: bold;
-  position: absolute;
-  left: 0;
-}
-
-/* Book List */
-.book-list {
-  list-style: none;
-  margin: 0;
-}
-
-.book-item {
-  display: flex;
-  gap: 20px;
-  padding: 24px 32px;
-  border-radius: var(--r);
-  margin-bottom: 16px;
-  background: linear-gradient(135deg, var(--s) 0%, var(--s2) 100%);
-  border: 2px solid var(--b);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: default;
-  position: relative;
-  overflow: hidden;
-}
-
-.book-item::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  background: linear-gradient(135deg, var(--a), var(--a2));
-  opacity: 0.8;
-}
-
-.book-item:hover {
-  border-color: rgba(232,168,56,.4);
-  background: linear-gradient(135deg, var(--s2) 0%, var(--s3) 100%);
-  transform: translateX(8px);
-}
-
-.book-rank {
-  flex-shrink: 0;
+.category-card:hover { border-color: var(--a); transform: translateX(4px); background: var(--s2); }
+.category-emoji {
+  font-size: 1.8rem;
   width: 48px;
   height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: var(--s2);
   border-radius: 12px;
-  background: var(--s3);
-  color: var(--a);
-  font-weight: 800;
-  font-size: 1.1rem;
-  border: 2px solid var(--b);
+}
+.category-info { flex: 1; }
+.category-name { font-weight: 700; font-size: 1rem; color: var(--t); margin-bottom: 4px; }
+.category-stats { font-size: 0.85rem; color: var(--t3); }
+.category-arrow { color: var(--t3); font-size: 1.2rem; transition: transform 0.3s; }
+.category-card:hover .category-arrow { transform: translateX(4px); color: var(--a); }
+
+/* ===== BOOK LIST ===== */
+.book-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+.book-item {
+  display: flex;
+  gap: 16px;
+  padding: 20px;
+  background: var(--s);
+  border-radius: var(--r-sm);
+  border: 1px solid var(--b);
   transition: all 0.3s;
+  cursor: pointer;
 }
+.book-item:hover { border-color: var(--a); transform: translateY(-2px); }
+.book-item-number { font-size: 0.75rem; font-weight: 700; color: var(--t3); min-width: 24px; }
+.book-item-info h4 { font-size: 1rem; font-weight: 600; color: var(--t); margin-bottom: 4px; }
+.book-item-info p { font-size: 0.85rem; color: var(--t3); }
 
-.book-rank.top-rank {
-  background: linear-gradient(135deg, var(--a), var(--a2));
-  color: #000;
-  border-color: var(--a);
-  box-shadow: 0 4px 15px rgba(232,168,56,.3);
-}
+/* ===== GUIDE ===== */
+.guide-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 24px; }
+.guide-card { padding: 28px; background: var(--s); border-radius: var(--r); border: 1px solid var(--b); }
+.guide-card h3 { font-size: 1.2rem; font-weight: 700; color: var(--a); margin-bottom: 16px; }
+.guide-card ul { list-style: none; padding: 0; }
+.guide-card li { padding: 8px 0; color: var(--t2); font-size: 0.9rem; border-bottom: 1px solid var(--b); }
+.guide-card li:last-child { border: none; }
+.guide-card li strong { color: var(--t); }
 
-.book-info {
-  flex: 1;
-  min-width: 0;
-}
-
-.book-title {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin-bottom: 6px;
-  color: var(--t);
-  letter-spacing: -0.01em;
-}
-
-.book-author {
-  color: var(--a2);
-  font-size: 0.95rem;
-  margin-bottom: 12px;
-  font-weight: 600;
-}
-
-.book-description {
-  color: var(--t2);
-  font-size: 0.95rem;
-  line-height: 1.7;
-  margin-bottom: 0;
-}
-
-.book-link {
-  color: var(--a);
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.2s;
-  opacity: 0.8;
-}
-
-.book-link:hover {
-  opacity: 1;
-  text-shadow: 0 0 8px rgba(232,168,56,.5);
-}
-
-/* Footer */
-.footer {
-  text-align: center;
-  padding: 60px 20px 40px;
-  border-top: 2px solid var(--b);
-  margin-top: 80px;
-  background: linear-gradient(to top, rgba(26,26,26,.5), transparent);
-}
-
-.footer-content {
-  max-width: var(--max);
-  margin: 0 auto;
-}
-
-.footer-text {
-  color: var(--t2);
-  font-size: 1rem;
-  margin-bottom: 20px;
-  font-weight: 500;
-}
-
-.footer-link {
-  color: var(--a);
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s;
-  padding: 8px 16px;
-  border-radius: 20px;
-  border: 1px solid transparent;
-}
-
-.footer-link:hover {
-  background: rgba(232,168,56,.1);
-  border-color: var(--a);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(232,168,56,.2);
-}
+/* ===== FOOTER ===== */
+footer { padding: 60px 24px; text-align: center; border-top: 1px solid var(--b); margin-top: 80px; }
+.footer-text { color: var(--t3); font-size: 0.9rem; margin-bottom: 20px; }
+.footer-links { display: flex; justify-content: center; gap: 24px; }
+.footer-links a { color: var(--t2); text-decoration: none; font-size: 0.9rem; transition: color 0.3s; }
+.footer-links a:hover { color: var(--a); }
 
 /* Empty State */
-.empty-state {
-  text-align: center;
-  padding: 80px 20px;
-  color: var(--t2);
-}
+.empty-state { text-align: center; padding: 80px 20px; color: var(--t3); }
+.empty-state-icon { font-size: 4rem; margin-bottom: 20px; }
+.empty-state-text { font-size: 1.2rem; font-weight: 600; color: var(--t2); }
 
-.empty-state-icon {
-  font-size: 3rem;
-  margin-bottom: 20px;
-  opacity: 0.6;
-}
-
-.empty-state-text {
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-
-.empty-state-subtext {
-  font-size: 1rem;
-  opacity: 0.8;
-}
-
-/* Responsive Design */
 @media (max-width: 768px) {
-  .hero {
-    padding: 80px 16px 60px;
-  }
-
-  .hero h1 {
-    font-size: 2.2rem;
-  }
-
-  .hero .subtitle {
-    font-size: 1.1rem;
-  }
-
-  .stats {
-    gap: 32px;
-  }
-
-  .stat-number {
-    font-size: 2rem;
-  }
-
-  .nav-button {
-    padding: 10px 18px;
-    font-size: 0.85rem;
-  }
-
-  .search-bar {
-    padding: 14px 20px;
-    font-size: 1rem;
-  }
-
-  .current-reading-grid,
-  .category-overview,
-  .guide-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .reading-card,
-  .guide-card {
-    padding: 24px;
-  }
-
-  .book-item {
-    padding: 20px 24px;
-    gap: 16px;
-  }
-
-  .book-rank {
-    width: 40px;
-    height: 40px;
-    font-size: 1rem;
-  }
-
-  .section-title {
-    font-size: 1.6rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero {
-    padding: 60px 12px 40px;
-  }
-
-  .badges {
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .badge {
-    padding: 6px 16px;
-    font-size: 0.8rem;
-  }
-
-  .stats {
-    flex-direction: column;
-    gap: 24px;
-  }
-
-  .nav-button {
-    padding: 8px 14px;
-    font-size: 0.8rem;
-  }
-
-  .category-card {
-    padding: 20px 24px;
-  }
-
-  .book-title {
-    font-size: 1.1rem;
-  }
-
-  .section {
-    margin-bottom: 48px;
-  }
+  .hero { padding: 80px 20px 60px; }
+  .hero h1 { font-size: 2.5rem; }
+  .hero .stats { gap: 24px; }
+  .stat-number { font-size: 2rem; }
+  .current-hero { grid-template-columns: 1fr; }
+  .category-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
 <body>
+<div class="bg-grid"></div>
 
-<!-- Hero Section -->
 <section class="hero">
-  <h1>📚 我的书单</h1>
-  <p class="subtitle">深度阅读 · 终身学习 · 全面成长</p>
-  <p class="description">精心整理的285本精选书籍，涵盖文学、技能、认知、历史、科技、投资、传记、艺术、哲学等9大分类。每本书都经过深思熟虑的选择，旨在构建完整的知识体系和思维框架。</p>
-  
-  <div class="badges">
-    <span class="badge bc">📖 计划阅读中</span>
-    <span class="badge bg">🎯 目标：深度内化与实践</span>
-  </div>
-  
+  <h1>我的书单</h1>
+  <p class="subtitle">深度阅读 · 终身学习</p>
   <div class="stats">
-    <div class="stat-item">
-      <span class="stat-number">285</span>
-      <span class="stat-label">本书籍</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-number">9</span>
-      <span class="stat-label">大分类</span>
-    </div>
+    <div class="stat-item"><div class="stat-number">285</div><div class="stat-label">本藏书</div></div>
+    <div class="stat-item"><div class="stat-number">9</div><div class="stat-label">大分类</div></div>
+    <div class="stat-item"><div class="stat-number">3</div><div class="stat-label">本在读</div></div>
   </div>
 </section>
 
-<!-- Navigation -->
-<nav>
-  <div class="nav-container" id="navigation"></div>
-</nav>
+<nav><div class="nav-container" id="navigation"></div></nav>
 
-<!-- Search Bar -->
 <div class="search-wrapper">
   <input type="text" class="search-bar" id="searchInput" placeholder="🔍 搜索书名、作者或主题...">
 </div>
 
-<!-- Main Content -->
 <div class="content-wrapper" id="mainContent"></div>
 
-<!-- Footer -->
-<footer class="footer">
-  <div class="footer-content">
-    <div class="footer-text">📚 我的书单 · 285本 · 9大分类 · 终身学习</div>
-    <a href="notes/civilization_1.html" class="footer-link">📖 查看读书笔记</a>
-  </div>
+<footer>
+  <p class="footer-text">📚 我的书单 · 285本 · 9大分类 · 终身学习</p>
+  <div class="footer-links"><a href="https://github.com/zhubao315/my-booklist" target="_blank">GitHub</a></div>
 </footer>
 
 <script>
-// Data structure
 const categories = [
-  { id: 1, name: "文学虚构类", emoji: "1️⃣", description: "审美体验与情感共鸣" },
-  { id: 2, name: "实用技能类", emoji: "2️⃣", description: "解决具体问题，提升实战能力" },
-  { id: 3, name: "认知成长类", emoji: "3️⃣", description: "向内生长，突破认知边界" },
-  { id: 4, name: "历史社科类", emoji: "4️⃣", description: "洞察历史规律，理解社会本质" },
-  { id: 5, name: "科技科普类", emoji: "5️⃣", description: "理解科技本质，把握未来趋势" },
-  { id: 6, name: "投资理财类", emoji: "6️⃣", description: "构建财富观念，实现财务自由" },
-  { id: 7, name: "传记人物类", emoji: "7️⃣", description: "观名人人生，汲取成长智慧" },
-  { id: 8, name: "艺术美学类", emoji: "8️⃣", description: "艺术修养与美学品味" },
-  { id: 9, name: "哲学宗教类", emoji: "9️⃣", description: "精神追求与智慧启蒙" }
+  { id: 1, name: "文学虚构类", emoji: "📖", desc: "审美体验与情感共鸣" },
+  { id: 2, name: "实用技能类", emoji: "🛠️", desc: "解决具体问题，提升实战能力" },
+  { id: 3, name: "认知成长类", emoji: "🧠", desc: "向内生长，突破认知边界" },
+  { id: 4, name: "历史社科类", emoji: "🏛️", desc: "洞察历史规律，理解社会本质" },
+  { id: 5, name: "科技科普类", emoji: "🔬", desc: "理解科技本质，把握未来趋势" },
+  { id: 6, name: "投资理财类", emoji: "💰", desc: "构建财富观念，实现财务自由" },
+  { id: 7, name: "传记人物类", emoji: "👤", desc: "观名人人生，汲取成长智慧" },
+  { id: 8, name: "艺术美学类", emoji: "🎨", desc: "艺术修养与美学品味" },
+  { id: 9, name: "哲学宗教类", emoji: "🕉️", desc: "精神追求与智慧启蒙" }
+];
+
+const currentReading = [
+  { title: "第二座山", author: "大卫·布鲁克斯", tag: "道德喜乐", desc: "从个人主义走向关系主义，探索人生意义的深层维度", goal: "理解承诺与奉献的力量", noteLink: "notes/second-mountain.html", progress: 65, status: "深度阅读中" },
+  { title: "重启人生", author: "亚瑟·布鲁克斯", tag: "职业转型", desc: "应对职业倦怠与中年危机，从流体智力向晶体智力转型", goal: "构建人生的第二曲线", noteLink: "notes/restart-life.html", progress: 40, status: "笔记整理中" },
+  { title: "与塞涅卡共进早餐", author: "大卫·菲德勒", tag: "斯多葛哲学", desc: "古老智慧应对现代焦虑，在不确定的时代找到内心平静", goal: "掌握控制二分法", noteLink: "notes/breakfast-with-seneca.html", progress: 80, status: "实践应用中" }
 ];
 
 const booksByCategory = {
-  1: [
-    ["百年孤独","马尔克斯","魔幻现实主义巅峰，诺贝尔文学奖作品"],
-    ["1984","奥威尔","反乌托邦经典，极权主义的终极警告"],
-    ["红楼梦","曹雪芹","中国古典文学巅峰，四大名著之首"],
-    ["悲惨世界","雨果","人道主义巨著，探讨救赎与正义"],
-    ["罪与罚","陀思妥耶夫斯基","心理小说经典，灵魂深处的拷问"],
-    ["简·爱","勃朗特","女性主义文学先驱，独立自尊"],
-    ["傲慢与偏见","奥斯汀","爱情喜剧经典，反讽幽默"],
-    ["呼啸山庄","艾米莉·勃朗特","狂野激烈的爱与恨"],
-    ["双城记","狄更斯","救赎与人道主义经典"],
-    ["老人与海","海明威","人可以被毁灭但不能被打败"],
-    ["了不起的盖茨比","菲茨杰拉德","美国梦的幻灭，爵士时代经典"],
-    ["麦田里的守望者","塞林格","青春叛逆与成长迷茫"],
-    ["堂吉诃德","塞万提斯","西方现代小说鼻祖"],
-    ["变形记","卡夫卡","现代人的异化与孤独"],
-    ["安娜·卡列尼娜","托尔斯泰","俄罗斯文学巅峰"]
-  ],
-  2: [
-    ["从优秀到卓越","柯林斯","企业转型的战略指南"],
-    ["从0到1","蒂尔","垂直进步创造垄断价值"],
-    ["精益创业","莱斯","MVP验证+快速迭代"],
-    ["高效能人士的七个习惯","柯维","全面效能提升"],
-    ["创新者的窘境","克里斯坦森","颠覆创新理论"],
-    ["创业维艰","霍洛维茨","反直觉管理与危机处理"],
-    ["重新定义公司","施密特","创意精英管理"],
-    ["定位","艾·里斯","心智认知战略"],
-    ["增长黑客","埃利斯","产品驱动增长"],
-    ["引爆点","格拉德威尔","流行传播规律"],
-    ["疯传","伯杰","让创意像病毒一样传播"],
-    ["上瘾","艾亚尔","打造让用户上瘾的产品"],
-    ["流量池","杨飞","品牌+裂变+精准投放"],
-    ["商业模式新生代","奥斯特瓦德","九大要素系统化分析"],
-    ["刻意练习","艾利克森","科学方法突破技能瓶颈"],
-    ["番茄工作法图解","西里洛","25分钟专注循环"],
-    ["高效能人士的时间管理","艾伦","GTD五步工作流"],
-    ["精力管理","洛尔","平衡人生四大能量源"],
-    ["极简时间管理","山下英子","断舍离在时间管理中的应用"],
-    ["拖延心理学","博克","拖延的深层心理机制"],
-    ["奇特的一生","格拉宁","56年时间统计法的极致实践"],
-    ["卓越基因","柯林斯","从初创到卓越"],
-    ["80/20法则","科克","最小努力获得最大收益"]
-  ],
-  3: [
-    ["思考，快与慢","卡尼曼","大脑的两种思维模式"],
-    ["金字塔原理","明托","结构化思维经典指南"],
-    ["非暴力沟通","卢森堡","同理心沟通化解冲突"],
-    ["原则","达利欧","系统化决策框架"],
-    ["第五项修炼","圣吉","学习型组织与系统思考"],
-    ["深度工作","纽波特","碎片化时代保持专注力"],
-    ["如何阅读一本书","艾德勒","终身学习的基础"],
-    ["反脆弱","塔勒布","从不确定性中获益"],
-    ["自卑与超越","阿德勒","借自我成长超越自卑"],
-    ["社会心理学","迈尔斯","群体行为与个体互动"],
-    ["黑天鹅","塔勒布","应对不可预测的重大事件"],
-    ["津巴多普通心理学","津巴多","描述、解释、预测、控制行为"],
-    ["心理学与生活","格里格","心理学与日常生活的入门经典"],
-    ["学习之道","奥克利","从学渣到博士的学习方法论"],
-    ["费曼学习法","费曼","教学相长深化理解"],
-    ["认知天性","布朗","基于认知科学的学习方法"],
-    ["心流","契克森米哈赖","最优体验与幸福科学"],
-    ["影响力","西奥迪尼","说服的六大原则"],
-    ["系统思考","舍伍德","复杂问题的系统性解决方案"],
-    ["习惯的力量","杜希格","解码习惯的运行机制"],
-    ["终身成长","德韦克","成长型思维模式"],
-    ["坚毅","达克沃思","激情与毅力的双重力量"],
-    ["清单革命","葛文德","用清单避免错误与遗漏"],
-    ["底层逻辑","刘润","看透世界本质的思维框架"],
-    ["跃迁","刘未鹏","利用认知杠杆跨越式成长"],
-    ["认知觉醒","周岭","开启自我改变的原动力"],
-    ["长期主义","刘润","用长期思维指导决策"],
-    ["远见","费瑟斯通豪","职业生涯三阶段规划"],
-    ["优秀到不能被忽视","纽波特","技能理论vs激情理论"],
-    ["精进","采铜","系统化思维规划人生"],
-    ["执行","鲍西迪","从战略到执行的落地方法"],
-    ["把时间当作朋友","李笑来","用心智开启成长之路"],
-    ["小强升职记","吴伯凡","时间管理实战指南"],
-    ["自律力","崔西","通过习惯实现自我管理"],
-    ["知识的边界","爱泼斯坦","多领域学习者的优势"],
-    ["阅读的力量","约翰逊","通过阅读改变命运"],
-    ["当下的力量","托利","觉察当下超越痛苦"],
-    ["象与骑象人","海特","理性与情感双系统模型"],
-    ["社会性动物","阿伦森","社会性动物的深层动机"],
-    ["亲密关系","米勒","科学研究视角的亲密关系指南"],
-    ["梦的解析","弗洛伊德","通过梦境探索潜意识"],
-    ["路西法效应","津巴多","环境对人性善恶的影响"],
-    ["操纵心理学","布瑞克","识别和应对心理操控"],
-    ["幸福的婚姻","戈特曼","科学研究的婚姻幸福秘诀"],
-    ["正面管教","尼尔森","不惩罚不娇纵的教育方法"],
-    ["如何说孩子才会听","费伯","亲子沟通经典指南"],
-    ["爱的五种语言","查普曼","用不同爱语表达和接收爱"],
-    ["养育男孩","比达尔夫","理解男孩成长特点"],
-    ["养育女孩","比达尔夫","养育自信智慧的女孩"],
-    ["父母的觉醒","保罗","与孩子一起成长"],
-    ["稀缺","穆来纳森","贫穷与忙碌的认知机制"],
-    ["被讨厌的勇气","岸见一郎","阿德勒心理学与课题分离"],
-    ["活出生命的意义","弗兰克尔","集中营幸存者的生命智慧"],
-    ["自控力","麦格尼格尔","意志力的科学训练"],
-    ["原子习惯","克利尔","微小改变的复利效应"],
-    ["少有人走的路","派克","自律、爱与心智成熟"],
-    ["学会提问","布朗","批判性思维的十大关键问题"],
-    ["清醒思考的艺术","多贝里","52种常见思维谬误"],
-    ["掌控习惯","杜希格","习惯回路机制与改变"],
-    ["第二座山","大卫·布鲁克斯","追求道德喜乐，超越自我"],
-    ["重启人生","亚瑟·布鲁克斯","人生下半场，流体智力向晶体智力转型"]
-  ],
-  4: [
-    ["文明的故事","杜兰特","人类文明如何崛起与腐化"],
-    ["伊利亚特","荷马","战争、领导力与决断"],
-    ["通往奴役之路","哈耶克","计划经济为何滑向专制"],
-    ["毁灭的代价","图兹","纳粹经济因资源错配而崩溃"],
-    ["八月枪声","塔奇曼","小错如何引爆世界大战"],
-    ["高卢战记","恺撒","组织+叙事+执行的征服手册"],
-    ["钢铁风暴","荣格尔","一战最真实的一线视角"],
-    ["论语","孔子","修身齐家治国平天下"],
-    ["道德经","老子","无为而治的人生哲学"],
-    ["史记","司马迁","史家之绝唱，无韵之离骚"],
-    ["人类简史","赫拉利","重新认识人类本身"],
-    ["资治通鉴","司马光","治国理政的历史镜鉴"],
-    ["孟子","孟子","性善论与仁政思想"],
-    ["大学","曾子","三纲领八条目"],
-    ["万历十五年","黄仁宇","大历史观的微观切入"],
-    ["理想国","柏拉图","西方哲学奠基之作"],
-    ["全球通史","斯塔夫里安诺斯","从史前到现代"],
-    ["国富论","亚当·斯密","市场经济运行规律"],
-    ["中庸","子思","致中和的人生境界"],
-    ["中国哲学史","冯友兰","中国哲学发展脉络"],
-    ["西方哲学史","罗素","西方哲学发展历程"],
-    ["尼各马可伦理学","亚里士多德","幸福与良善生活的本质"],
-    ["未来简史","赫拉利","AI时代的思想指南"],
-    ["今日简史","赫拉利","全球化时代的思考"],
-    ["乡土中国","费孝通","中国传统农村社会的密码"],
-    ["乌合之众","勒庞","群体行为的非理性特征"],
-    ["新教伦理与资本主义精神","韦伯","资本主义兴起的文化根源"],
-    ["毛选","毛泽东","在变局中把握本质"],
-    ["中国社会各阶层分析","梁晓声","当代社会阶层结构与变迁"],
-    ["莎士比亚全集","莎士比亚","人文主义思想的集大成者"],
-    ["美学散步","宗白华","中国美学思想与艺术精神"],
-    ["文化苦旅","余秋雨","文化探索与文明反思"],
-    ["商君书","商鞅","法家思想的集大成之作"],
-    ["盐铁论","桓宽","古代经济政策辩论实录"],
-    ["社会分工论","涂尔干","社会团结的根基"],
-    ["自杀论","涂尔干","社会学研究方法论典范"],
-    ["社会学概论","郑杭生","社会学基本理论和方法"],
-    ["社会学的邀请","威特","社会学思维和洞察"],
-    ["日常生活中的自我呈现","戈夫曼","拟剧论开创之作"],
-    ["回归故里","埃里蓬","社会阶层的固化与流动"]
-  ],
-  5: [
-    ["毁灭大师","库什纳","用代码改变世界的真实案例"],
-    ["深度学习","古德费洛","深度学习最权威的百科全书"],
-    ["机器学习","周志华","中文机器学习经典教材"],
-    ["时间简史","霍金","时间与空间的终极探索"],
-    ["必然","凯文·凯利","科技发展的12种必然趋势"],
-    ["失控","凯文·凯利","复杂自适应系统的终极探索"],
-    ["浪潮之巅","吴军","科技巨头兴衰史"],
-    ["智能时代","吴军","大数据与智能革命"],
-    ["创新者","艾萨克森","数字时代先驱者群像"],
-    ["计算机视觉","Szeliski","计算机视觉理论与算法大全"],
-    ["自然语言处理综论","Jurafsky","NLP最权威教科书"],
-    ["Python机器学习","Raschka","Python机器学习实践指南"],
-    ["Python深度学习","Chollet","Keras作者深度学习实战"],
-    ["动手学深度学习","李沐","交互式深度学习教程"],
-    ["强化学习","Sutton","强化学习理论基石"],
-    ["统计学习方法","李航","统计学习数学原理精讲"],
-    ["机器学习实战","Harrington","机器学习算法案例集"],
-    ["深度学习入门","斋藤康毅","深度学习最佳入门书"],
-    ["神经网络与深度学习","邱锡鹏","中文深度学习代表作"],
-    ["机器学习系统设计","Eric Kim","ML系统设计最佳实践"],
-    ["AI极简经济学","Agrawal","AI技术的经济影响"],
-    ["推荐系统实践","项亮","推荐系统完整指南"],
-    ["生成式AI","Wolfram","AIGC核心技术探秘"],
-    ["图深度学习","孙立钢","图神经网络前沿技术"],
-    ["联邦学习","杨强","分布式ML与隐私保护"],
-    ["科技想要什么","凯文·凯利","技术进化论深度思考"],
-    ["大数据时代","舍恩伯格","重新定义信息价值"],
-    ["区块链革命","塔普斯科特","区块链原理与未来影响"],
-    ["超级智能","博斯特罗姆","超级智能的风险与路径"],
-    ["AI产品经理手册","待定","AI产品管理实战方法"],
-    ["大模型应用开发","待定","大模型应用开发全流程"],
-    ["超越百岁","阿提亚","Medicine 3.0预防医学理念"],
-    ["长跑启示录","麦克杜格尔","人类跑步进化论"],
-    ["大脑健身房","汉森","运动对抗焦虑提升认知"],
-    ["观察的艺术","沃克","唤醒感官，把跑步变成探险"],
-    ["跑步安全指南","迪查里","建立无伤跑法的防护机制"],
-    ["姿势跑法实践","罗曼诺夫","利用重力高效奔跑"],
-    ["速度训练原理","丹尼尔斯","VDOT科学掌控配速"]
-  ],
-  6: [
-    ["聪明的投资者","格雷厄姆","安全边际投资哲学"],
-    ["穷查理宝典","考夫曼","多元思维模型集成"],
-    ["巴菲特致股东的信","巴菲特","价值投资实战精髓"],
-    ["原则","达利欧","系统化决策原则"],
-    ["证券分析","格雷厄姆","企业价值评估的圣经"],
-    ["漫步华尔街","马尔基尔","市场效率与被动投资"],
-    ["投资最重要的事","马克斯","第二层思维与周期投资"],
-    ["随机漫步的傻瓜","塔勒布","概率思维与黑天鹅"],
-    ["非理性繁荣","席勒","市场心理与资产泡沫"],
-    ["估值","达莫达兰","企业估值完整方法论"],
-    ["指数基金投资指南","博格","被动投资理论"],
-    ["资产配置的艺术","伯恩斯坦","构建稳健投资组合"],
-    ["财务自由之路","舍费尔","系统化财务规划"],
-    ["穷爸爸富爸爸","清崎","区分资产与负债"],
-    ["小狗钱钱","舍费尔","用童话教授财富管理"],
-    ["纳瓦尔宝典","乔根森","专长积累与复利效应"],
-    ["金钱心理学","豪泽尔","人性与金钱的关系"],
-    ["思考致富","希尔","成功与财富的心理密码"],
-    ["芒格之道","芒格","多领域思维模型"],
-    ["慢慢变富","杨天南","价值投资的实践指南"],
-    ["有钱人","艾克","重构财富思维"],
-    ["富有的习惯","科里","日常习惯改变实现财富积累"],
-    ["贫穷的本质","班纳吉","贫穷的深层心理和社会机制"],
-    ["钱从哪里来","香帅","个人财富积累路径全面解析"],
-    ["你的第一本理财书","埃利斯","投资咨询师的专业建议"]
-  ],
-  7: [
-    ["美国恺撒","曼彻斯特","麦克阿瑟：天才+缺陷"],
-    ["十二位对抗诸神的人","博利索","拒绝接受命运的疯子"],
-    ["成吉思汗：现代世界的缔造者","威瑟弗德","草原帝国的崛起"],
-    ["富兰克林自传","富兰克林","美国精神的自我修养典范"],
-    ["苏东坡","林语堂","道家顺应、佛家破执的生活哲学家"],
-    ["曾国藩","唐浩明","从笨小孩到半个圣人的自省之路"],
-    ["乔布斯","艾萨克森","极简美学的创新教父"],
-    ["马斯克传","艾萨克森","重新定义多个行业的颠覆者"],
-    ["毛选","毛泽东","改变中国命运的传奇历程"],
-    ["稻盛和夫","稻盛和夫","利他哲学创造两家世界500强"],
-    ["贝索斯","斯通","长期主义重塑零售业"],
-    ["甘地自传","甘地","非暴力不合作的精神领袖"],
-    ["曼德拉传","桑普森","用宽容终结种族隔离"],
-    ["曹操","张作耀","理性客观的政治家"],
-    ["褚时健","周桦","实干破局的企业家精神"],
-    ["张居正","熊召政","用改革智慧挽救大明王朝"],
-    ["左宗棠","徐志频","抬棺出征收复新疆的民族英雄"],
-    ["袁隆平","辛业芸","杂交水稻之父解决世界粮食危机"],
-    ["居里夫人传","艾芙·居里","两次诺贝尔奖的女性先驱"],
-    ["海伦凯勒","海伦·凯勒","在黑暗中创造光明"],
-    ["苏格拉底","色诺芬","认识你自己的哲学智慧"]
-  ],
-  8: [
-    ["吴哥之美","蒋勋","在废墟中看见文明的生灭"],
-    ["艺术的故事","贡布里希","从史前到现代的艺术发展"],
-    ["美的历程","李泽厚","中国数千年审美意识演变"],
-    ["谈美","朱光潜","书信体美感修养与人生艺术"],
-    ["观看之道","伯格","揭示视觉背后的意识形态"],
-    ["艺术精神","罗伯特·亨利","艺术创作与生活的深刻联系"]
-  ],
-  9: [
-    ["纯粹理性批判","康德","人类理性的边界与能力"],
-    ["存在与时间","海德格尔","追问存在的意义"],
-    ["查拉图斯特拉如是说","尼采","上帝已死与超人的诞生"],
-    ["禅与摩托车维修艺术","皮尔西格","调和理性与感性的哲学之旅"],
-    ["悉达多","黑塞","探索自我实现与内心平静"],
-    ["心经","玄奘译","260字浓缩大乘佛法精髓"],
-    ["蒙田随笔","蒙田","通过认识自己寻找安身立命之本"],
-    ["黄庭经","魏华存","道教内丹修炼经典"],
-    ["太上感应篇","佚名","道教入门伦理指南"],
-    ["庄子","庄子","坐忘心斋等修养方法"],
-    ["周易参同契","魏伯阳","万古丹经王"],
-    ["抱朴子内篇","葛洪","系统论述神仙方术"],
-    ["养生延命录","陶弘景","南朝道教养生集大成"],
-    ["太乙金华宗旨","吕洞宾","回光修炼法"],
-    ["云笈七签","张君房","宋代道教文献汇编"],
-    ["性命圭旨","佚名","内丹修炼图解经典"],
-    ["乐育堂语录","黄元吉","全真道内丹修炼语录"],
-    ["炁体源流","张至顺","当代道教大师实修经验"],
-    ["礼记·月令","佚名","遵循季节变化的养生指南"],
-    ["黄帝内经","佚名","中医养生根本经典"],
-    ["千金方","孙思邈","药王养生实践集"],
-    ["本草纲目","李时珍","药食同源养生"],
-    ["遵生八笺","高濂","明代文人养生大全"],
-    ["丹道法诀十二讲","胡孚琛","社科院道学研究成果"],
-    ["道的呼吸","李谨伯","橐龠呼吸详解"],
-    ["道家养生学概要","萧天石","系统梳理道家养生体系"],
-    ["道教与养生","陈撄宁","近代仙学大师著作"],
-    ["道医学","熊春锦","现代道医学体系"],
-    ["金花的秘密","荣格","心理学解读太乙金华宗旨"],
-    ["马王堆房中术","佚名","中国最早房中术文献"],
-    ["容成阴道","容成子","最早系统论述还精补脑"],
-    ["养性延命录·御女损益篇","陶弘景","房中术实操指南"],
-    ["素女经","佚名","调和阴阳与还精补脑"],
-    ["洞玄子","张鼎","体位与技巧体系"],
-    ["房中补益","孙思邈","药王性养生经验"],
-    ["三元延寿参赞书","李鹏飞","欲不可早、不可纵、不可禁"],
-    ["遵生八笺·延年却病笺","高濂","固精气修炼法与药膳"],
-    ["摄生总要","洪基","综合性养生著作"],
-    ["道教与性","李约瑟","西方汉学视角解读房中术"],
-    ["中国古代房内考","高罗佩","房中术发展脉络学术研究"],
-    ["道家性养生研究","胡孚琛","现代科学解读道教性养生"],
-    ["性理学","萧天石","性与生命能量关系"],
-    ["悟真篇","张伯端","南宗祖书，隐喻阴阳双修"],
-    ["无根树词","张三丰","丹道词作，接命延年"],
-    ["钟吕传道集","钟离权","龙虎交媾与坎离交济框架"],
-    ["方壶外史","陆西星","东派双修集大成"],
-    ["道窍谈","李西月","西派核心，彼家真义"],
-    ["三车秘旨","李西月","丹道河车运转"],
-    ["金丹真传","孙汝忠","明代双修实操记录"],
-    ["大成捷要","柳华阳","全真龙门派著作"],
-    ["青娥功","佚名","女性双修/独修功法"],
-    ["道教南宗与双修","汇编","南宗双修思想考证"],
-    ["与塞涅卡共进早餐","菲德勒","斯多葛哲学的生活指南"]
-  ]
+  1: [["百年孤独","马尔克斯"],["1984","奥威尔"],["红楼梦","曹雪芹"],["悲惨世界","雨果"],["罪与罚","陀思妥耶夫斯基"],["简·爱","勃朗特"],["傲慢与偏见","奥斯汀"],["呼啸山庄","勃朗特"],["双城记","狄更斯"],["老人与海","海明威"],["了不起的盖茨比","菲茨杰拉德"],["麦田里的守望者","塞林格"],["堂吉诃德","塞万提斯"],["变形记","卡夫卡"],["安娜·卡列尼娜","托尔斯泰"]],
+  2: [["从优秀到卓越","柯林斯"],["从0到1","蒂尔"],["精益创业","莱斯"],["高效能人士的七个习惯","柯维"],["创新者的窘境","克里斯坦森"],["创业维艰","霍洛维茨"],["重新定义公司","施密特"],["定位","里斯"],["增长黑客","埃利斯"],["引爆点","格拉德威尔"],["疯传","伯杰"],["上瘾","艾亚尔"],["流量池","杨飞"]],
+  3: [["思考，快与慢","卡尼曼"],["金字塔原理","明托"],["非暴力沟通","卢森堡"],["原则","达利欧"],["第五项修炼","圣吉"],["深度工作","纽波特"],["如何阅读一本书","艾德勒"],["反脆弱","塔勒布"],["自卑与超越","阿德勒"],["心流","契克森米哈赖"],["影响力","西奥迪尼"],["系统思考","舍伍德"],["习惯的力量","杜希格"],["终身成长","德韦克"],["原子习惯","克利尔"]],
+  4: [["文明的故事","杜兰特"],["伊利亚特","荷马"],["通往奴役之路","哈耶克"],["论语","孔子"],["道德经","老子"],["史记","司马迁"],["人类简史","赫拉利"],["资治通鉴","司马光"],["理想国","柏拉图"],["全球通史","斯塔夫里安诺斯"],["国富论","亚当·斯密"],["乡土中国","费孝通"]],
+  5: [["时间简史","霍金"],["黑客与画家","格雷厄姆"],["浪潮之巅","吴军"],["深度学习","古德费洛"],["生命3.0","泰格马克"],["基因传","慕克吉"],["复杂","沃尔德罗普"],["信息简史","格雷克"]],
+  6: [["聪明的投资者","格雷厄姆"],["巴菲特致股东的信","巴菲特"],["证券分析","格雷厄姆"],["穷查理宝典","芒格"],["投资最重要的事","马克斯"],["漫步华尔街","马尔基尔"],["财务自由之路","舍费尔"]],
+  7: [["史蒂夫·乔布斯","艾萨克森"],["埃隆·马斯克","万斯"],["富兰克林自传","富兰克林"],["苏东坡传","林语堂"],["曾国藩","张宏杰"],["毛泽东","特里尔"]],
+  8: [["艺术的故事","贡布里希"],["美的历程","李泽厚"],["艺术哲学","丹纳"],["观看之道","伯格"],["中国美学史","李泽厚"]],
+  9: [["沉思录","马可·奥勒留"],["道德经","老子"],["庄子","庄子"],["理想国","柏拉图"],["存在与时间","海德格尔"],["纯粹理性批判","康德"]]
 };
 
-// Create a comprehensive and reliable navigation links mapping using only safe URLs
-function createSafeNavigationLinks() {
-  // Safe note file mappings using only ASCII characters
-  const safeNoteFiles = {
-    // ===== 中文书名映射 =====
-    // 认知成长类
-    "思考，快与慢": "think-fast-slow.html",
-    "原则": "principles.html",
-    "原子习惯": "atomic-habits.html",
-    "深度工作": "deep-work.html",
-    "刻意练习": "deliberate-practice.html",
-    "高效能人士的七个习惯": "seven-habits.html",
-    "非暴力沟通": "nonviolent-communication.html",
-    "心流": "flow.html",
-    "影响力": "influence.html",
-    "系统思考": "systems-thinking.html",
-    "美的历程": "systems-beauty.html",
-    "认知觉醒": "cognitive-awareness.html",
-    "批判性思维": "critical-thinking.html",
-    "终身成长": "lifelong-growth.html",
-    "转变": "transition.html",
-    "远见": "vision.html",
-    "如何阅读一本书": "how-read-book.html",
-    "高效学习": "efficient-learning.html",
-    "学会提问": "ask-questions.html",
-    "反脆弱": "anti-fragile.html",
-    "直觉思考": "intuition-thinking.html",
-    "习惯的力量": "power-of-habits.html",
-    "自卑与超越": "self-esteem-superiority.html",
-    "少有人走的路": "few-roads.html",
-    "自控力": "self-control.html",
-    "象与骑象人": "personality.html",
-    "社会心理学": "social-psychology.html",
-    "亲密关系": "close-relationships.html",
-    "社会性动物": "social-animals.html",
-    "梦的解析": "dream-analysis.html",
-    "路西法效应": "lucifer-effect.html",
-    "操纵心理学": "psychological-manipulation.html",
-    "稀缺": "scarcity.html",
-    "被讨厌的勇气": "self-esteem.html",
-    "当下的力量": "self.html",
-    "情绪": "emotions.html",
-    "意志力": "willpower.html",
-    
-    // 实用技能类
-    "从0到1": "from-zero-one.html",
-    "精益创业": "lean-startup.html",
-    "创新者的窘境": "innovators-dilemma.html",
-    "定位": "positioning.html",
-    "增长黑客": "growth-hackers.html",
-    "商业模式新生代": "business-model-new-generation.html",
-    "创业维艰": "startup-hardship.html",
-    "重新定义公司": "reimagine-company.html",
-    
-    // 投资理财类
-    "纳瓦尔宝典": "navarro-principles.html",
-    "巴菲特致股东的信": "buffett-letters.html",
-    "巴菲特的投资原则": "buffett-principles.html",
-    "国富论": "the-wealth-of-nations.html",
-    
-    // 传记人物类
-    "史蒂夫·乔斯": "steve-jobs.html",
-    
-    // 科技科普类
-    "时间简史": "a-brief-history-of-time.html",
-    "人类简史": "sapiens.html",
-    "资治通鉴": "zizhi-tongjian.html",
-    
-    // 文学虚构类
-    "百年孤独": "one-hundred-years-of-solitude.html",
-    "1984": "nineteen-eighty-four.html",
-    
-    // 艺术美学类
-    "艺术": "art.html",
-    "思考的艺术": "thinking-art.html",
-    
-    // 哲学宗教类
-    "斯多葛": "stoicism.html",
-    
-    // 文学虚构类
-    "百年孤独": "one-hundred-years-of-solitude.html",
-    "1984": "nineteen-eighty-four.html",
-    
-    // 科技科普类
-    "时间简史": "a-brief-history-of-time.html",
-    "人类简史": "sapiens.html",
-    "深度学习": "deep-learning.html",
-    
-    // 传记人物类
-    "史蒂夫·乔布斯": "steve-jobs.html",
-    "资治通鉴": "zizhi-tongjian.html",
-    
-    // 历史社科类
-    "国富论": "the-wealth-of-nations.html",
-    
-    // 有笔记的其他书籍
-    "从0到1": "from-zero-to-one.html",
-    "精益创业": "the-lean-startup.html",
-    "创新者的窘境": "innovators-dilemma.html",
-    "纳瓦尔宝典": "navarro-principles.html",
-    "巴菲特致股东的信": "buffett-letters.html",
-    "艺术": "art.html",
-    "思考的艺术": "thinking-art.html",
-    
-    // 当前阅读的三本书
-    "第二座山": "second-mountain.html",
-    "重启人生": "restart-life.html",
-    "与塞涅卡共进早餐": "breakfast-with-seneca.html",
-    
-    // Historical & Social Science - Direct matches
-    "civilization": "civilization_1.html",
-    "iliad": "iliad_1.html",
-    "road-to-serfdom": "road-to-serfdom_1.html",
-
-    // Self-improvement classics - ASCII-safe names
-    "think-fast-slow": "think-fast-slow.html",
-    "principles": "principles.html",
-    "atomic-habits": "atomic-habits.html",
-    "deep-work": "deep-work.html",
-    "deliberate-practice": "deliberate-practice.html",
-    "seven-habits": "seven-habits.html",
-    "unliked-courage": "unliked-courage.html",
-    "nonviolent-communication": "nonviolent-communication.html",
-    "flow": "flow.html",
-    "influence": "influence.html",
-    "systems-thinking": "systems-thinking.html",
-    "systems-beauty": "systems-beauty.html",
-    "cognitive-nature": "cognitive-nature.html",
-    "cognitive-awareness": "cognitive-awareness.html",
-    "lifelong-growth": "lifelong-growth.html",
-    "transition": "transition.html",
-    "vision": "vision.html",
-    "mastery": "mastery.html",
-    "execution": "execution.html",
-    "learning-path": "learning-path.html",
-    "how-read-book": "how-read-book.html",
-    "efficient-learning": "efficient-learning.html",
-    "ask-questions": "ask-questions.html",
-    "anti-fragile": "anti-fragile.html",
-    "intuition-thinking": "intuition-thinking.html",
-    "power-of-habits": "power-of-habits.html",
-    "time-management": "time-management.html",
-    "energy-management": "energy-management.html",
-    "pomodoro-method": "pomodoro-method.html",
-    "procrastination-psychology": "procrastination-psychology.html",
-    "strange-life": "strange-life.html",
-
-    // Business & Innovation - ASCII-safe names
-    "from-zero-one": "from-zero-one.html",
-    "lean-startup": "lean-startup.html",
-    "innovators-dilemma": "innovators-dilemma.html",
-    "positioning": "positioning.html",
-    "growth-hackers": "growth-hackers.html",
-    "business-model": "business-model.html",
-    "business-model-new-generation": "business-model-new-generation.html",
-    "startup-hardship": "startup-hardship.html",
-    "reimagine-company": "reimagine-company.html",
-    "innovators": "innovators.html",
-    "disruptive-innovation": "disruptive-innovation.html",
-    "entrepreneurship": "entrepreneurship.html",
-    "business-strategy": "business-strategy.html",
-
-    // Psychology & Philosophy - ASCII-safe names
-    "psychology": "psychology.html",
-    "psychology-life": "psychology-life.html",
-    "zimbardo": "zimbardo.html",
-    "social-psychology": "social-psychology.html",
-    "social-animals": "social-animals.html",
-    "close-relationships": "close-relationships.html",
-    "dream-analysis": "dream-analysis.html",
-    "lucifer-effect": "lucifer-effect.html",
-    "psychological-manipulation": "psychological-manipulation.html",
-    "happy-marriage": "happy-marriage.html",
-    "positive-discipline": "positive-discipline.html",
-    "talk-kids": "talk-kids.html",
-    "five-languages-love": "five-languages-love.html",
-    "parenting": "parenting.html",
-    "parents": "parents.html",
-    "scarcity": "scarcity.html",
-    "self-esteem-superiority": "self-esteem-superiority.html",
-    "self-esteem": "self-esteem.html",
-    "self": "self.html",
-    "personality": "personality.html",
-    "emotions": "emotions.html",
-    "willpower": "willpower.html",
-    "self-control": "self-control.html",
-    "few-roads": "few-roads.html",
-    "critical-thinking": "critical-thinking.html",
-    "conscious-thinking": "conscious-thinking.html",
-    "art-of-conscious-thinking": "art-of-conscious-thinking.html",
-    "master-habits": "master-habits.html",
-
-    // Investment & Finance - ASCII-safe names
-    "investment": "investment.html",
-    "smart-investor": "smart-investor.html",
-    "buffett-principles": "buffett-principles.html",
-    "buffett": "buffett.html",
-    "security-analysis": "security-analysis.html",
-    "wall-street": "wall-street.html",
-    "important-investments": "important-investments.html",
-    "random-walk": "random-walk.html",
-    "irrational-exuberance": "irrational-exuberance.html",
-    "valuation": "valuation.html",
-    "index-funds": "index-funds.html",
-    "asset-allocation": "asset-allocation.html",
-    "financial-freedom": "financial-freedom.html",
-    "rich-dad-poor-dad": "rich-dad-poor-dad.html",
-    "little-money-dog": "little-money-dog.html",
-    "navarro-principles": "navarro-principles.html",
-    "money-psychology": "money-psychology.html",
-    "think-rich": "think-rich.html",
-    "munger": "munger.html",
-    "slow-wealth": "slow-wealth.html",
-    "rich-thinking": "rich-thinking.html",
-    "rich-habits": "rich-habits.html",
-    "poverty-depth": "poverty-depth.html",
-    "wealth-source": "wealth-source.html",
-    "first-finance-book": "first-finance-book.html",
-
-    // Biography & Leadership - ASCII-safe names
-    "biography": "biography.html",
-    "american-caesar": "american-caesar.html",
-    "twelve-defying-gods": "twelve-defying-gods.html",
-    "genghis-khan": "genghis-khan.html",
-    "benjamin-franklin": "benjamin-franklin.html",
-    "su-dongpo": "su-dongpo.html",
-    "confucius": "confucius.html",
-    "jobs": "jobs.html",
-    "elon-musk": "elon-musk.html",
-    "mao-selections": "mao-selections.html",
-    "kazuo-ishikawa": "kazuo-ishikawa.html",
-    "jeff-bezos": "jeff-bezos.html",
-    "gandhi": "gandhi.html",
-    "nelson-mandela": "nelson-mandela.html",
-    "caocao": "caocao.html",
-    "du-shijian": "du-shijian.html",
-    "zhang-juzheng": "zhang-juzheng.html",
-    "zuozongtang": "zuozongtang.html",
-    "yuan-longping": "yuan-longping.html",
-    "marie-curie": "marie-curie.html",
-    "helen-keller": "helen-keller.html",
-    "socrates": "socrates.html",
-
-    // Art & Aesthetics - ASCII-safe names
-    "art": "art.html",
-    "anguo-beauty": "anguo-beauty.html",
-    "art-story": "art-story.html",
-    "beauty-history": "beauty-history.html",
-    "discussing-beauty": "discussing-beauty.html",
-    "viewing-ways": "viewing-ways.html",
-    "art-spirit": "art-spirit.html",
-
-    // Philosophy & Religion - ASCII-safe names
-    "philosophy": "philosophy.html",
-    "religion": "religion.html",
-    "critique-rational": "critique-rational.html",
-    "being-time": "being-time.html",
-    "thus-spoke-zarathustra": "thus-spoke-zarathustra.html",
-    "zen-motorcycle": "zen-motorcycle.html",
-    "siddhartha": "siddhartha.html",
-    "heart-sutra": "heart-sutra.html",
-    "montaigne-essays": "montaigne-essays.html",
-    "yellow-court": "yellow-court.html",
-    "taishang-inductions": "taishang-inductions.html",
-    "zhuangzi": "zhuangzi.html",
-    "talisman-hexagram": "talisman-hexagram.html",
-    "baopu-zi-inner": "baopu-zi-inner.html",
-    "prolonging-life": "prolonging-life.html",
-    "golden-prescription": "golden-prescription.html",
-    "seven-signs": "seven-signs.html",
-    "guizhi": "guizhi.html",
-    "joyful-classroom": "joyful-classroom.html",
-    "qi-body-source": "qi-body-source.html",
-    "monthly-commandments": "monthly-commandments.html",
-    "yellow-emperor": "yellow-emperor.html",
-    "thousand-gold": "thousand-gold.html",
-    "bencaogen": "bencaogen.html",
-    "eight-fold-note": "eight-fold-note.html",
-    "dan-dao-methods": "dan-dao-methods.html",
-    "dao-breathing": "dao-breathing.html",
-    "daojia-health": "daojia-health.html",
-    "dao-medicine": "dao-medicine.html",
-    "secret-golden": "secret-golden.html",
-    "warring-states-sexual": "warring-states-sexual.html",
-    "rongcheng-vagina": "rongcheng-vagina.html",
-    "nurture-extension": "nurture-extension.html",
-    "plain-woman": "plain-woman.html",
-    "dunhuang": "dunhuang.html",
-    "benefits-sex": "benefits-sex.html",
-    "three-yuan-extend": "three-yuan-extend.html",
-    "eight-fold-note-prevent": "eight-fold-note-prevent.html",
-    "collective-health": "collective-health.html",
-    "daoism-sex": "daoism-sex.html",
-    "ancient-chinese-sexual": "ancient-chinese-sexual.html",
-    "daojia-sex-health": "daojia-sex-health.html",
-    "sexual-philosophy": "sexual-philosophy.html",
-    "wisdom-tan": "wisdom-tan.html",
-    "tree-without-root": "tree-without-root.html",
-    "zhonglü-transmit": "zhonglü-transmit.html",
-    "fanghu-wai-shi": "fanghu-wai-shi.html",
-    "dao-qiao-talk": "dao-qiao-talk.html",
-    "three-car-secret": "three-car-secret.html",
-    "true-golden": "true-golden.html",
-    "great-completion": "great-completion.html",
-    "blue-eyed-girl": "blue-eyed-girl.html",
-    "daoist-south-school": "daoist-south-school.html",
-    "stoicism": "stoicism.html",
-
-    // Literature & Fiction - ASCII-safe names
-    "one-hundred-years-solitude": "one-hundred-years-solitude.html",
-    "nineteen-eighty-four": "nineteen-eighty-four.html",
-    "dream-of-red-chamber": "dream-of-red-chamber.html",
-    "les-miserables": "les-miserables.html",
-    "crime-punishment": "crime-punishment.html",
-    "jane-eyre": "jane-eyre.html",
-    "pride-prejudice": "pride-prejudice.html",
-    "wuthering-heights": "wuthering-heights.html",
-    "tale-two-cities": "tale-two-cities.html",
-    "old-man-sea": "old-man-sea.html",
-    "great-gatsby": "great-gatsby.html",
-    "catcher-rye": "catcher-rye.html",
-    "don-quixote": "don-quixote.html",
-    "metamorphosis": "metamorphosis.html",
-    "anna-karenina": "anna-karenina.html"
-  };
-
-  // Function to find the best matching note file for a book title
-  function findBestNoteFile(bookTitle) {
-    const cleanTitle = bookTitle.replace(/[《》]/g, '').trim();
-    
-    // Try direct pattern matches first
-    if (safeNoteFiles[cleanTitle]) {
-      return "notes/" + safeNoteFiles[cleanTitle];
-    }
-    
-    // Try partial matches
-    for (const [pattern, fileName] of Object.entries(safeNoteFiles)) {
-      if (cleanTitle.includes(pattern) || pattern.includes(cleanTitle.slice(0, pattern.length))) {
-        return "notes/" + fileName;
-      }
-    }
-    
-    // Fallback: return a generic note file with ASCII-safe name
-    return "notes/thinking-process.html"; // Default thought process notes
-  }
-
-  // Build the navigation links object
-  const navigationLinks = {};
-  const allBooks = [];
-  
-  // Collect all books from all categories
-  for (let i = 1; i <= 9; i++) {
-    if (booksByCategory[i]) {
-      allBooks.push(...booksByCategory[i]);
-    }
-  }
-  
-  // Create links for all books
-  allBooks.forEach(([title, author]) => {
-    const link = findBestNoteFile(title);
-    if (link) {
-      navigationLinks[title] = link;
-    }
-  });
-
-  return navigationLinks;
-}
-
-// Generate navigation links with ASCII-safe URLs
-const navigationLinks = createSafeNavigationLinks();
-
-// Current reading books - ensure these have working links too
-const currentReading = [
-  { 
-    title: "第二座山", 
-    author: "大卫·布鲁克斯", 
-    tag: "道德喜乐", 
-    description: "从个人主义走向关系主义", 
-    goal: "理解承诺与奉献的力量",
-    noteLink: "notes/second-mountain.html"
-  },
-  { 
-    title: "重启人生", 
-    author: "亚瑟·布鲁克斯", 
-    tag: "职业转型", 
-    description: "应对职业倦怠与中年危机", 
-    goal: "从流体智力向晶体智力转型",
-    noteLink: "notes/restart-life.html"
-  },
-  { 
-    title: "与塞涅卡共进早餐", 
-    author: "大卫·菲德勒", 
-    tag: "斯多葛哲学", 
-    description: "古老智慧应对现代焦虑", 
-    goal: "内心宁静与情绪管理",
-    noteLink: "notes/breakfast-with-seneca.html"
-  }
-];
-
-// Initialize navigation
-function initializeNavigation() {
-  const navContainer = document.getElementById('navigation');
-  const navItems = [
-    { id: 'all', name: '全部' },
-    { id: 'current', name: '📖 当前阅读' },
-    { id: 'overview', name: '📊 分类概览' }
-  ];
-
-  // Add category buttons
-  categories.forEach(category => {
-    navItems.push({
-      id: category.id.toString(),
-      name: `${category.emoji} ${category.name}`
-    });
-  });
-
-  // Add guide button
-  navItems.push({ id: 'guide', name: '💡 阅读指南' });
-
-  navItems.forEach(item => {
-    const button = document.createElement('button');
-    button.className = `nav-button${item.id === 'all' ? ' active' : ''}`;
-    button.dataset.category = item.id;
-    button.textContent = item.name;
-    button.addEventListener('click', () => filterByCategory(item.id));
-    navContainer.appendChild(button);
+function initNav() {
+  const nav = document.getElementById('navigation');
+  const items = [{ id: 'all', name: '全部' }, { id: 'current', name: '🔥 当前阅读' }, { id: 'overview', name: '📊 分类概览' }];
+  categories.forEach(c => items.push({ id: c.id.toString(), name: `${c.emoji} ${c.name}` }));
+  items.push({ id: 'guide', name: '💡 阅读指南' });
+  items.forEach(item => {
+    const btn = document.createElement('button');
+    btn.className = `nav-button${item.id === 'all' ? ' active' : ''}`;
+    btn.dataset.category = item.id;
+    btn.textContent = item.name;
+    btn.onclick = () => filterBy(item.id);
+    nav.appendChild(btn);
   });
 }
 
-// Filter function
 let activeCategory = 'all';
-function filterByCategory(categoryId) {
-  activeCategory = categoryId;
-
-  // Update active state for navigation buttons
-  document.querySelectorAll('.nav-button').forEach(button => {
-    button.classList.toggle('active', button.dataset.category === categoryId);
-  });
-
-  // Render content based on selected category
-  renderContent();
+function filterBy(id) {
+  activeCategory = id;
+  document.querySelectorAll('.nav-button').forEach(b => b.classList.toggle('active', b.dataset.category === id));
+  render();
 }
 
-// Search functionality
-document.getElementById('searchInput').addEventListener('input', function() {
-  renderContent();
-});
+document.getElementById('searchInput').addEventListener('input', render);
 
-// Render main content
-function renderContent() {
-  const mainContent = document.getElementById('mainContent');
-  const searchQuery = document.getElementById('searchInput').value.trim().toLowerCase();
-
+function render() {
+  const main = document.getElementById('mainContent');
+  const q = document.getElementById('searchInput').value.trim().toLowerCase();
   let html = '';
 
-  // Current reading section
+  // Current Reading
   if (activeCategory === 'current' || activeCategory === 'all') {
-    const filteredCurrent = currentReading.filter(book =>
-      !searchQuery ||
-      book.title.toLowerCase().includes(searchQuery) ||
-      book.author.toLowerCase().includes(searchQuery) ||
-      book.description.toLowerCase().includes(searchQuery)
-    );
-
-    if (filteredCurrent.length > 0) {
-      html += `
-        <section class="section">
-          <div class="section-header">
-            <h2 class="section-title">📖 当前阅读</h2>
-            <span class="section-count">${filteredCurrent.length}本</span>
-          </div>
-          <div class="section-description">正在深入研读的核心书籍，重点关注实践应用与思维升级</div>
-          <div class="current-reading-grid">`;
-
-      filteredCurrent.forEach(book => {
-        html += `
-          <div class="reading-card" onclick="window.location.href='${book.noteLink}'">
-            <h3>${book.title}</h3>
-            <div class="author">${book.author}</div>
-            <span class="tag">${book.tag}</span>
-            <div class="description">${book.description}</div>
-            <div class="goal">🎯 ${book.goal}</div>
-          </div>`;
+    const filtered = currentReading.filter(b => !q || b.title.toLowerCase().includes(q) || b.author.toLowerCase().includes(q));
+    if (filtered.length > 0) {
+      html += `<section class="section"><div class="section-header"><h2 class="section-title">📖 当前阅读</h2><span class="section-count">${filtered.length}本进行中</span></div><p class="section-desc">正在深度研读的核心书籍，配有详细读书笔记</p><div class="current-hero">`;
+      filtered.forEach((book, i) => {
+        html += `<a href="${book.noteLink}" class="book-hero"><div class="book-hero-header"><div class="book-number">正在阅读 · ${String(i+1).padStart(2,'0')}</div><h3>${book.title}</h3><div class="book-author">${book.author}</div><span class="book-tag">${book.tag}</span></div><div class="book-hero-body"><p class="book-desc">${book.desc}</p><div class="book-goal">🎯 ${book.goal}</div></div><div class="book-hero-footer"><div class="book-cta"><span>查看详细笔记</span><span>→</span></div><div class="book-progress"><div class="progress-track"><div class="progress-fill"></div></div><span class="progress-label">${book.progress}% · ${book.status}</span></div></div></a>`;
       });
-
       html += '</div></section>';
     }
   }
 
-  // Category overview section
+  // Category Overview
   if (activeCategory === 'overview' || activeCategory === 'all') {
-    html += `
-      <section class="section">
-        <div class="section-header">
-          <h2 class="section-title">📊 分类概览</h2>
-          <span class="section-count">${categories.length}个分类</span>
-        </div>
-        <div class="section-description">点击任意分类查看详细内容，了解每个领域的知识架构</div>
-        <div class="category-overview">`;
-
-    categories.forEach(category => {
-      const bookCount = booksByCategory[category.id].length;
-      const percentage = Math.round((bookCount / 285) * 100);
-
-      html += `
-        <div class="category-card" onclick="filterByCategory(${category.id})">
-          <div class="category-info">
-            <div class="category-name">${category.emoji} ${category.name}</div>
-            <div class="category-stats">${bookCount}本 · ${percentage}%</div>
-          </div>
-          <div class="progress-container">
-            <div class="progress-bar" style="width: ${percentage}%"></div>
-          </div>
-        </div>`;
+    html += `<section class="section"><div class="section-header"><h2 class="section-title">📊 分类概览</h2><span class="section-count">${categories.length}个分类</span></div><p class="section-desc">探索不同领域的知识体系</p><div class="category-grid">`;
+    categories.forEach(c => {
+      const count = booksByCategory[c.id]?.length || 0;
+      html += `<div class="category-card" onclick="filterBy(${c.id})"><div class="category-emoji">${c.emoji}</div><div class="category-info"><div class="category-name">${c.name}</div><div class="category-stats">${count}本 · ${c.desc}</div></div><div class="category-arrow">→</div></div>`;
     });
-
     html += '</div></section>';
   }
 
-  // Reading guide section
+  // Book Lists
+  if (!['current','overview','guide'].includes(activeCategory)) {
+    const catId = parseInt(activeCategory);
+    const cat = categories.find(c => c.id === catId);
+    const books = booksByCategory[catId] || [];
+    const filtered = books.filter(([t, a]) => !q || t.toLowerCase().includes(q) || a.toLowerCase().includes(q));
+    html += `<section class="section"><div class="section-header"><h2 class="section-title">${cat.emoji} ${cat.name}</h2><span class="section-count">${filtered.length}本</span></div><p class="section-desc">${cat.desc}</p><div class="book-list">`;
+    filtered.forEach(([title, author], i) => {
+      html += `<div class="book-item"><span class="book-item-number">${String(i+1).padStart(2,'0')}</span><div class="book-item-info"><h4>${title}</h4><p>${author}</p></div></div>`;
+    });
+    html += '</div></section>';
+  }
+
+  // Guide
   if (activeCategory === 'guide' || activeCategory === 'all') {
-    html += `
-      <section class="section">
-        <div class="section-header">
-          <h2 class="section-title">💡 阅读指南</h2>
-          <span class="section-count">实用策略</span>
-        </div>
-        <div class="guide-grid">
-          <div class="guide-card">
-            <h3>🎯 按需选择</h3>
-            <p>根据当前需求选择合适的书籍分类：</p>
-            <ul>
-              <li><strong>需要解决问题</strong> → 实用技能类</li>
-              <li><strong>追求自我成长</strong> → 认知成长类</li>
-              <li><strong>理解社会运行</strong> → 历史社科类</li>
-              <li><strong>把握科技趋势</strong> → 科技科普类</li>
-              <li><strong>建立财富观念</strong> → 投资理财类</li>
-            </ul>
-          </div>
-
-          <div class="guide-card">
-            <h3>📅 按场景阅读</h3>
-            <p>根据不同时间段安排阅读计划：</p>
-            <ul>
-              <li><strong>通勤碎片时间</strong>：认知成长、科技科普</li>
-              <li><strong>周末深度阅读</strong>：历史社科、哲学宗教</li>
-              <li><strong>工作学习间隙</strong>：实用技能、技术类</li>
-              <li><strong>投资理财规划</strong>：投资理财、金融类</li>
-            </ul>
-          </div>
-
-          <div class="guide-card">
-            <h3>⭐ 精读建议</h3>
-            <p>确保深度理解和实践应用：</p>
-            <ul>
-              <li><strong>每类前5本为核心必读</strong> - 建立基础框架</li>
-              <li><strong>从最重要的开始</strong> - 优先阅读影响力最大的作品</li>
-              <li><strong>深度内化而非读完</strong> - 真正的价值在于吸收和实践</li>
-              <li><strong>建立知识连接</strong> - 将不同领域的知识有机整合</li>
-            </ul>
-          </div>
-        </div>
-      </section>`;
-  }
-
-  // Book sections for specific categories or all categories
-  if (activeCategory === 'all') {
-    categories.forEach(category => {
-      const books = booksByCategory[category.id];
-      const filteredBooks = searchQuery ?
-        books.filter(book =>
-          book[0].toLowerCase().includes(searchQuery) ||
-          book[1].toLowerCase().includes(searchQuery) ||
-          book[2].toLowerCase().includes(searchQuery)
-        ) : books;
-
-      if (filteredBooks.length > 0) {
-        html += `
-          <section class="section">
-            <div class="section-header">
-              <h2 class="section-title">${category.emoji} ${category.name}</h2>
-              <span class="section-count">${filteredBooks.length}本</span>
-            </div>
-            <div class="section-description">${category.description}</div>
-            <ul class="book-list">`;
-
-        filteredBooks.forEach((book, index) => {
-          const bookTitle = book[0];
-          const bookLink = navigationLinks[bookTitle];
-          const hasNote = !!bookLink;
-
-          html += `
-            <li class="book-item" ${hasNote ? 'style="cursor: pointer;" onclick="window.location.href=\'' + bookLink + '\'' : ''}>
-              <div class="book-rank${index < 3 ? ' top-rank' : ''}">${index + 1}</div>
-              <div class="book-info">
-                <div class="book-title">${bookTitle}${hasNote ? `<a href="${bookLink}" class="book-link" target="_blank"> →</a>` : ''}</div>
-                <div class="book-author">${book[1]}</div>
-                <div class="book-description">${book[2]}</div>
-              </div>
-            </li>`;
-        });
-
-        html += '</ul></section>';
-      }
-    });
-  } else if (activeCategory !== 'current' && activeCategory !== 'overview' && activeCategory !== 'guide') {
-    // Show specific category books
-    const categoryId = parseInt(activeCategory);
-    const category = categories.find(c => c.id === categoryId);
-    if (category) {
-      const books = booksByCategory[categoryId];
-      const filteredBooks = searchQuery ?
-        books.filter(book =>
-          book[0].toLowerCase().includes(searchQuery) ||
-          book[1].toLowerCase().includes(searchQuery) ||
-          book[2].toLowerCase().includes(searchQuery)
-        ) : books;
-
-      if (filteredBooks.length > 0) {
-        html += `
-          <section class="section">
-            <div class="section-header">
-              <h2 class="section-title">${category.emoji} ${category.name}</h2>
-              <span class="section-count">${filteredBooks.length}本</span>
-            </div>
-            <div class="section-description">${category.description}</div>
-            <ul class="book-list">`;
-
-        filteredBooks.forEach((book, index) => {
-          const bookTitle = book[0];
-          const bookLink = navigationLinks[bookTitle];
-          const hasNote = !!bookLink;
-
-          html += `
-            <li class="book-item" ${hasNote ? 'style="cursor: pointer;" onclick="window.location.href=\'' + bookLink + '\'' : ''}>
-              <div class="book-rank${index < 3 ? ' top-rank' : ''}">${index + 1}</div>
-              <div class="book-info">
-                <div class="book-title">${bookTitle}${hasNote ? `<a href="${bookLink}" class="book-link" target="_blank"> →</a>` : ''}</div>
-                <div class="book-author">${book[1]}</div>
-                <div class="book-description">${book[2]}</div>
-              </div>
-            </li>`;
-        });
-
-        html += '</ul></section>';
-      }
-    }
-  }
-
-  // Empty state
-  if (!html) {
-    html = `
-      <div class="empty-state">
-        <div class="empty-state-icon">🔍</div>
-        <div class="empty-state-text">没有找到匹配的书籍</div>
-        <div class="empty-state-subtext">尝试调整搜索关键词或浏览其他分类</div>
-      </div>`;
-  }
-
-  mainContent.innerHTML = html;
-}
-
-// Initialize the application
-document.addEventListener('DOMContentLoaded', function() {
-  initializeNavigation();
-  renderContent();
-
-  // Smooth scrolling for navigation
-  document.querySelectorAll('.nav-button').forEach(button => {
-    button.addEventListener('click', function() {
-      const targetCategory = this.dataset.category;
-      const navButtons = document.querySelectorAll('.nav-button');
-
-      navButtons.forEach(btn => btn.classList.remove('active'));
-      this.classList.add('active');
-
-      // Scroll to top when switching categories
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  });
-});
-
-// Keyboard navigation support
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') {
-    document.getElementById('searchInput').value = '';
-    renderContent();
-  }
-});
-</script>
-</body>
-</html>
+    html += `<section class="section"><div class="section-header"><h2 class="section-title">💡 阅读指南</h2></div><div class="guide-grid"><div class="guide-card"><h3>🎯 按需选择</h3><ul><li><strong>需要解决问题</strong> → 实用技能类</li><li><strong>追求自我成长</strong> → 认知成长类</li><li><strong>理解社会运行</strong> → 历史社科类</li><li><strong>把握科技趋势</strong> → 科技科普类</li><li><strong>建立财富观念</strong> → 投资理财类</li></ul></div><div class="guide-card"><h3>📅 按场景阅读</h3><ul><li><strong>通勤碎片时间</strong>：认知成长类</li><li><strong>周末深度阅读</strong>：历史社科、哲学宗教</li><li><strong>工作学习间隙</strong>：实用技能类</li><li><strong>睡前放松时光</strong>：文学虚构、艺术美学</li></ul></div><div class="guide-card"><h3>🔄 阅读方法</h3><ul><li><strong>主题阅读</strong>：围绕一个主题读多本书</li><li><strong>对比阅读</strong>：不同观点的书籍对照</li>
