@@ -1,5 +1,7 @@
 # 📚 我的书单
 
+https://zhubao315.github.io/my-booklist/
+
 > **深度阅读 · 终身学习 · 全面成长**
 
 这是一个精心整理的个人书单，包含 **285本精选书籍**，涵盖文学、技能、认知、历史、科技、投资、传记、艺术、哲学等9大分类。每本书都经过深思熟虑的选择，旨在构建完整的知识体系和思维框架。
@@ -103,7 +105,7 @@ booklist/
 如有任何问题或建议，欢迎通过以下方式联系我：
 
 - GitHub Issues: [https://github.com/zhubao315/my-booklist/issues](https://github.com/zhubao315/my-booklist/issues)
-- Email: zhubao@example.com
+- Email: zhubao@qq.com
 
 ---
 
