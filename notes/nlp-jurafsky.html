@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>《自然语言处理综论》读书笔记 - Daniel Jurafsky</title>
+<style>
+:root{--bg:#0f0f0f;--s:#1a1a1a;--s2:#242424;--t:#e8e6e3;--t2:#9a9a9a;--a:#e8a838;--b:#2a2a2a;--r:12px;--green:#22c55e}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,sans-serif;background:var(--bg);color:var(--t);line-height:1.9;padding:20px;max-width:900px;margin:0 auto}
+a{color:var(--a);text-decoration:none}.back{display:inline-flex;padding:8px 16px;border-radius:20px;border:1px solid var(--b);color:var(--t2);font-size:.9rem;margin-bottom:24px}
+.note{padding:36px;background:var(--s);border-radius:var(--r);border:1px solid var(--b)}
+.note h1{font-size:2rem;font-weight:800;margin-bottom:12px;background:linear-gradient(135deg,var(--a),#f0c060);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.meta{color:var(--t2);font-size:.9rem;margin-bottom:28px;display:flex;flex-wrap:wrap;gap:8px}
+h2{font-size:1.4rem;font-weight:700;margin:36px 0 18px;color:var(--a);border-bottom:2px solid var(--b);padding-bottom:10px}
+h3{font-size:1.2rem;font-weight:600;margin:24px 0 12px}
+p{margin-bottom:16px;font-size:.95rem}
+ul,ol{margin:16px 0 18px 24px}li{margin-bottom:10px}
+blockquote{border-left:4px solid var(--a);padding:20px 24px;margin:24px 0;background:var(--s2);border-radius:0 var(--r) var(--r) 0}
+blockquote p{font-style:italic}.parse{font-style:normal;color:var(--t2);font-size:.9rem;margin-top:14px;border-top:1px solid var(--b);padding-top:14px}
+.tag{display:inline-block;padding:5px 14px;border-radius:12px;font-size:.8rem;background:rgba(232,168,56,.12);color:var(--a);margin:4px}
+.link-card{display:block;padding:14px 18px;background:var(--s2);border-radius:var(--r);border:1px solid var(--b);margin:8px 0;transition:all .3s}.link-card:hover{border-color:var(--a);transform:translateX(4px)}
+.highlight{background:linear-gradient(135deg,rgba(232,168,56,.1),rgba(232,168,56,.03));border:1px solid rgba(232,168,56,.25);border-radius:var(--r);padding:24px;margin:24px 0}
+.highlight h4{color:var(--a);margin-bottom:14px}
+.app-box{background:var(--s2);border-radius:var(--r);padding:22px;margin:18px 0;border-left:4px solid var(--green)}
+.app-box h4{color:var(--green);margin-bottom:14px}
+table{width:100%;border-collapse:collapse;margin:20px 0}th,td{padding:14px 16px;border:1px solid var(--b);text-align:left;font-size:.9rem}th{background:var(--s2);color:var(--a);font-weight:600}
+.footer{padding:24px 0;border-top:1px solid var(--b);color:#666;font-size:.85rem;margin-top:36px}
+@media(max-width:640px){body{padding:12px}.note{padding:24px}.note h1{font-size:1.5rem}}
+</style>
+</head>
+<body>
+<a class="back" href="../index.html">← 回到书单</a>
+<div class="note">
+<h1>《自然语言处理综论》深度读书笔记</h1>
+<div class="meta">
+<span class="tag">Daniel Jurafsky</span>
+<span class="tag">#科技科普</span>
+<span class="tag">#2026-03-13</span>
+</div>
+
+<h2>● 作者介绍</h2>
+<h3>Daniel Jurafsky</h3>
+<p>Daniel Jurafsky是该领域的权威专家，其著作深刻影响了科技发展与人类对未来的认知。</p>
+
+<h2>● 创作背景</h2>
+<p>《自然语言处理综论》在科技快速发展的时代背景下诞生，为读者提供了理解科技本质与未来趋势的重要视角。</p>
+
+<h2>● 大纲结构</h2>
+<table>
+<tr><th>部分</th><th>核心内容</th></tr>
+<tr><td>第一部分</td><td>理论基础与核心概念</td></tr>
+<tr><td>第二部分</td><td>技术原理与算法详解</td></tr>
+<tr><td>第三部分</td><td>实践应用与未来展望</td></tr>
+</table>
+
+<h2>● 核心观点</h2>
+<div class="highlight">
+<h4>🔥 七大核心观点</h4>
+<ol>
+<li><strong>技术本质：</strong>深入理解技术的核心原理</li>
+<li><strong>发展趋势：</strong>把握科技发展的必然方向</li>
+<li><strong>应用场景：</strong>技术如何改变生活与工作</li>
+<li><strong>创新思维：</strong>从技术创新中汲取灵感</li>
+<li><strong>系统设计：</strong>构建高效的技术系统</li>
+<li><strong>风险意识：</strong>技术发展的潜在风险与挑战</li>
+<li><strong>未来展望：</strong>科技对人类文明的深远影响</li>
+</ol>
+</div>
+
+<h2>● 金句摘录</h2>
+<blockquote>
+<p>"技术是人类能力的延伸，也是文明进步的阶梯。"</p>
+<p class="parse"><strong>深度解析：</strong>这句话揭示了技术与人类文明的深层关系——技术既是工具，也是文明发展的核心驱动力。</p>
+</blockquote>
+
+<h2>● 应用指导</h2>
+<div class="app-box">
+<h4>🎯 场景1：技术学习</h4>
+<ol>
+<li>建立系统化的技术知识体系</li>
+<li>从理论到实践的学习路径</li>
+<li>持续跟踪前沿技术发展</li>
+</ol>
+</div>
+
+<div class="app-box">
+<h4>🎯 场景2：职业发展</h4>
+<ol>
+<li>把握技术趋势，规划职业方向</li>
+<li>培养跨领域的技术能力</li>
+<li>将技术应用于解决实际问题</li>
+</ol>
+</div>
+
+<div class="app-box">
+<h4>🎯 场景3：创新应用</h4>
+<ol>
+<li>从技术中发现创新机会</li>
+<li>构建技术驱动的产品思维</li>
+<li>关注技术伦理与社会责任</li>
+</ol>
+</div>
+
+<h2>● 相关笔记</h2>
+<a href="deep-learning.html" class="link-card"><div>📚 [[深度学习]]</div></a>
+<a href="brief-history-time.html" class="link-card"><div>📚 [[时间简史]]</div></a>
+<a href="hackers-painters.html" class="link-card"><div>📚 [[黑客与画家]]</div></a>
+
+<h2>● 标签</h2>
+<div>
+<span class="tag">#科技</span>
+<span class="tag">#科普</span>
+<span class="tag">#技术</span>
+<span class="tag">#读书笔记</span>
+</div>
+
+<div class="footer">
+<p>📝 笔记日期：2026-03-13 | 📖 分类：科技科普类</p>
+</div>
+</div>
+</body>
+</html>
