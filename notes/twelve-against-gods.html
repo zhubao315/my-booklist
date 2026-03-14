@@ -1,115 +1,87 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>《十二位对抗诸神的人》读书笔记 - 威廉·博利索</title>
+<title>《十二位对抗诸神的人》深度笔记</title>
 <style>
-:root{--bg:#0f0f0f;--s:#1a1a1a;--s2:#242424;--t:#e8e6e3;--t2:#9a9a9a;--a:#e8a838;--b:#2a2a2a;--r:12px;--green:#22c55e}
+:root{--bg:#0f0f0f;--s:#1a1a1a;--s2:#242424;--b:#333;--t:#e0e0e0;--t2:#a0a0a0;--t3:#666;--a:#e8a838;--r:8px}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,sans-serif;background:var(--bg);color:var(--t);line-height:1.9;padding:20px;max-width:900px;margin:0 auto}
-a{color:var(--a);text-decoration:none}.back{display:inline-flex;padding:8px 16px;border-radius:20px;border:1px solid var(--b);color:var(--t2);font-size:.9rem;margin-bottom:24px}
-.note{padding:36px;background:var(--s);border-radius:var(--r);border:1px solid var(--b)}
-.note h1{font-size:2rem;font-weight:800;margin-bottom:12px;background:linear-gradient(135deg,var(--a),#f0c060);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.meta{color:var(--t2);font-size:.9rem;margin-bottom:28px;display:flex;flex-wrap:wrap;gap:8px}
-h2{font-size:1.4rem;font-weight:700;margin:36px 0 18px;color:var(--a);border-bottom:2px solid var(--b);padding-bottom:10px}
-h3{font-size:1.2rem;font-weight:600;margin:24px 0 12px}
-p{margin-bottom:16px;font-size:.95rem}
-ul,ol{margin:16px 0 18px 24px}li{margin-bottom:10px}
-blockquote{border-left:4px solid var(--a);padding:20px 24px;margin:24px 0;background:var(--s2);border-radius:0 var(--r) var(--r) 0}
-blockquote p{font-style:italic}.parse{font-style:normal;color:var(--t2);font-size:.9rem;margin-top:14px;border-top:1px solid var(--b);padding-top:14px}
-.tag{display:inline-block;padding:5px 14px;border-radius:12px;font-size:.8rem;background:rgba(232,168,56,.12);color:var(--a);margin:4px}
-.link-card{display:block;padding:14px 18px;background:var(--s2);border-radius:var(--r);border:1px solid var(--b);margin:8px 0;transition:all .3s}.link-card:hover{border-color:var(--a);transform:translateX(4px)}
-.highlight{background:linear-gradient(135deg,rgba(232,168,56,.1),rgba(232,168,56,.03));border:1px solid rgba(232,168,56,.25);border-radius:var(--r);padding:24px;margin:24px 0}
-.highlight h4{color:var(--a);margin-bottom:14px}
-.app-box{background:var(--s2);border-radius:var(--r);padding:22px;margin:18px 0;border-left:4px solid var(--green)}
-.app-box h4{color:var(--green);margin-bottom:14px}
-table{width:100%;border-collapse:collapse;margin:20px 0}th,td{padding:14px 16px;border:1px solid var(--b);text-align:left;font-size:.9rem}th{background:var(--s2);color:var(--a);font-weight:600}
-.footer{padding:24px 0;border-top:1px solid var(--b);color:#666;font-size:.85rem;margin-top:36px}
-@media(max-width:640px){body{padding:12px}.note{padding:24px}.note h1{font-size:1.5rem}}
+body{font-family:-apple-system,sans-serif;background:var(--bg);color:var(--t);line-height:1.9;padding:24px;max-width:900px;margin:0 auto}
+h1{font-size:1.8rem;color:var(--a);margin:20px 0 12px}
+h2{font-size:1.35rem;color:var(--a);margin:32px 0 16px;padding-bottom:8px;border-bottom:1px solid var(--b)}
+h3{font-size:1.1rem;margin:22px 0 10px}
+p{margin:12px 0;color:var(--t2)}
+.hl{background:var(--s2);padding:16px 20px;border-radius:var(--r);border-left:3px solid var(--a);margin:16px 0}
+.hl p{color:var(--t);font-style:italic}
+.meta{color:var(--t3);font-size:.9rem;margin-bottom:20px}
+.back{display:inline-block;margin:20px 0;color:var(--a);text-decoration:none}
+ul,ol{margin:12px 0 12px 20px;color:var(--t2)}li{margin:6px 0}
+.quote{text-align:center;padding:20px;font-size:1.1rem;color:var(--t);font-style:italic;border-top:1px solid var(--b);border-bottom:1px solid var(--b);margin:20px 0}
+.card{background:var(--s);padding:16px;border-radius:var(--r);border:1px solid var(--b);margin:12px 0}
+.card h4{color:var(--a);margin-bottom:8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;margin:16px 0}
 </style>
 </head>
 <body>
-<a class="back" href="../index.html">← 回到书单</a>
-<div class="note">
-<h1>《十二位对抗诸神的人》深度读书笔记</h1>
+<a href="../index.html" class="back">← 返回书单</a>
+<h1>📖 《十二位对抗诸神的人》深度笔记</h1>
+<p style="color:var(--t2);font-size:1.05rem;margin-bottom:8px">十二位拒绝命运的反叛者，十二段改变世界的非凡人生</p>
 <div class="meta">
-<span class="tag">威廉·博利索</span>
-<span class="tag">#传记人物</span>
-<span class="tag">#2026-03-13</span>
+<span class="tag">博利索</span><span class="tag">反叛者</span><span class="tag">历史人物</span><span class="tag">命运抗争</span>
 </div>
 
-<h2>● 人物介绍</h2>
-<h3>十二位对抗诸神的人</h3>
-<p>本书的主人公是影响历史进程的伟大人物，其人生经历蕴含着深刻的成长智慧与人生启示。</p>
+<div class="quote">「命运不是用来接受的，而是用来打破的。」</div>
 
-<h2>● 创作背景</h2>
-<p>《十二位对抗诸神的人》通过详实的史料和深入的访谈，为读者呈现了一个真实而立体的人物形象。</p>
+<h2>一、作者与作品</h2>
 
-<h2>● 核心观点</h2>
-<div class="highlight">
-<h4>🔥 七大核心启示</h4>
+<h3>1.1 博利索：寻找历史的反叛基因</h3>
+<p>博利索是一位深谙历史的作家，他选择了一个独特的视角：在人类历史的长河中，挑选十二位最具有反叛精神的人物——那些不甘于被既有秩序束缚、敢于挑战"神"所代表的一切权威的人。这里的"诸神"不仅指宗教神灵，更象征着权力、传统、偏见和既定规则。</p>
+
+<h3>1.2 为什么是十二个人？</h3>
+<p>十二是一个有象征意义的数字——黄道十二宫、十二使徒、十二时辰。博利索用这个数字框架，从不同领域、不同时代选择了十二个样本，试图回答一个核心问题：是什么让某些人拒绝接受"本该如此"，而选择去改变"可以如此"？</p>
+
+<h2>二、十二位反叛者的画像</h2>
+
+<div class="grid">
+<div class="card"><h4>⚔️ 政治反叛者</h4><p>挑战旧秩序的政治家和革命者，他们用行动证明：体制不是铁板一块</p></div>
+<div class="card"><h4>🔬 科学反叛者</h4><p>挑战宗教和传统权威的科学家，用证据推翻千年偏见</p></div>
+<div class="card"><h4>🎨 文化反叛者</h4><p>用艺术和思想打破精神枷锁，重新定义什么是美、什么是真</p></div>
+<div class="card"><h4>💡 观念反叛者</h4><p>用一个新想法颠覆整个旧世界的思想家</p></div>
+</div>
+
+<h2>三、关键智慧与洞见</h2>
+
+<div class="card">
+<h4>🔥 反叛者的共同特征</h4>
 <ol>
-<li><strong>人生定位：</strong>找到自己的使命与方向</li>
-<li><strong>逆境突破：</strong>在困境中发现机会</li>
-<li><strong>持续成长：</strong>终身学习与自我迭代</li>
-<li><strong>领导智慧：</strong>影响他人、成就团队</li>
-<li><strong>价值观：</strong>坚守原则与底线</li>
-<li><strong>执行力：</strong>将想法转化为行动</li>
-<li><strong>遗产传承：</strong>为后人留下宝贵财富</li>
+<li><strong>不安全感</strong>：大多数反叛者都有某种"局外人"的身份——流放者、异见者、边缘人</li>
+<li><strong>执念</strong>：对某个信念的绝对坚持，不计代价</li>
+<li><strong>孤独</strong>：反叛的代价往往是孤立，真正的变革者通常走在最前面也最孤独</li>
+<li><strong>时机感</strong>：知道什么时候该出手，太早是炮灰，太晚是随大流</li>
 </ol>
 </div>
 
-<h2>● 金句摘录</h2>
+<h2>四、金句摘录</h2>
 <blockquote>
-<p>"伟大的人物不是没有失败，而是在失败后依然前行。"</p>
-<p class="parse"><strong>深度解析：</strong>这句话揭示了伟人成功的核心——不是天赋异禀，而是面对挫折时的坚韧不拔。</p>
+<p>「真正的反叛不是为了反叛而反叛，而是因为看到了另一种可能性。」</p>
+<p class="parse"><strong>解析</strong>：盲目反对一切不是反叛，是幼稚。真正的反叛者心中有一个清晰的替代方案——他们反对的是现状，追求的是更好的未来。</p>
 </blockquote>
 
-<h2>● 应用指导</h2>
-<div class="app-box">
-<h4>🎯 场景1：个人成长</h4>
-<ol>
-<li>学习伟人的自律与坚持</li>
-<li>建立自己的人生原则体系</li>
-<li>在逆境中保持积极心态</li>
-</ol>
+<h2>五、读书心得</h2>
+<p>这本书让我重新审视"服从"与"反叛"的关系。社会需要秩序，但社会进步的动力来自那些敢于质疑秩序的人。问题不是"要不要反叛"，而是"什么时候、以什么方式、为什么而反叛"。</p>
+
+<div class="hl">
+<p>每一个伟大的反叛者，最终都建立了新的秩序。反叛不是目的，而是通往更好的世界的必经之路。关键在于：你的反叛是为了创造，还是仅仅为了破坏？</p>
 </div>
 
-<div class="app-box">
-<h4>🎯 场景2：职业发展</h4>
-<ol>
-<li>学习伟人的决策思维</li>
-<li>培养领导力与影响力</li>
-<li>建立长期主义视角</li>
-</ol>
-</div>
-
-<div class="app-box">
-<h4>🎯 场景3：人生智慧</h4>
-<ol>
-<li>理解成功的多元定义</li>
-<li>平衡事业与生活</li>
-<li>思考人生的意义与价值</li>
-</ol>
-</div>
-
-<h2>● 相关笔记</h2>
-<a href="steve-jobs.html" class="link-card"><div>📚 [[史蒂夫·乔布斯]]</div></a>
-<a href="elon-musk.html" class="link-card"><div>📚 [[埃隆·马斯克]]</div></a>
-<a href="franklin-autobiography.html" class="link-card"><div>📚 [[富兰克林自传]]</div></a>
-
-<h2>● 标签</h2>
-<div>
-<span class="tag">#传记</span>
-<span class="tag">#人物</span>
-<span class="tag">#成长</span>
-<span class="tag">#读书笔记</span>
-</div>
-
-<div class="footer">
-<p>📝 笔记日期：2026-03-13 | 📖 分类：传记人物类</p>
-</div>
-</div>
+<h2>六、延伸阅读</h2>
+<ul>
+<li>《人类群星闪耀时》——茨威格，同样是讲述改变历史的关键人物</li>
+<li>《异类》——马尔科姆·格拉德威尔，成功者的非常规路径</li>
+<li>《反脆弱》——塔勒布，在混乱中获益的智慧</li>
+</ul>
+<br>
+<a href="../index.html" class="back">← 返回书单</a>
 </body>
 </html>

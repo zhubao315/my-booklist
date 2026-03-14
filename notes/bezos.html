@@ -1,115 +1,88 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>《贝索斯》读书笔记 - 布拉德·斯通</title>
+<title>《贝索斯》深度笔记</title>
 <style>
-:root{--bg:#0f0f0f;--s:#1a1a1a;--s2:#242424;--t:#e8e6e3;--t2:#9a9a9a;--a:#e8a838;--b:#2a2a2a;--r:12px;--green:#22c55e}
+:root{--bg:#0f0f0f;--s:#1a1a1a;--s2:#242424;--b:#333;--t:#e0e0e0;--t2:#a0a0a0;--t3:#666;--a:#e8a838;--r:8px}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,sans-serif;background:var(--bg);color:var(--t);line-height:1.9;padding:20px;max-width:900px;margin:0 auto}
-a{color:var(--a);text-decoration:none}.back{display:inline-flex;padding:8px 16px;border-radius:20px;border:1px solid var(--b);color:var(--t2);font-size:.9rem;margin-bottom:24px}
-.note{padding:36px;background:var(--s);border-radius:var(--r);border:1px solid var(--b)}
-.note h1{font-size:2rem;font-weight:800;margin-bottom:12px;background:linear-gradient(135deg,var(--a),#f0c060);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.meta{color:var(--t2);font-size:.9rem;margin-bottom:28px;display:flex;flex-wrap:wrap;gap:8px}
-h2{font-size:1.4rem;font-weight:700;margin:36px 0 18px;color:var(--a);border-bottom:2px solid var(--b);padding-bottom:10px}
-h3{font-size:1.2rem;font-weight:600;margin:24px 0 12px}
-p{margin-bottom:16px;font-size:.95rem}
-ul,ol{margin:16px 0 18px 24px}li{margin-bottom:10px}
-blockquote{border-left:4px solid var(--a);padding:20px 24px;margin:24px 0;background:var(--s2);border-radius:0 var(--r) var(--r) 0}
-blockquote p{font-style:italic}.parse{font-style:normal;color:var(--t2);font-size:.9rem;margin-top:14px;border-top:1px solid var(--b);padding-top:14px}
-.tag{display:inline-block;padding:5px 14px;border-radius:12px;font-size:.8rem;background:rgba(232,168,56,.12);color:var(--a);margin:4px}
-.link-card{display:block;padding:14px 18px;background:var(--s2);border-radius:var(--r);border:1px solid var(--b);margin:8px 0;transition:all .3s}.link-card:hover{border-color:var(--a);transform:translateX(4px)}
-.highlight{background:linear-gradient(135deg,rgba(232,168,56,.1),rgba(232,168,56,.03));border:1px solid rgba(232,168,56,.25);border-radius:var(--r);padding:24px;margin:24px 0}
-.highlight h4{color:var(--a);margin-bottom:14px}
-.app-box{background:var(--s2);border-radius:var(--r);padding:22px;margin:18px 0;border-left:4px solid var(--green)}
-.app-box h4{color:var(--green);margin-bottom:14px}
-table{width:100%;border-collapse:collapse;margin:20px 0}th,td{padding:14px 16px;border:1px solid var(--b);text-align:left;font-size:.9rem}th{background:var(--s2);color:var(--a);font-weight:600}
-.footer{padding:24px 0;border-top:1px solid var(--b);color:#666;font-size:.85rem;margin-top:36px}
-@media(max-width:640px){body{padding:12px}.note{padding:24px}.note h1{font-size:1.5rem}}
+body{font-family:-apple-system,sans-serif;background:var(--bg);color:var(--t);line-height:1.9;padding:24px;max-width:900px;margin:0 auto}
+h1{font-size:1.8rem;color:var(--a);margin:20px 0 12px}
+h2{font-size:1.35rem;color:var(--a);margin:32px 0 16px;padding-bottom:8px;border-bottom:1px solid var(--b)}
+h3{font-size:1.1rem;margin:22px 0 10px}
+p{margin:12px 0;color:var(--t2)}
+.hl{background:var(--s2);padding:16px 20px;border-radius:var(--r);border-left:3px solid var(--a);margin:16px 0}
+.hl p{color:var(--t);font-style:italic}
+.meta{color:var(--t3);font-size:.9rem;margin-bottom:20px}
+.back{display:inline-block;margin:20px 0;color:var(--a);text-decoration:none}
+ul,ol{margin:12px 0 12px 20px;color:var(--t2)}li{margin:6px 0}
+.quote{text-align:center;padding:20px;font-size:1.1rem;color:var(--t);font-style:italic;border-top:1px solid var(--b);border-bottom:1px solid var(--b);margin:20px 0}
+.card{background:var(--s);padding:16px;border-radius:var(--r);border:1px solid var(--b);margin:12px 0}
+.card h4{color:var(--a);margin-bottom:8px}
 </style>
 </head>
 <body>
-<a class="back" href="../index.html">← 回到书单</a>
-<div class="note">
-<h1>《贝索斯》深度读书笔记</h1>
+<a href="../index.html" class="back">← 返回书单</a>
+<h1>📖 《贝索斯》深度笔记</h1>
+<p style="color:var(--t2);font-size:1.05rem;margin-bottom:8px">从车库书店到万亿帝国：长期主义的胜利</p>
 <div class="meta">
-<span class="tag">布拉德·斯通</span>
-<span class="tag">#传记人物</span>
-<span class="tag">#2026-03-13</span>
+<span class="tag">布拉德·斯通</span><span class="tag">贝索斯</span><span class="tag">亚马逊</span><span class="tag">长期主义</span><span class="tag">商业传记</span>
 </div>
 
-<h2>● 人物介绍</h2>
-<h3>贝索斯</h3>
-<p>本书的主人公是影响历史进程的伟大人物，其人生经历蕴含着深刻的成长智慧与人生启示。</p>
+<div class="quote">「如果你做一件事，把眼光放到未来三年，和你同台竞技的人很多；但如果你的眼光放到未来七年，那么可以和你竞争的人就很少了。」<br>—— 杰夫·贝索斯</div>
 
-<h2>● 创作背景</h2>
-<p>《贝索斯》通过详实的史料和深入的访谈，为读者呈现了一个真实而立体的人物形象。</p>
+<h2>一、作者与人物</h2>
 
-<h2>● 核心观点</h2>
-<div class="highlight">
-<h4>🔥 七大核心启示</h4>
+<h3>1.1 布拉德·斯通：科技记者的深度追踪</h3>
+<p>布拉德·斯通（Brad Stone），《彭博商业周刊》资深科技记者，花了六年时间，采访数百位亚马逊现任和前任员工，写出了这部亚马逊帝国最详尽的传记。本书的英文原名《The Everything Store》完美概括了贝索斯的野心——把亚马逊打造成"卖一切的商店"。</p>
+
+<h3>1.2 贝索斯：从华尔街到西雅图车库</h3>
+<p>杰夫·贝索斯（Jeff Bezos），1964年出生于新墨西哥州。普林斯顿大学毕业后在华尔街对冲基金工作，1994年发现互联网年增长2300%的数据，毅然辞职，在自家车库创办了网上书店。此后三十年，亚马逊从一个卖书的网站成长为全球最大的电商和云计算公司，贝索斯本人也曾是世界首富。</p>
+
+<h2>二、核心商业场景</h2>
+
+<h3>2.1 Day One 哲学：永远是创业第一天</h3>
+<p>贝索斯反复强调的"Day One"理念：把每一天都当作公司创立的第一天来对待。这意味着永远保持创业者的紧迫感、好奇心和行动力。"Day Two是停滞，接着是衰退，接着是死亡。"这句话被刻在亚马逊总部的墙上。</p>
+
+<h3>2.2 飞轮效应：越转越快的增长引擎</h3>
+<p>贝索斯在一张餐巾纸上画出了亚马逊的增长飞轮：更低的价格→更多的客户→更多的卖家→更低的成本→更低的价格。这个自我强化的循环一旦转动起来，就会产生巨大的竞争优势。他不做短期优化，只关注如何让飞轮转得更快。</p>
+
+<h3>2.3 AWS：从内部工具到万亿生意</h3>
+<p>亚马逊云计算（AWS）最初只是为了解决亚马逊自身的技术架构问题。贝索斯敏锐地意识到，如果亚马逊能解决自己的基础设施问题，其他公司也会有同样的需求。如今AWS贡献了亚马逊大部分利润，改变了整个科技行业的基础设施格局。</p>
+
+<h2>三、关键智慧与洞见</h2>
+
+<div class="card">
+<h4>🔥 贝索斯的决策哲学</h4>
 <ol>
-<li><strong>人生定位：</strong>找到自己的使命与方向</li>
-<li><strong>逆境突破：</strong>在困境中发现机会</li>
-<li><strong>持续成长：</strong>终身学习与自我迭代</li>
-<li><strong>领导智慧：</strong>影响他人、成就团队</li>
-<li><strong>价值观：</strong>坚守原则与底线</li>
-<li><strong>执行力：</strong>将想法转化为行动</li>
-<li><strong>遗产传承：</strong>为后人留下宝贵财富</li>
+<li><strong>可逆决策 vs 不可逆决策</strong>：可逆决策要快，不可逆决策要慢</li>
+<li><strong>逆向工作法</strong>：从客户需要的结果出发，倒推实现路径</li>
+<li><strong>遗憾最小化框架</strong>：想象80岁的自己，问会后悔没做什么</li>
+<li><strong>两个披萨原则</strong>：团队人数不能超过两个披萨能喂饱的人数</li>
 </ol>
 </div>
 
-<h2>● 金句摘录</h2>
+<h2>四、金句摘录</h2>
 <blockquote>
-<p>"伟大的人物不是没有失败，而是在失败后依然前行。"</p>
-<p class="parse"><strong>深度解析：</strong>这句话揭示了伟人成功的核心——不是天赋异禀，而是面对挫折时的坚韧不拔。</p>
+<p>「客户永远是不满意的，即使他们说满意，那也只是暂时的。他们的期望永远在上升。」</p>
+<p class="parse"><strong>解析</strong>：这不是悲观，而是对竞争本质的清醒认知。今天的优势是明天的底线。唯一的选择是持续进步。</p>
 </blockquote>
 
-<h2>● 应用指导</h2>
-<div class="app-box">
-<h4>🎯 场景1：个人成长</h4>
-<ol>
-<li>学习伟人的自律与坚持</li>
-<li>建立自己的人生原则体系</li>
-<li>在逆境中保持积极心态</li>
-</ol>
+<h2>五、读书心得</h2>
+<p>贝索斯最令人敬佩的不是他的商业成就，而是他的时间观念。在一个季度财报驱动一切的商业世界里，他坚持做七年才能见效的投资。AWS、Kindle、Prime——这些今天看起来理所当然的业务，当年都被华尔街嘲笑为"浪费钱"。</p>
+
+<div class="hl">
+<p>长期主义不是"耐心等待"，而是在别人看不到回报的地方持续投入。贝索斯的成功证明了一个反直觉的道理：越不追求短期回报，长期回报越大。</p>
 </div>
 
-<div class="app-box">
-<h4>🎯 场景2：职业发展</h4>
-<ol>
-<li>学习伟人的决策思维</li>
-<li>培养领导力与影响力</li>
-<li>建立长期主义视角</li>
-</ol>
-</div>
-
-<div class="app-box">
-<h4>🎯 场景3：人生智慧</h4>
-<ol>
-<li>理解成功的多元定义</li>
-<li>平衡事业与生活</li>
-<li>思考人生的意义与价值</li>
-</ol>
-</div>
-
-<h2>● 相关笔记</h2>
-<a href="steve-jobs.html" class="link-card"><div>📚 [[史蒂夫·乔布斯]]</div></a>
-<a href="elon-musk.html" class="link-card"><div>📚 [[埃隆·马斯克]]</div></a>
-<a href="franklin-autobiography.html" class="link-card"><div>📚 [[富兰克林自传]]</div></a>
-
-<h2>● 标签</h2>
-<div>
-<span class="tag">#传记</span>
-<span class="tag">#人物</span>
-<span class="tag">#成长</span>
-<span class="tag">#读书笔记</span>
-</div>
-
-<div class="footer">
-<p>📝 笔记日期：2026-03-13 | 📖 分类：传记人物类</p>
-</div>
-</div>
+<h2>六、延伸阅读</h2>
+<ul>
+<li>《一网打尽》——布拉德·斯通的亚马逊续作</li>
+<li>《贝索斯致股东的信》——理解亚马逊文化的原始材料</li>
+<li>《创新者的窘境》——克莱顿·克里斯坦森，理解颠覆式创新</li>
+</ul>
+<br>
+<a href="../index.html" class="back">← 返回书单</a>
 </body>
 </html>
