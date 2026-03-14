@@ -149,9 +149,10 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(10,10,11,.9); bac
 /* Category Grid */
 .category-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
 .category-card {
-  display: flex; align-items: center; gap: 14px; padding: 18px 20px;
+  display: flex; flex-direction: column; gap: 0; padding: 18px 20px;
   background: var(--s); border-radius: var(--r); border: 1px solid var(--b); cursor: pointer; transition: all .3s;
 }
+.category-card-top { display: flex; align-items: center; gap: 14px; }
 .category-card:hover { border-color: var(--a); transform: translateX(4px); background: var(--s2); }
 .category-emoji { font-size: 1.5rem; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: var(--s2); border-radius: 10px; }
 .category-info { flex: 1; }
@@ -159,6 +160,8 @@ nav { position: sticky; top: 0; z-index: 100; background: rgba(10,10,11,.9); bac
 .category-stats { font-size: .8rem; color: var(--t3); }
 .category-arrow { color: var(--t3); transition: transform .3s; }
 .category-card:hover .category-arrow { transform: translateX(4px); color: var(--a); }
+.category-card-subs { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--b); }
+.category-card-subs span { font-size: .7rem; padding: 2px 7px; border-radius: 4px; background: var(--s2); color: var(--t2); border: 1px solid var(--b); white-space: nowrap; }
 
 /* Book List */
 .book-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
@@ -856,9 +859,16 @@ function render() {
   if (activeCategory === 'overview' || activeCategory === 'all') {
     html += `<section class="section"><div class="section-header"><h2 class="section-title">📊 分类概览</h2><span class="section-count">${categories.length}个分类</span></div><p class="section-desc">探索不同领域的知识体系</p><div class="category-grid">`;
     categories.forEach(c => {
-      const count = booksByCategory[c.id]?.length || 0;
-      const noteCount = (booksByCategory[c.id] || []).filter(([t]) => getNoteLink(t)).length;
-      html += `<div class="category-card" onclick="filterBy(${c.id})"><div class="category-emoji">${c.emoji}</div><div class="category-info"><div class="category-name">${c.name}</div><div class="category-stats">${count}本 · ${noteCount > 0 ? noteCount + '篇笔记' : c.desc}</div></div><div class="category-arrow">→</div></div>`;
+      const catBooks = booksByCategory[c.id] || [];
+      const count = catBooks.length;
+      const noteCount = catBooks.filter(([t]) => getNoteLink(t)).length;
+      // 提取子分类
+      let subs = [];
+      catBooks.forEach(item => {
+        if (typeof item === 'string' && item.startsWith('// ')) subs.push(item.replace('// ', ''));
+      });
+      const subsHtml = subs.length > 0 ? `<div class="category-card-subs">${subs.map(s => `<span>${s}</span>`).join('')}</div>` : '';
+      html += `<div class="category-card" onclick="filterBy(${c.id})"><div class="category-card-top"><div class="category-emoji">${c.emoji}</div><div class="category-info"><div class="category-name">${c.name}</div><div class="category-stats">${count}本 · ${noteCount > 0 ? noteCount + '篇笔记' : c.desc}</div></div><div class="category-arrow">→</div></div>${subsHtml}</div>`;
     });
     html += '</div></section>';
   }
