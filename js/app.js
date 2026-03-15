@@ -102,6 +102,17 @@
   }
 
   // Filter & Search
+  // Show skeleton loading
+  function showSkeleton(count) {
+    var container = $('#book-grid');
+    if (!container) return;
+    var html = '';
+    for (var i = 0; i < (count || 8); i++) {
+      html += '<div class="skeleton-card"><div class="skeleton-line h20 w60"></div><div class="skeleton-line w80"></div><div class="skeleton-line w40"></div><div class="skeleton-line"></div></div>';
+    }
+    container.innerHTML = html;
+  }
+
   function applyFilters() {
     var books = DATA.BOOKS;
     // Category filter
@@ -135,6 +146,14 @@
   }
 
   // Render books
+  // Highlight search matches
+  function hl(text, query) {
+    if (!query || !text) return esc(text);
+    var safe = esc(text);
+    var escaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    return safe.replace(new RegExp('(' + escaped + ')', 'gi'), '<mark>$1</mark>');
+  }
+
   function renderBooks() {
     var container = $('#book-grid');
     var emptyState = $('#empty-state');
@@ -163,9 +182,9 @@
       var noteLink = b.hasNote && b.noteFile ? 'notes/' + b.noteFile : null;
       var card = '<div class="book-card" data-id="' + b.id + '">';
       card += '<span class="status-badge ' + b.status + '">' + statusText + '</span>';
-      card += '<div class="book-card-header"><h3>' + esc(b.title) + '</h3></div>';
-      card += '<p class="book-author">' + esc(b.author) + '</p>';
-      card += '<p class="book-desc">' + esc(b.desc || '') + '</p>';
+      card += '<div class="book-card-header"><h3>' + hl(b.title, state.searchQuery) + '</h3></div>';
+      card += '<p class="book-author">' + hl(b.author, state.searchQuery) + '</p>';
+      card += '<p class="book-desc">' + hl(b.desc || '', state.searchQuery) + '</p>';
       card += '<div class="book-meta">';
       card += '<span class="tag cat">' + esc(b.category) + '</span>';
       card += '<span class="tag status-' + b.status + '">' + statusText + '</span>';
@@ -254,7 +273,8 @@
         $$('.category-btn').forEach(function(b) { b.classList.remove('active'); });
         btn.classList.add('active');
         state.activeCategory = parseInt(btn.dataset.cat) || 0;
-        applyFilters();
+        showSkeleton(6);
+        requestAnimationFrame(function() { applyFilters(); });
       });
     });
 
