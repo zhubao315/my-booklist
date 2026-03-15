@@ -211,21 +211,71 @@ footer { padding: 48px 20px; text-align: center; border-top: 1px solid var(--b);
   .current-hero { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 768px) {
-  .hero { padding: 60px 16px 40px; }
+  body { padding: 8px; }
+  .hero { padding: 50px 16px 36px; }
   .hero h1 { font-size: 2.2rem; }
-  .hero .stats { gap: 20px; }
-  .stat-number { font-size: 1.6rem; }
+  .hero .stats { gap: 15px; flex-wrap: wrap; justify-content: center; }
+  .stat-number { font-size: 1.5rem; }
   .current-hero { grid-template-columns: 1fr; }
   .category-grid { grid-template-columns: 1fr 1fr; }
   .book-list { grid-template-columns: 1fr; }
   .guide-grid { grid-template-columns: 1fr; }
   .section-title { font-size: 1.3rem; }
   .nav-button { padding: 6px 12px; font-size: .8rem; }
+  nav { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .nav-container { display: flex; flex-wrap: nowrap; min-width: max-content; gap: 6px; padding: 8px 0; }
+  .search-bar { width: 100%; }
+  .content-wrapper { padding: 0 4px; }
+  .book-meta { flex-wrap: wrap; gap: 4px; }
+  footer { padding: 20px 16px; font-size: .85rem; }
+  .detail-hero { padding: 24px; }
+  .detail-hero h1 { font-size: 1.5rem; }
+  .detail-meta { flex-direction: column; gap: 6px; }
 }
 @media (max-width: 480px) {
+  body { padding: 5px; }
   .category-grid { grid-template-columns: 1fr; }
-  .hero h1 { font-size: 1.8rem; }
-  .search-bar { padding: 12px 18px; font-size: .9rem; }
+  .hero h1 { font-size: 1.8rem; letter-spacing: 4px; }
+  .hero .subtitle { font-size: .9rem; }
+  .hero .stats { gap: 12px; }
+  .stat-number { font-size: 1.3rem; }
+  .stat-label { font-size: .75rem; }
+  .search-bar { padding: 12px 16px; font-size: .9rem; }
+  .book-card { padding: 14px; border-radius: 12px; }
+  .book-card h3 { font-size: .95rem; }
+  .book-card p { font-size: .8rem; line-height: 1.6; }
+  .book-meta { font-size: .7rem; }
+  .tag { font-size: .65rem; padding: 2px 6px; }
+  .section-title { font-size: 1.15rem; }
+  .nav-button { padding: 5px 10px; font-size: .75rem; }
+  .detail-hero { padding: 16px; }
+  .detail-hero h1 { font-size: 1.3rem; }
+  .detail-section { padding: 16px; }
+  .detail-section h2 { font-size: 1.1rem; }
+  .detail-section p { font-size: .9rem; }
+  footer { padding: 16px 12px; font-size: .8rem; }
+  .guide-card { padding: 16px; }
+  .guide-card h3 { font-size: 1rem; }
+  .empty-state { padding: 40px 15px; }
+  .empty-state-icon { font-size: 2.5rem; }
+}
+@media (max-width: 360px) {
+  .hero h1 { font-size: 1.5rem; letter-spacing: 3px; }
+  .category-grid { gap: 8px; }
+  .book-card { padding: 12px; }
+}
+
+/* 触屏优化 */
+@media (hover: none) and (pointer: coarse) {
+  .book-card:active { transform: scale(0.98); transition: transform .15s; }
+  .nav-button { min-height: 40px; display: inline-flex; align-items: center; }
+  .search-bar { min-height: 48px; }
+}
+
+/* 刘海屏适配 */
+@supports (padding: max(0px)) {
+  footer { padding-bottom: max(20px, env(safe-area-inset-bottom)); }
+  body { padding-left: max(5px, env(safe-area-inset-left)); padding-right: max(5px, env(safe-area-inset-right)); }
 }
 </style>
 </head>
