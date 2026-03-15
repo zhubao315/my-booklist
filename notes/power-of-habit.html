@@ -3,83 +3,115 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>《习惯的力量》读书笔记 - 杜希格</title>
+<title>《习惯的力量》读书笔记 - 查尔斯·杜希格</title>
 <style>
-:root{--bg:#0f0f0f;--s:#1a1a1a;--s2:#242424;--t:#e8e6e3;--t2:#9a9a9a;--a:#e8a838;--a2:#c4882a;--b:#2a2a2a;--r:12px}
+:root{--bg:#0f0f0f;--s:#1a1a1a;--s2:#242424;--t:#e8e6e3;--t2:#9a9a9a;--a:#e8a838;--b:#2a2a2a;--r:12px;--green:#22c55e}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--t);line-height:1.8;padding:20px;max-width:900px;margin:0 auto}
-a{color:var(--a);text-decoration:none}.back{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:20px;border:1px solid var(--b);color:var(--t2);font-size:.9rem;margin-bottom:24px}
-.note{padding:32px;background:var(--s);border-radius:var(--r);border:1px solid var(--b);margin-bottom:24px}
-.note h1{font-size:1.8rem;font-weight:800;margin-bottom:8px;background:linear-gradient(135deg,var(--a),#f0c060);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.note .meta{color:var(--t2);font-size:.9rem;margin-bottom:24px;display:flex;flex-wrap:wrap;gap:8px}
-.note h2{font-size:1.3rem;font-weight:700;margin:28px 0 14px;color:var(--a);border-bottom:1px solid var(--b);padding-bottom:8px}
-.note h3{font-size:1.1rem;font-weight:600;margin:20px 0 10px}
-.note p{margin-bottom:14px}.note ul,ol{margin:14px 0 14px 24px}.note li{margin-bottom:6px}
-.note blockquote{border-left:4px solid var(--a);padding:14px 20px;margin:20px 0;background:var(--s2);border-radius:0 var(--r) var(--r) 0}
-.note blockquote p{font-style:italic}.note blockquote .parse{font-style:normal;color:var(--t2);font-size:.9rem;margin-top:10px;border-top:1px solid var(--b);padding-top:10px}
-.tag{display:inline-block;padding:4px 12px;border-radius:12px;font-size:.8rem;background:rgba(232,168,56,.12);color:var(--a);margin:4px}
-.link-card{display:block;padding:12px 16px;background:var(--s2);border-radius:var(--r);border:1px solid var(--b);margin:6px 0;transition:all .3s}
-.highlight-box{background:linear-gradient(135deg,rgba(232,168,56,.08),rgba(232,168,56,.03));border:1px solid rgba(232,168,56,.25);border-radius:var(--r);padding:18px;margin:18px 0}
-.highlight-box h4{color:var(--a);margin-bottom:10px}
-.footer{padding:20px 0;border-top:1px solid var(--b);color:var(--t2);font-size:.85rem;margin-top:24px}
-.theme-grid{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
-.theme-item{padding:8px 16px;background:var(--s2);border-radius:var(--r);border:1px solid var(--b);font-size:.9rem;color:var(--t)}
-@media(max-width:640px){body{padding:16px}.note{padding:20px}.note h1{font-size:1.4rem}}
+body{font-family:-apple-system,sans-serif;background:var(--bg);color:var(--t);line-height:1.9;padding:20px;max-width:900px;margin:0 auto}
+a{color:var(--a);text-decoration:none}.back{display:inline-flex;padding:8px 16px;border-radius:20px;border:1px solid var(--b);color:var(--t2);font-size:.9rem;margin-bottom:24px}
+.note{padding:36px;background:var(--s);border-radius:var(--r);border:1px solid var(--b)}
+.note h1{font-size:2rem;font-weight:800;margin-bottom:12px;background:linear-gradient(135deg,var(--a),#f0c060);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.meta{color:var(--t2);font-size:.9rem;margin-bottom:28px;display:flex;flex-wrap:wrap;gap:8px}
+h2{font-size:1.4rem;font-weight:700;margin:36px 0 18px;color:var(--a);border-bottom:2px solid var(--b);padding-bottom:10px}
+h3{font-size:1.2rem;font-weight:600;margin:24px 0 12px}
+p{margin-bottom:16px;font-size:.95rem}
+ul,ol{margin:16px 0 18px 24px}li{margin-bottom:10px}
+blockquote{border-left:4px solid var(--a);padding:20px 24px;margin:24px 0;background:var(--s2);border-radius:0 var(--r) var(--r) 0}
+blockquote p{font-style:italic}.parse{font-style:normal;color:var(--t2);font-size:.9rem;margin-top:14px;border-top:1px solid var(--b);padding-top:14px}
+.tag{display:inline-block;padding:5px 14px;border-radius:12px;font-size:.8rem;background:rgba(232,168,56,.12);color:var(--a);margin:4px}
+.link-card{display:block;padding:14px 18px;background:var(--s2);border-radius:var(--r);border:1px solid var(--b);margin:8px 0;transition:all .3s}.link-card:hover{border-color:var(--a);transform:translateX(4px)}
+.highlight{background:linear-gradient(135deg,rgba(232,168,56,.1),rgba(232,168,56,.03));border:1px solid rgba(232,168,56,.25);border-radius:var(--r);padding:24px;margin:24px 0}
+.highlight h4{color:var(--a);margin-bottom:14px}
+.app-box{background:var(--s2);border-radius:var(--r);padding:22px;margin:18px 0;border-left:4px solid var(--green)}
+.app-box h4{color:var(--green);margin-bottom:14px}
+table{width:100%;border-collapse:collapse;margin:20px 0}th,td{padding:14px 16px;border:1px solid var(--b);text-align:left;font-size:.9rem}th{background:var(--s2);color:var(--a);font-weight:600}
+.footer{padding:24px 0;border-top:1px solid var(--b);color:#666;font-size:.85rem;margin-top:36px}
+@media(max-width:640px){body{padding:12px}.note{padding:24px}.note h1{font-size:1.5rem}}
 </style>
 </head>
 <body>
 <a class="back" href="../index.html">← 回到书单</a>
 <div class="note">
-<h1>《习惯的力量》读书笔记</h1>
+<h1>《习惯的力量》深度读书笔记</h1>
 <div class="meta">
-<span class="tag">杜希格</span>
-<span class="tag">#认知成长</span>
-<span class="tag">#习惯回路</span>
-<span class="tag">#核心习惯</span>
-<span class="tag">#意志力</span>
+<span class="tag">查尔斯·杜希格</span><span class="tag">#心理学</span><span class="tag">#习惯养成</span><span class="tag">#行为科学</span><span class="tag">#2026-03-13</span>
 </div>
 
-<h2>● 核心主题</h2>
-<div class="theme-grid">
-<div class="theme-item">习惯回路</div>
-<div class="theme-item">核心习惯</div>
-<div class="theme-item">意志力</div>
+<h2>● 全书概览</h2>
+<p>《习惯的力量》（The Power of Habit）是《纽约时报》记者查尔斯·杜希格的代表作，2012年出版后成为习惯研究领域的标杆之作。杜希格并非发明了习惯研究，而是将神经科学、心理学和商业案例编织成一个引人入胜的叙事——习惯如何形成、为何难以改变、以及改变的关键是什么。</p>
+<p>全书分三部分：个人习惯的机制、组织习惯的力量、社会习惯的运动。核心论点是：习惯不能被消灭，只能被替代。理解这个原理，你就掌握了一把改变人生的钥匙。</p>
+
+<h2>● 习惯回路：暗示→惯常行为→奖赏</h2>
+<div class="highlight">
+<h4>🔥 习惯形成的三要素</h4>
+<p>杜希格通过研究麻省理工学院的实验鼠和人类大脑扫描数据，提炼出习惯形成的三大要素：</p>
 </div>
 
-<h2>● 内容概要</h2>
-<p>《习惯的力量》是杜希格的经典著作，习惯回路、核心习惯、意志力是本书的核心主题。这本书值得深度阅读和反复思考。</p>
+<ol>
+<li><strong>暗示（Cue）</strong>：触发习惯的信号。可以是时间（每天早上7点）、地点（路过咖啡店）、情绪（感到无聊）、其他人（看到朋友）、或前一个行为（刷完牙后）。大脑对暗示极其敏感，它告诉大脑"切换到自动模式"。</li>
+<li><strong>惯常行为（Routine）</strong>：习惯的执行动作。这是你实际做的事情——跑步、刷手机、吃零食、抽烟。行为可以是身体的、思维的、或情感的。</li>
+<li><strong>奖赏（Reward）</strong>：行为带来的满足感。跑步后的愉悦、刷手机的多巴胺刺激、零食的甜蜜。奖赏告诉大脑"这个回路值得记住"。</li>
+</ol>
 
-<div class="highlight-box">
-<h4>🎯 阅读收获</h4>
+<blockquote>
+<p>"习惯之所以出现，是因为大脑一直在寻找省力的方式。"</p>
+<p class="parse"><strong>深度解析：</strong>习惯的本质是大脑的节能策略。人脑每天消耗约20%的能量，如果每个行为都需要深思熟虑，大脑很快就会不堪重负。习惯将频繁的行为"打包"成自动化程序，让大脑腾出资源处理新信息。这不是懒惰，而是进化的智慧。</p>
+</blockquote>
+
+<h2>● 渴求：习惯的隐形引擎</h2>
+<p>杜希格在书中引入了关键的第四要素——<strong>渴求（Craving）</strong>。渴求是习惯变得强大的原因。当大脑不仅期待奖赏，而且开始在奖赏到达之前就开始分泌多巴胺时，习惯就变成了渴求。</p>
+<p>以跑步为例：最初的暗示（看到跑鞋）→ 惯常行为（跑步）→ 奖赏（跑后的愉悦感）。但当大脑在"看到跑鞋"的瞬间就已经开始分泌多巴胺时，跑步就从一个好习惯变成了一种渴求——不跑就难受。</p>
+<blockquote>
+<p>"如果你想改变一个习惯，你必须找到旧的暗示和奖赏，然后插入一个新的惯常行为。"</p>
+<p class="parse"><strong>关键洞察：</strong>改变习惯的黄金法则——保留暗示和奖赏，替换中间的行为。例如，如果你想戒掉下午吃甜食的习惯，暗示是"下午3点的能量低谷"，奖赏是"提神和愉悦"。你可以用散步、喝茶、和同事聊天来替代吃甜食，只要新行为能带来同样的奖赏感。</p>
+</blockquote>
+
+<h2>● 核心习惯：改变的支点</h2>
+<p>不是所有习惯都同等重要。<strong>核心习惯</strong>（Keystone Habits）是那些一旦改变就会引发连锁反应的习惯。它们像多米诺骨牌一样，推动其他习惯自动改变。</p>
+
+<div class="app-box">
+<h4>🎯 经典核心习惯案例</h4>
 <ul>
-<li><strong>核心洞见</strong>：习惯回路</li>
-<li><strong>实践价值</strong>：核心习惯</li>
-<li><strong>思维启发</strong>：意志力</li>
+<li><strong>运动</strong>：杜希格引用研究显示，开始规律运动的人，即使没有刻意改变，也会在饮食、工作、财务等方面做出更好的决策。运动就是一个核心习惯。</li>
+<li><strong>家庭晚餐</strong>：研究表明，坚持家庭晚餐的孩子在学校表现更好、更有韧性、更少焦虑。</li>
+<li><strong>写日记</strong>：每天花5分钟记录，可以改善睡眠、提高工作效率、减少焦虑。</li>
 </ul>
 </div>
 
-<h2>● 待补充</h2>
-<p>📝 此笔记正在完善中，后续将补充：</p>
-<ul>
-<li>作者详细介绍</li>
-<li>创作背景分析</li>
-<li>章节大纲</li>
-<li>金句摘录</li>
-<li>应用指导</li>
-</ul>
+<h2>● 意志力的科学</h2>
+<p>杜希格引用佛罗里达州立大学罗伊·鲍迈斯特的研究：<strong>意志力是有限资源</strong>。它像肌肉一样会疲劳。这也是为什么法官在下午做出更严厉的判决、为什么节食者在晚餐后更容易破戒。</p>
+<p>解决方案：<strong>将意志力变成习惯</strong>。当你把某个行为变成自动化的习惯时，它就不再消耗意志力。这也是为什么成功人士往往将关键决策（穿什么衣服、吃什么早餐）自动化——他们把宝贵的意志力留给真正重要的事情。</p>
 
-<h2>● 相关笔记</h2>
-<a href="../index.html" class="link-card"><div>📚 返回书单查看更多笔记</div></a>
+<h2>● 组织习惯与社会习惯</h2>
+<p>《习惯的力量》第二、三部分将视角从个人扩展到组织和社会。</p>
+<h3>组织习惯：铝业巨头的故事</h3>
+<p>美国铝业公司（Alcoa）在1987年面临危机。新CEO保罗·奥尼尔上任后没有谈论利润或股价，而是聚焦于"安全"这一个习惯。结果：事故发生率大幅下降，员工开始主动改进流程，利润随之飙升。安全成为了一个核心习惯，改变了整个组织的文化。</p>
+<h3>社会习惯：蒙哥马利公交车抵制运动</h3>
+<p>1955年罗莎·帕克斯拒绝让座引发的蒙哥马利公交车抵制运动，本质上是一个"弱联系"社会习惯的爆发。杜希格展示了社会运动如何依赖于"强联系"（亲密朋友）和"弱联系"（熟人网络）的双重推动。</p>
+
+<h2>● 改变习惯的实践框架</h2>
+<div class="app-box">
+<h4>🎯 四步改变法</h4>
+<ol>
+<li><strong>识别你的习惯回路</strong>：记录你的暗示、行为、奖赏。追踪一周，找出规律。</li>
+<li><strong>找到真正的奖赏</strong>：实验——当你有渴求时，尝试不同的行为（散步、和朋友聊天、喝水），看看哪个能满足你的渴求。这帮你找到真正的奖赏是什么。</li>
+<li><strong>制定计划</strong>：明确你的暗示和期望的奖赏后，制定新计划："当我看到[暗示]时，我会执行[新行为]，以便获得[奖赏]。"</li>
+<li><strong>相信改变的可能</strong>：信念是习惯改变的最后拼图。加入一个支持性的社群（如戒酒互助会），让信念来源于他人。</li>
+</ol>
+</div>
+
+<h2>● 延伸阅读</h2>
+<a href="hooked.html" class="link-card"><div>📚 [[上瘾]] — 产品设计中的习惯形成</div></a>
+<a href="atomic-habits.html" class="link-card"><div>📚 [[原子习惯]] — 微小改变的惊人力量</div></a>
+<a href="mindset.html" class="link-card"><div>📚 [[终身成长]] — 成长型思维与改变的力量</div></a>
+<a href="thinking-fast-and-slow.html" class="link-card"><div>📚 [[思考，快与慢]] — 双系统思维与自动行为</div></a>
 
 <h2>● 标签</h2>
 <div>
-<span class="tag">#习惯回路</span><span class="tag">#核心习惯</span><span class="tag">#意志力</span>
-<span class="tag">#认知成长</span>
-<span class="tag">#读书笔记</span>
+<span class="tag">#心理学</span><span class="tag">#习惯</span><span class="tag">#行为科学</span><span class="tag">#意志力</span><span class="tag">#组织文化</span><span class="tag">#自我管理</span>
 </div>
-
 <div class="footer">
-<p>📝 笔记日期：2026-03-13 | 📖 分类：认知成长</p>
+<p>📝 笔记日期：2026-03-13 | 📖 分类：心理学类 | ✏️ 最后更新：2026-03-15 深度重写</p>
 </div>
 </div>
 </body>

@@ -5,81 +5,101 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>《中国美学史》读书笔记 - 李泽厚</title>
 <style>
-:root{--bg:#0f0f0f;--s:#1a1a1a;--s2:#242424;--t:#e8e6e3;--t2:#9a9a9a;--a:#e8a838;--a2:#c4882a;--b:#2a2a2a;--r:12px}
+:root{--bg:#0f0f0f;--s:#1a1a1a;--s2:#242424;--t:#e8e6e3;--t2:#9a9a9a;--a:#e8a838;--b:#2a2a2a;--r:12px;--green:#22c55e}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--t);line-height:1.8;padding:20px;max-width:900px;margin:0 auto}
-a{color:var(--a);text-decoration:none}.back{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:20px;border:1px solid var(--b);color:var(--t2);font-size:.9rem;margin-bottom:24px}
-.note{padding:32px;background:var(--s);border-radius:var(--r);border:1px solid var(--b);margin-bottom:24px}
-.note h1{font-size:1.8rem;font-weight:800;margin-bottom:8px;background:linear-gradient(135deg,var(--a),#f0c060);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.note .meta{color:var(--t2);font-size:.9rem;margin-bottom:24px;display:flex;flex-wrap:wrap;gap:8px}
-.note h2{font-size:1.3rem;font-weight:700;margin:28px 0 14px;color:var(--a);border-bottom:1px solid var(--b);padding-bottom:8px}
-.note h3{font-size:1.1rem;font-weight:600;margin:20px 0 10px}
-.note p{margin-bottom:14px}.note ul,ol{margin:14px 0 14px 24px}.note li{margin-bottom:6px}
-.note blockquote{border-left:4px solid var(--a);padding:14px 20px;margin:20px 0;background:var(--s2);border-radius:0 var(--r) var(--r) 0}
-.note blockquote p{font-style:italic}.note blockquote .parse{font-style:normal;color:var(--t2);font-size:.9rem;margin-top:10px;border-top:1px solid var(--b);padding-top:10px}
-.tag{display:inline-block;padding:4px 12px;border-radius:12px;font-size:.8rem;background:rgba(232,168,56,.12);color:var(--a);margin:4px}
-.link-card{display:block;padding:12px 16px;background:var(--s2);border-radius:var(--r);border:1px solid var(--b);margin:6px 0;transition:all .3s}
-.highlight-box{background:linear-gradient(135deg,rgba(232,168,56,.08),rgba(232,168,56,.03));border:1px solid rgba(232,168,56,.25);border-radius:var(--r);padding:18px;margin:18px 0}
-.highlight-box h4{color:var(--a);margin-bottom:10px}
-.footer{padding:20px 0;border-top:1px solid var(--b);color:var(--t2);font-size:.85rem;margin-top:24px}
-.theme-grid{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
-.theme-item{padding:8px 16px;background:var(--s2);border-radius:var(--r);border:1px solid var(--b);font-size:.9rem;color:var(--t)}
-@media(max-width:640px){body{padding:16px}.note{padding:20px}.note h1{font-size:1.4rem}}
+body{font-family:-apple-system,sans-serif;background:var(--bg);color:var(--t);line-height:1.9;padding:20px;max-width:900px;margin:0 auto}
+a{color:var(--a);text-decoration:none}.back{display:inline-flex;padding:8px 16px;border-radius:20px;border:1px solid var(--b);color:var(--t2);font-size:.9rem;margin-bottom:24px}
+.note{padding:36px;background:var(--s);border-radius:var(--r);border:1px solid var(--b)}
+.note h1{font-size:2rem;font-weight:800;margin-bottom:12px;background:linear-gradient(135deg,var(--a),#f0c060);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.meta{color:var(--t2);font-size:.9rem;margin-bottom:28px;display:flex;flex-wrap:wrap;gap:8px}
+h2{font-size:1.4rem;font-weight:700;margin:36px 0 18px;color:var(--a);border-bottom:2px solid var(--b);padding-bottom:10px}
+h3{font-size:1.2rem;font-weight:600;margin:24px 0 12px}
+p{margin-bottom:16px;font-size:.95rem}
+ul,ol{margin:16px 0 18px 24px}li{margin-bottom:10px}
+blockquote{border-left:4px solid var(--a);padding:20px 24px;margin:24px 0;background:var(--s2);border-radius:0 var(--r) var(--r) 0}
+blockquote p{font-style:italic}.parse{font-style:normal;color:var(--t2);font-size:.9rem;margin-top:14px;border-top:1px solid var(--b);padding-top:14px}
+.tag{display:inline-block;padding:5px 14px;border-radius:12px;font-size:.8rem;background:rgba(232,168,56,.12);color:var(--a);margin:4px}
+.link-card{display:block;padding:14px 18px;background:var(--s2);border-radius:var(--r);border:1px solid var(--b);margin:8px 0;transition:all .3s}.link-card:hover{border-color:var(--a);transform:translateX(4px)}
+.highlight{background:linear-gradient(135deg,rgba(232,168,56,.1),rgba(232,168,56,.03));border:1px solid rgba(232,168,56,.25);border-radius:var(--r);padding:24px;margin:24px 0}
+.highlight h4{color:var(--a);margin-bottom:14px}
+.app-box{background:var(--s2);border-radius:var(--r);padding:22px;margin:18px 0;border-left:4px solid var(--green)}
+.app-box h4{color:var(--green);margin-bottom:14px}
+table{width:100%;border-collapse:collapse;margin:20px 0}th,td{padding:14px 16px;border:1px solid var(--b);text-align:left;font-size:.9rem}th{background:var(--s2);color:var(--a);font-weight:600}
+.footer{padding:24px 0;border-top:1px solid var(--b);color:#666;font-size:.85rem;margin-top:36px}
+@media(max-width:640px){body{padding:12px}.note{padding:24px}.note h1{font-size:1.5rem}}
 </style>
 </head>
 <body>
 <a class="back" href="../index.html">← 回到书单</a>
 <div class="note">
-<h1>《中国美学史》读书笔记</h1>
+<h1>《美的历程》深度读书笔记</h1>
 <div class="meta">
-<span class="tag">李泽厚</span>
-<span class="tag">#艺术美学</span>
-<span class="tag">#儒道禅美学</span>
-<span class="tag">#意境范畴</span>
-<span class="tag">#审美传统</span>
+<span class="tag">李泽厚</span><span class="tag">#美学</span><span class="tag">#中国艺术</span><span class="tag">#文化史</span><span class="tag">#2026-03-15</span>
 </div>
 
-<h2>● 核心主题</h2>
-<div class="theme-grid">
-<div class="theme-item">儒道禅美学</div>
-<div class="theme-item">意境范畴</div>
-<div class="theme-item">审美传统</div>
+<h2>● 全书定位</h2>
+<p>《美的历程》（1981）是中国当代最重要的美学著作之一。李泽厚以不到20万字的篇幅，浓缩了从远古图腾到明清文艺的数千年美学历程。冯友兰评价此书是"一部中国美学和美术史，一部中国文学史，一部中国哲学史，一部中国文化史"。</p>
+<p>全书的独创性在于"积淀说"——美不是天生的，而是人类在漫长历史实践中，将社会内容积淀到感性形式中，形成了审美趣味。这一理论解释了为什么中国人偏爱山水画，为什么古希腊追求人体美，为什么不同时代有不同的审美标准。</p>
+
+<h2>● 美的历程：十个时代的美学密码</h2>
+<h3>一、龙飞凤舞：远古图腾</h3>
+<p>中国美学的起源不在文字，而在图腾。龙（蛇）与凤（鸟）是华夏民族两大图腾，它们的融合过程就是中华民族形成的过程。彩陶上的鱼纹、蛙纹、人面鱼纹，不是简单的装饰，而是原始巫术与图腾崇拜的物质化表达。美，最初是"有用"——祈祷丰收、驱逐恶灵、团结部落。</p>
+<blockquote>
+<p>"龙飞凤舞——这正是以龙凤为图腾的远古氏族的充满生命力的歌舞。"</p>
+<p class="parse">李泽厚指出，原始歌舞不是"艺术"而是"仪式"。舞蹈的动作、节奏、装饰，都是为了与神灵沟通。但正是在这种非审美的巫术活动中，人类第一次体验到情感的抒发和形式的韵律——美的萌芽由此诞生。</p>
+</blockquote>
+
+<h3>二、青铜饕餮：狞厉的美</h3>
+<p>商代青铜器上的饕餮纹，面目狰狞、恐怖骇人，却代表了中国青铜艺术的最高成就。李泽厚称之为"狞厉的美"——它不是优美的，而是崇高的；不是让人愉悦的，而是让人敬畏的。</p>
+<div class="highlight">
+<h4>🔥 狞厉美的辩证法</h4>
+<p>饕餮纹的恐怖感，正是它美的来源。在原始社会，恐怖与敬畏是人类面对不可控力量的自然反应。饕餮纹将这种情感凝聚为可视的形象，让人在恐惧中感受到超越性的力量。这种"以恐怖为美"的现象，在西方美学中对应着"崇高"（sublime）的概念。</p>
 </div>
 
-<h2>● 内容概要</h2>
-<p>《中国美学史》是李泽厚的经典著作，儒道禅美学、意境范畴、审美传统是本书的核心主题。这本书值得深度阅读和反复思考。</p>
+<h3>三、先秦理性：儒道互补</h3>
+<p>春秋战国是中国美学的"轴心时代"。孔子将"仁"注入审美，提出"尽善尽美"；庄子以"逍遥游"追求超越功利的审美自由。儒道互补构成了中国美学的两大支柱——儒家关注社会和谐之美，道家追求自然天成之美。</p>
 
-<div class="highlight-box">
-<h4>🎯 阅读收获</h4>
-<ul>
-<li><strong>核心洞见</strong>：儒道禅美学</li>
-<li><strong>实践价值</strong>：意境范畴</li>
-<li><strong>思维启发</strong>：审美传统</li>
-</ul>
+<h3>四、楚汉浪漫</h3>
+<p>屈原的《离骚》开创了中国文学的浪漫主义传统。汉代艺术（帛画、画像石、漆器）充满了奇幻瑰丽的想象力。楚汉美学的特点是"天上人间"——把神话世界与现实世界融为一体。</p>
+
+<h3>五、魏晋风度：人的觉醒</h3>
+<p>魏晋南北朝是中国美学的黄金时代。"人的觉醒"使得个体情感和人格美第一次获得独立价值。《世说新语》记载了大量关于人物品藻的逸事——"朗朗如日月之入怀"、"萧萧如松下风"——人本身成为了审美的对象。</p>
+<blockquote>
+<p>"曹丕的一个时代，可以说是一个'文学的自觉'的时代。"</p>
+<p class="parse">"文的自觉"意味着文学不再只是政治教化的工具，而是具有独立审美价值的艺术形式。这一转变催生了中国文学史上最重要的理论著作——刘勰的《文心雕龙》。</p>
+</blockquote>
+
+<h3>六、佛陀世容：佛教艺术中国化</h3>
+<p>佛教艺术传入中国后，经历了深刻的"中国化"过程。从北魏石窟中清癯超脱的佛像，到唐代丰满圆润的菩萨，佛像的面容变化反映了中国人审美趣味的演变。从"出世"到"入世"，从"苦"到"乐"，中国佛教艺术最终形成了自己独特的美学风格。</p>
+
+<h3>七、盛唐之音</h3>
+<p>唐代是中国诗歌的巅峰。"诗仙"李白代表了盛唐的浪漫精神，"诗圣"杜甫体现了深沉的现实关怀。唐诗之美在于"气象"——宏大、自信、自然天成。</p>
+
+<h3>八、韵外之致：宋元山水</h3>
+<p>宋代美学从外在的"气象"转向内在的"韵味"。山水画成为最高的艺术形式，因为它体现了"天人合一"的哲学理想。宋画追求的不是形似，而是神韵；不是再现自然，而是表达心境。</p>
+
+<h3>九、明清文艺：市民趣味</h3>
+<p>明清时期，市民文化兴起。小说（《红楼梦》《西游记》）、戏曲（昆曲、京剧）取代诗文成为主要文艺形式。趣味从精英雅文化转向市民俗文化，但"俗"中同样蕴含着深刻的美学价值。</p>
+
+<h2>● "积淀说"：美的形成机制</h2>
+<div class="app-box">
+<h4>🎯 李泽厚的核心理论</h4>
+<p><strong>积淀</strong>（sedimentation）：人类在漫长的社会实践中，将理性内容（如道德规范、社会关系、历史记忆）积淀到感性形式（如颜色、形状、节奏）中，使原本实用的形式获得了独立的审美价值。</p>
+<p>例如：红色最初只是血液的颜色（实用），但在狩猎、祭祀、战争等实践中，逐渐积淀了"生命力"、"危险"、"喜庆"等社会意义，最终成为一种独立的审美对象——中国人看到红色会本能地感到温暖和喜悦。</p>
 </div>
 
-<h2>● 待补充</h2>
-<p>📝 此笔记正在完善中，后续将补充：</p>
-<ul>
-<li>作者详细介绍</li>
-<li>创作背景分析</li>
-<li>章节大纲</li>
-<li>金句摘录</li>
-<li>应用指导</li>
-</ul>
-
-<h2>● 相关笔记</h2>
-<a href="../index.html" class="link-card"><div>📚 返回书单查看更多笔记</div></a>
+<h2>● 延伸阅读</h2>
+<a href="history-chinese-aesthetics.html" class="link-card"><div>📚 [[中国美学史]] — 补充版本</div></a>
+<a href="philosophy-art.html" class="link-card"><div>📚 [[艺术哲学]] — 丹纳的艺术批评方法论</div></a>
+<a href="tao-te-ching.html" class="link-card"><div>📚 [[道德经]] — 道家美学的哲学源头</div></a>
+<a href="huangting-jing.html" class="link-card"><div>📚 [[黄庭经]] — 道教修炼美学</div></a>
 
 <h2>● 标签</h2>
 <div>
-<span class="tag">#儒道禅美学</span><span class="tag">#意境范畴</span><span class="tag">#审美传统</span>
-<span class="tag">#艺术美学</span>
-<span class="tag">#读书笔记</span>
+<span class="tag">#美学</span><span class="tag">#中国艺术</span><span class="tag">#文化史</span><span class="tag">#积淀说</span><span class="tag">#李泽厚</span><span class="tag">#青铜器</span><span class="tag">#山水画</span><span class="tag">#唐诗</span>
 </div>
-
 <div class="footer">
-<p>📝 笔记日期：2026-03-13 | 📖 分类：艺术美学</p>
+<p>📝 笔记日期：2026-03-15 | 📖 分类：哲学宗教类 | ✏️ 最后更新：2026-03-15 深度重写</p>
 </div>
 </div>
 </body>
