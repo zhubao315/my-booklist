@@ -9,7 +9,7 @@
     filteredBooks: [],
     currentPage: 1,
     perPage: 30,
-    activeCategory: 0,
+    activeCategory: 1,
     activeStatus: 'all',
     searchQuery: '',
     sortBy: 'default',
@@ -26,7 +26,7 @@
     bindEvents();
     state.filteredBooks = DATA.BOOKS;
     renderBooks();
-    renderCurrentReading();
+
     renderStats();
     updateStatCards();
     initReadingProgress();
@@ -54,15 +54,6 @@
       var p = h > 0 ? (window.scrollY / h) * 100 : 0;
       bar.style.width = p + '%';
     }, { passive: true });
-  }
-
-  // Current reading
-  function renderCurrentReading() {
-    var container = $('#current-reading-list');
-    if (!container || !DATA.CURRENT_READING) return;
-    container.innerHTML = DATA.CURRENT_READING.map(function(b) {
-      return '<div class="reading-item"><h4>' + esc(b.title) + '</h4><p>' + esc(b.author) + '</p><p>' + esc(b.desc) + '</p></div>';
-    }).join('');
   }
 
   // Stats
@@ -114,7 +105,7 @@
   function applyFilters() {
     var books = DATA.BOOKS;
     // Category filter
-    if (state.activeCategory !== 0) {
+    if (state.activeCategory) {
       books = books.filter(function(b) { return b.categoryId === state.activeCategory; });
     }
     // Status filter
