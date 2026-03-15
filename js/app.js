@@ -258,24 +258,6 @@
       });
     });
 
-    // Status filter
-    var statusFilter = $('#status-filter');
-    if (statusFilter) {
-      statusFilter.addEventListener('change', function() {
-        state.activeStatus = statusFilter.value;
-        applyFilters();
-      });
-    }
-
-    // Sort
-    var sortFilter = $('#sort-filter');
-    if (sortFilter) {
-      sortFilter.addEventListener('change', function() {
-        state.sortBy = sortFilter.value;
-        applyFilters();
-      });
-    }
-
     // Pagination
     var prevBtn = $('#prev-page');
     var nextBtn = $('#next-page');
