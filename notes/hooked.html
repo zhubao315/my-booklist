@@ -1,86 +1,168 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>《上瘾》读书笔记 - 艾亚尔</title>
-<style>
-:root{--bg:#0f0f0f;--s:#1a1a1a;--s2:#242424;--t:#e8e6e3;--t2:#9a9a9a;--a:#e8a838;--a2:#c4882a;--b:#2a2a2a;--r:12px}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--t);line-height:1.8;padding:20px;max-width:900px;margin:0 auto}
-a{color:var(--a);text-decoration:none}.back{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:20px;border:1px solid var(--b);color:var(--t2);font-size:.9rem;margin-bottom:24px}
-.note{padding:32px;background:var(--s);border-radius:var(--r);border:1px solid var(--b);margin-bottom:24px}
-.note h1{font-size:1.8rem;font-weight:800;margin-bottom:8px;background:linear-gradient(135deg,var(--a),#f0c060);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.note .meta{color:var(--t2);font-size:.9rem;margin-bottom:24px;display:flex;flex-wrap:wrap;gap:8px}
-.note h2{font-size:1.3rem;font-weight:700;margin:28px 0 14px;color:var(--a);border-bottom:1px solid var(--b);padding-bottom:8px}
-.note h3{font-size:1.1rem;font-weight:600;margin:20px 0 10px}
-.note p{margin-bottom:14px}.note ul,ol{margin:14px 0 14px 24px}.note li{margin-bottom:6px}
-.note blockquote{border-left:4px solid var(--a);padding:14px 20px;margin:20px 0;background:var(--s2);border-radius:0 var(--r) var(--r) 0}
-.note blockquote p{font-style:italic}.note blockquote .parse{font-style:normal;color:var(--t2);font-size:.9rem;margin-top:10px;border-top:1px solid var(--b);padding-top:10px}
-.tag{display:inline-block;padding:4px 12px;border-radius:12px;font-size:.8rem;background:rgba(232,168,56,.12);color:var(--a);margin:4px}
-.link-card{display:block;padding:12px 16px;background:var(--s2);border-radius:var(--r);border:1px solid var(--b);margin:6px 0;transition:all .3s}
-.highlight-box{background:linear-gradient(135deg,rgba(232,168,56,.08),rgba(232,168,56,.03));border:1px solid rgba(232,168,56,.25);border-radius:var(--r);padding:18px;margin:18px 0}
-.highlight-box h4{color:var(--a);margin-bottom:10px}
-.footer{padding:20px 0;border-top:1px solid var(--b);color:var(--t2);font-size:.85rem;margin-top:24px}
-.theme-grid{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
-.theme-item{padding:8px 16px;background:var(--s2);border-radius:var(--r);border:1px solid var(--b);font-size:.9rem;color:var(--t)}
-@media(max-width:640px){body{padding:16px}.note{padding:20px}.note h1{font-size:1.4rem}}
-</style>
-</head>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>《上瘾》深度笔记</title>
+<style>:root{--bg:#0f0f0f;--s:#1a1a1a;--s2:#242424;--b:#333;--t:#e0e0e0;--t2:#a0a0a0;--t3:#666;--a:#e8a838;--r:8px}*{margin:0;padding:0;box-sizing:border-box}body{font-family:-apple-system,sans-serif;background:var(--bg);color:var(--t);line-height:1.9;padding:24px;max-width:900px;margin:0 auto}h1{font-size:1.8rem;color:var(--a);margin:20px 0 12px}h2{font-size:1.35rem;color:var(--a);margin:32px 0 16px;padding-bottom:8px;border-bottom:1px solid var(--b)}h3{font-size:1.1rem;margin:22px 0 10px}p{margin:12px 0;color:var(--t2)}.hl{background:var(--s2);padding:16px 20px;border-radius:var(--r);border-left:3px solid var(--a);margin:16px 0}.hl p{color:var(--t);font-style:italic}.meta{color:var(--t3);font-size:.9rem;margin-bottom:20px}.back{display:inline-block;margin:20px 0;color:var(--a);text-decoration:none}ul,ol{margin:12px 0 12px 20px;color:var(--t2)}li{margin:6px 0}.card{background:var(--s);padding:16px;border-radius:var(--r);border:1px solid var(--b);margin:12px 0}.card h4{color:var(--a);margin-bottom:8px}</style></head>
 <body>
-<a class="back" href="../index.html">← 回到书单</a>
-<div class="note">
-<h1>《上瘾》读书笔记</h1>
-<div class="meta">
-<span class="tag">艾亚尔</span>
-<span class="tag">#实用技能</span>
-<span class="tag">#习惯回路</span>
-<span class="tag">#触发→行动</span>
-<span class="tag">#奖励→投入</span>
+<a href="../index.html" class="back">← 返回书单</a>
+<h1>📖 《上瘾：如何让用户养成使用习惯》深度笔记</h1>
+<p style="color:var(--t2);font-size:1.05rem;margin-bottom:8px">尼尔·艾亚尔——产品设计的心理密码与伦理边界</p>
+<div class="meta"><span class="tag">产品设计</span><span class="tag">行为心理学</span><span class="tag">习惯形成</span><span class="tag">用户体验</span></div>
+
+<h2>一、为什么这本书重要</h2>
+<p>尼尔·艾亚尔（Nir Eyal）的《上瘾》（Hooked: How to Build Habit-Forming Products，2014）是过去十年对产品设计领域影响最大的书籍之一。它试图回答一个所有创业者、产品经理和设计师都在思考的问题：<strong>如何让用户不需要广告、不需要提醒，自发地、反复地回到你的产品？</strong></p>
+<p>艾亚尔的解答是一个四步模型：触发（Trigger）→ 行动（Action）→ 多变的酬赏（Variable Reward）→ 投入（Investment）。这四个步骤形成一个循环——"上瘾模型"（Hook Model）——当用户在这个循环中经历足够多次之后，外部触发（比如推送通知）就会被内部触发（比如无聊时想刷一下、焦虑时想看看消息）所取代。</p>
+<p>这本书的重要性不仅在于它提供了一个实用的设计框架，更在于它引发了一场关于产品伦理的深刻讨论。在艾亚尔之前，硅谷的产品哲学是"增长黑客"——如何让用户更多地使用你的产品。艾亚尔提出了一个更本质的问题：当你的产品能改变用户的行为习惯时，你是否有责任确保这种改变是积极的？</p>
+<p>2019年，艾亚尔出版了续作《不可打扰》（Indistractable），直接回应了人们对《上瘾》被滥用的批评。他说："我写《上瘾》是为了帮助产品设计师创造有价值的习惯，不是为了帮助他们设计数字毒品。"但批评者指出，模型本身不区分"好习惯"和"坏习惯"——一旦你把机制交给了市场，你就无法控制它被如何使用。</p>
+
+<h2>二、核心框架：上瘾模型（Hook Model）</h2>
+
+<div class="card">
+<h4>🔑 四步循环总览</h4>
+<p><strong>第一步：触发（Trigger）</strong>——启动用户行为的扳机，分为外部触发和内部触发</p>
+<p><strong>第二步：行动（Action）</strong>——用户执行的最简单行为，由动机和能力共同决定</p>
+<p><strong>第三步：多变的酬赏（Variable Reward）</strong>——不可预测的回报，驱动用户反复参与</p>
+<p><strong>第四步：投入（Investment）</strong>——用户对产品付出的努力，增加了下一轮循环的概率</p>
+<p>关键洞见：上瘾模型不是一次性的线性流程，而是一个不断加速的螺旋。每次循环都在增强用户的动机、降低触发门槛、加深用户投入。当这个循环运转足够多次后，产品就变成了用户生活的一部分——像刷牙一样自然。</p>
 </div>
 
-<h2>● 核心主题</h2>
-<div class="theme-grid">
-<div class="theme-item">习惯回路</div>
-<div class="theme-item">触发→行动</div>
-<div class="theme-item">奖励→投入</div>
+<h2>三、深度解析：四个步骤</h2>
+
+<h3>1. 触发（Trigger）</h3>
+<p>触发是上瘾循环的起点。艾亚尔将触发分为两个层次，理解它们的区别是掌握整个模型的关键。</p>
+
+<div class="card">
+<h4>🔥 外部触发 vs 内部触发</h4>
+<p><strong>外部触发</strong>是产品环境中的线索，告诉用户"去做什么"。它们分为四种类型：</p>
+<p>• <strong>付费型触发</strong>：广告、搜索引擎关键词——花钱买注意力</p>
+<p>• <strong>回馈型触发</strong>：媒体报道、App Store推荐——靠公关获取曝光</p>
+<p>• <strong>人际型触发</strong>：朋友的分享、邀请——利用社交关系传播</p>
+<p>• <strong>自主型触发</strong>：推送通知、邮件提醒、图标上的红色数字——用户已经安装但需要提醒</p>
+<p><strong>内部触发</strong>是用户内在的情绪或想法，它们不需要任何外部提醒。当一个人感到无聊，他想刷抖音；当他感到孤独，他想打开微信；当他焦虑不确定，他想查看邮箱。这些内在的情感驱动才是真正的"上瘾"——它们是外部触发要达成的终极目标。</p>
 </div>
 
-<h2>● 内容概要</h2>
-<p>《上瘾》是艾亚尔的经典著作，习惯回路、触发→行动、奖励→投入是本书的核心主题。这本书值得深度阅读和反复思考。</p>
+<p>艾亚尔引用了斯坦福大学B.J.福格（BJ Fogg）的行为模型来解释触发的作用：行为 = 动机 × 能力 × 触发。三者缺一不可。如果你有动机但没有触发，你不会行动；如果你被触发但没有动机，你也不会行动；如果你被触发也有动机但行为太困难（能力不足），你同样不会行动。外部触发解决的是"什么时候做"的问题，但"想不想做"和"能不能做"还需要另外两个因素。</p>
 
-<div class="highlight-box">
-<h4>🎯 阅读收获</h4>
+<h3>2. 行动（Action）</h3>
+<p>行动是用户在期待酬赏之前所执行的最简单行为。艾亚尔特别强调了"最简单"这个词——他借鉴了福格的行为模型，认为行为的简单程度（Ease）与用户的执行意愿（Motivation）同样重要。</p>
+
+<div class="card">
+<h4>🔥 简化行动的六要素</h4>
+<p>艾亚尔引用了福格博士总结的六个影响行为难易程度的要素：</p>
+<p><strong>1. 时间</strong>——完成行为需要的时间越长，越不可能执行</p>
+<p><strong>2. 金钱</strong>——花费越多，门槛越高</p>
+<p><strong>3. 体力</strong>——体力消耗越大，执行率越低</p>
+<p><strong>4. 脑力</strong>——认知负荷越高，用户越容易放弃</p>
+<p><strong>5. 社会偏差</strong>——行为是否让他人侧目</p>
+<p><strong>6. 非常规程度</strong>——行为是否偏离日常习惯</p>
+<p>产品设计的目标就是尽可能减少这六个要素的阻力。Twitter的140字符限制就是减少"脑力"阻力的经典设计——你不需要思考太多，写一条简短的想法就行。Uber的一键叫车是减少"时间"和"脑力"的双重设计——你不需要打电话、不需要说地址、不需要准备现金。</p>
+</div>
+
+<p>艾亚尔还引入了一个关键概念：<strong>动机与能力的权衡</strong>。当用户的动机很高时，即使行为比较困难，他们也可能执行（比如注册一个非常热门的邀请制App）。但当动机很低时，行为必须极其简单才能被触发。大多数产品面对的用户动机水平参差不齐，因此最佳策略是<strong>优先提升能力（简化行为），而不是试图提升动机</strong>——因为提升动机的成本远高于简化流程的成本。</p>
+
+<h3>3. 多变的酬赏（Variable Reward）</h3>
+<p>这是上瘾模型最核心、最具争议的一步。艾亚尔将奖励分为三个子类别，但它们有一个共同特征：<strong>不可预测性</strong>。</p>
+
+<div class="card">
+<h4>🔥 酬赏的三种形态</h4>
+<p><strong>猎物酬赏（Rewards of the Tribe）——社交奖励</strong></p>
+<p>来自他人的认可、关注、点赞、评论、转发。这些奖励利用了人类对社交归属感的深层需求。Facebook的通知红点、Instagram的点赞数量、微信朋友圈的评论——这些都是社交酬赏的具象化。关键在于"多变"：你不知道这次发动态会有多少人点赞，所以你会反复发布以期待更多认可。</p>
+<p><strong>自我酬赏（Rewards of the Self）——自我实现</strong></p>
+<p>来自完成任务、掌握技能、达到目标的内在满足感。电子游戏的升级系统、LinkedIn的个人资料完成度、Duolingo的连胜记录——这些奖励利用的是人类对掌控感和成就感的需求。你不知道下一次升级需要多久，所以你继续玩下去。</p>
+<p><strong>猎物酬赏（Rewards of the Hunt）——资源获取</strong></p>
+<p>来自寻找和获取资源的过程本身。滚动刷新的信息流、推荐算法的"猜你喜欢"、无限滚动的抖音视频——这些设计利用的是人类狩猎采集时代遗留的"搜索-发现"本能。你不知道下一条内容会不会更有趣，所以你继续滑动。</p>
+</div>
+
+<p>为什么是"多变的"奖励而不是"固定的"奖励？艾亚尔引用了斯金纳（B.F. Skinner）的经典实验：当鸽子每次啄按钮都能获得食物（固定奖励），它们很快就会停止啄按钮。但如果食物的出现是随机的（多变奖励），鸽子会疯狂地反复啄按钮——即使它们已经吃饱了。</p>
+<p>这就是社交媒体的底层逻辑：每次打开Instagram，你不知道你会看到什么——可能是朋友的动态、可能是一条有趣的新闻、可能是一张精美的照片。这种不确定性本身就成了奖励的一部分。你不是在看内容——你是在狩猎"惊喜"。</p>
+
+<h3>4. 投入（Investment）</h3>
+<p>投入是上瘾循环的最后一环，也是最巧妙的一环。核心洞见：<strong>用户在产品上投入的时间、精力、数据或社交资本越多，他们就越不愿意离开</strong>。</p>
+
+<div class="card">
+<h4>🔥 投入如何增强上瘾循环</h4>
+<p><strong>加载下一次触发。</strong>用户的投入可以创造未来的外部触发。比如你在Gmail中发送一封邮件（投入），对方的回复就是你的下一次触发。你在Twitter上关注了新的人（投入），他们的推文就是你的下一次触发。</p>
+<p><strong>存储价值。</strong>用户在产品中积累的数据、内容、等级、声誉都是"存储价值"——它们使产品变得越来越有用。你在网易云音乐中收藏的歌单、在淘宝中的购物记录、在知乎中获得的关注者——这些投入让切换到竞品的成本越来越高。</p>
+<p><strong>存储偏好。</strong>推荐算法利用用户的投入行为来学习偏好。你点的每个赞、看的每个视频、停留的每一秒都在告诉算法"你更喜欢什么"。投入越多，推荐越精准——产品就变得越"懂你"，离开就越困难。</p>
+<p>注意：投入不一定要发生在酬赏之后。艾亚尔强调，投入可以发生在循环的任何阶段，但它最有效的位置是在酬赏之后——因为酬赏带来的积极情绪降低了用户对投入的抗拒心理。</p>
+</div>
+
+<h2>四、案例分析</h2>
+
+<h3>1. Instagram的上瘾循环</h3>
+<p>Instagram是上瘾模型的教科书级案例：</p>
+<p><strong>触发：</strong>外部触发是推送通知（"某某点赞了你的照片"）和图标上的红色角标。内部触发是无聊、社交焦虑（"朋友发了什么？"）和自我展示的欲望。</p>
+<p><strong>行动：</strong>打开App、浏览信息流——这个行为几乎不需要任何时间、金钱或脑力。即使你只是想"看一眼"，你也已经开始执行行为了。</p>
+<p><strong>酬赏：</strong>信息流中的多变内容（猎物酬赏）、点赞和评论（社交酬赏）、发布精美的照片获得关注（自我酬赏）。三重酬赏叠加，形成强大的吸引力。</p>
+<p><strong>投入：</strong>发布照片、添加滤镜、写描述、使用标签、关注其他人、给照片点赞——每一次投入都增强了用户与平台的绑定，加载了下一次触发。</p>
+
+<h3>2. 抖音/TikTok的极致优化</h3>
+<p>如果说Instagram是上瘾模型的经典案例，TikTok就是它的极致进化：</p>
+<p>• <strong>触发：</strong>几乎消除了一切摩擦——无需手动刷新，视频自动播放，全屏沉浸式体验</p>
+<p>• <strong>行动：</strong>只需要"滑动"一个动作，比Instagram的"浏览信息流"还要简单</p>
+<p>• <strong>酬赏：</strong>每次滑动都是一个新的视频，奖励的多变性被推向了极致。推荐算法确保了"下一个视频可能更好"——这种承诺让用户不断滑动</p>
+<p>• <strong>投入：</strong>用户的每一次观看、停留、点赞、评论都在训练算法。你用得越多，推荐越精准——形成了一个几乎无法打破的循环</p>
+
+<h2>五、伦理讨论：上瘾模型的双刃剑</h2>
+
+<h3>1. 艾亚尔的辩护</h3>
+<p>艾亚尔在《上瘾》中提出了一个"改善生活的产品"标准：他区分了"促进健康习惯的产品"和"剥削用户的产品"。他认为，如果一个产品利用上瘾模型来帮助用户建立积极习惯——比如Duolingo帮助用户每天学习语言、Medito帮助用户每天冥想——那么这是良性的使用。</p>
+<p>他的判断标准是：设计师自己是否愿意让自己的家人使用这个产品。如果答案是肯定的，那就是道德的；如果设计师自己都不会让家人使用，那就是剥削性的。</p>
+
+<h3>2. 批评者的声音</h3>
+<p>批评者（包括前谷歌设计伦理学家特里斯坦·哈里斯Tristan Harris）指出了几个根本性问题：</p>
+<p><strong>用户不知情。</strong>上瘾模型的有效性依赖于用户对其机制的无知。如果用户完全理解"多变的酬赏"如何劫持他们的注意力，这个模型就会失效。因此，产品设计师有经济动机去维持用户的无知——这本身就是不道德的。</p>
+<p><strong>"好习惯"vs"坏习惯"的界定模糊。</strong>谁来判断一个习惯是好是坏？Duolingo的每日学习是好习惯，但如果它导致用户忽视了工作和家庭呢？抖音的碎片化娱乐是坏习惯，但如果它帮助用户在通勤中放松呢？艾亚尔的"改善生活"标准过于主观，无法作为伦理判断的可靠基础。</p>
+<p><strong>商业模式的结构性驱动。</strong>大多数使用上瘾模型的产品是免费的，它们的商业模式是广告——即出售用户的注意力。这意味着产品有结构性动机去最大化用户的时间投入，而不管这对用户是否真正有益。只要注意力经济的商业模式不变，上瘾模型就更可能被用于剥削而不是改善。</p>
+
+<h3>3. 哈里斯的"时间烂掉"概念</h3>
+<p>特里斯坦·哈里斯提出了一个精准的概念："时间烂掉"（Time Well Spent）。他认为，衡量一个产品价值的标准不应该是"用户停留时间有多长"，而是"用户觉得这段时间花得值不值"。很多用户在刷完一小时短视频之后感到空虚和后悔——这说明这段时间是"烂掉"了。</p>
+<p>这个观点深刻影响了后来的行业实践。苹果的"屏幕时间"功能、谷歌的"数字健康"工具——都是"时间烂掉"理念的产物。但批评者指出，这些功能本身也可能是上瘾模型的变体——"你今天又刷了三小时手机"这条通知，难道不是一种让人感到焦虑、然后产生行动欲望的内部触发？</p>
+
+<h2>六、个人思考</h2>
+
+<h3>1. 工具的中立性是一个幻觉</h3>
+<p>艾亚尔坚持说上瘾模型是一个中性的工具，可以被用于好的或坏的目的。但在实践中，这个说法过于天真。当一个工具的设计初衷是最大化用户的使用频率时，它就会被那个方向上的力量推向极致。平台的算法优化团队每天都在测试如何让用户多停留一秒——这种结构性驱动力最终会把任何"良性设计"推向"剥削性设计"。</p>
+<p>这就像说"核技术可以用于发电也可以用于制造武器"——理论上正确，但在实际中，一旦核技术被发展出来，你就无法控制它被如何使用。上瘾模型也是如此——一旦你教会了整个行业如何设计让人上瘾的产品，你就无法控制这些技术被用于增强健康习惯还是制造注意力黑洞。</p>
+
+<h3>2. 自我觉察的力量</h3>
+<p>读完《上瘾》之后，我对自己的数字行为有了新的觉察。当我发现自己在无意识地刷手机时，我会停下来问自己：是什么触发了这个行为？是外部触发（推送通知、红色角标）还是内部触发（无聊、焦虑、孤独）？我正在期待什么酬赏？我在投入什么？</p>
+<p>这种觉察并不能消除上瘾循环的力量——但它至少让我能够有意识地选择是否继续。在某些情况下，我会说"好吧，我就刷十分钟"；在另一些情况下，我会关掉手机去做别的事情。关键不是战胜冲动，而是知道冲动从哪里来。</p>
+
+<div class="hl">
+<p>"习惯是行为的自动化。当一个行为变成了习惯，它不再需要决策——它变成了条件反射。"</p>
+<p>——尼尔·艾亚尔，《上瘾》</p>
+</div>
+
+<div class="hl">
+<p>"如果你的产品不能让用户形成习惯，你就不得不花钱不停地提醒他们回来。"</p>
+<p>——尼尔·艾亚尔</p>
+</div>
+
+<div class="hl">
+<p>"最大的产品机会不在创造新行为，而在将新的技术嫁接到旧的动机上。"</p>
+<p>——尼尔·艾亚尔</p>
+</div>
+
+<h2>七、上瘾模型在中国科技行业的应用</h2>
+
+<h3>1. 微信：从通讯工具到生活习惯</h3>
+<p>微信是上瘾模型在中国最成功的应用。它的核心竞争力不是任何单个功能，而是它成功地将自己编织进了用户的日常触发场景中：早上醒来看朋友圈、工作中用微信沟通、午休时刷公众号、晚上在群里聊天。每一个场景都是一个内部触发，每一条消息都是一次外部触发。</p>
+
+<h3>2. 拼多多的"多多果园"</h3>
+<p>拼多多的"多多果园"是上瘾模型的变体应用：用户在虚拟果园中种树，需要每天浇水、签到、做任务来让果树成长，最终收获真实的水果。这个设计将上瘾循环与真实奖励结合——每天的签到和浇水是行动，果树的生长是投资，最终的水果是酬赏。它将低频的购物行为变成了高频的日常互动。</p>
+
+<h3>3. B站的"大会员"与投入效应</h3>
+<p>B站的大会员体系完美利用了投入效应：用户在B站上投币、收藏、发弹幕、关注UP主，这些投入都存储在B站的系统中。即使有竞品提供更好的功能，用户也很难迁移——因为他们已经在B站投入了大量社交资本和时间成本。</p>
+
+<h2>八、延伸阅读</h2>
 <ul>
-<li><strong>核心洞见</strong>：习惯回路</li>
-<li><strong>实践价值</strong>：触发→行动</li>
-<li><strong>思维启发</strong>：奖励→投入</li>
+<li>《不可打扰》尼尔·艾亚尔——《上瘾》的续作，从抵抗注意力被劫持的角度写作</p>
+<li>《欲罢不能》亚当·奥尔特——行为成瘾的科学与社会影响</li>
+<li>《原子习惯》詹姆斯·克利尔——从个人角度建立好习惯、戒除坏习惯的实用指南</li>
+<li>《思考，快与慢》丹尼尔·卡尼曼——理解决策的"系统1"和"系统2"</li>
+<li>《上瘾的真相》安娜·伦布克——从神经科学角度理解成瘾机制</li>
+<li>《注意力商人》吴修铭——注意力经济的历史与商业模式</li>
 </ul>
-</div>
-
-<h2>● 待补充</h2>
-<p>📝 此笔记正在完善中，后续将补充：</p>
-<ul>
-<li>作者详细介绍</li>
-<li>创作背景分析</li>
-<li>章节大纲</li>
-<li>金句摘录</li>
-<li>应用指导</li>
-</ul>
-
-<h2>● 相关笔记</h2>
-<a href="../index.html" class="link-card"><div>📚 返回书单查看更多笔记</div></a>
-
-<h2>● 标签</h2>
-<div>
-<span class="tag">#习惯回路</span><span class="tag">#触发→行动</span><span class="tag">#奖励→投入</span>
-<span class="tag">#实用技能</span>
-<span class="tag">#读书笔记</span>
-</div>
-
-<div class="footer">
-<p>📝 笔记日期：2026-03-13 | 📖 分类：实用技能</p>
-</div>
-</div>
-</body>
-</html>
+<br>
+<a href="../index.html" class="back">← 返回书单</a>
+</body></html>
