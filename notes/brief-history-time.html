@@ -4,58 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>《时间简史》深度读书笔记 - 史蒂芬·霍金</title>
-<style>
-:root{--bg:#0f0f0f;--s:#1a1a1a;--s2:#242424;--s3:#2a2a2a;--t:#e8e6e3;--t2:#9a9a9a;--t3:#666;--a:#e8a838;--a2:#c4882a;--b:#2a2a2a;--r:12px;--green:#22c55e;--blue:#3b82f6;--purple:#a855f7;--red:#ef4444}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--t);line-height:1.9;padding:20px;max-width:960px;margin:0 auto}
-a{color:var(--a);text-decoration:none}
-.back{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:20px;border:1px solid var(--b);color:var(--t2);font-size:.9rem;margin-bottom:24px;transition:all .3s}
-.back:hover{border-color:var(--a);color:var(--a)}
-.note{padding:40px;background:var(--s);border-radius:var(--r);border:1px solid var(--b);margin-bottom:24px}
-.note h1{font-size:2.2rem;font-weight:800;margin-bottom:8px;background:linear-gradient(135deg,var(--a),#f0c060);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.note .subtitle{font-size:1.1rem;color:var(--t2);margin-bottom:16px}
-.note .meta{color:var(--t2);font-size:.9rem;margin-bottom:32px;display:flex;flex-wrap:wrap;gap:8px}
-.note h2{font-size:1.5rem;font-weight:700;margin:40px 0 20px;color:var(--a);border-bottom:2px solid var(--b);padding-bottom:12px}
-.note h3{font-size:1.2rem;font-weight:600;margin:28px 0 14px;color:var(--t)}
-.note h4{font-size:1.05rem;font-weight:600;margin:20px 0 10px}
-.note p{margin-bottom:16px;color:var(--t);font-size:.95rem}
-.note ul,ol{margin:16px 0 20px 24px}.note li{margin-bottom:10px;font-size:.95rem}
-.note blockquote{border-left:4px solid var(--a);padding:20px 24px;margin:24px 0;background:var(--s2);border-radius:0 var(--r) var(--r) 0}
-.note blockquote p{font-style:italic;font-size:1.05rem;line-height:1.8}
-.note blockquote .parse{font-style:normal;color:var(--t2);font-size:.9rem;margin-top:14px;border-top:1px solid var(--b);padding-top:14px}
-.tag{display:inline-block;padding:5px 14px;border-radius:12px;font-size:.8rem;background:rgba(232,168,56,.12);color:var(--a);margin:4px}
-.link-card{display:block;padding:14px 18px;background:var(--s2);border-radius:var(--r);border:1px solid var(--b);margin:8px 0;transition:all .3s}
-.link-card:hover{border-color:var(--a);transform:translateX(4px)}
-.highlight{background:linear-gradient(135deg,rgba(232,168,56,.1),rgba(232,168,56,.03));border:1px solid rgba(232,168,56,.25);border-radius:var(--r);padding:24px;margin:24px 0}
-.highlight h4{color:var(--a);margin-bottom:14px;font-size:1.1rem}
-.highlight-blue{background:linear-gradient(135deg,rgba(59,130,246,.1),rgba(59,130,246,.03));border:1px solid rgba(59,130,246,.25);border-radius:var(--r);padding:24px;margin:24px 0}
-.highlight-blue h4{color:var(--blue);margin-bottom:14px}
-.highlight-purple{background:linear-gradient(135deg,rgba(168,85,247,.1),rgba(168,85,247,.03));border:1px solid rgba(168,85,247,.25);border-radius:var(--r);padding:24px;margin:24px 0}
-.highlight-purple h4{color:var(--purple);margin-bottom:14px}
-.app-box{background:var(--s2);border-radius:var(--r);padding:22px;margin:18px 0;border-left:4px solid var(--green)}
-.app-box h4{color:var(--green);margin-bottom:14px;font-size:1.05rem}
-.app-box ol{margin-left:20px}
-.app-box li{margin-bottom:12px}
-.quote-block{background:var(--s2);border-radius:var(--r);padding:20px 24px;margin:16px 0;border-left:4px solid var(--purple)}
-.quote-block .quote-text{font-size:1.1rem;font-weight:600;color:var(--t);margin-bottom:12px;font-style:italic}
-.quote-block .quote-num{display:inline-block;background:var(--purple);color:#fff;font-size:.7rem;padding:2px 8px;border-radius:4px;margin-bottom:8px;font-weight:700}
-table{width:100%;border-collapse:collapse;margin:20px 0}
-th,td{padding:14px 16px;border:1px solid var(--b);text-align:left;font-size:.9rem}
-th{background:var(--s2);color:var(--a);font-weight:600}
-tr:hover td{background:rgba(232,168,56,.05)}
-.footer{padding:24px 0;border-top:1px solid var(--b);color:var(--t3);font-size:.85rem;margin-top:36px}
-.author-card{background:var(--s2);border-radius:var(--r);padding:24px;margin:20px 0;display:flex;gap:24px;align-items:flex-start;flex-wrap:wrap}
-.author-avatar{width:80px;height:80px;background:linear-gradient(135deg,var(--a),var(--a2));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;flex-shrink:0}
-.author-info{flex:1;min-width:200px}
-.author-info h3{margin:0 0 8px}
-.author-info p{margin:0;color:var(--t2);font-size:.9rem}
-.point-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin:20px 0}
-.point-card{background:var(--s2);border-radius:var(--r);padding:20px;border:1px solid var(--b)}
-.point-num{font-size:2rem;font-weight:800;color:var(--a);opacity:.3;margin-bottom:8px}
-.point-title{font-size:1rem;font-weight:700;margin-bottom:8px}
-.point-desc{font-size:.85rem;color:var(--t2);line-height:1.7}
-@media(max-width:640px){body{padding:12px}.note{padding:24px}.note h1{font-size:1.6rem}.author-card{flex-direction:column;align-items:center;text-align:center}.point-grid{grid-template-columns:1fr}}
-</style>
+<link rel="stylesheet" href="shared.css">
+
+<meta name="description" content="霍金以轮椅上的身躯，凭借超凡的智慧，带领读者踏上一场从大爆炸到黑洞的思想之旅">
+<meta name="keywords" content="宇宙起源,黑洞理论,时间箭头,霍金,科技科普类">
+<link rel="canonical" href="https://zhubao315.github.io/my-booklist/notes/brief-history-time.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《《时间简史》》深度读书笔记">
+<meta property="og:description" content="霍金以轮椅上的身躯，凭借超凡的智慧，带领读者踏上一场从大爆炸到黑洞的思想之旅">
+<meta property="og:url" content="https://zhubao315.github.io/my-booklist/notes/brief-history-time.html">
+<meta property="og:site_name" content="朱宝的书单">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《《时间简史》》深度读书笔记">
+<meta name="twitter:description" content="霍金以轮椅上的身躯，凭借超凡的智慧，带领读者踏上一场从大爆炸到黑洞的思想之旅">
 </head>
 <body>
 <a class="back" href="../index.html">← 回到书单</a>
@@ -313,5 +274,6 @@ tr:hover td{background:rgba(232,168,56,.05)}
 </div>
 
 </div>
+<nav class="note-nav"><a href="ml-system-design.html" class="nav-prev">← 《《机器学习系统设计》》</a><a href="../index.html" class="nav-home">📚 书单首页</a><a href="inevitable.html" class="nav-next">《《必然》》 →</a></nav>
 </body>
 </html>

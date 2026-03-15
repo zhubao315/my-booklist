@@ -1,0 +1,220 @@
+/* 朱宝的书单 - 笔记页面共享样式 v2.0 */
+/* 统一新旧版样式，支持所有笔记页面 */
+
+:root {
+  --bg: #0f0f0f;
+  --s: #1a1a1a;
+  --s2: #242424;
+  --b: #2a2a2a;
+  --t: #e8e6e3;
+  --t2: #9a9a9a;
+  --t3: #666;
+  --a: #e8a838;
+  --a2: #c4882a;
+  --r: 12px;
+  --green: #22c55e;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Noto Sans SC', sans-serif;
+  background: var(--bg);
+  color: var(--t);
+  line-height: 1.9;
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+a { color: var(--a); text-decoration: none; }
+
+/* === 导航 === */
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--b);
+  color: var(--t2);
+  font-size: .9rem;
+  margin-bottom: 24px;
+  transition: all 0.2s;
+}
+.back:hover { border-color: var(--a); color: var(--a); }
+
+/* === 笔记容器（新版） === */
+.note {
+  padding: 32px;
+  background: var(--s);
+  border-radius: var(--r);
+  border: 1px solid var(--b);
+}
+
+/* === 标题 === */
+h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 20px 0 12px;
+  background: linear-gradient(135deg, var(--a), #f0c060);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 32px 0 16px;
+  color: var(--a);
+  border-bottom: 1px solid var(--b);
+  padding-bottom: 8px;
+}
+
+h3 { font-size: 1.2rem; margin: 24px 0 12px; }
+
+/* === 内容 === */
+p { margin: 12px 0; color: var(--t2); }
+ul, ol { margin: 12px 0 12px 24px; color: var(--t2); }
+li { margin: 6px 0; }
+
+blockquote {
+  border-left: 4px solid var(--a);
+  padding: 16px 24px;
+  margin: 24px 0;
+  background: var(--s2);
+  border-radius: 0 var(--r) var(--r) 0;
+}
+blockquote p { font-style: italic; }
+blockquote .parse {
+  font-style: normal;
+  color: var(--t2);
+  font-size: .9rem;
+  margin-top: 12px;
+  border-top: 1px solid var(--b);
+  padding-top: 12px;
+}
+
+/* === 元信息 === */
+.meta {
+  color: var(--t2);
+  font-size: .9rem;
+  margin-bottom: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.read-time {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: .8rem;
+  background: rgba(232, 168, 56, .12);
+  color: var(--a);
+  margin: 8px 0;
+}
+
+/* === 标签 === */
+.tag {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: .8rem;
+  background: rgba(232, 168, 56, .12);
+  color: var(--a);
+  margin: 4px;
+}
+
+/* === 高亮框 === */
+.hl, .highlight-box {
+  background: linear-gradient(135deg, rgba(232, 168, 56, .1), rgba(232, 168, 56, .05));
+  border: 1px solid rgba(232, 168, 56, .3);
+  border-radius: var(--r);
+  padding: 20px;
+  margin: 20px 0;
+}
+.hl p, .highlight-box p { color: var(--t); font-style: italic; }
+.hl h4, .highlight-box h4 { color: var(--a); margin-bottom: 12px; }
+
+/* === 引用框 === */
+.quote {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.1rem;
+  color: var(--t);
+  font-style: italic;
+  border-top: 1px solid var(--b);
+  border-bottom: 1px solid var(--b);
+  margin: 20px 0;
+}
+
+/* === 卡片 === */
+.card {
+  background: var(--s);
+  padding: 16px;
+  border-radius: var(--r);
+  border: 1px solid var(--b);
+  margin: 12px 0;
+}
+.card h4 { color: var(--a); margin-bottom: 8px; }
+
+/* === 链接卡片 === */
+.link-card {
+  display: block;
+  padding: 14px 18px;
+  background: var(--s2);
+  border-radius: var(--r);
+  border: 1px solid var(--b);
+  margin: 8px 0;
+  transition: all 0.2s;
+}
+.link-card:hover { border-color: var(--a); transform: translateY(-1px); }
+
+/* === 页脚 === */
+.footer {
+  padding: 24px 0;
+  border-top: 1px solid var(--b);
+  color: var(--t2);
+  font-size: .85rem;
+  margin-top: 32px;
+}
+
+/* === 笔记导航 === */
+.note-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  margin-top: 32px;
+  border-top: 1px solid var(--b);
+  gap: 12px;
+}
+.note-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: 1px solid var(--b);
+  color: var(--t2);
+  font-size: .9rem;
+  transition: all 0.2s;
+  max-width: 45%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.note-nav a:hover { border-color: var(--a); color: var(--a); }
+.nav-home { color: var(--a) !important; }
+
+/* === 响应式 === */
+@media (max-width: 640px) {
+  body { padding: 16px; }
+  .note { padding: 20px; }
+  h1 { font-size: 1.6rem; }
+  h2 { font-size: 1.2rem; }
+  .note-nav { flex-wrap: wrap; }
+  .note-nav a { max-width: 100%; }
+}

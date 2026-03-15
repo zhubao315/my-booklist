@@ -4,90 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>《通往奴役之路》读书笔记</title>
-<style>
-:root{--bg:#0d0d0d;--s:#161616;--s2:#1e1e1e;--s3:#282828;--t:#e4e2df;--t2:#8a8880;--t3:#5a5850;--a:#c9a84c;--a2:#a88a3a;--a-bg:rgba(201,168,76,.08);--r:12px;--max:820px;--red:#c05040;--red-bg:rgba(192,80,64,.08)}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--t);line-height:1.8;-webkit-font-smoothing:antialiased}
-::selection{background:var(--a);color:#000}
-.progress{position:fixed;top:0;left:0;height:3px;background:var(--a);z-index:200;transition:width .1s}
-.topnav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,13,13,.88);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.06);padding:0 20px;transform:translateY(-100%);transition:transform .3s}
-.topnav.show{transform:translateY(0)}
-.topnav-inner{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:52px}
-.topnav a{color:var(--t2);text-decoration:none;font-size:.85rem;transition:color .2s}
-.topnav a:hover{color:var(--a)}
-.topnav .home{color:var(--a);font-weight:600}
-.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:80px 24px 60px;overflow:hidden}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 40%,rgba(201,168,76,.06),transparent 70%);pointer-events:none}
-.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:200px;background:linear-gradient(transparent,var(--bg));pointer-events:none}
-.hero-emoji{font-size:4rem;margin-bottom:20px}
-.hero h1{font-size:clamp(2rem,5.5vw,3.4rem);font-weight:800;letter-spacing:-.02em;line-height:1.25;margin-bottom:12px}
-.hero h1 span{background:linear-gradient(135deg,var(--a),#e8d5a0);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero .subtitle{font-size:1.1rem;color:var(--t2);margin-bottom:8px;font-style:italic}
-.hero .author{color:var(--a2);font-size:1rem;margin-bottom:32px}
-.hero .tag-row{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
-.hero .tag{padding:4px 14px;border-radius:16px;font-size:.8rem;background:var(--a-bg);color:var(--a);border:1px solid rgba(201,168,76,.15)}
-.scroll-hint{position:absolute;bottom:40px;animation:bounce 2s infinite;color:var(--t3);font-size:.85rem}
-@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
-.content{max-width:var(--max);margin:0 auto;padding:0 24px 120px}
-.section{margin-bottom:64px;animation:fi .5s ease}
-@keyframes fi{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-.section-label{display:inline-flex;align-items:center;gap:6px;font-size:.75rem;color:var(--a);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;font-weight:600}
-.section h2{font-size:clamp(1.5rem,3vw,2rem);font-weight:800;margin-bottom:8px;letter-spacing:-.01em}
-.section .desc{color:var(--t2);font-size:.95rem;margin-bottom:28px}
-.divider{width:48px;height:3px;background:var(--a);border-radius:2px;margin-bottom:32px}
-.value-box{padding:28px 32px;background:var(--s);border-radius:var(--r);border-left:3px solid var(--a);margin-bottom:32px;line-height:1.9;font-size:.95rem}
-.value-box strong{color:var(--a)}
-.warn-box{padding:28px 32px;background:var(--s);border-radius:var(--r);border-left:3px solid var(--red);margin-bottom:32px;line-height:1.9;font-size:.95rem}
-.warn-box strong{color:var(--red)}
-.timeline{position:relative;padding-left:28px}
-.timeline::before{content:'';position:absolute;left:8px;top:4px;bottom:4px;width:2px;background:var(--s2)}
-.tl-item{position:relative;margin-bottom:24px}
-.tl-item::before{content:'';position:absolute;left:-24px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--s);border:2px solid var(--a)}
-.tl-item h4{font-size:1rem;font-weight:600;margin-bottom:4px;color:var(--t)}
-.tl-item p{color:var(--t2);font-size:.9rem;line-height:1.7}
-.point-card{padding:24px;background:var(--s);border-radius:var(--r);margin-bottom:16px;border:1px solid var(--s2);transition:border-color .3s}
-.point-card:hover{border-color:rgba(201,168,76,.3)}
-.point-card h4{font-size:1.05rem;font-weight:700;margin-bottom:8px}
-.point-card h4 .num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:8px;background:var(--a);color:#000;font-size:.8rem;font-weight:800;margin-right:8px;flex-shrink:0}
-.point-card p{color:var(--t2);font-size:.9rem;line-height:1.8}
-.point-card strong{color:var(--t)}
-.quote{position:relative;padding:24px 28px 24px 32px;background:var(--s);border-radius:var(--r);margin:24px 0;border:1px solid var(--s2)}
-.quote::before{content:'"';position:absolute;top:12px;left:16px;font-size:3rem;color:var(--a);opacity:.4;line-height:1;font-family:Georgia,serif}
-.quote p{font-size:1.05rem;font-weight:600;line-height:1.8;font-style:italic;margin-bottom:12px;padding-left:20px}
-.quote .ref{color:var(--t2);font-size:.85rem;font-style:normal;padding-left:20px;line-height:1.7}
-.quote .ref strong{color:var(--a2)}
-.table-wrap{overflow-x:auto;margin:20px 0 32px;border-radius:var(--r);border:1px solid var(--s2)}
-.table-wrap table{width:100%;border-collapse:collapse;font-size:.82rem;min-width:700px}
-.table-wrap th{background:var(--s2);color:var(--a);font-weight:600;padding:12px 14px;text-align:left;white-space:nowrap}
-.table-wrap td{padding:12px 14px;border-top:1px solid var(--s2);color:var(--t2);vertical-align:top;line-height:1.6}
-.table-wrap tr:hover td{background:var(--s)}
-.chain{display:flex;flex-direction:column;gap:2px;margin:24px 0}
-.chain-step{display:flex;align-items:flex-start;gap:12px;padding:16px;background:var(--s);border-radius:var(--r);border:1px solid var(--s2)}
-.chain-step .step-num{flex-shrink:0;width:32px;height:32px;border-radius:50%;background:var(--red-bg);color:var(--red);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem}
-.chain-step .step-arrow{align-self:center;color:var(--t3);font-size:.8rem;padding-left:32px}
-.chain-step p{color:var(--t2);font-size:.9rem;line-height:1.7}
-.chain-step p strong{color:var(--t)}
-.app-card{padding:28px;background:var(--s);border-radius:var(--r);margin-bottom:20px;border:1px solid var(--s2)}
-.app-card .app-header{display:flex;align-items:center;gap:12px;margin-bottom:16px}
-.app-card .app-icon{width:44px;height:44px;border-radius:12px;background:var(--a-bg);display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0}
-.app-card .app-title h4{font-size:1.05rem;font-weight:700;margin:0}
-.app-card .app-title p{color:var(--t2);font-size:.8rem;margin:2px 0 0}
-.app-card .principle{padding:12px 16px;background:var(--a-bg);border-radius:8px;margin-bottom:16px;font-size:.85rem;color:var(--t2);line-height:1.7}
-.app-card .principle strong{color:var(--a)}
-.app-card .scene{font-size:.85rem;color:var(--t2);margin-bottom:16px;line-height:1.7}
-.app-card ol{padding-left:20px;color:var(--t2);font-size:.9rem;line-height:1.8}
-.app-card ol li{margin-bottom:12px}
-.app-card ol strong{color:var(--t)}
-.note-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
-.note-link{padding:14px 18px;background:var(--s);border-radius:8px;border:1px solid var(--s2);color:var(--t2);font-size:.85rem;transition:all .2s;text-decoration:none;display:block}
-.note-link:hover{border-color:var(--a);color:var(--a)}
-.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
-.tags span{padding:4px 12px;border-radius:14px;font-size:.78rem;background:var(--s2);color:var(--t2)}
-.foot{text-align:center;padding:40px 24px;border-top:1px solid var(--s2);color:var(--t3);font-size:.8rem;margin-top:40px}
-.foot a{color:var(--a2);text-decoration:none}
-@media(max-width:640px){.hero{padding:100px 20px 60px;min-height:80vh}.hero-emoji{font-size:3rem}.value-box,.warn-box{padding:20px}.quote p{font-size:.95rem}.app-card .app-header{flex-direction:column;align-items:flex-start}.note-grid{grid-template-columns:1fr}.table-wrap{border-radius:8px}}
-</style>
+<link rel="stylesheet" href="shared.css">
+
+<meta name="description" content="《通往奴役之路》读书笔记 ← 返回书单 作者 大纲 论证链 核心观点 金句 应用 ⚠️ 通往奴役之路 The Road to Serfdom 哈耶克 · 1944 · 诺贝尔经济学奖 政治经济学经典 新自由主义 马斯克反监管思维根基 销量60万+ ↓ 向下探索 ● 核心定位 通往奴役之路，往往由善意">
+<meta name="keywords" content=",未知,">
+<link rel="canonical" href="https://zhubao315.github.io/my-booklist/notes/road-to-serfdom_1.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《road to serfdom 1》深度读书笔记">
+<meta property="og:description" content="《通往奴役之路》读书笔记 ← 返回书单 作者 大纲 论证链 核心观点 金句 应用 ⚠️ 通往奴役之路 The Road to Serfdom 哈耶克 · 1944 · 诺贝尔经济学奖 政治经济学经典 新自由主义 马斯克反监管思维根基 销量60万+ ↓ 向下探索 ● 核心定位 通往奴役之路，往往由善意">
+<meta property="og:url" content="https://zhubao315.github.io/my-booklist/notes/road-to-serfdom_1.html">
+<meta property="og:site_name" content="朱宝的书单">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《road to serfdom 1》深度读书笔记">
+<meta name="twitter:description" content="《通往奴役之路》读书笔记 ← 返回书单 作者 大纲 论证链 核心观点 金句 应用 ⚠️ 通往奴役之路 The Road to Serfdom 哈耶克 · 1944 · 诺贝尔经济学奖 政治经济学经典 新自由主义 马斯克反监管思维根基 销量60万+ ↓ 向下探索 ● 核心定位 通往奴役之路，往往由善意">
 </head>
 <body>
 <div class="progress" id="progressBar"></div>
@@ -460,5 +389,6 @@ document.getElementById('progressBar').style.width=(h.scrollTop/(h.scrollHeight-
 document.getElementById('topnav').classList.toggle('show',h.scrollTop>600);
 });
 </script>
+<nav class="note-nav"><span></span><a href="../index.html" class="nav-home">📚 书单首页</a><a href="hundred-years-solitude.html" class="nav-next">《《百年孤独》》 →</a></nav>
 </body>
 </html>
