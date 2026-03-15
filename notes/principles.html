@@ -81,3 +81,20 @@
 <li><strong>诊断：</strong>准确诊断问题的根本原因</li>
 <li><strong>方案：</strong>设计解决问题的方案</li>
 <li><strong>执行：</strong>坚决执行方案
+<button id="theme-toggle" onclick="toggleTheme()" aria-label="切换主题">🌙</button>
+<script>
+(function(){
+  var t=localStorage.getItem("theme")||"dark";
+  if(t==="light")document.documentElement.setAttribute("data-theme","light");
+  function upd(){var btn=document.getElementById("theme-toggle");if(btn)btn.textContent=t==="light"?"☀️":"🌙";}
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",upd);else upd();
+})();
+function toggleTheme(){
+  var r=document.documentElement,cur=r.getAttribute("data-theme")==="light"?"light":"dark";
+  var nxt=cur==="light"?"dark":"light";
+  nxt==="light"?r.setAttribute("data-theme","light"):r.removeAttribute("data-theme");
+  localStorage.setItem("theme",nxt);
+  document.getElementById("theme-toggle").textContent=nxt==="light"?"☀️":"🌙";
+}
+</script>
+</body></html>

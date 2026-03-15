@@ -15,6 +15,19 @@
   --green: #22c55e;
 }
 
+:root[data-theme="light"] {
+  --bg: #ffffff;
+  --s: #f8f8f8;
+  --s2: #f0f0f0;
+  --b: #e0e0e0;
+  --t: #333333;
+  --t2: #666666;
+  --t3: #999999;
+  --a: #d4740a;
+  --a2: #b8650a;
+  --green: #16a34a;
+}
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
@@ -217,4 +230,28 @@ blockquote .parse {
   h2 { font-size: 1.2rem; }
   .note-nav { flex-wrap: wrap; }
   .note-nav a { max-width: 100%; }
+}
+
+/* === 主题切换 === */
+#theme-toggle {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  background: var(--s2);
+  border: 1px solid var(--b);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+  transition: background .3s, border-color .3s;
+}
+#theme-toggle:hover { border-color: var(--a); }
+
+body {
+  transition: background .3s, color .3s;
 }

@@ -127,3 +127,20 @@
 <ul>
 <li><strong>市场行为包容一切信息</strong>：所有影响价格的因素（基本面、心理、政策等）都已经反映在价格和成交量中</li>
 <li><strong>价格沿趋势移动</strong>：一旦趋势形成，就会在一段时间内持续</li><
+<button id="theme-toggle" onclick="toggleTheme()" aria-label="切换主题">🌙</button>
+<script>
+(function(){
+  var t=localStorage.getItem("theme")||"dark";
+  if(t==="light")document.documentElement.setAttribute("data-theme","light");
+  function upd(){var btn=document.getElementById("theme-toggle");if(btn)btn.textContent=t==="light"?"☀️":"🌙";}
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",upd);else upd();
+})();
+function toggleTheme(){
+  var r=document.documentElement,cur=r.getAttribute("data-theme")==="light"?"light":"dark";
+  var nxt=cur==="light"?"dark":"light";
+  nxt==="light"?r.setAttribute("data-theme","light"):r.removeAttribute("data-theme");
+  localStorage.setItem("theme",nxt);
+  document.getElementById("theme-toggle").textContent=nxt==="light"?"☀️":"🌙";
+}
+</script>
+</body></html>

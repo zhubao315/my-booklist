@@ -189,5 +189,22 @@
 </div>
 
 <nav class="note-nav"><a href="make-it-stick.html" class="nav-prev">← 《《认知天性》》</a><a href="../index.html" class="nav-home">📚 书单首页</a><a href="reading-power.html" class="nav-next">《《阅读的力量》》 →</a></nav>
+
+<button id="theme-toggle" onclick="toggleTheme()" aria-label="切换主题">🌙</button>
+<script>
+(function(){
+  var t=localStorage.getItem('theme')||'dark';
+  if(t==='light')document.documentElement.setAttribute('data-theme','light');
+  function upd(){var btn=document.getElementById('theme-toggle');if(btn)btn.textContent=t==='light'?'☀️':'🌙';}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',upd);else upd();
+})();
+function toggleTheme(){
+  var r=document.documentElement,cur=r.getAttribute('data-theme')==='light'?'light':'dark';
+  var nxt=cur==='light'?'dark':'light';
+  nxt==='light'?r.setAttribute('data-theme','light'):r.removeAttribute('data-theme');
+  localStorage.setItem('theme',nxt);
+  document.getElementById('theme-toggle').textContent=nxt==='light'?'☀️':'🌙';
+}
+</script>
 </body>
 </html>
