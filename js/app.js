@@ -4,6 +4,101 @@
   var DATA = window.DATA;
   if (!DATA) { console.error('DATA not loaded'); return; }
 
+  // ===== Book Cover Fetcher (Google Books API) =====
+  var CoverCache = {
+    KEY: 'booklist_covers_v2',
+    _data: null,
+    load: function() {
+      if (this._data) return this._data;
+      try { this._data = JSON.parse(localStorage.getItem(this.KEY)) || {}; }
+      catch(e) { this._data = {}; }
+      return this._data;
+    },
+    get: function(id) { return this.load()[id] || null; },
+    set: function(id, url) { this.load()[id] = url; this._save(); },
+    _save: function() {
+      try { localStorage.setItem(this.KEY, JSON.stringify(this._data)); } catch(e) {}
+    }
+  };
+
+  // Fetch cover from Google Books API
+  function fetchCoverFromGoogle(title, author) {
+    return new Promise(function(resolve) {
+      var cleanTitle = title.replace(/[《》\s]/g, '').trim();
+      var cleanAuthor = (author || '').replace(/[《》\s]/g, '').trim();
+      // Use Chinese title for search
+      var query = encodeURIComponent(cleanTitle);
+      var url = 'https://www.googleapis.com/books/v1/volumes?q=' + query + '&maxResults=3&fields=items(volumeInfo(imageLinks))';
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', url, true);
+      xhr.timeout = 8000;
+      xhr.onload = function() {
+        try {
+          var data = JSON.parse(xhr.responseText);
+          var items = data.items || [];
+          for (var i = 0; i < items.length; i++) {
+            var links = items[i].volumeInfo && items[i].volumeInfo.imageLinks;
+            if (links) {
+              // Prefer larger thumbnail
+              var imgUrl = links.thumbnail || links.smallThumbnail;
+              if (imgUrl) {
+                // Upgrade to larger image if possible
+                imgUrl = imgUrl.replace('zoom=1', 'zoom=2').replace('edge=curl', '');
+                resolve(imgUrl);
+                return;
+              }
+            }
+          }
+        } catch(e) {}
+        resolve(null);
+      };
+      xhr.onerror = function() { resolve(null); };
+      xhr.ontimeout = function() { resolve(null); };
+      xhr.send();
+    });
+  }
+
+  // Batch load covers with concurrency limit
+  var coverQueue = [];
+  var coverLoading = false;
+  var coverConcurrency = 3;
+  var coverActive = 0;
+
+  function enqueueCover(book) {
+    if (CoverCache.get(book.id)) return; // Already cached
+    coverQueue.push(book);
+    processCoverQueue();
+  }
+
+  function processCoverQueue() {
+    while (coverActive < coverConcurrency && coverQueue.length > 0) {
+      var book = coverQueue.shift();
+      coverActive++;
+      fetchCoverFromGoogle(book.title, book.author).then(function(url) {
+        if (url) {
+          CoverCache.set(book.id, url);
+          updateBookCover(book.id, url);
+        }
+        coverActive--;
+        processCoverQueue();
+      });
+    }
+  }
+
+  function updateBookCover(bookId, url) {
+    var card = document.querySelector('.book-card[data-id="' + bookId + '"]');
+    if (!card) return;
+    // Check if cover already exists
+    if (card.querySelector('.book-cover-wrap')) return;
+    // Hide placeholder
+    var placeholder = card.querySelector('.book-cover-placeholder');
+    if (placeholder) placeholder.style.display = 'none';
+    var wrap = document.createElement('div');
+    wrap.className = 'book-cover-wrap';
+    wrap.innerHTML = '<img class="book-cover loaded" src="' + url + '" alt="cover" loading="lazy" onerror="this.parentElement.remove()">';
+    card.insertBefore(wrap, card.firstChild);
+  }
+
   // State
   var state = {
     filteredBooks: [],
@@ -180,7 +275,13 @@
     container.innerHTML = page.map(function(b) {
       var statusText = b.status === 'done' ? '\u5DF2\u8BFB' : (b.status === 'reading' ? '\u5728\u8BFB' : '\u60F3\u8BFB');
       var noteLink = b.hasNote && b.noteFile ? 'notes/' + b.noteFile : null;
+      var coverUrl = b.cover || CoverCache.get(b.id);
       var card = '<div class="book-card" data-id="' + b.id + '">';
+      if (coverUrl) {
+        card += '<div class="book-cover-wrap"><img class="book-cover loaded" src="' + esc(coverUrl) + '" alt="' + esc(b.title.replace(/[《》\u300B]/g, '').replace(/[《\u300A]/g, '')) + '" loading="lazy" onerror="this.parentElement.style.display=\'none\'"></div>';
+      } else {
+        card += '<div class="book-cover-placeholder"><span>' + esc((b.title || '?').replace(/[《》\u300A\u300B]/g, '').charAt(0)) + '</span></div>';
+      }
       card += '<span class="status-badge ' + b.status + '">' + statusText + '</span>';
       card += '<div class="book-card-header"><h3>' + hl(b.title, state.searchQuery) + '</h3></div>';
       card += '<p class="book-author">' + hl(b.author, state.searchQuery) + '</p>';
@@ -196,6 +297,13 @@
       }
       return card;
     }).join('');
+
+    // Enqueue cover fetching for books without covers (lazy, async)
+    page.forEach(function(b) {
+      if (!b.cover && !CoverCache.get(b.id)) {
+        enqueueCover(b);
+      }
+    });
 
     // Section count
     var countEl = $('#section-count');

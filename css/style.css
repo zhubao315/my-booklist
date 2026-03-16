@@ -78,6 +78,16 @@ a:hover{color:var(--a2)}
 .book-card .tag.status-done{background:rgba(168,85,247,.1);color:var(--purple)}
 .book-card .tag.has-note{background:rgba(232,168,56,.15);color:var(--a);font-weight:600}
 
+/* ===== 书封封面 ===== */
+.book-cover-wrap{width:100%;margin-bottom:14px;border-radius:8px;overflow:hidden;position:relative;background:var(--bg);aspect-ratio:2/3;max-height:220px}
+.book-cover{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease,opacity .3s ease}
+.book-cover.loaded{animation:coverFadeIn .5s ease forwards}
+@keyframes coverFadeIn{from{opacity:0;transform:scale(1.02)}to{opacity:1;transform:scale(1)}}
+.book-card:hover .book-cover{transform:scale(1.05)}
+.book-cover-placeholder{width:100%;margin-bottom:14px;border-radius:8px;aspect-ratio:2/3;max-height:220px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--card),var(--bg));border:1px dashed var(--border);transition:opacity .3s}
+.book-cover-placeholder span{font-size:2.5em;font-weight:700;color:var(--muted);opacity:.5;line-height:1}
+.book-cover-placeholder.covered{display:none}
+
 /* ===== 状态徽章 ===== */
 .status-badge{position:absolute;top:12px;right:12px;padding:3px 10px;border-radius:10px;font-size:.7rem;font-weight:600}
 .status-badge.want{background:rgba(59,130,246,.15);color:var(--blue)}
@@ -185,6 +195,9 @@ mark{background:rgba(232,168,56,.35);color:var(--t);border-radius:2px;padding:0 
   .book-card .book-desc{font-size:.8rem;-webkit-line-clamp:2}
   .section-title{font-size:1.2rem}
   .current-reading{padding:16px}
+  .book-cover-wrap{max-height:180px}
+  .book-cover-placeholder{max-height:180px}
+  .book-cover-placeholder span{font-size:2em}
 }
 @media(max-width:360px){
   .hero h1{font-size:1.4rem}
@@ -200,6 +213,58 @@ mark{background:rgba(232,168,56,.35);color:var(--t);border-radius:2px;padding:0 
 @supports(padding:max(0px)){
   .site-footer{padding-bottom:max(20px,env(safe-area-inset-bottom))}
   body{padding-left:max(0px,env(safe-area-inset-left));padding-right:max(0px,env(safe-area-inset-right))}
+}
+
+/* ===== 书籍封面样式 ===== */
+.book-cover-container {
+  display: flex;
+  justify-content: center;
+  margin: 32px 0;
+}
+
+.book-cover {
+  width: 240px;
+  height: 360px;
+  border-radius: 12px;
+  box-shadow: 0 12px 48px rgba(0,0,0,0.2);
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.book-cover:hover {
+  transform: scale(1.05);
+}
+
+/* Hero区域调整 */
+.hero {
+  text-align: center;
+  padding: 60px 24px 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  margin-bottom: 24px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .book-cover {
+    width: 180px;
+    height: 270px;
+  }
+
+  .hero {
+    padding: 48px 20px 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .book-cover {
+    width: 140px;
+    height: 210px;
+  }
 }
 
 /* ===== 加载动画 ===== */

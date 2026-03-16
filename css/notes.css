@@ -30,3 +30,55 @@ th{background:var(--s2);color:var(--a);font-weight:600}
 .note-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--a),#f0c060);z-index:1000;transition:width .1s}
 @media(max-width:900px){body{padding:10px}.note{padding:24px}h2{font-size:1.3rem}}
 @media(max-width:480px){body{padding:5px}.note{padding:16px}.note h1{font-size:1.5rem}h2{font-size:1.15rem}p{font-size:.9rem}blockquote{padding:16px}table{font-size:.8rem}th,td{padding:10px}}
+
+/* 书籍封面 */
+.book-cover-container {
+  display: flex;
+  justify-content: center;
+  margin: 32px 0;
+}
+
+.book-cover {
+  width: 240px;
+  height: 360px;
+  border-radius: 12px;
+  box-shadow: 0 12px 48px rgba(0,0,0,0.2);
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.book-cover:hover {
+  transform: scale(1.05);
+}
+
+/* Hero区域调整 */
+.hero {
+  text-align: center;
+  padding: 60px 24px 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  margin-bottom: 24px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .book-cover {
+    width: 180px;
+    height: 270px;
+  }
+
+  .hero {
+    padding: 48px 20px 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .book-cover {
+    width: 140px;
+    height: 210px;
+  }
+}
