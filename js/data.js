@@ -675,7 +675,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "marvelous-life.html",
       "isbn": "9787201125091",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787201125091-L.jpg"
+      "cover": "img/covers/marvelous-life.jpg"
     },
     {
       "id": 36,
