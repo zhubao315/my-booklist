@@ -1,4 +1,5 @@
-window.DATA = {
+window.DATA =
+{
   "CATEGORIES": {
     "1": "文学虚构类",
     "2": "实用技能类",
@@ -28,7 +29,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "hundred-years-solitude.html",
       "isbn": "9787544253994",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787544253994-L.jpg"
+      "cover": "img/covers/placeholder_475150b6.svg"
     },
     {
       "id": 2,
@@ -47,7 +48,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "nineteen-eighty-four.html",
       "isbn": "9787544291163",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787544291163-L.jpg"
+      "cover": "img/covers/placeholder_c994b24d.svg"
     },
     {
       "id": 3,
@@ -66,7 +67,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "dream-red-chamber.html",
       "isbn": "9787020002207",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787020002207-L.jpg"
+      "cover": "img/covers/placeholder_d1ee1bed.svg"
     },
     {
       "id": 4,
@@ -85,7 +86,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "les-miserables.html",
       "isbn": "9787020050642",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787020050642-L.jpg"
+      "cover": "img/covers/placeholder_192031ee.svg"
     },
     {
       "id": 5,
@@ -104,7 +105,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "crime-punishment.html",
       "isbn": "9787020060443",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787020060443-L.jpg"
+      "cover": "img/covers/placeholder_8d47d3e7.svg"
     },
     {
       "id": 6,
@@ -123,7 +124,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "jane-eyre.html",
       "isbn": "9787020032211",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787020032211-L.jpg"
+      "cover": "img/covers/placeholder_346cfc28.svg"
     },
     {
       "id": 7,
@@ -142,7 +143,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "pride-prejudice.html",
       "isbn": "9787020036660",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787020036660-L.jpg"
+      "cover": "img/covers/placeholder_55212af7.svg"
     },
     {
       "id": 8,
@@ -161,7 +162,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "anna-karenina.html",
       "isbn": "9787020043309",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787020043309-L.jpg"
+      "cover": "img/covers/placeholder_98665302.svg"
     },
     {
       "id": 9,
@@ -180,7 +181,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "wuthering-heights.html",
       "isbn": "9787020028290",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787020028290-L.jpg"
+      "cover": "img/covers/placeholder_0b91d348.svg"
     },
     {
       "id": 10,
@@ -199,7 +200,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "tale-two-cities.html",
       "isbn": "9787020043217",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787020043217-L.jpg"
+      "cover": "img/covers/placeholder_764b5349.svg"
     },
     {
       "id": 11,
@@ -218,7 +219,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "old-man-sea.html",
       "isbn": "9787544247574",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787544247574-L.jpg"
+      "cover": "img/covers/placeholder_153caf29.svg"
     },
     {
       "id": 12,
@@ -237,7 +238,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "great-gatsby.html",
       "isbn": "9787544247369",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787544247369-L.jpg"
+      "cover": "img/covers/placeholder_fbbeacf5.svg"
     },
     {
       "id": 13,
@@ -256,7 +257,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "catcher-rye.html",
       "isbn": "9787544247543",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787544247543-L.jpg"
+      "cover": "img/covers/placeholder_ba5dbc48.svg"
     },
     {
       "id": 14,
@@ -275,7 +276,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "don-quixote.html",
       "isbn": "9787020050338",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787020050338-L.jpg"
+      "cover": "img/covers/placeholder_37e6ebc2.svg"
     },
     {
       "id": 15,
@@ -294,7 +295,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "metamorphosis.html",
       "isbn": "9787020060351",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787020060351-L.jpg"
+      "cover": "img/covers/placeholder_2798bd8e.svg"
     },
     {
       "id": 16,
@@ -313,7 +314,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "good-to-great.html",
       "isbn": "9787508627229",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787508627229-L.jpg"
+      "cover": "img/covers/placeholder_49812edf.svg"
     },
     {
       "id": 17,
@@ -332,7 +333,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "zero-to-one.html",
       "isbn": "9787508649719",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787508649719-L.jpg"
+      "cover": "img/covers/placeholder_b575b5be.svg"
     },
     {
       "id": 18,
@@ -351,7 +352,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "lean-startup.html",
       "isbn": "9787508636405",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787508636405-L.jpg"
+      "cover": "img/covers/placeholder_c9983200.svg"
     },
     {
       "id": 19,
@@ -370,7 +371,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "innovators-dilemma.html",
       "isbn": "9787508673264",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787508673264-L.jpg"
+      "cover": "img/covers/placeholder_b36dba74.svg"
     },
     {
       "id": 20,
@@ -389,7 +390,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "positioning.html",
       "isbn": "9787111348146",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787111348146-L.jpg"
+      "cover": "img/covers/placeholder_8dc7f93b.svg"
     },
     {
       "id": 21,
@@ -408,7 +409,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "business-model-generation.html",
       "isbn": "9787111358299",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787111358299-L.jpg"
+      "cover": "img/covers/placeholder_f942d894.svg"
     },
     {
       "id": 22,
@@ -427,7 +428,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "seven-habits.html",
       "isbn": "9787111406204",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787111406204-L.jpg"
+      "cover": "img/covers/placeholder_dd2209d4.svg"
     },
     {
       "id": 23,
@@ -446,7 +447,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "hard-thing-hard.html",
       "isbn": "9787508646640",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787508646640-L.jpg"
+      "cover": "img/covers/placeholder_f5ef453c.svg"
     },
     {
       "id": 24,
@@ -465,7 +466,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "how-google-works.html",
       "isbn": "9787508653525",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787508653525-L.jpg"
+      "cover": "img/covers/placeholder_487610cc.svg"
     },
     {
       "id": 25,
@@ -484,7 +485,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "great-by-choice.html",
       "isbn": "9787508688442",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787508688442-L.jpg"
+      "cover": "img/covers/placeholder_826ab107.svg"
     },
     {
       "id": 26,
@@ -503,7 +504,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "growth-hacking.html",
       "isbn": "9787121268380",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787121268380-L.jpg"
+      "cover": "img/covers/placeholder_4dc74804.svg"
     },
     {
       "id": 27,
@@ -522,7 +523,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "tipping-point.html",
       "isbn": "9787508675329",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787508675329-L.jpg"
+      "cover": "img/covers/placeholder_61ee5131.svg"
     },
     {
       "id": 28,
@@ -541,7 +542,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "contagious.html",
       "isbn": "9787121210204",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787121210204-L.jpg"
+      "cover": "img/covers/placeholder_7047aeb6.svg"
     },
     {
       "id": 29,
@@ -560,7 +561,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "hooked.html",
       "isbn": "9787111562467",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787111562467-L.jpg"
+      "cover": "img/covers/placeholder_12932674.svg"
     },
     {
       "id": 30,
@@ -579,7 +580,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "traffic-pool.html",
       "isbn": "9787111599364",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787111599364-L.jpg"
+      "cover": "img/covers/placeholder_73ba4fae.svg"
     },
     {
       "id": 31,
@@ -598,7 +599,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "80-20-principle.html",
       "isbn": "9787508627236",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787508627236-L.jpg"
+      "cover": "img/covers/placeholder_103eb255.svg"
     },
     {
       "id": 32,
@@ -617,7 +618,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "pomodoro-technique.html",
       "isbn": "9787115211897",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787115211897-L.jpg"
+      "cover": "img/covers/placeholder_818ed7d6.svg"
     },
     {
       "id": 33,
@@ -636,7 +637,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "getting-things-done.html",
       "isbn": "9787111406211",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787111406211-L.jpg"
+      "cover": "img/covers/placeholder_96875008.svg"
     },
     {
       "id": 34,
@@ -655,7 +656,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "declutter-time.html",
       "isbn": "9787111618645",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787111618645-L.jpg"
+      "cover": "img/covers/placeholder_005a0502.svg"
     },
     {
       "id": 35,
@@ -694,7 +695,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "power-of-full-engagement.html",
       "isbn": "9787508650838",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787508650838-L.jpg"
+      "cover": "img/covers/placeholder_8bb034ca.svg"
     },
     {
       "id": 37,
@@ -713,7 +714,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "procrastination.html",
       "isbn": "9787111317203",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787111317203-L.jpg"
+      "cover": "img/covers/placeholder_cdaf8f8c.svg"
     },
     {
       "id": 38,
@@ -732,7 +733,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "deliberate-practice.html",
       "isbn": "9787111529187",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787111529187-L.jpg"
+      "cover": "img/covers/placeholder_8d0ee076.svg"
     },
     {
       "id": 39,
@@ -751,7 +752,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "thinking-fast-slow.html",
       "isbn": "9787508633558",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787508633558-L.jpg"
+      "cover": "img/covers/placeholder_e36ba580.svg"
     },
     {
       "id": 40,
@@ -770,7 +771,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "social-psychology.html",
       "isbn": "9787111409809",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787111409809-L.jpg"
+      "cover": "img/covers/placeholder_ad71cc4d.svg"
     },
     {
       "id": 41,
@@ -789,7 +790,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "ordinary-psychology.html",
       "isbn": "9787111459286",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787111459286-L.jpg"
+      "cover": "img/covers/placeholder_dd14c194.svg"
     },
     {
       "id": 42,
@@ -808,7 +809,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "psychology-life.html",
       "isbn": "9787111454915",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787111454915-L.jpg"
+      "cover": "img/covers/placeholder_bbcf5695.svg"
     },
     {
       "id": 43,
@@ -827,7 +828,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "elephant-rider.html",
       "isbn": "9787111577393",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787111577393-L.jpg"
+      "cover": "img/covers/placeholder_64abf6fb.svg"
     },
     {
       "id": 44,
@@ -847,7 +848,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "social-animal.html",
       "isbn": "9787568909556",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787568909556-L.jpg"
+      "cover": "img/covers/placeholder_6ee1fa0c.svg"
     },
     {
       "id": 45,
@@ -866,7 +867,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "dream-analysis.html",
       "isbn": "9787100077750",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787100077750-L.jpg"
+      "cover": "img/covers/placeholder_e92f8bac.svg"
     },
     {
       "id": 46,
@@ -885,7 +886,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "lucifer-effect.html",
       "isbn": "9787108037473",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787108037473-L.jpg"
+      "cover": "img/covers/placeholder_c026ef0c.svg"
     },
     {
       "id": 47,
@@ -903,7 +904,8 @@ window.DATA = {
       "rating": 3,
       "hasNote": true,
       "noteFile": "manipulation-psychology.html",
-      "cover": "search:操纵心理学"
+      "cover": "search:操纵心理学",
+      "isbn": "9787513922173"
     },
     {
       "id": 48,
@@ -922,7 +924,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "deliberate-practice.html",
       "isbn": "9787111529187",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787111529187-L.jpg"
+      "cover": "img/covers/placeholder_8d0ee076.svg"
     },
     {
       "id": 49,
@@ -941,7 +943,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "learning-how-to-learn.html",
       "isbn": "9787111571513",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787111571513-L.jpg"
+      "cover": "img/covers/placeholder_b5dfd9a8.svg"
     },
     {
       "id": 50,
@@ -960,7 +962,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "feynman-technique.html",
       "isbn": "9787115556257",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787115556257-L.jpg"
+      "cover": "img/covers/placeholder_7c60f866.svg"
     },
     {
       "id": 51,
@@ -979,7 +981,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "make-it-stick.html",
       "isbn": "9787508695525",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787508695525-L.jpg"
+      "cover": "img/covers/placeholder_f7bf35fe.svg"
     },
     {
       "id": 52,
@@ -998,7 +1000,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "how-read-book.html",
       "isbn": "9787100097994",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787100097994-L.jpg"
+      "cover": "img/covers/placeholder_2d712ab3.svg"
     },
     {
       "id": 53,
@@ -1017,7 +1019,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "reading-power.html",
       "isbn": "9787111572541",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787111572541-L.jpg"
+      "cover": "img/covers/placeholder_2578a7af.svg"
     },
     {
       "id": 54,
@@ -1036,7 +1038,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "minto-pyramid.html",
       "isbn": "9787111378273",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787111378273-L.jpg"
+      "cover": "img/covers/placeholder_cae004b4.svg"
     },
     {
       "id": 55,
@@ -1055,7 +1057,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "asking-questions.html",
       "isbn": "9787111406594",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787111406594-L.jpg"
+      "cover": "img/covers/placeholder_0eb01ccf.svg"
     },
     {
       "id": 56,
@@ -1074,7 +1076,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "principles.html",
       "isbn": "9787508684031",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787508684031-L.jpg"
+      "cover": "img/covers/placeholder_3d592a67.svg"
     },
     {
       "id": 57,
@@ -1093,7 +1095,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "fifth-discipline.html",
       "isbn": "9787508689708",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787508689708-L.jpg"
+      "cover": "img/covers/placeholder_823d914d.svg"
     },
     {
       "id": 58,
@@ -1112,7 +1114,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "systems-thinking.html",
       "isbn": "9787111571759",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787111571759-L.jpg"
+      "cover": "img/covers/placeholder_068bb10f.svg"
     },
     {
       "id": 59,
@@ -1131,7 +1133,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "antifragile.html",
       "isbn": "9787508643381",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787508643381-L.jpg"
+      "cover": "img/covers/placeholder_59768486.svg"
     },
     {
       "id": 60,
@@ -1150,7 +1152,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "black-swan.html",
       "isbn": "9787508684390",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787508684390-L.jpg"
+      "cover": "img/covers/placeholder_da6427b0.svg"
     },
     {
       "id": 61,
@@ -1169,7 +1171,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "art-thinking-clearly.html",
       "isbn": "9787121272677",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787121272677-L.jpg"
+      "cover": "img/covers/placeholder_2826615b.svg"
     },
     {
       "id": 62,
@@ -1188,7 +1190,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "checklist-manifesto.html",
       "isbn": "9787111358169",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787111358169-L.jpg"
+      "cover": "img/covers/placeholder_5f298066.svg"
     },
     {
       "id": 63,
@@ -1207,7 +1209,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "bottom-logic.html",
       "isbn": "9787111689447",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787111689447-L.jpg"
+      "cover": "img/covers/placeholder_029a834d.svg"
     },
     {
       "id": 64,
@@ -1226,7 +1228,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "leap-cognition.html",
       "isbn": "9787508678917",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787508678917-L.jpg"
+      "cover": "img/covers/placeholder_ba281c81.svg"
     },
     {
       "id": 65,
@@ -1245,7 +1247,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "cognitive-awareness.html",
       "isbn": "9787511380654",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787511380654-L.jpg"
+      "cover": "img/covers/placeholder_b453af3e.svg"
     },
     {
       "id": 66,
@@ -1264,7 +1266,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "deep-work.html",
       "isbn": "9787111573272",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787111573272-L.jpg"
+      "cover": "img/covers/placeholder_8083c2de.svg"
     },
     {
       "id": 67,
@@ -1283,7 +1285,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "far-sight.html",
       "isbn": "9787508681863",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787508681863-L.jpg"
+      "cover": "img/covers/placeholder_021aaedc.svg"
     },
     {
       "id": 68,
@@ -1301,7 +1303,8 @@ window.DATA = {
       "rating": 3,
       "hasNote": true,
       "noteFile": "so-good-cant-ignore.html",
-      "cover": "search:优秀到不能被忽视"
+      "cover": "search:优秀到不能被忽视",
+      "isbn": "9787550275140"
     },
     {
       "id": 69,
@@ -1321,7 +1324,8 @@ window.DATA = {
       "rating": 3,
       "hasNote": true,
       "noteFile": "craftsmanship.html",
-      "cover": "search:精进"
+      "cover": "search:精进",
+      "isbn": "9787539990484"
     },
     {
       "id": 70,
@@ -1358,7 +1362,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "time-friend.html",
       "isbn": "9787121182310",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787121182310-L.jpg"
+      "cover": "img/covers/placeholder_d514b7b5.svg"
     },
     {
       "id": 72,
@@ -1376,7 +1380,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "xiaoqiang-promotion.html",
-      "cover": "search:小强升职记"
+      "cover": "search:小强升职记",
+      "isbn": "9787121225703"
     },
     {
       "id": 73,
@@ -1395,7 +1400,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "nonviolent-communication.html",
       "isbn": "9787508095226",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787508095226-L.jpg"
+      "cover": "img/covers/placeholder_c9c69886.svg"
     },
     {
       "id": 74,
@@ -1415,7 +1420,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "influence.html",
       "isbn": "9787111318736",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787111318736-L.jpg"
+      "cover": "img/covers/placeholder_7d19fae8.svg"
     },
     {
       "id": 75,
@@ -1434,7 +1439,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "intimate-relationship.html",
       "isbn": "9787111574903",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787111574903-L.jpg"
+      "cover": "img/covers/placeholder_18fad7ac.svg"
     },
     {
       "id": 76,
@@ -1452,7 +1457,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "happy-marriage.html",
-      "cover": "search:幸福的婚姻"
+      "cover": "search:幸福的婚姻",
+      "isbn": "9787213058417"
     },
     {
       "id": 77,
@@ -1472,7 +1478,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "five-love-languages.html",
-      "cover": "search:爱的五种语言"
+      "cover": "search:爱的五种语言",
+      "isbn": "9787210078951"
     },
     {
       "id": 78,
@@ -1491,7 +1498,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "kids-communication.html",
-      "cover": "search:如何说孩子才会听"
+      "cover": "search:如何说孩子才会听",
+      "isbn": "9787508609539"
     },
     {
       "id": 79,
@@ -1509,7 +1517,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "positive-discipline.html",
-      "cover": "search:正面管教"
+      "cover": "search:正面管教",
+      "isbn": "9787807246176"
     },
     {
       "id": 80,
@@ -1527,7 +1536,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "raising-boys.html",
-      "cover": "search:养育男孩"
+      "cover": "search:养育男孩",
+      "isbn": "9787508619576"
     },
     {
       "id": 81,
@@ -1546,7 +1556,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "raising-girls.html",
-      "cover": "search:养育女孩"
+      "cover": "search:养育女孩",
+      "isbn": "9787508635637"
     },
     {
       "id": 82,
@@ -1563,7 +1574,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "awakened-parent.html",
-      "cover": "search:父母的觉醒"
+      "cover": "search:父母的觉醒",
+      "isbn": "9787552003796"
     },
     {
       "id": 83,
@@ -1581,7 +1593,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "flow.html",
-      "cover": "search:心流"
+      "cover": "search:心流",
+      "isbn": "9787508675534"
     },
     {
       "id": 84,
@@ -1600,7 +1613,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "individual-psychology.html",
       "isbn": "9787111472482",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787111472482-L.jpg"
+      "cover": "img/covers/placeholder_b9302489.svg"
     },
     {
       "id": 85,
@@ -1619,7 +1632,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "courage-be-disliked.html",
       "isbn": "9787111495482",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787111495482-L.jpg"
+      "cover": "img/covers/placeholder_1b40a7cb.svg"
     },
     {
       "id": 86,
@@ -1638,7 +1651,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "mans-search.html",
       "isbn": "9787111470366",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787111470366-L.jpg"
+      "cover": "img/covers/placeholder_022fcff5.svg"
     },
     {
       "id": 87,
@@ -1657,7 +1670,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "power-now.html",
       "isbn": "9787508627274",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787508627274-L.jpg"
+      "cover": "img/covers/placeholder_aa3da4c5.svg"
     },
     {
       "id": 88,
@@ -1677,7 +1690,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "road-less-traveled.html",
       "isbn": "9787111495369",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787111495369-L.jpg"
+      "cover": "img/covers/placeholder_77cedb41.svg"
     },
     {
       "id": 89,
@@ -1696,7 +1709,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "second-mountain-book.html",
-      "cover": "search:第二座山"
+      "cover": "search:第二座山",
+      "isbn": "9787521717662"
     },
     {
       "id": 90,
@@ -1714,7 +1728,8 @@ window.DATA = {
       "rating": 3,
       "hasNote": true,
       "noteFile": "restart-life-book.html",
-      "cover": "search:重启人生"
+      "cover": "search:重启人生",
+      "isbn": "9787550031395"
     },
     {
       "id": 91,
@@ -1732,7 +1747,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "second-half.html",
-      "cover": "search:人生下半场"
+      "cover": "search:人生下半场",
+      "isbn": "9787210028345"
     },
     {
       "id": 92,
@@ -1750,7 +1766,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "scarcity.html",
-      "cover": "search:稀缺"
+      "cover": "search:稀缺",
+      "isbn": "9787213063497"
     },
     {
       "id": 93,
@@ -1769,7 +1786,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "power-of-habit.html",
       "isbn": "9787508643847",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787508643847-L.jpg"
+      "cover": "img/covers/placeholder_ad1f2cbf.svg"
     },
     {
       "id": 94,
@@ -1787,7 +1804,8 @@ window.DATA = {
       "rating": 3,
       "hasNote": true,
       "noteFile": "power-habit.html",
-      "cover": "search:掌控习惯"
+      "cover": "search:掌控习惯",
+      "isbn": "9787508674421"
     },
     {
       "id": 95,
@@ -1805,7 +1823,8 @@ window.DATA = {
       "rating": 3,
       "hasNote": true,
       "noteFile": "atomic-habits.html",
-      "cover": "search:原子习惯"
+      "cover": "search:原子习惯",
+      "isbn": "9789861755267"
     },
     {
       "id": 96,
@@ -1823,7 +1842,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "mindset.html",
-      "cover": "search:终身成长"
+      "cover": "search:终身成长",
+      "isbn": "9787210096528"
     },
     {
       "id": 97,
@@ -1841,7 +1861,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "grit.html",
-      "cover": "search:坚毅"
+      "cover": "search:坚毅",
+      "isbn": "9787508673868"
     },
     {
       "id": 98,
@@ -1878,7 +1899,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "willpower.html",
       "isbn": "9787111391128",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787111391128-L.jpg"
+      "cover": "img/covers/placeholder_87cf503b.svg"
     },
     {
       "id": 100,
@@ -1896,7 +1917,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "long-term-thinking.html",
-      "cover": "search:长期主义"
+      "cover": "search:长期主义",
+      "isbn": "9787505754751"
     },
     {
       "id": 101,
@@ -1914,7 +1936,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "range.html",
-      "cover": "search:知识的边界"
+      "cover": "search:知识的边界",
+      "isbn": "9787559651518"
     },
     {
       "id": 102,
@@ -1932,7 +1955,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "analects.html",
-      "cover": "search:论语"
+      "cover": "search:论语",
+      "isbn": "9784140815212"
     },
     {
       "id": 103,
@@ -1951,7 +1975,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "tao-te-ching.html",
       "isbn": "9787101100822",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787101100822-L.jpg"
+      "cover": "img/covers/placeholder_2aa23070.svg"
     },
     {
       "id": 104,
@@ -1969,7 +1993,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "mencius.html",
-      "cover": "search:孟子"
+      "cover": "search:孟子",
+      "isbn": "9787547408209"
     },
     {
       "id": 105,
@@ -1987,7 +2012,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "great-learning.html",
-      "cover": "search:大学"
+      "cover": "search:大学",
+      "isbn": "9787513504607"
     },
     {
       "id": 106,
@@ -2005,7 +2031,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "doctrine-mean.html",
-      "cover": "search:中庸"
+      "cover": "search:中庸",
+      "isbn": "9787806999783"
     },
     {
       "id": 107,
@@ -2023,7 +2050,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "shiji.html",
-      "cover": "search:史记"
+      "cover": "search:史记",
+      "isbn": "9784634644106"
     },
     {
       "id": 108,
@@ -2041,7 +2069,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "zizhi-tongjian.html",
-      "cover": "search:资治通鉴"
+      "cover": "search:资治通鉴",
+      "isbn": "9786695091660"
     },
     {
       "id": 109,
@@ -2059,7 +2088,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "shangjun-book.html",
-      "cover": "search:商君书"
+      "cover": "search:商君书",
+      "isbn": "9789866528095"
     },
     {
       "id": 110,
@@ -2077,7 +2107,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "salt-iron-debate.html",
-      "cover": "search:盐铁论"
+      "cover": "search:盐铁论",
+      "isbn": "9787101107517"
     },
     {
       "id": 111,
@@ -2095,7 +2126,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "story-civilization.html",
-      "cover": "search:文明的故事"
+      "cover": "search:文明的故事",
+      "isbn": "9787545541397"
     },
     {
       "id": 112,
@@ -2114,7 +2146,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "sapiens.html",
       "isbn": "9787508660752",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787508660752-L.jpg"
+      "cover": "img/covers/placeholder_812b704b.svg"
     },
     {
       "id": 113,
@@ -2133,7 +2165,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "global-history.html",
       "isbn": "9787301112946",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787301112946-L.jpg"
+      "cover": "img/covers/placeholder_4792df79.svg"
     },
     {
       "id": 114,
@@ -2152,7 +2184,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "1587-year.html",
       "isbn": "9787108009821",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787108009821-L.jpg"
+      "cover": "img/covers/placeholder_8e3a8ef2.svg"
     },
     {
       "id": 115,
@@ -2171,7 +2203,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "homo-deus.html",
       "isbn": "9787508672069",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787508672069-L.jpg"
+      "cover": "img/covers/placeholder_e371dd60.svg"
     },
     {
       "id": 116,
@@ -2190,7 +2222,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "21-lessons.html",
       "isbn": "9787508692105",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787508692105-L.jpg"
+      "cover": "img/covers/placeholder_7b14eefc.svg"
     },
     {
       "id": 117,
@@ -2208,7 +2240,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "iliad.html",
-      "cover": "search:伊利亚特"
+      "cover": "search:伊利亚特",
+      "isbn": "9787208050518"
     },
     {
       "id": 118,
@@ -2226,7 +2259,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "price-destruction.html",
-      "cover": "search:毁灭的代价"
+      "cover": "search:毁灭的代价",
+      "isbn": "9787511382788"
     },
     {
       "id": 119,
@@ -2244,7 +2278,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "guns-august.html",
-      "cover": "search:八月枪声"
+      "cover": "search:八月枪声",
+      "isbn": "9787542663764"
     },
     {
       "id": 120,
@@ -2262,7 +2297,8 @@ window.DATA = {
       "rating": 2,
       "hasNote": true,
       "noteFile": "gallic-wars.html",
-      "cover": "search:高卢战记"
+      "cover": "search:高卢战记",
+      "isbn": "9787508639451"
     },
     {
       "id": 121,
@@ -2280,7 +2316,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "storm-steel.html",
-      "cover": "search:钢铁风暴"
+      "cover": "search:钢铁风暴",
+      "isbn": "9787020166862"
     },
     {
       "id": 122,
@@ -2299,7 +2336,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "republic.html",
       "isbn": "9787100077200",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787100077200-L.jpg"
+      "cover": "img/covers/placeholder_d4b2e23d.svg"
     },
     {
       "id": 123,
@@ -2317,7 +2354,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "the-wealth-of-nations.html",
-      "cover": "search:国富论"
+      "cover": "search:国富论",
+      "isbn": "9787508092508"
     },
     {
       "id": 124,
@@ -2335,7 +2373,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "nicomachean-ethics.html",
-      "cover": "search:尼各马可伦理学"
+      "cover": "search:尼各马可伦理学",
+      "isbn": "9787100035750"
     },
     {
       "id": 125,
@@ -2353,7 +2392,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "history-western-philosophy.html",
-      "cover": "search:西方哲学史"
+      "cover": "search:西方哲学史",
+      "isbn": "9787100004824"
     },
     {
       "id": 126,
@@ -2371,7 +2411,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "history-chinese-philosophy.html",
-      "cover": "search:中国哲学史"
+      "cover": "search:中国哲学史",
+      "isbn": "9787220118852"
     },
     {
       "id": 127,
@@ -2390,7 +2431,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "earthbound-china.html",
       "isbn": "9787108056689",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787108056689-L.jpg"
+      "cover": "img/covers/placeholder_883a95b1.svg"
     },
     {
       "id": 128,
@@ -2408,7 +2449,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "division-labor.html",
-      "cover": "search:社会分工论"
+      "cover": "search:社会分工论",
+      "isbn": "9787108014054"
     },
     {
       "id": 129,
@@ -2426,7 +2468,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "suicide.html",
-      "cover": "search:自杀论"
+      "cover": "search:自杀论",
+      "isbn": "9787100031233"
     },
     {
       "id": 130,
@@ -2444,7 +2487,8 @@ window.DATA = {
       "rating": 2,
       "hasNote": true,
       "noteFile": "intro-sociology.html",
-      "cover": "search:社会学概论"
+      "cover": "search:社会学概论",
+      "isbn": "9787300263236"
     },
     {
       "id": 131,
@@ -2462,7 +2506,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "invitation-sociology.html",
-      "cover": "search:社会学的邀请"
+      "cover": "search:社会学的邀请",
+      "isbn": "9787301234037"
     },
     {
       "id": 132,
@@ -2481,7 +2526,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "crowd-psychology.html",
       "isbn": "9787100075040",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787100075040-L.jpg"
+      "cover": "img/covers/placeholder_43f90684.svg"
     },
     {
       "id": 133,
@@ -2499,7 +2544,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "presentation-self.html",
-      "cover": "search:日常生活中的自我呈现"
+      "cover": "search:日常生活中的自我呈现",
+      "isbn": "9787301135907"
     },
     {
       "id": 134,
@@ -2517,7 +2563,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "return-home.html",
-      "cover": "search:回归故里"
+      "cover": "search:回归故里",
+      "isbn": "9787553518510"
     },
     {
       "id": 135,
@@ -2535,7 +2582,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "road-serfdom.html",
-      "cover": "search:通往奴役之路"
+      "cover": "search:通往奴役之路",
+      "isbn": "9787500421368"
     },
     {
       "id": 136,
@@ -2554,7 +2602,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "protestant-ethic.html",
       "isbn": "9787100074988",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787100074988-L.jpg"
+      "cover": "img/covers/placeholder_2ecc7bb8.svg"
     },
     {
       "id": 137,
@@ -2572,7 +2620,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "mao-selected.html",
-      "cover": "search:毛选"
+      "cover": "search:毛选",
+      "isbn": "9787010009148"
     },
     {
       "id": 138,
@@ -2590,7 +2639,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "china-social-strata.html",
-      "cover": "search:中国社会各阶层分析"
+      "cover": "search:中国社会各阶层分析",
+      "isbn": "9787503948107"
     },
     {
       "id": 139,
@@ -2608,7 +2658,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "shakespeare-complete.html",
-      "cover": "search:莎士比亚全集"
+      "cover": "search:莎士比亚全集",
+      "isbn": "9787510023712"
     },
     {
       "id": 140,
@@ -2626,7 +2677,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "aesthetics-stroll.html",
-      "cover": "search:美学散步"
+      "cover": "search:美学散步",
+      "isbn": "9787810939164"
     },
     {
       "id": 141,
@@ -2644,7 +2696,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "cultural-journey.html",
-      "cover": "search:文化苦旅"
+      "cover": "search:文化苦旅",
+      "isbn": "9787535447340"
     },
     {
       "id": 142,
@@ -2663,7 +2716,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "deep-learning.html",
       "isbn": "9787111574491",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787111574491-L.jpg"
+      "cover": "img/covers/placeholder_4d9e0d3c.svg"
     },
     {
       "id": 143,
@@ -2681,7 +2734,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "machine-learning-zhou.html",
-      "cover": "search:机器学习"
+      "cover": "search:机器学习",
+      "isbn": "9787302423287"
     },
     {
       "id": 144,
@@ -2700,7 +2754,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "statistical-learning.html",
       "isbn": "9787302319381",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787302319381-L.jpg"
+      "cover": "img/covers/placeholder_dc637196.svg"
     },
     {
       "id": 145,
@@ -2718,7 +2772,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "nn-dl.html",
-      "cover": "search:神经网络与深度学习"
+      "cover": "search:神经网络与深度学习",
+      "isbn": "9787111649687"
     },
     {
       "id": 146,
@@ -2736,7 +2791,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "python-ml.html",
-      "cover": "search:Python机器学习"
+      "cover": "search:Python机器学习",
+      "isbn": "9781787125933"
     },
     {
       "id": 147,
@@ -2754,7 +2810,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "python-dl.html",
-      "cover": "search:Python深度学习"
+      "cover": "search:Python深度学习",
+      "isbn": "9781617294433"
     },
     {
       "id": 148,
@@ -2772,7 +2829,8 @@ window.DATA = {
       "rating": 3,
       "hasNote": true,
       "noteFile": "d2l.html",
-      "cover": "search:动手学深度学习"
+      "cover": "search:动手学深度学习",
+      "isbn": "9787115490841"
     },
     {
       "id": 149,
@@ -2790,7 +2848,8 @@ window.DATA = {
       "rating": 3,
       "hasNote": true,
       "noteFile": "ml-in-action.html",
-      "cover": "search:机器学习实战"
+      "cover": "search:机器学习实战",
+      "isbn": "9787115317957"
     },
     {
       "id": 150,
@@ -2808,7 +2867,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "dl-intro.html",
-      "cover": "search:深度学习入门"
+      "cover": "search:深度学习入门",
+      "isbn": "9787115485588"
     },
     {
       "id": 151,
@@ -2826,7 +2886,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "reinforcement-learning.html",
-      "cover": "search:强化学习"
+      "cover": "search:强化学习",
+      "isbn": "9787121295164"
     },
     {
       "id": 152,
@@ -2844,7 +2905,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "generative-ai.html",
-      "cover": "search:生成式AI"
+      "cover": "search:生成式AI",
+      "isbn": "9787115670830"
     },
     {
       "id": 153,
@@ -2862,7 +2924,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "graph-dl.html",
-      "cover": "search:图深度学习"
+      "cover": "search:图深度学习",
+      "isbn": "9787121394782"
     },
     {
       "id": 154,
@@ -2880,7 +2943,8 @@ window.DATA = {
       "rating": 2,
       "hasNote": true,
       "noteFile": "federated-learning.html",
-      "cover": "search:联邦学习"
+      "cover": "search:联邦学习",
+      "isbn": "9787121407925"
     },
     {
       "id": 155,
@@ -2898,7 +2962,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "ml-system-design.html",
-      "cover": "search:机器学习系统设计"
+      "cover": "search:机器学习系统设计",
+      "isbn": "9787519886288"
     },
     {
       "id": 156,
@@ -2917,7 +2982,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "brief-history-time.html",
       "isbn": "9787544276993",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787544276993-L.jpg"
+      "cover": "img/covers/placeholder_60045f05.svg"
     },
     {
       "id": 157,
@@ -2936,7 +3001,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "inevitable.html",
       "isbn": "9787115415578",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787115415578-L.jpg"
+      "cover": "img/covers/placeholder_6a7df7d4.svg"
     },
     {
       "id": 158,
@@ -2955,7 +3020,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "out-of-control.html",
       "isbn": "9787508648958",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787508648958-L.jpg"
+      "cover": "img/covers/placeholder_2c726a15.svg"
     },
     {
       "id": 159,
@@ -2974,7 +3039,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "top-tides.html",
       "isbn": "9787115260659",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787115260659-L.jpg"
+      "cover": "img/covers/placeholder_ca9539f6.svg"
     },
     {
       "id": 160,
@@ -2992,7 +3057,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "smart-era.html",
-      "cover": "search:智能时代"
+      "cover": "search:智能时代",
+      "isbn": "9787508663814"
     },
     {
       "id": 161,
@@ -3010,7 +3076,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "innovators.html",
-      "cover": "search:创新者"
+      "cover": "search:创新者",
+      "isbn": "9787508671642"
     },
     {
       "id": 162,
@@ -3028,7 +3095,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "tech-wants.html",
-      "cover": "search:科技想要什么"
+      "cover": "search:科技想要什么",
+      "isbn": "9787508630373"
     },
     {
       "id": 163,
@@ -3046,7 +3114,8 @@ window.DATA = {
       "rating": 3,
       "hasNote": true,
       "noteFile": "big-data.html",
-      "cover": "search:大数据时代"
+      "cover": "search:大数据时代",
+      "isbn": "9787213052545"
     },
     {
       "id": 164,
@@ -3064,7 +3133,8 @@ window.DATA = {
       "rating": 2,
       "hasNote": true,
       "noteFile": "blockchain.html",
-      "cover": "search:区块链革命"
+      "cover": "search:区块链革命",
+      "isbn": "9787508666853"
     },
     {
       "id": 165,
@@ -3082,7 +3152,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "superintelligence.html",
-      "cover": "search:超级智能"
+      "cover": "search:超级智能",
+      "isbn": "9787508650166"
     },
     {
       "id": 166,
@@ -3100,7 +3171,8 @@ window.DATA = {
       "rating": 2,
       "hasNote": true,
       "noteFile": "ai-economics.html",
-      "cover": "search:AI极简经济学"
+      "cover": "search:AI极简经济学",
+      "isbn": "9787535799647"
     },
     {
       "id": 167,
@@ -3118,7 +3190,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "ai-pm-handbook.html",
-      "cover": "search:AI产品经理手册"
+      "cover": "search:AI产品经理手册",
+      "isbn": "9787500595762"
     },
     {
       "id": 168,
@@ -3136,7 +3209,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "llm-dev.html",
-      "cover": "search:大模型应用开发"
+      "cover": "search:大模型应用开发",
+      "isbn": "9787115686398"
     },
     {
       "id": 169,
@@ -3154,7 +3228,8 @@ window.DATA = {
       "rating": 2,
       "hasNote": true,
       "noteFile": "masters-doom.html",
-      "cover": "search:毁灭大师"
+      "cover": "search:毁灭大师",
+      "isbn": "9787108014283"
     },
     {
       "id": 170,
@@ -3172,7 +3247,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "computer-vision.html",
-      "cover": "search:计算机视觉"
+      "cover": "search:计算机视觉",
+      "isbn": "9787302269151"
     },
     {
       "id": 171,
@@ -3190,7 +3266,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "nlp-jurafsky.html",
-      "cover": "search:自然语言处理综论"
+      "cover": "search:自然语言处理综论",
+      "isbn": "9787121007767"
     },
     {
       "id": 172,
@@ -3208,7 +3285,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "recsys.html",
-      "cover": "search:推荐系统实践"
+      "cover": "search:推荐系统实践",
+      "isbn": "9787115281586"
     },
     {
       "id": 173,
@@ -3227,7 +3305,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "outlive.html",
       "isbn": "9787521764369",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787521764369-L.jpg"
+      "cover": "img/covers/placeholder_bf9707fa.svg"
     },
     {
       "id": 174,
@@ -3245,7 +3323,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "born-run.html",
-      "cover": "search:长跑启示录"
+      "cover": "search:长跑启示录",
+      "isbn": "9787544260336"
     },
     {
       "id": 175,
@@ -3264,7 +3343,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "brain-gym.html",
       "isbn": "9787111629870",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787111629870-L.jpg"
+      "cover": "img/covers/placeholder_dc337932.svg"
     },
     {
       "id": 176,
@@ -3282,7 +3361,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "art-noticing.html",
-      "cover": "search:观察的艺术"
+      "cover": "search:观察的艺术",
+      "isbn": "9787559659675"
     },
     {
       "id": 177,
@@ -3318,7 +3398,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "pose-running.html",
-      "cover": "search:姿势跑法实践"
+      "cover": "search:姿势跑法实践",
+      "isbn": "9787213083372"
     },
     {
       "id": 179,
@@ -3336,7 +3417,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "daniels-running.html",
-      "cover": "search:速度训练原理"
+      "cover": "search:速度训练原理",
+      "isbn": "9787572512346"
     },
     {
       "id": 180,
@@ -3355,7 +3437,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "intelligent-investor.html",
       "isbn": "9787111478333",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787111478333-L.jpg"
+      "cover": "img/covers/placeholder_2c734937.svg"
     },
     {
       "id": 181,
@@ -3374,7 +3456,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "poor-charlie-almanack.html",
       "isbn": "9787508674674",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787508674674-L.jpg"
+      "cover": "img/covers/placeholder_ffd6eeb7.svg"
     },
     {
       "id": 182,
@@ -3393,7 +3475,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "buffett-letters.html",
       "isbn": "9787508680045",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787508680045-L.jpg"
+      "cover": "img/covers/placeholder_877375fb.svg"
     },
     {
       "id": 183,
@@ -3411,7 +3493,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "security-analysis.html",
-      "cover": "search:证券分析"
+      "cover": "search:证券分析",
+      "isbn": "9787300173429"
     },
     {
       "id": 184,
@@ -3430,7 +3513,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "most-important-thing.html",
       "isbn": "9787508635168",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787508635168-L.jpg"
+      "cover": "img/covers/placeholder_42cead38.svg"
     },
     {
       "id": 185,
@@ -3449,7 +3532,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "random-walk-wall-street.html",
       "isbn": "9787111568568",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787111568568-L.jpg"
+      "cover": "img/covers/placeholder_7e2bf344.svg"
     },
     {
       "id": 186,
@@ -3467,7 +3550,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "munger-way.html",
-      "cover": "search:芒格之道"
+      "cover": "search:芒格之道",
+      "isbn": "9787521754841"
     },
     {
       "id": 187,
@@ -3486,7 +3570,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "slow-rich.html",
       "isbn": "9787544297400",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787544297400-L.jpg"
+      "cover": "img/covers/placeholder_8f8dbc0c.svg"
     },
     {
       "id": 188,
@@ -3504,7 +3588,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "fooled-randomness.html",
-      "cover": "search:随机漫步的傻瓜"
+      "cover": "search:随机漫步的傻瓜",
+      "isbn": "9787508633749"
     },
     {
       "id": 189,
@@ -3523,7 +3608,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "irrational-exuberance.html",
       "isbn": "9787111580256",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787111580256-L.jpg"
+      "cover": "img/covers/placeholder_656d6108.svg"
     },
     {
       "id": 190,
@@ -3541,7 +3626,8 @@ window.DATA = {
       "rating": 2,
       "hasNote": true,
       "noteFile": "valuation.html",
-      "cover": "search:估值"
+      "cover": "search:估值",
+      "isbn": "9787111423393"
     },
     {
       "id": 191,
@@ -3559,7 +3645,8 @@ window.DATA = {
       "rating": 3,
       "hasNote": true,
       "noteFile": "index-fund.html",
-      "cover": "search:指数基金投资指南"
+      "cover": "search:指数基金投资指南",
+      "isbn": "9787508682549"
     },
     {
       "id": 192,
@@ -3578,7 +3665,8 @@ window.DATA = {
       "rating": 3,
       "hasNote": true,
       "noteFile": "stock-basics.html",
-      "cover": "search:股票投资入门"
+      "cover": "search:股票投资入门",
+      "isbn": "9787111753506"
     },
     {
       "id": 193,
@@ -3596,7 +3684,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "asset-allocation.html",
-      "cover": "search:资产配置的艺术"
+      "cover": "search:资产配置的艺术",
+      "isbn": "9787300180458"
     },
     {
       "id": 194,
@@ -3615,7 +3704,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "financial-freedom.html",
       "isbn": "9787544285827",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787544285827-L.jpg"
+      "cover": "img/covers/placeholder_b72c518b.svg"
     },
     {
       "id": 195,
@@ -3634,7 +3723,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "rich-dad-poor-dad.html",
       "isbn": "9787544277532",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787544277532-L.jpg"
+      "cover": "img/covers/placeholder_ef86a7b1.svg"
     },
     {
       "id": 196,
@@ -3653,7 +3742,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "money-dog.html",
       "isbn": "9787544251488",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787544251488-L.jpg"
+      "cover": "img/covers/placeholder_e385f449.svg"
     },
     {
       "id": 197,
@@ -3671,7 +3760,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "where-money.html",
-      "cover": "search:钱从哪里来"
+      "cover": "search:钱从哪里来",
+      "isbn": "9787521713008"
     },
     {
       "id": 198,
@@ -3689,7 +3779,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "first-finance-book.html",
-      "cover": "search:你的第一本理财书"
+      "cover": "search:你的第一本理财书",
+      "isbn": "9787511379245"
     },
     {
       "id": 199,
@@ -3708,7 +3799,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "naval-almanack.html",
       "isbn": "9787521746013",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787521746013-L.jpg"
+      "cover": "img/covers/placeholder_92146270.svg"
     },
     {
       "id": 200,
@@ -3726,7 +3817,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "money-psychology.html",
-      "cover": "search:金钱心理学"
+      "cover": "search:金钱心理学",
+      "isbn": "9787513941242"
     },
     {
       "id": 201,
@@ -3744,7 +3836,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "think-grow-rich.html",
-      "cover": "search:思考致富"
+      "cover": "search:思考致富",
+      "isbn": "9787122190826"
     },
     {
       "id": 202,
@@ -3762,7 +3855,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "rich-mindset.html",
-      "cover": "search:有钱人"
+      "cover": "search:有钱人",
+      "isbn": "9787500465904"
     },
     {
       "id": 203,
@@ -3780,7 +3874,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "rich-habits.html",
-      "cover": "search:富有的习惯"
+      "cover": "search:富有的习惯",
+      "isbn": "9787513919395"
     },
     {
       "id": 204,
@@ -3798,7 +3893,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "poverty.html",
-      "cover": "search:贫穷的本质"
+      "cover": "search:贫穷的本质",
+      "isbn": "9787508638492"
     },
     {
       "id": 205,
@@ -3817,7 +3913,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "principles.html",
       "isbn": "9787508684031",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787508684031-L.jpg"
+      "cover": "img/covers/placeholder_3d592a67.svg"
     },
     {
       "id": 206,
@@ -3835,7 +3931,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "american-caesar.html",
-      "cover": "search:美国恺撒"
+      "cover": "search:美国恺撒",
+      "isbn": "9787508679792"
     },
     {
       "id": 207,
@@ -3853,7 +3950,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "genghis-khan.html",
-      "cover": "search:成吉思汗"
+      "cover": "search:成吉思汗",
+      "isbn": "9787229122102"
     },
     {
       "id": 208,
@@ -3871,7 +3969,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "cao-cao.html",
-      "cover": "search:曹操"
+      "cover": "search:曹操",
+      "isbn": "9787010032146"
     },
     {
       "id": 209,
@@ -3889,7 +3988,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "zhang-juzheng.html",
-      "cover": "search:张居正"
+      "cover": "search:张居正",
+      "isbn": "9787020141265"
     },
     {
       "id": 210,
@@ -3907,7 +4007,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "zuo-zongtang.html",
-      "cover": "search:左宗棠"
+      "cover": "search:左宗棠",
+      "isbn": "9787515339658"
     },
     {
       "id": 211,
@@ -3925,7 +4026,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "mao-zedong.html",
-      "cover": "search:毛泽东"
+      "cover": "search:毛泽东",
+      "isbn": "9787300198972"
     },
     {
       "id": 212,
@@ -3943,7 +4045,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "jobs-bio.html",
-      "cover": "search:乔布斯"
+      "cover": "search:乔布斯",
+      "isbn": "9787508630069"
     },
     {
       "id": 213,
@@ -3961,7 +4064,8 @@ window.DATA = {
       "rating": 3,
       "hasNote": true,
       "noteFile": "musk-bio.html",
-      "cover": "search:马斯克传"
+      "cover": "search:马斯克传",
+      "isbn": "9787521758399"
     },
     {
       "id": 214,
@@ -3979,7 +4083,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "bezos.html",
-      "cover": "search:贝索斯"
+      "cover": "search:贝索斯",
+      "isbn": "9787511332424"
     },
     {
       "id": 215,
@@ -3997,7 +4102,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "inamori.html",
-      "cover": "search:稻盛和夫"
+      "cover": "search:稻盛和夫",
+      "isbn": "9787506021401"
     },
     {
       "id": 216,
@@ -4015,7 +4121,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "chu-shijian.html",
-      "cover": "search:褚时健"
+      "cover": "search:褚时健",
+      "isbn": "9787508656359"
     },
     {
       "id": 217,
@@ -4033,7 +4140,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "curie.html",
-      "cover": "search:居里夫人传"
+      "cover": "search:居里夫人传",
+      "isbn": "9787540215866"
     },
     {
       "id": 218,
@@ -4051,7 +4159,8 @@ window.DATA = {
       "rating": 3,
       "hasNote": true,
       "noteFile": "yuan-longping.html",
-      "cover": "search:袁隆平"
+      "cover": "search:袁隆平",
+      "isbn": "9787535570703"
     },
     {
       "id": 219,
@@ -4087,7 +4196,8 @@ window.DATA = {
       "rating": 3,
       "hasNote": true,
       "noteFile": "franklin-autobiography.html",
-      "cover": "search:富兰克林自传"
+      "cover": "search:富兰克林自传",
+      "isbn": "9787514501704"
     },
     {
       "id": 221,
@@ -4105,7 +4215,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "su-shi.html",
-      "cover": "search:苏东坡"
+      "cover": "search:苏东坡",
+      "isbn": "9787802561120"
     },
     {
       "id": 222,
@@ -4123,7 +4234,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "zeng-guofan-th.html",
-      "cover": "search:曾国藩"
+      "cover": "search:曾国藩",
+      "isbn": "9787553809502"
     },
     {
       "id": 223,
@@ -4141,7 +4253,8 @@ window.DATA = {
       "rating": 3,
       "hasNote": true,
       "noteFile": "gandhi.html",
-      "cover": "search:甘地自传"
+      "cover": "search:甘地自传",
+      "isbn": "9787222132429"
     },
     {
       "id": 224,
@@ -4159,7 +4272,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "mandela.html",
-      "cover": "search:曼德拉传"
+      "cover": "search:曼德拉传",
+      "isbn": "9787535466914"
     },
     {
       "id": 225,
@@ -4176,7 +4290,8 @@ window.DATA = {
       "rating": 3,
       "hasNote": true,
       "noteFile": "keller.html",
-      "cover": "search:海伦凯勒"
+      "cover": "search:海伦凯勒",
+      "isbn": "9787500780816"
     },
     {
       "id": 226,
@@ -4194,7 +4309,8 @@ window.DATA = {
       "rating": 3,
       "hasNote": true,
       "noteFile": "socrates.html",
-      "cover": "search:苏格拉底"
+      "cover": "search:苏格拉底",
+      "isbn": "9787553822983"
     },
     {
       "id": 227,
@@ -4213,7 +4329,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "story-art.html",
       "isbn": "9787508624440",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787508624440-L.jpg"
+      "cover": "img/covers/placeholder_c29e23d9.svg"
     },
     {
       "id": 228,
@@ -4232,7 +4348,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "course-beauty.html",
       "isbn": "9787108006738",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787108006738-L.jpg"
+      "cover": "img/covers/placeholder_07b781a2.svg"
     },
     {
       "id": 229,
@@ -4250,7 +4366,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "ways-seeing.html",
-      "cover": "search:观看之道"
+      "cover": "search:观看之道",
+      "isbn": "9787549558575"
     },
     {
       "id": 230,
@@ -4286,7 +4403,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "zhongguohuihuasanqiannian.html",
-      "cover": "search:中国绘画三千年"
+      "cover": "search:中国绘画三千年",
+      "isbn": "9787119020815"
     },
     {
       "id": 232,
@@ -4304,7 +4422,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "sheyingjingshen.html",
-      "cover": "search:摄影的精神"
+      "cover": "search:摄影的精神",
+      "isbn": "9787806869086"
     },
     {
       "id": 233,
@@ -4322,7 +4441,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "art-spirit.html",
-      "cover": "search:艺术精神"
+      "cover": "search:艺术精神",
+      "isbn": "9787305223365"
     },
     {
       "id": 234,
@@ -4340,7 +4460,8 @@ window.DATA = {
       "rating": 2,
       "hasNote": true,
       "noteFile": "angkor-beauty.html",
-      "cover": "search:吴哥之美"
+      "cover": "search:吴哥之美",
+      "isbn": "9787535668776"
     },
     {
       "id": 235,
@@ -4359,7 +4480,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "on-beauty.html",
       "isbn": "9787100074698",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787100074698-L.jpg"
+      "cover": "img/covers/placeholder_d70b1a44.svg"
     },
     {
       "id": 236,
@@ -4377,7 +4498,8 @@ window.DATA = {
       "rating": 3,
       "hasNote": true,
       "noteFile": "beethoven.html",
-      "cover": "search:贝多芬传"
+      "cover": "search:贝多芬传",
+      "isbn": "9787539618517"
     },
     {
       "id": 237,
@@ -4395,7 +4517,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "mozart.html",
-      "cover": "search:莫扎特传"
+      "cover": "search:莫扎特传",
+      "isbn": "9787500160434"
     },
     {
       "id": 238,
@@ -4431,7 +4554,8 @@ window.DATA = {
       "rating": 2,
       "hasNote": true,
       "noteFile": "musical-instruments.html",
-      "cover": "search:古典音乐入门"
+      "cover": "search:古典音乐入门",
+      "isbn": "9787308167987"
     },
     {
       "id": 240,
@@ -4449,7 +4573,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "rock-music.html",
-      "cover": "search:摇滚音乐史"
+      "cover": "search:摇滚音乐史",
+      "isbn": "9787305052316"
     },
     {
       "id": 241,
@@ -4466,7 +4591,8 @@ window.DATA = {
       "rating": 3,
       "hasNote": true,
       "noteFile": "japan-architecture.html",
-      "cover": "search:日本建筑的故事"
+      "cover": "search:日本建筑的故事",
+      "isbn": "9787559632777"
     },
     {
       "id": 242,
@@ -4483,7 +4609,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "zen-garden.html",
-      "cover": "search:禅庭枯山水"
+      "cover": "search:禅庭枯山水",
+      "isbn": "9784838105168"
     },
     {
       "id": 243,
@@ -4500,7 +4627,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "pop-art.html",
-      "cover": "search:波普艺术"
+      "cover": "search:波普艺术",
+      "isbn": "9787563374779"
     },
     {
       "id": 244,
@@ -4534,7 +4662,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "visual-design.html",
-      "cover": "search:视觉设计的故事"
+      "cover": "search:视觉设计的故事",
+      "isbn": "9787558053788"
     },
     {
       "id": 246,
@@ -4551,7 +4680,8 @@ window.DATA = {
       "rating": 3,
       "hasNote": true,
       "noteFile": "design-stories.html",
-      "cover": "search:设计的故事"
+      "cover": "search:设计的故事",
+      "isbn": "9789865695125"
     },
     {
       "id": 247,
@@ -4588,7 +4718,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "critique-pure-reason.html",
       "isbn": "9787100074971",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787100074971-L.jpg"
+      "cover": "img/covers/placeholder_8aa98309.svg"
     },
     {
       "id": 249,
@@ -4607,7 +4737,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "being-time.html",
       "isbn": "9787100074896",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787100074896-L.jpg"
+      "cover": "img/covers/placeholder_a536eddd.svg"
     },
     {
       "id": 250,
@@ -4626,7 +4756,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "zarathustra.html",
       "isbn": "9787100078962",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787100078962-L.jpg"
+      "cover": "img/covers/placeholder_ec3ce5f5.svg"
     },
     {
       "id": 251,
@@ -4644,7 +4774,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "montaigne-essays.html",
-      "cover": "search:蒙田随笔"
+      "cover": "search:蒙田随笔",
+      "isbn": "9787532762811"
     },
     {
       "id": 252,
@@ -4662,7 +4793,8 @@ window.DATA = {
       "rating": 3,
       "hasNote": true,
       "noteFile": "breakfast-with-seneca.html",
-      "cover": "search:与塞涅卡共进早餐"
+      "cover": "search:与塞涅卡共进早餐",
+      "isbn": "9787552039559"
     },
     {
       "id": 253,
@@ -4681,7 +4813,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "tao-te-ching.html",
       "isbn": "9787101100822",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787101100822-L.jpg"
+      "cover": "img/covers/placeholder_2aa23070.svg"
     },
     {
       "id": 254,
@@ -4700,7 +4832,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "zhuangzi.html",
       "isbn": "9787101100945",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787101100945-L.jpg"
+      "cover": "img/covers/placeholder_42dd06d6.svg"
     },
     {
       "id": 255,
@@ -4718,7 +4850,8 @@ window.DATA = {
       "rating": 2,
       "hasNote": true,
       "noteFile": "taishang-ganying.html",
-      "cover": "search:太上感应篇"
+      "cover": "search:太上感应篇",
+      "isbn": "9787540200268"
     },
     {
       "id": 256,
@@ -4736,7 +4869,8 @@ window.DATA = {
       "rating": 2,
       "hasNote": true,
       "noteFile": "liao-fan-si-xun.html",
-      "cover": "search:了凡四训"
+      "cover": "search:了凡四训",
+      "isbn": "9787101061772"
     },
     {
       "id": 257,
@@ -4755,7 +4889,7 @@ window.DATA = {
       "hasNote": true,
       "noteFile": "zen-motorcycle.html",
       "isbn": "9787544289474",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787544289474-L.jpg"
+      "cover": "img/covers/placeholder_f85b49ea.svg"
     },
     {
       "id": 258,
@@ -4773,7 +4907,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "huangdi-neijing.html",
-      "cover": "search:黄帝内经"
+      "cover": "search:黄帝内经",
+      "isbn": "9787537739832"
     },
     {
       "id": 259,
@@ -4791,7 +4926,8 @@ window.DATA = {
       "rating": 3,
       "hasNote": true,
       "noteFile": "heart-sutra.html",
-      "cover": "search:心经"
+      "cover": "search:心经",
+      "isbn": "9787552705140"
     },
     {
       "id": 260,
@@ -4809,7 +4945,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "siddhartha.html",
-      "cover": "search:悉达多"
+      "cover": "search:悉达多",
+      "isbn": "9787201112695"
     },
     {
       "id": 261,
@@ -4827,7 +4964,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "huangting-jing.html",
-      "cover": "search:黄庭经"
+      "cover": "search:黄庭经",
+      "isbn": "9787511721976"
     },
     {
       "id": 262,
@@ -4845,7 +4983,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "cantongqi.html",
-      "cover": "search:周易参同契"
+      "cover": "search:周易参同契",
+      "isbn": "9787101100976"
     },
     {
       "id": 263,
@@ -4863,7 +5002,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "taiyi-jinhua.html",
-      "cover": "search:太乙金华宗旨"
+      "cover": "search:太乙金华宗旨",
+      "isbn": "9787516925645"
     },
     {
       "id": 264,
@@ -4881,7 +5021,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "xingming-guizhi.html",
-      "cover": "search:性命圭旨"
+      "cover": "search:性命圭旨",
+      "isbn": "9787511701176"
     },
     {
       "id": 265,
@@ -4899,7 +5040,8 @@ window.DATA = {
       "rating": 3,
       "hasNote": true,
       "noteFile": "wuzhen-pian.html",
-      "cover": "search:悟真篇"
+      "cover": "search:悟真篇",
+      "isbn": "9787511721969"
     },
     {
       "id": 266,
@@ -4935,7 +5077,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "zhonglv-chuandao.html",
-      "cover": "search:钟吕传道集"
+      "cover": "search:钟吕传道集",
+      "isbn": "9787101111743"
     },
     {
       "id": 268,
@@ -4953,7 +5096,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "leyutang.html",
-      "cover": "search:乐育堂语录"
+      "cover": "search:乐育堂语录",
+      "isbn": "9787510824012"
     },
     {
       "id": 269,
@@ -4971,7 +5115,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "dandao-fajue.html",
-      "cover": "search:丹道法诀十二讲"
+      "cover": "search:丹道法诀十二讲",
+      "isbn": "9787509709061"
     },
     {
       "id": 270,
@@ -4989,7 +5134,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "dao-breath.html",
-      "cover": "search:道的呼吸"
+      "cover": "search:道的呼吸",
+      "isbn": "9787508072753"
     },
     {
       "id": 271,
@@ -5007,7 +5153,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "dao-health.html",
-      "cover": "search:道家养生学概要"
+      "cover": "search:道家养生学概要",
+      "isbn": "9787508041971"
     },
     {
       "id": 272,
@@ -5025,7 +5172,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "daoism-health.html",
-      "cover": "search:道教与养生"
+      "cover": "search:道教与养生",
+      "isbn": "9787507500424"
     },
     {
       "id": 273,
@@ -5043,7 +5191,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "dao-medicine.html",
-      "cover": "search:道医学"
+      "cover": "search:道医学",
+      "isbn": "9787802145498"
     },
     {
       "id": 274,
@@ -5061,7 +5210,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "golden-flower.html",
-      "cover": "search:金花的秘密"
+      "cover": "search:金花的秘密",
+      "isbn": "9787100121989"
     },
     {
       "id": 275,
@@ -5079,7 +5229,8 @@ window.DATA = {
       "rating": 3,
       "hasNote": false,
       "noteFile": null,
-      "cover": "search:养性延命录"
+      "cover": "search:养性延命录",
+      "isbn": "9787101103618"
     },
     {
       "id": 276,
@@ -5097,7 +5248,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "qianjin-fang.html",
-      "cover": "search:千金方"
+      "cover": "search:千金方",
+      "isbn": "9787512021228"
     },
     {
       "id": 277,
@@ -5115,7 +5267,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "bencao-gangmu.html",
-      "cover": "search:本草纲目"
+      "cover": "search:本草纲目",
+      "isbn": "9787570602834"
     },
     {
       "id": 278,
@@ -5133,7 +5286,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "zunsheng-bajian.html",
-      "cover": "search:遵生八笺"
+      "cover": "search:遵生八笺",
+      "isbn": "9787117086745"
     },
     {
       "id": 279,
@@ -5151,7 +5305,8 @@ window.DATA = {
       "rating": 2,
       "hasNote": true,
       "noteFile": "yueling.html",
-      "cover": "search:礼记·月令"
+      "cover": "search:礼记·月令",
+      "isbn": "9784762922145"
     },
     {
       "id": 280,
@@ -5169,7 +5324,8 @@ window.DATA = {
       "rating": 3,
       "hasNote": true,
       "noteFile": "baopuzi.html",
-      "cover": "search:抱朴子内篇"
+      "cover": "search:抱朴子内篇",
+      "isbn": "9787101004915"
     },
     {
       "id": 281,
@@ -5187,7 +5343,8 @@ window.DATA = {
       "rating": 2,
       "hasNote": true,
       "noteFile": "yunji-qiqian.html",
-      "cover": "search:云笈七签"
+      "cover": "search:云笈七签",
+      "isbn": "9787533301019"
     },
     {
       "id": 282,
@@ -5205,7 +5362,8 @@ window.DATA = {
       "rating": 3,
       "hasNote": true,
       "noteFile": "qiti-yuanliu.html",
-      "cover": "search:炁体源流"
+      "cover": "search:炁体源流",
+      "isbn": "9787807094753"
     },
     {
       "id": 283,
@@ -5241,7 +5399,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "rongcheng.html",
-      "cover": "search:容成阴道"
+      "cover": "search:容成阴道",
+      "isbn": "9787573500946"
     },
     {
       "id": 285,
@@ -5312,7 +5471,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "sanyuan-yanshou.html",
-      "cover": "search:三元延寿参赞书"
+      "cover": "search:三元延寿参赞书",
+      "isbn": "9787533542856"
     },
     {
       "id": 289,
@@ -5330,7 +5490,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "shesheng-zongyao.html",
-      "cover": "search:摄生总要"
+      "cover": "search:摄生总要",
+      "isbn": "9787513248167"
     },
     {
       "id": 290,
@@ -5348,7 +5509,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "daoism-sex.html",
-      "cover": "search:道教与性"
+      "cover": "search:道教与性",
+      "isbn": "9789888805730"
     },
     {
       "id": 291,
@@ -5366,7 +5528,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "ancient-chinese-sex.html",
-      "cover": "search:中国古代房内考"
+      "cover": "search:中国古代房内考",
+      "isbn": "9787208006423"
     },
     {
       "id": 292,
@@ -5420,7 +5583,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "fanghu-waishi.html",
-      "cover": "search:方壶外史"
+      "cover": "search:方壶外史",
+      "isbn": "9787550622029"
     },
     {
       "id": 295,
@@ -5438,7 +5602,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "daoqiao-tan.html",
-      "cover": "search:道窍谈"
+      "cover": "search:道窍谈",
+      "isbn": "9787532507481"
     },
     {
       "id": 296,
@@ -5456,7 +5621,8 @@ window.DATA = {
       "rating": 5,
       "hasNote": true,
       "noteFile": "sanche-mizhi.html",
-      "cover": "search:三车秘旨"
+      "cover": "search:三车秘旨",
+      "isbn": "9787532507481"
     },
     {
       "id": 297,
@@ -5492,7 +5658,8 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "dacheng-jieyao.html",
-      "cover": "search:大成捷要"
+      "cover": "search:大成捷要",
+      "isbn": "9787203002819"
     },
     {
       "id": 299,
@@ -5528,14 +5695,15 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "nanzong-shuangxiu.html",
-      "cover": "search:道教南宗与双修"
+      "cover": "search:道教南宗与双修",
+      "isbn": "9787802548299"
     },
     {
       "id": 301,
       "title": "《爱上跑步的13周》",
       "author": "伊恩·麦克尼尔",
-      "category": "科普知识类",
-      "categoryId": 6,
+      "category": "科技科普类",
+      "categoryId": 5,
       "desc": "阶梯式走跑结合训练法，13周科学规划，从零基础到轻松跑10公里。消除跑步恐惧，明确每周训练量、休息日安排与呼吸技巧，充满人文关怀。",
       "tags": [
         "跑步入门",
@@ -5546,7 +5714,7 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "love-running-13-weeks.html",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787544270878-L.jpg",
+      "cover": "img/covers/placeholder_d4bb2daa.svg",
       "isbn": "9787544270878"
     },
     {
@@ -5565,15 +5733,15 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "running-bible.html",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787544251501-L.jpg",
+      "cover": "img/covers/placeholder_b1409d28.svg",
       "isbn": "9787544251501"
     },
     {
       "id": 303,
       "title": "《无伤跑法》",
       "author": "徐国峰、罗誉寅",
-      "category": "科普知识类",
-      "categoryId": 6,
+      "category": "科技科普类",
+      "categoryId": 5,
       "desc": "预防跑步伤痛的完整体系，结合东方养生智慧与西方运动科学，提供姿势、呼吸、力量训练的具体方法。所有跑者必备。",
       "tags": [
         "防伤",
@@ -5584,7 +5752,7 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "injury-free-running.html",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787550271234-L.jpg",
+      "cover": "img/covers/placeholder_d1ed10c7.svg",
       "isbn": "9787550271234"
     },
     {
@@ -5592,7 +5760,7 @@ window.DATA = {
       "title": "《丹尼尔斯经典跑步训练法》",
       "author": "杰克·丹尼尔斯",
       "category": "实用技能类",
-      "categoryId": 8,
+      "categoryId": 2,
       "desc": "跑圈公认的训练圣经，提出VDOT跑力值体系。详解E/M/T/I/R五种训练强度，提供从新手到精英的全周期训练计划。",
       "tags": [
         "训练方法",
@@ -5603,15 +5771,15 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "daniels-running-formula.html",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787115459701-L.jpg",
+      "cover": "img/covers/placeholder_3a97b68f.svg",
       "isbn": "9787115459701"
     },
     {
       "id": 305,
       "title": "《耐力：无伤、燃脂、高效的MAF训练法》",
       "author": "菲利普·马费通",
-      "category": "科普知识类",
-      "categoryId": 6,
+      "category": "科技科普类",
+      "categoryId": 5,
       "desc": "最大有氧心率训练法，通过控制心率在有氧区间实现高效燃脂与耐力提升。降低受伤风险，适合长期坚持。",
       "tags": [
         "MAF训练",
@@ -5622,14 +5790,15 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "maf-training.html",
-      "cover": "search:耐力：无伤、燃脂、高效的MAF训练法"
+      "cover": "search:耐力：无伤、燃脂、高效的MAF训练法",
+      "isbn": "9787213080135"
     },
     {
       "id": 306,
       "title": "《马拉松训练宝典》",
       "author": "霍尔格·施密特",
       "category": "实用技能类",
-      "categoryId": 8,
+      "categoryId": 2,
       "desc": "全马跑者必备工具书，从周期计划到赛前调整。针对不同水平跑者提供个性化训练方案，包含配速策略、补给计划、心理调节。",
       "tags": [
         "马拉松",
@@ -5640,15 +5809,15 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "marathon-training-bible.html",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787115428530-L.jpg",
+      "cover": "img/covers/placeholder_50d01b5f.svg",
       "isbn": "9787115428530"
     },
     {
       "id": 307,
       "title": "《天生就会跑》",
       "author": "克里斯托弗·麦克杜格尔",
-      "category": "文学艺术类",
-      "categoryId": 2,
+      "category": "文学虚构类",
+      "categoryId": 1,
       "desc": "豆瓣8.5分。讲述墨西哥塔拉乌马拉部落超级跑者的故事，探讨人类奔跑本能与跑步的本质意义。改变全球跑步文化的经典之作。",
       "tags": [
         "跑步文化",
@@ -5659,15 +5828,15 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "born-to-run.html",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787544255387-L.jpg",
+      "cover": "img/covers/placeholder_39763791.svg",
       "isbn": "9787544255387"
     },
     {
       "id": 308,
       "title": "《跑步时，我谈些什么》",
       "author": "村上春树",
-      "category": "文学艺术类",
-      "categoryId": 2,
+      "category": "文学虚构类",
+      "categoryId": 1,
       "desc": "作家村上春树的跑步随笔，记录他坚持跑步30年的感悟，将跑步与写作、人生哲学融合。细腻笔触展现跑步中的孤独与坚持。",
       "tags": [
         "村上春树",
@@ -5678,15 +5847,15 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "what-i-talk-about-running.html",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787544247771-L.jpg",
+      "cover": "img/covers/placeholder_aa100a79.svg",
       "isbn": "9787544247771"
     },
     {
       "id": 309,
       "title": "《强风吹拂》",
       "author": "三浦紫苑",
-      "category": "文学艺术类",
-      "categoryId": 2,
+      "category": "文学虚构类",
+      "categoryId": 1,
       "desc": "豆瓣9.0分。跑步小说，讲述10个大学生挑战箱根驿传的故事，跑步版《灌篮高手》。展现团队精神、青春热血与个人成长。",
       "tags": [
         "日本文学",
@@ -5697,15 +5866,15 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "the-wind-up.html",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787544278782-L.jpg",
+      "cover": "img/covers/placeholder_5b9e8c74.svg",
       "isbn": "9787544278782"
     },
     {
       "id": 310,
       "title": "《跑出肯尼亚》",
       "author": "阿德哈拉南德·芬恩",
-      "category": "文学艺术类",
-      "categoryId": 2,
+      "category": "文学虚构类",
+      "categoryId": 1,
       "desc": "深入肯尼亚埃藤小镇，探寻世界最快跑者的训练秘密与生活方式。揭示肯尼亚跑者成功的文化、环境、饮食与训练因素。",
       "tags": [
         "肯尼亚",
@@ -5716,15 +5885,15 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "running-with-kenyans.html",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787544270878-L.jpg",
+      "cover": "img/covers/placeholder_ea4e5b52.svg",
       "isbn": "9787544270878"
     },
     {
       "id": 311,
       "title": "《26 Marathons》",
       "author": "梅布·凯夫莱齐吉",
-      "category": "文学艺术类",
-      "categoryId": 2,
+      "category": "文学虚构类",
+      "categoryId": 1,
       "desc": "奥运奖牌得主、波士顿马拉松冠军分享他26场马拉松的人生故事。从挑战与胜利中提炼经验，展现马拉松精神与永不放弃的信念。",
       "tags": [
         "马拉松",
@@ -5735,15 +5904,15 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "26-marathons.html",
-      "cover": "https://covers.openlibrary.org/b/isbn/9780593137888-L.jpg",
+      "cover": "img/covers/placeholder_96fe2dfa.svg",
       "isbn": "9780593137888"
     },
     {
       "id": 312,
       "title": "《雨中的3分58秒》",
       "author": "约翰·帕克",
-      "category": "文学艺术类",
-      "categoryId": 2,
+      "category": "文学虚构类",
+      "categoryId": 1,
       "desc": "经典跑步小说，讲述大学生跑者追求1英里3分58秒目标的艰辛历程。细腻描绘跑步中的痛苦、坚持与突破，被称为最真实的跑步小说。",
       "tags": [
         "跑步小说",
@@ -5754,15 +5923,15 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "358-in-the-rain.html",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787544267342-L.jpg",
+      "cover": "img/covers/placeholder_26206740.svg",
       "isbn": "9787544267342"
     },
     {
       "id": 313,
       "title": "《跑步运动解剖学》",
       "author": "詹妮弗·戴尔曼",
-      "category": "科普知识类",
-      "categoryId": 6,
+      "category": "科技科普类",
+      "categoryId": 5,
       "desc": "解析跑步时肌肉发力、关节协作机制，图文并茂，帮助理解伤痛根源，提供针对性力量训练建议。让你敬畏身体，跑得长久。",
       "tags": [
         "解剖学",
@@ -5773,14 +5942,15 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "running-anatomy.html",
-      "cover": "search:跑步运动解剖学"
+      "cover": "search:跑步运动解剖学",
+      "isbn": "9787115524195"
     },
     {
       "id": 314,
       "title": "《80/20跑步》",
       "author": "马特·菲茨杰拉德",
-      "category": "科普知识类",
-      "categoryId": 6,
+      "category": "科技科普类",
+      "categoryId": 5,
       "desc": "提出80/20训练法则：80%低强度有氧训练+20%高强度训练，最大化训练效果。打破越努力越好的误区，提高训练效率。",
       "tags": [
         "训练法则",
@@ -5791,15 +5961,15 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "80-20-running.html",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787544270878-L.jpg",
+      "cover": "img/covers/placeholder_2ddf9323.svg",
       "isbn": "9787544270878"
     },
     {
       "id": 315,
       "title": "《运动基因》",
       "author": "大卫·爱普斯坦",
-      "category": "科普知识类",
-      "categoryId": 6,
+      "category": "科技科普类",
+      "categoryId": 5,
       "desc": "探索跑步能力与基因的关系，解答为什么有些人天生会跑。结合科学研究与真实案例，拓宽对跑步能力的认知边界。",
       "tags": [
         "运动科学",
@@ -5810,15 +5980,15 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "the-sports-gene.html",
-      "cover": "https://covers.openlibrary.org/b/isbn/9787544270878-L.jpg",
+      "cover": "img/covers/placeholder_4e595ad7.svg",
       "isbn": "9787544270878"
     },
     {
       "id": 316,
       "title": "《Born to Run》",
       "author": "Christopher McDougall",
-      "category": "文学艺术类",
-      "categoryId": 2,
+      "category": "文学虚构类",
+      "categoryId": 1,
       "desc": "天生就会跑英文原版。The New York Times bestseller that transformed the running world. Original English edition for bilingual reading.",
       "tags": [
         "英文原版",
@@ -5829,7 +5999,7 @@ window.DATA = {
       "rating": 4,
       "hasNote": true,
       "noteFile": "born-to-run-en.html",
-      "cover": "https://covers.openlibrary.org/b/isbn/9780307266309-L.jpg",
+      "cover": "img/covers/placeholder_28f095fb.svg",
       "isbn": "9780307266309"
     }
   ],

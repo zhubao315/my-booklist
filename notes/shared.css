@@ -255,3 +255,32 @@ blockquote .parse {
 body {
   transition: background .3s, color .3s;
 }
+
+/* ===== 封面图 ===== */
+.book-cover-container {
+  display: flex;
+  justify-content: center;
+  margin: 24px 0;
+}
+.book-cover {
+  width: 200px;
+  height: auto;
+  max-height: 300px;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+.book-cover:hover {
+  transform: scale(1.03);
+}
+@media (max-width: 480px) {
+  .book-cover {
+    width: 160px;
+  }
+}
+@media (max-width: 360px) {
+  .book-cover {
+    width: 130px;
+  }
+}

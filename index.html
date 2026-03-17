@@ -52,9 +52,10 @@
     </div>
   </section>
 
-  <!-- Category Navigation -->
+  <!-- Category Navigation (desktop/tablet) -->
   <nav class="category-nav" aria-label="分类导航">
-    <button class="category-btn active" data-cat="1">📖 文学虚构类</button>
+    <button class="category-btn active" data-cat="all">📚 全部</button>
+    <button class="category-btn" data-cat="1">📖 文学虚构类</button>
     <button class="category-btn" data-cat="2">🛠️ 实用技能类</button>
     <button class="category-btn" data-cat="3">🧠 认知成长类</button>
     <button class="category-btn" data-cat="4">🏛️ 历史社科类</button>
@@ -63,8 +64,23 @@
     <button class="category-btn" data-cat="7">👤 传记人物类</button>
     <button class="category-btn" data-cat="8">🎨 艺术美学类</button>
     <button class="category-btn" data-cat="9">🕉️ 哲学宗教类</button>
-
   </nav>
+
+  <!-- Category Select (mobile) -->
+  <div class="category-select-wrap">
+    <select id="category-select" aria-label="选择分类">
+      <option value="all">📚 全部分类</option>
+      <option value="1">📖 文学虚构类</option>
+      <option value="2">🛠️ 实用技能类</option>
+      <option value="3">🧠 认知成长类</option>
+      <option value="4">🏛️ 历史社科类</option>
+      <option value="5">🔬 科技科普类</option>
+      <option value="6">💰 投资理财类</option>
+      <option value="7">👤 传记人物类</option>
+      <option value="8">🎨 艺术美学类</option>
+      <option value="9">🕉️ 哲学宗教类</option>
+    </select>
+  </div>
 
   <!-- Main Content -->
   <main class="content-section" role="main">

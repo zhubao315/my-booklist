@@ -305,7 +305,12 @@
       }
     });
 
-    // Section count
+    // Section title & count
+    var titleEl = document.querySelector('.section-title');
+    if (titleEl) {
+      var catNames = {1:'文学虚构类',2:'实用技能类',3:'认知成长类',4:'历史社科类',5:'科技科普类',6:'投资理财类',7:'传记人物类',8:'艺术美学类',9:'哲学宗教类'};
+      titleEl.textContent = state.activeCategory ? catNames[state.activeCategory] || '筛选结果' : '全部书籍';
+    }
     var countEl = $('#section-count');
     if (countEl) countEl.textContent = '\u5171 ' + total + ' \u672C';
 
@@ -380,10 +385,26 @@
       btn.addEventListener('click', function() {
         $$('.category-btn').forEach(function(b) { b.classList.remove('active'); });
         btn.classList.add('active');
-        state.activeCategory = parseInt(btn.dataset.cat) || 0;
+        state.activeCategory = btn.dataset.cat === 'all' ? 0 : parseInt(btn.dataset.cat) || 0;
+        // Sync mobile select
+        var sel = $('#category-select');
+        if (sel) sel.value = state.activeCategory || 'all';
         showSkeleton(6);
         requestAnimationFrame(function() { applyFilters(); });
       });
+    });
+
+    // Mobile category select
+    var catSelect = $('#category-select');
+    if (catSelect) catSelect.addEventListener('change', function() {
+      var val = this.value;
+      state.activeCategory = val === 'all' ? 0 : parseInt(val);
+      // Sync desktop buttons
+      $$('.category-btn').forEach(function(b) {
+        b.classList.toggle('active', parseInt(b.dataset.cat) === state.activeCategory);
+      });
+      showSkeleton(6);
+      requestAnimationFrame(function() { applyFilters(); });
     });
 
     // Pagination
