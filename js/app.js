@@ -1,8 +1,30 @@
 // my-booklist main application
 (function() {
   'use strict';
-  var DATA = window.DATA;
+
+  // ===== Data Cache =====
+  var DataCache = {
+    KEY: 'booklist_data',
+    VERSION: '2026-03-18-v1',
+    load: function() {
+      try {
+        var cached = JSON.parse(localStorage.getItem(this.KEY));
+        if (cached && cached.version === this.VERSION) {
+          return cached.data;
+        }
+      } catch(e) {}
+      return null;
+    },
+    save: function(data) {
+      try {
+        localStorage.setItem(this.KEY, JSON.stringify({ version: this.VERSION, data: data }));
+      } catch(e) { console.warn('DataCache save failed', e); }
+    }
+  };
+
+  var DATA = window.DATA || DataCache.load();
   if (!DATA) { console.error('DATA not loaded'); return; }
+  if (window.DATA) DataCache.save(window.DATA); // cache fresh load
 
   // ===== Book Cover Fetcher (Google Books API) =====
   var CoverCache = {
