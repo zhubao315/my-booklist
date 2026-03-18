@@ -284,3 +284,28 @@ body {
     width: 130px;
   }
 }
+
+/* Theme Toggle Button */
+#theme-toggle {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text);
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+#theme-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+}
