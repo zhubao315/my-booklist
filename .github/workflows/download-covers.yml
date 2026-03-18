@@ -2,120 +2,35 @@ name: Download Book Covers
 
 on:
   workflow_dispatch:
-
-permissions:
-  contents: write
+    inputs:
+      limit:
+        description: 'Max books to process (0 = all)'
+        required: false
+        default: '0'
 
 jobs:
-  download-covers:
+  download:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
+    
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Download covers
-        run: |
-          python3 << 'PYEOF'
-          import json, os, re, time, urllib.request, concurrent.futures, threading
-          
-          COVERS_DIR = "img/covers"
-          os.makedirs(COVERS_DIR, exist_ok=True)
-          
-          # 加载数据
-          with open('js/data.js') as f:
-              content = f.read()
-          eq = content.index('=')
-          semi = content.rindex(';')
-          data = json.loads(content[eq+1:semi].strip())
-          books = data['BOOKS']
-          
-          # 找出需要下载的书（有 ISBN 且没有本地封面文件）
-          need = []
-          for i, b in enumerate(books):
-              isbn = b.get('isbn', '').replace('-', '')
-              cover = b.get('cover', '')
-              if not isbn:
-                  continue
-              filename = f"{isbn}.jpg"
-              filepath = os.path.join(COVERS_DIR, filename)
-              # 如果文件已存在且大小合理，跳过
-              if os.path.exists(filepath) and os.path.getsize(filepath) > 2000:
-                  # 但要确保 data.js 指向本地路径
-                  if not cover.startswith('img/'):
-                      books[i]['cover'] = f'img/covers/{filename}'
-                  continue
-              # 删除损坏的小文件
-              if os.path.exists(filepath):
-                  os.remove(filepath)
-              need.append((i, isbn, b['title']))
-          
-          print(f"总书: {len(books)} | 需下载: {len(need)} | 已有本地: {len([f for f in os.listdir(COVERS_DIR) if f.endswith('.jpg')])}", flush=True)
-          
-          if not need:
-              print("无需下载，更新 data.js 路径即可")
-              # 保存 data.js
-              new_content = content[:eq+1] + '\n' + json.dumps(data, ensure_ascii=False, indent=2) + content[semi:]
-              with open('js/data.js', 'w') as f:
-                  f.write(new_content)
-              exit(0)
-          
-          stats = {"ok": 0, "fail": 0}
-          lock = threading.Lock()
-          
-          def download(isbn):
-              # Open Library L size
-              for size in ['L', 'M', 'S']:
-                  url = f"https://covers.openlibrary.org/b/isbn/{isbn}-{size}.jpg"
-                  try:
-                      req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-                      resp = urllib.request.urlopen(req, timeout=15)
-                      data_bytes = resp.read()
-                      if len(data_bytes) > 2000 and not data_bytes[:5] == b'<!doc':
-                          return True, data_bytes
-                  except:
-                      pass
-              return False, None
-          
-          def proc(item):
-              i, isbn, title = item
-              ok, data_bytes = download(isbn)
-              if ok:
-                  filepath = os.path.join(COVERS_DIR, f"{isbn}.jpg")
-                  with open(filepath, 'wb') as f:
-                      f.write(data_bytes)
-                  with lock:
-                      stats["ok"] += 1
-                  return i, f"img/covers/{isbn}.jpg", True
-              with lock:
-                  stats["fail"] += 1
-              return i, None, False
-          
-          done = 0
-          start = time.time()
-          
-          with concurrent.futures.ThreadPoolExecutor(max_workers=6) as ex:
-              futures = {ex.submit(proc, item): item for item in need}
-              for f in concurrent.futures.as_completed(futures):
-                  idx, path, ok = f.result()
-                  done += 1
-                  if ok:
-                      books[idx]['cover'] = path
-                  if done % 20 == 0 or done == len(need):
-                      print(f"[{done}/{len(need)}] ✅{stats['ok']} ❌{stats['fail']} {(time.time()-start):.0f}s", flush=True)
-          
-          # 保存 data.js
-          new_content = content[:eq+1] + '\n' + json.dumps(data, ensure_ascii=False, indent=2) + content[semi:]
-          with open('js/data.js', 'w') as f:
-              f.write(new_content)
-          
-          print(f"\n完成: ✅{stats['ok']} ❌{stats['fail']} | 耗时{(time.time()-start)/60:.1f}min | 封面共{len(os.listdir(COVERS_DIR))}个", flush=True)
-          PYEOF
-
-      - name: Commit and push
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add img/covers/ js/data.js
-          COUNT=$(ls img/covers/*.jpg 2>/dev/null | wc -l)
-          echo "本地封面: $COUNT 本"
-          git diff --cached --shortstat || true
-          git diff --cached --quiet && echo "无变更" || (git commit -m "📚 本地封面 $COUNT 本" && git push)
+    - uses: actions/checkout@v4
+    
+    - name: Download covers
+      run: |
+        pip install requests
+        python3 scripts/download_covers_v3.py
+      env:
+        LIMIT: ${{ github.event.inputs.limit }}
+    
+    - name: Commit & push
+      run: |
+        git config user.name "github-actions"
+        git config user.email "actions@github.com"
+        git add -A img/covers/ js/data.js
+        if git diff --staged --quiet; then
+          echo "No changes"
+        else
+          git commit -m "auto: 批量下载封面 ($(date +%Y-%m-%d))"
+          git push
+        fi
