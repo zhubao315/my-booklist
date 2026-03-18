@@ -17,9 +17,7 @@ jobs:
     - uses: actions/checkout@v4
     
     - name: Download covers
-      run: |
-        pip install requests
-        python3 scripts/download_covers_v3.py
+      run: python3 scripts/download_covers_v4.py
       env:
         LIMIT: ${{ github.event.inputs.limit }}
     
