@@ -1,34 +1,25 @@
 // 朱宝的书单 - 笔记页面共享脚本
+// localStorage key 与首页保持一致
 (function() {
-  const KEY = 'booklist-theme';
+  const KEY = 'theme';
   const btn = document.getElementById('theme-toggle');
-  
-  // Load saved theme
-  const saved = localStorage.getItem(KEY);
-  if (saved === 'light') {
-    document.documentElement.setAttribute('data-theme', 'light');
+
+  // Load saved theme (默认 dark)
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem(KEY, theme);
+    if (btn) btn.textContent = theme === 'dark' ? '\u2600\uFE0F' : '\uD83C\uDF19';
+    if (btn) btn.title = theme === 'dark' ? '切换到日间模式' : '切换到夜间模式';
   }
-  
-  // Update button icon
-  function updateBtn() {
-    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-    if (btn) btn.textContent = isLight ? '🌙' : '☀️';
-    if (btn) btn.title = isLight ? '切换到夜间模式' : '切换到日间模式';
-  }
-  updateBtn();
-  
+
+  const saved = localStorage.getItem(KEY) || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  applyTheme(saved);
+
   // Toggle
   if (btn) {
     btn.addEventListener('click', function() {
-      const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-      if (isLight) {
-        document.documentElement.removeAttribute('data-theme');
-        localStorage.setItem(KEY, 'dark');
-      } else {
-        document.documentElement.setAttribute('data-theme', 'light');
-        localStorage.setItem(KEY, 'light');
-      }
-      updateBtn();
+      const current = document.documentElement.getAttribute('data-theme') || 'dark';
+      applyTheme(current === 'dark' ? 'light' : 'dark');
     });
   }
 })();
