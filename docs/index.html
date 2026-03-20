@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>我的书单</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <div class="site-head">
+    <h1>我的书单</h1>
+    <p class="subtitle">285本 · 9大分类 · 终身学习</p>
+  </div>
+</header>
+<main>
+  <div class="controls">
+    <input id="search" type="search" placeholder="搜索书名、作者或标签" />
+    <select id="category"><option value="">所有分类</option></select>
+  </div>
+  <div id="books" class="grid" aria-live="polite"></div>
+  <div id="no-results" class="no-results hidden">没有找到结果</div>
+</main>
+<footer>
+  <p>基于静态数据渲染。替换 <code>docs/data/books.json</code> 来更新书单。</p>
+</footer>
+<script src="js/books-render.js" defer></script>
+</body>
+</html>
